@@ -1,0 +1,830 @@
+{
+	"info": {
+		"_postman_id": "bb935058-fedb-45dc-9645-4102be5796b7",
+		"name": "PrizeAuthor Tests",
+		"description": "Colección de pruebas sobre el recurso PrizeAuthor",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Crear una organización",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bd46dd39-b07d-4bf0-b05f-f121debd387d",
+						"exec": [
+							"var data = JSON.parse(responseBody);",
+							"postman.setGlobalVariable(\"new_id_o\",data.id);",
+							"tests[\"no genera error en el Post\"] = responseCode.code === 200;",
+							"console.log(data.id);",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Real Academia Sueca de Ciencias\",\r\n    \"type\": \"PRIVADA\"\r\n}"
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/organizations",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"organizations"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nCrea una nueva organización. El recurso tiene el atributo \"name\" que debe ser único. El Id es inicializado por la BD y se debe ver en la respuesta. \r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
+			},
+			"response": []
+		},
+		{
+			"name": "Crear una organizacion 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "886d6d83-f309-4ab8-a7e8-fac2621a6e6c",
+						"exec": [
+							"var data = JSON.parse(responseBody);",
+							"postman.setGlobalVariable(\"new_id_o2\",data.id);",
+							"tests[\"no genera error en el Post\"] = responseCode.code === 200;",
+							"console.log(data.id);",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Real Academia de espanol\",\r\n    \"type\": \"PRIVADA\"\r\n}"
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/organizations",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"organizations"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nCrea una nueva organizacion. El recurso tiene el atributo \"name\" que debe ser único. El Id es inicializado por la BD y se debe ver en la respuesta. \r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
+			},
+			"response": []
+		},
+		{
+			"name": "Crear un premio",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "821e467b-f573-424a-8c4a-a69473523571",
+						"exec": [
+							"var data = JSON.parse(responseBody);",
+							"postman.setGlobalVariable(\"new_id_p\",data.id);",
+							"tests[\"no genera error en el Post\"] = responseCode.code === 200;",
+							"console.log(data.id);",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t \"name\": \"Hugo Award\",\r\n\t \"description\": \"The Hugo Awards are a set of literary awards given annually for the best science fiction or fantasy works and achievements of the previous year.\",\r\n\t \"premiationDate\": \"2015-10-1 3:00 PM GMT+1:00\",\r\n\t \"organization\":\r\n       {\r\n            \"id\": {{new_id_o}},\r\n    \t\t\"name\": \"Real Academia Sueca de Ciencias\",\r\n    \t\t\"tipo\": \"PRIVADA\"\r\n       }\r\n\r\n}"
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/prizes",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"prizes"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo premio. El Id es inicializado por la BD y se debe ver en la respuesta. \r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
+			},
+			"response": []
+		},
+		{
+			"name": "Crear un premio 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "991e6429-46da-4930-a743-40bbca82a763",
+						"exec": [
+							"var data = JSON.parse(responseBody);",
+							"postman.setGlobalVariable(\"new_id_p2\",data.id);",
+							"tests[\"no genera error en el Post\"] = responseCode.code === 200;",
+							"console.log(data.id);",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t \"name\": \"Varon Award\",\r\n\t \"description\": \"The Varon Awards are a set of peace awards given monthly for the best peace book of the year.\",\r\n\t \"premiationDate\": \"2016-10-1 3:00 PM GMT+1:00\",\r\n\t \"organization\":\r\n       {\r\n            \"id\": {{new_id_o2}},\r\n    \t\t\"name\": \"Real Academia de espanol\",\r\n    \t\t\"tipo\": \"PRIVADA\"\r\n       }\r\n\r\n}"
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/prizes",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"prizes"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo premio. El Id es inicializado por la BD y se debe ver en la respuesta. \r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
+			},
+			"response": []
+		},
+		{
+			"name": "Crear un autor",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f9c4bdfa-e96f-4ad9-9c5e-7fa2cf8902ee",
+						"exec": [
+							"var data = JSON.parse(responseBody);",
+							"postman.setGlobalVariable(\"new_id_a\",data.id);",
+							"tests[\"no genera error en el Post\"] = responseCode.code === 200;",
+							"console.log(data.id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\n        \"birthDate\": \"1927-03-03T00:00:00-05:00\",\n        \"description\": \"fue un escritor, guionista, editor y periodista colombiano. En 1982 recibió el Premio Nobel de Literatura.\",\n        \"image\": \"https://commons.wikimedia.org/wiki/File:Gabriel_Garcia_Marquez.jpg\",\n        \"name\": \"Gabriel José de la Concordia García Márquez\"\n    }"
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/authors",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"authors"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo autor. El Id es inicializado por la BD y se debe ver en la respuesta.\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
+			},
+			"response": []
+		},
+		{
+			"name": "Crear autor 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "964c17d7-47f6-425a-baba-05b73b06f193",
+						"exec": [
+							"var data = JSON.parse(responseBody);",
+							"postman.setGlobalVariable(\"new_id_a2\",data.id);",
+							"tests[\"no genera error en el Post\"] = responseCode.code === 200;",
+							"console.log(data.id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\n        \"birthDate\": \"1966-07-22T00:00:00-05:00\",\n        \"description\": \"fue un escritor, guionista, editor y periodista colombiano..\",\n        \"image\": \"https://commons.wikimedia.org/wiki/File:Descargakoj.jpg\",\n        \"name\": \"Gustavo Bolivar Moreno\"\n    }"
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/authors",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"authors"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo autor. El Id es inicializado por la BD y se debe ver en la respuesta.\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
+			},
+			"response": []
+		},
+		{
+			"name": "Agregarle un autor a un premio",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e9b76351-dc3d-4ac6-beab-81871addfd96",
+						"exec": [
+							"tests[\"no genera error en el Post\"] = responseCode.code === 200;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/prizes/{{new_id_p}}/authors/{{new_id_a}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"prizes",
+						"{{new_id_p}}",
+						"authors",
+						"{{new_id_a}}"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nAsocia un premio a un autor en la aplicación. \r\n\r\nSe envía el Id del autor y el del premio a asociar en la URL de la petición.\r\n\r\n**Código http esperado: 200**"
+			},
+			"response": []
+		},
+		{
+			"name": "Asociar un autor  que no existe a un premio",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bd685e11-33db-4118-be98-28f9dacd0dc7",
+						"exec": [
+							"tests[\"No se puede asociar el author ya que este no existe.\"] = responseCode.code === 404;",
+							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The author with the given id was not found\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/prizes/{{new_id_p}}/authors/0",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"prizes",
+						"{{new_id_p}}",
+						"authors",
+						"0"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nAsocia un autor que no existe a un premio en la aplicación. \r\n\r\nSe envía el Id del autor y el del premio a asociar en la URL de la petición.\r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /authors/0 no existe.\".\r\n\r\n**Código http esperado: 404**"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener el autor de un premio",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6e5d490f-c9a8-4f77-9ff8-cd2807cf9b20",
+						"exec": [
+							"console.log(responseBody);",
+							"var data = JSON.parse(responseBody);",
+							"tests[\"no genera error en el Get\"] = responseCode.code === 200;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/prizes/{{new_id_p}}/author",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"prizes",
+						"{{new_id_p}}",
+						"author"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nConsulta un autor de un premio en la aplicación. \r\nLa petición no tiene cuerpo.\r\n\r\nSe envía el Id del autor y del premio a consultar en la URL de la petición.\r\n\r\n**Código http esperado: 200**"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener el autor que no existe de un premio",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3297c68a-6c35-4e0f-96bb-711c10512c2c",
+						"exec": [
+							"tests[\"No se puede obtener el author ya que este no existe.\"] = responseCode.code === 404;",
+							"let id = pm.variables.get(\"new_id_p2\");",
+							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The author has not the prize\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/prizes/{{new_id_p2}}/author",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"prizes",
+						"{{new_id_p2}}",
+						"author"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nConsulta un autor que no existe de un premio en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error.\r\n\r\n**Código http esperado: 404**"
+			},
+			"response": []
+		},
+		{
+			"name": "Asociar un autor a un premio",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b595cd14-771c-4768-9c3e-b1faacdf23ce",
+						"exec": [
+							"tests[\"no genera error en el Put\"] = responseCode.code === 200;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/prizes/{{new_id_p}}/author/{{new_id_a2}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"prizes",
+						"{{new_id_p}}",
+						"author",
+						"{{new_id_a2}}"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nActualiza el autor de un premio existente. Se envían los Ids de las entidades asociar en la URL de la petición.\r\n\r\n**Código http esperado: 200**"
+			},
+			"response": []
+		},
+		{
+			"name": "Asociar un autor que no existe a un premio",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "826eb21c-0515-42ac-95a6-9367c2a4182f",
+						"exec": [
+							"tests[\"No se puede reemplazar el author al prize ya que el nuevo no existe.\"] = responseCode.code === 404;",
+							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The author with the given id was not found\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/prizes/{{new_id_p}}/author/0",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"prizes",
+						"{{new_id_p}}",
+						"author",
+						"0"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nAsocia un autor que no existe a un premio en la aplicación. \r\n\r\nSe envían los Ids a asociar en la URL de la petición.\r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /authors/0 no existe.\".\r\n\r\n**Código http esperado: 404**"
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar un premio con autor",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "935bb55e-32d4-48b9-bcd6-ad0df156ee7a",
+						"exec": [
+							"tests[\"No se puede borrar un prize que tenga un author asociado.\"] = responseCode.code === 412;",
+							"let id = pm.variables.get(\"new_id_p\");",
+							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The prize has an associated author\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/prizes/{{new_id_p}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"prizes",
+						"{{new_id_p}}"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nBorra un premio existente pero con autor. Verifica que se genera el error.\r\n\r\n**Código HTTP esperado: 412 Precondition failed\".**"
+			},
+			"response": []
+		},
+		{
+			"name": "Borrarle el autor a un premio",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "08d9072a-55bf-4641-bbdb-52b352762f65",
+						"exec": [
+							"tests[\"no genera error en el Delete\"] = responseCode.code === 204;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/prizes/{{new_id_p}}/author",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"prizes",
+						"{{new_id_p}}",
+						"author"
+					]
+				},
+				"description": "**Release: Paso-5**\n\nBorra la asociación entre un premio y un autor. Se envían los ids del autor y del premio creados anteriormente.\n\n**Código HTTP esperado: 204**"
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar un autor",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bb946ff6-d049-4d41-bf7d-9bdcabb53d6e",
+						"exec": [
+							"tests[\"no genera error en el Delete\"] = responseCode.code === 204;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/authors/{{new_id_a}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"authors",
+						"{{new_id_a}}"
+					]
+				},
+				"description": "**Release: Paso-5**\n\nBorra un autor. Se envía el id del autor creado anteriormente.\n\n**Código HTTP esperado: 204**"
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar un autor 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0cffadd9-c487-464d-ba34-ac04f0b25f6f",
+						"exec": [
+							"tests[\"no genera error en el Delete\"] = responseCode.code === 204;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/authors/{{new_id_a2}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"authors",
+						"{{new_id_a2}}"
+					]
+				},
+				"description": "**Release: Paso-5**\n\nBorra un autor. Se envía el id del autor creado anteriormente.\n\n**Código HTTP esperado: 204**"
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar un premio",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5af38318-0cba-4c19-ad45-2bb3394069e3",
+						"exec": [
+							"tests[\"no genera error en el Delete\"] = responseCode.code === 204;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/prizes/{{new_id_p}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"prizes",
+						"{{new_id_p}}"
+					]
+				},
+				"description": "**Release: Paso-5**\n\nBorra un premio. Se envía el id del premio creado anteriormente.\n\n**Código HTTP esperado: 204**"
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar un premio 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8670dccb-1743-4bae-82b1-e4d2b01febe6",
+						"exec": [
+							"tests[\"no genera error en el Delete\"] = responseCode.code === 204;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/prizes/{{new_id_p2}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"prizes",
+						"{{new_id_p2}}"
+					]
+				},
+				"description": "**Release: Paso-5**\n\nBorra un premio. Se envía el id del premio creado anteriormente.\n\n**Código HTTP esperado: 204**"
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar una organización",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e93d1c9e-0e8c-4ab1-aadd-2128a9232d2e",
+						"exec": [
+							"tests[\"no genera error en el Delete\"] = responseCode.code === 204;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/organizations/{{new_id_o}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"organizations",
+						"{{new_id_o}}"
+					]
+				},
+				"description": "**Release: Paso-5**\n\nBorra una organización. Se envía el id de la organización creada petición.\n\n**Código HTTP esperado: 204**"
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar una organizacion 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8ca5a162-20b4-41ea-abc1-fd1286d75b2d",
+						"exec": [
+							"tests[\"no genera error en el Delete\"] = responseCode.code === 204;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/organizations/{{new_id_o2}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"organizations",
+						"{{new_id_o2}}"
+					]
+				},
+				"description": "**Release: Paso-5**\n\nBorra una organizacion. Se envía el id de la organizacion creada anteriormente.\n\n**Código HTTP esperado: 204**"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "0062c40a-acd3-4e89-b997-477e077f4faf",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "e944d212-8a99-4296-9ef7-fd69501a8593",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
