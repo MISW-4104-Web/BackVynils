@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "c1634d16-0c80-4843-a95f-5d93881ddf5e",
 		"name": "RecordLabel Tests",
-		"description": "Colección de pruebas sobre el recurso Editorial",
+		"description": "Colección de pruebas sobre el recurso RecordLabel",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -45,7 +45,7 @@
 						"recordlabels"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nCrea una nueva editorial. El recurso solo tiene de atributo \"name\" que debe ser único. El Id es inicializado por la BD y se debe ver en la respuesta. \r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
+				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo sello discográfico. El recurso solo tiene de atributo \"name\" que debe ser único. El Id es inicializado por la BD y se debe ver en la respuesta. \r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
 			},
 			"response": []
 		},
@@ -90,7 +90,7 @@
 						"recordlabels"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nCrea otra editorial. El recurso solo tiene de atributo \"name\" que debe ser único. El Id es inicializado por la BD y se debe ver en la respuesta. \r\n\r\nEsta segunda editorial se utiliza para probar la petición que consultar todas las editoriales\r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
+				"description": "**Release: Paso-5**\r\n\r\nCrea otro sello discográfico. El recurso solo tiene de atributo \"name\" que debe ser único. El Id es inicializado por la BD y se debe ver en la respuesta. \r\n\r\nEste segundo sello discográfico se utiliza para probar la petición que consultar todas los sellos discográficos\r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
 			},
 			"response": []
 		},
@@ -132,7 +132,7 @@
 						"recordlabels"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nCrea una nueva editorial pero con un nombre que ya existe. Verifica que se genera el error y el mensaje \"Ya existe una Editorial con el nombre\".\r\n\r\n**Código HTTP esperado: 412 Precondition failed\".**"
+				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo sello discográfico pero con un nombre que ya existe. Verifica que se genera el error y el mensaje \"Ya existe una Editorial con el nombre\".\r\n\r\n**Código HTTP esperado: 412 Precondition failed\".**"
 			},
 			"response": []
 		},
@@ -219,7 +219,7 @@
 						"{{new_id_rl}}"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nActualiza una editorial existente. El recurso solo tiene de atributo \"name\" que debe ser único. se envía el Id en la URL de la petición.\r\n\r\n**Código http esperado: 200**"
+				"description": "**Release: Paso-5**\r\n\r\nActualiza una un sello discográfico existente. El recurso solo tiene de atributo \"name\" que debe ser único. se envía el Id en la URL de la petición.\r\n\r\n**Código http esperado: 200**"
 			},
 			"response": []
 		},
@@ -262,7 +262,7 @@
 						"0"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nActualiza una editorial que no existe. \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /editorials/0 no existe.\".\r\n\r\n**Código HTTP esperado: 404**"
+				"description": "**Release: Paso-5**\r\n\r\nActualiza un sello discográfico que no existe. \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /recordlabels/0 no existe.\".\r\n\r\n**Código HTTP esperado: 404**"
 			},
 			"response": []
 		},
@@ -276,7 +276,7 @@
 						"exec": [
 							"var data= JSON.parse(responseBody);",
 							"tests[\"No genera error en el Get all\"] = responseCode.code === 200;",
-							"tests[\"editorials count\"] = data.length > 1;"
+							"tests[\"recordlabels count\"] = data.length > 1;"
 						],
 						"type": "text/javascript"
 					}
@@ -297,7 +297,7 @@
 						""
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nConsulta todas las editoriales de la aplicación. \r\nLa petición no tiene cuerpo.\r\n\r\nPara la prueba, se verifica que el conjunto de editoriales en la respuesta tenga mas de una.\r\n\r\n**Código http esperado: 200**"
+				"description": "**Release: Paso-5**\r\n\r\nConsulta todos los sellos discográficos de la aplicación. \r\nLa petición no tiene cuerpo.\r\n\r\nPara la prueba, se verifica que el conjunto de sellos discográficos en la respuesta tenga mas de una.\r\n\r\n**Código http esperado: 200**"
 			},
 			"response": []
 		},
@@ -332,7 +332,7 @@
 						"{{new_id_rl}}"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nConsulta una editorial de la aplicación.  \r\nLa petición no tiene cuerpo.\r\nSe envía el id de la editorial deseada por la URL de la petición.\r\n\r\n**Código http esperado: 200**"
+				"description": "**Release: Paso-5**\r\n\r\nConsulta un sello discográfico de la aplicación.  \r\nLa petición no tiene cuerpo.\r\nSe envía el id del sello discográfico deseado por la URL de la petición.\r\n\r\n**Código http esperado: 200**"
 			},
 			"response": []
 		},
@@ -366,7 +366,7 @@
 						"0"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nConsulta una editorial que no existe en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /editorials/0 no existe.\".\r\n\r\n**Código http esperado: 404**"
+				"description": "**Release: Paso-5**\r\n\r\nConsulta un sello discográfico que no existe en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /recordlabels/0 no existe.\".\r\n\r\n**Código http esperado: 404**"
 			},
 			"response": []
 		},
@@ -403,7 +403,7 @@
 						"{{new_id_rl}}"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nBorra una editorial existente pero con libros asociados. Verifica que se genera el error.\r\n\r\n**Código HTTP esperado: 412 Precondition failed\".**"
+				"description": "**Release: Paso-5**\r\n\r\nBorra un sello discográfico existente pero con libros asociados. Verifica que se genera el error.\r\n\r\n**Código HTTP esperado: 412 Precondition failed\".**"
 			},
 			"response": []
 		},
@@ -477,7 +477,7 @@
 						"{{new_id_rl}}"
 					]
 				},
-				"description": "**Release: Paso-5**\n\nBorra una editorial. Se envía el id de la entidad creada anteriormente.\n\n**Código HTTP esperado: 204**"
+				"description": "**Release: Paso-5**\n\nBorra un sello discográfico. Se envía el id de la entidad creada anteriormente.\n\n**Código HTTP esperado: 204**"
 			},
 			"response": []
 		},
@@ -514,7 +514,7 @@
 						"{{new_id_rl2}}"
 					]
 				},
-				"description": "**Release: Paso-5**\n\nBorra una editorial. Se envía el id de la entidad creada anteriormente.\n\n**Código HTTP esperado: 204**"
+				"description": "**Release: Paso-5**\n\nBorra un sello discográfico. Se envía el id de la entidad creada anteriormente.\n\n**Código HTTP esperado: 204**"
 			},
 			"response": []
 		},
@@ -552,7 +552,7 @@
 						"0"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nBorra una editorial que no existe en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /editorials/0 no existe.\".\r\n\r\n**Código http esperado: 404**"
+				"description": "**Release: Paso-5**\r\n\r\nBorra un sello discográfico que no existe en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /recordlabel/0 no existe.\".\r\n\r\n**Código http esperado: 404**"
 			},
 			"response": []
 		}
