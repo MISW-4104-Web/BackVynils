@@ -3,15 +3,15 @@ import { VinylRecordLabelService } from './vinylrecordlabel.service';
 import { RecordLabelDto } from "../recordlabel/recordlabel.dto";
 import { BusinessErrorsInterceptor } from "../interceptors/interceptor";
 
-@Controller('books')
+@Controller('vinyls')
 @UseInterceptors(BusinessErrorsInterceptor)
 export class VinylRecordLabelController {
 
     constructor(private readonly bookeditorialService: VinylRecordLabelService) { }
 
-    @Put(':bookId/editorial/')
-    async associateAuthorVinyl(@Param('bookId') bookId: number,
-        @Body() editorialDto: RecordLabelDto) {
-        return await this.bookeditorialService.associateVinylRecordLabel(bookId, editorialDto);
+    @Put(':vinylId/recordlabels/')
+    async associateAuthorVinyl(@Param('vinylId') vinylId: number,
+        @Body() recordLabelDto: RecordLabelDto) {
+        return await this.bookeditorialService.associateVinylRecordLabel(vinylId, recordLabelDto);
     }
 }

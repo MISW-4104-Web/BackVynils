@@ -1,0 +1,543 @@
+{
+	"info": {
+		"_postman_id": "bde81957-2303-46cc-a4df-425ccfc314fb",
+		"name": "Vinyl Tests",
+		"description": "Colección de pruebas sobre el recurso Book",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Crear un sello discográfico",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "acdf554f-1d87-4105-8dd9-590c23183914",
+						"exec": [
+							"var data = JSON.parse(responseBody);",
+							"postman.setGlobalVariable(\"new_id_rl\",data.id);",
+							"tests[\"no genera error en el Post\"] = responseCode.code === 200;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\":\"Sony Music\"}"
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/recordlabels",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"recordlabels"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nCrea una nueva editorial. El recurso solo tiene de atributo \"name\" que debe ser único. El Id es inicializado por la BD y se debe ver en la respuesta. \r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
+			},
+			"response": []
+		},
+		{
+			"name": "Crear un vinilo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "304084ed-d326-4e9b-b66a-8c2c95b18e0b",
+						"exec": [
+							"var data = JSON.parse(responseBody);",
+							"postman.setGlobalVariable(\"new_id_v\",data.id);",
+							"tests[\"no genera error en el Post\"] = responseCode.code === 200;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"description\": \"Buscando América es el primer álbum de la banda de Rubén Blades y Seis del Solar lanzado en 1984. La producción, bajo el sello Elektra, fusiona diferentes ritmos musicales tales como la salsa, reggae, rock, y el jazz latino. El disco fue grabado en Eurosound Studios en Nueva York entre mayo y agosto de 1983.\",\n    \"recordLabel\": { \"id\": {{new_id_rl}} },\n    \"name\": \"Buscando América\",\n    \"releaseDate\": \"1984-08-01T00:00:00-05:00\",\n    \"cover\": \"\"\n}"
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/vinyls",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"vinyls"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo libro. El ISBN del recurso debe ser único. El Id es inicializado por la BD y se debe ver en la respuesta. \r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
+			},
+			"response": []
+		},
+		{
+			"name": "Crear un vinilo 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ceefa0d0-e6b0-4457-bf73-209c199fd164",
+						"exec": [
+							"var data = JSON.parse(responseBody);",
+							"postman.setGlobalVariable(\"new_id_v2\",data.id);",
+							"tests[\"no genera error en el Post\"] = responseCode.code === 200;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"description\": \"Recopilación de 27 composiciones del cosmos Blades que los bailadores y melómanos han hecho suyas en estos 40 años de presencia de los ritmos y concordias afrocaribeños en múltiples escenarios internacionales. Grabaciones de Blades para la Fania con las orquestas de Pete Rodríguez, Ray Barreto, Fania All Stars y, sobre todo, los grandes éxitos con la Banda de Willie Colón\",\n    \"recordLabel\": { \"id\": {{new_id_rl}} },\n    \"name\": \"Poeta del Pueblo\",\n    \"releaseDate\": \"2011-08-01T00:00:00-05:00\",\n    \"cover\": \"\"\n}"
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/vinyls",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"vinyls"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nCrea otro libro. El ISBN del recurso debe ser único. El Id es inicializado por la BD y se debe ver en la respuesta. \r\nEste segundo libro se utiliza para probar la petición que consultar todos los libros\r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
+			},
+			"response": []
+		},
+		{
+			"name": "Crear un vinilo con un sello discrográfico que no existe",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4acd1375-1d39-4524-9719-76c3a1d4e261",
+						"exec": [
+							"tests[\"No crea con sello discográfico que no existe\"] = responseCode.code === 412;",
+							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The record label with the given id was not found\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"description\": \"Recopilación de 27 composiciones del cosmos Blades que los bailadores y melómanos han hecho suyas en estos 40 años de presencia de los ritmos y concordias afrocaribeños en múltiples escenarios internacionales. Grabaciones de Blades para la Fania con las orquestas de Pete Rodríguez, Ray Barreto, Fania All Stars y, sobre todo, los grandes éxitos con la Banda de Willie Colón\",\n    \"recordLabel\": {\n        \"id\": 0\n    },\n    \"name\": \"Poeta del Pueblo\",\n    \"releaseDate\": \"2011-08-01T00:00:00-05:00\",\n    \"cover\": \"\"\n}"
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/vinyls",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"vinyls"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo libro pero con una editorial que no existe. Verifica que se genera el error y el mensaje \"La editorial es inválida\".\r\n\r\n**Código HTTP esperado: 412 Precondition failed\".**"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener todos los vinilos",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ad309e51-c9e6-4900-a0ff-f4574a40b3df",
+						"exec": [
+							"var data= JSON.parse(responseBody);",
+							"tests[\"No genera error en el Get all\"] = responseCode.code === 200;",
+							"tests[\"vinyls count\"] = data.length >= 0;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/vinyls",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"vinyls"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nConsulta todos los libros de la aplicación. \r\nLa petición no tiene cuerpo.\r\n\r\nPara la prueba, se verifica que el conjunto de libros en la respuesta tenga mas de uno.\r\n\r\n**Código http esperado: 200**"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener un vinilo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b671f4fd-2e8e-4662-a534-d450acfc06d0",
+						"exec": [
+							"console.log(responseBody);",
+							"var data = JSON.parse(responseBody);",
+							"tests[\"No genera error en el Get\"] = responseCode.code === 200;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/vinyls/{{new_id_v}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"vinyls",
+						"{{new_id_v}}"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nConsulta un libro de la aplicación.  \r\nLa petición no tiene cuerpo.\r\nSe envía el id del libro deseado por la URL de la petición.\r\n\r\n**Código http esperado: 200**"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener un vinilo que no existe",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "febd508c-10d5-415e-b52b-846b9e059291",
+						"exec": [
+							"tests[\"No consulta con id que no existe\"] = responseCode.code === 404; ",
+							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The vinyl with the given id was not found\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/vinyls/0",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"vinyls",
+						"0"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nConsulta un libro que no existe en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /books/0 no existe.\".\r\n\r\n**Código http esperado: 404**"
+			},
+			"response": []
+		},
+		{
+			"name": "Editar un vinilo que no existe",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1fe4e1cc-8b1e-48a6-b194-f17a6a2fc158",
+						"exec": [
+							"tests[\"No actualiza con id que no existe\"] = responseCode.code === 404;",
+							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The vinyl with the given id was not found\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"description\": \"Recopilación de 27 composiciones del cosmos Blades que los bailadores y melómanos han hecho suyas en estos 40 años de presencia de los ritmos y concordias afrocaribeños en múltiples escenarios internacionales. Grabaciones de Blades para la Fania con las orquestas de Pete Rodríguez, Ray Barreto, Fania All Stars y, sobre todo, los grandes éxitos con la Banda de Willie Colón\",\n    \"recordLabel\": { \"id\": {{new_id_rl}} },\n    \"name\": \"Poeta del Pueblo\",\n    \"releaseDate\": \"2011-08-01T00:00:00-05:00\",\n    \"cover\": \"\"\n}"
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/vinyls/0",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"vinyls",
+						"0"
+					]
+				},
+				"description": "**Release: Paso-5**\r\nActualiza un libro que no existe. \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /books/0 no existe.\".\r\n\r\n**Código HTTP esperado: 404**"
+			},
+			"response": []
+		},
+		{
+			"name": "Editar un vinilo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1077a573-437a-4a11-9b9a-87cb45264001",
+						"exec": [
+							"console.log(responseBody);",
+							"var data = JSON.parse(responseBody);",
+							"tests[\"No genera error en el Put\"] = responseCode.code === 200;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"description\": \"Recopilación de 27 composiciones del cosmos Blades que los bailadores y melómanos han hecho suyas en estos 40 años de presencia de los ritmos y concordias afrocaribeños en múltiples escenarios internacionales\",\n    \"recordLabel\": { \"id\": {{new_id_rl}} },\n    \"name\": \"Poeta del Pueblo\",\n    \"releaseDate\": \"2011-08-01T00:00:00-05:00\",\n    \"cover\": \"\"\n}"
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/vinyls/{{new_id_v}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"vinyls",
+						"{{new_id_v}}"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nActualiza un libro existente. \r\nse envía el Id en la URL de la petición.\r\n\r\n**Código http esperado: 200**"
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar un vinilo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2ec74fba-bc15-4973-99bd-0c1a86a28a2e",
+						"exec": [
+							"tests[\"No genera error en el Delete\"] = responseCode.code === 204;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/vinyls/{{new_id_v}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"vinyls",
+						"{{new_id_v}}"
+					]
+				},
+				"description": "**Release: Paso-5**\n\nBorra un libro. Se envía el id del libro creado anteriormente.\n\n**Código HTTP esperado: 204**"
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar un vinilo 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2ec74fba-bc15-4973-99bd-0c1a86a28a2e",
+						"exec": [
+							"tests[\"No genera error en el Delete\"] = responseCode.code === 204;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/vinyls/{{new_id_v2}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"vinyls",
+						"{{new_id_v2}}"
+					]
+				},
+				"description": "**Release: Paso-5**\n\nBorra un libro. Se envía el id del libro creado anteriormente.\n\n**Código HTTP esperado: 204**"
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar un vinilo que no existe",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f0c07240-fe4b-447c-9e39-ab2524df2ace",
+						"exec": [
+							"tests[\"No borra con id que no existe\"] = responseCode.code === 404;",
+							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The vinyl with the given id was not found\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/vinyls/0",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"vinyls",
+						"0"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nBorra un libro que no existe en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /books/0 no existe.\".\r\n\r\n**Código http esperado: 404**"
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar un sello discográfico",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0ef06c2f-4539-4732-ac96-d27cf3eb1c8b",
+						"exec": [
+							"tests[\"No genera error en el Delete\"] = responseCode.code === 204;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/recordlabels/{{new_id_rl}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"recordlabels",
+						"{{new_id_rl}}"
+					]
+				},
+				"description": "**Release: Paso-5**\n\nBorra una editorial. Se envía el id de la editorial creada anteriormente.\n\n**Código HTTP esperado: 204**"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "a7e7fbf6-05fd-4e01-a73c-b5553dfd51c0",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "acf4632f-f115-4dba-aca6-7f5f2f476be4",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

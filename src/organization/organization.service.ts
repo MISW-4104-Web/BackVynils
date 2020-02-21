@@ -55,7 +55,7 @@ export class OrganizationService {
         if (!organization)
             throw new BusinnesLogicException("The organization with the given id was not found", BusinessError.NOT_FOUND)
         else if (organization.prize)
-            throw new BusinnesLogicException("The editorial has prize", BusinessError.PRECONDITION_FAILED)
+            throw new BusinnesLogicException("The organization has a prize", BusinessError.PRECONDITION_FAILED)
 
         return await this.organizationRepository.remove(organization);
     }

@@ -3,9 +3,8 @@ import { RecordLabel } from "src/recordlabel/recordlabel.entity";
 export class VinylDto {
     readonly id: number;
     readonly name: string;
-    readonly image: string;
-    readonly isbn: string;
-    readonly publishingDate: Date;
+    readonly cover: string;
     readonly description: string;
+    readonly releaseDate: Date;
     readonly recordLabel: RecordLabel;
 }

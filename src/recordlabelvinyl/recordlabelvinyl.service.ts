@@ -53,7 +53,7 @@ export class RecordLabelVinylService {
         const recordLabelvinyl = recordLabel.vinyls.find(e => e.id === vinyl.id)
 
         if (!recordLabelvinyl) {
-            throw new BusinnesLogicException("The vinyl is not associated to the recordLabel", BusinessError.PRECONDITION_FAILED)
+            throw new BusinnesLogicException("The vinyl is not associated to the record label", BusinessError.PRECONDITION_FAILED)
         }
 
         return recordLabelvinyl;
@@ -75,10 +75,9 @@ export class RecordLabelVinylService {
             const newVinyl = new Vinyl();
             newVinyl.id = vinylDto[i].id;
             newVinyl.name = vinylDto[i].name;
-            newVinyl.image = vinylDto[i].image;
+            newVinyl.cover = vinylDto[i].cover;
             newVinyl.description = vinylDto[i].description;
-            newVinyl.publishingDate = vinylDto[i].publishingDate;
-            newVinyl.isbn = vinylDto[i].isbn;
+            newVinyl.releaseDate = vinylDto[i].releaseDate;
             vinyls.push(newVinyl);
         }
         recordLabel.vinyls = vinyls;

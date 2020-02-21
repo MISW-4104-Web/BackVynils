@@ -70,9 +70,9 @@ export class ArtistVinylService {
             const newVinyl = new Vinyl();
             newVinyl.id = vinylDto[i].id;
             newVinyl.name = vinylDto[i].name;
-            newVinyl.image = vinylDto[i].image;
+            newVinyl.cover = vinylDto[i].cover;
             newVinyl.description = vinylDto[i].description;
-            newVinyl.publishingDate = vinylDto[i].publishingDate;
+            newVinyl.releaseDate = vinylDto[i].releaseDate;
             vinyls.push(newVinyl);
         }
 

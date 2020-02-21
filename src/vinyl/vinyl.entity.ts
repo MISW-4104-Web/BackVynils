@@ -12,16 +12,13 @@ export class Vinyl {
     name: string;
 
     @Column()
-    image: string;
+    cover: string;
 
     @Column()
-    publishingDate: Date;
+    releaseDate: Date;
 
     @Column()
     description: string;
-
-    @Column()
-    isbn: string;
 
     @ManyToOne(type => RecordLabel, recordLabel => recordLabel.vinyls)
     recordLabel: RecordLabel;
@@ -32,6 +29,6 @@ export class Vinyl {
 
     @OneToMany(type => Review, review => review.vinyl, {
         cascade: true
-    }) book
+    })
     reviews: Review[];
 }

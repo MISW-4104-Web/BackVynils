@@ -28,7 +28,7 @@ export class RecordLabelService {
     async create(recordLabelDto: RecordLabelDto): Promise<RecordLabel> {
         const recordLabel = await this.recordLabelRepository.findOne({ where: { name: recordLabelDto.name } })
         if (recordLabel)
-            throw new BusinnesLogicException("There is an record label with the same name", BusinessError.PRECONDITION_FAILED)
+            throw new BusinnesLogicException("There is a record label with the same name", BusinessError.PRECONDITION_FAILED)
 
         const newRecordLabel = new RecordLabel();
         newRecordLabel.name = recordLabelDto.name;
@@ -49,9 +49,9 @@ export class RecordLabelService {
         const recordLabel = await this.recordLabelRepository.findOne(id, { relations: ["vinyls"] });
 
         if (!recordLabel)
-            throw new BusinnesLogicException("The recordLabel with the given id was not found", BusinessError.NOT_FOUND)
+            throw new BusinnesLogicException("The record label with the given id was not found", BusinessError.NOT_FOUND)
         else if (recordLabel.vinyls.length !== 0)
-            throw new BusinnesLogicException("The recordLabel has vinyls", BusinessError.PRECONDITION_FAILED)
+            throw new BusinnesLogicException("The record label has vinyls", BusinessError.PRECONDITION_FAILED)
 
         return await this.recordLabelRepository.remove(recordLabel);
     }

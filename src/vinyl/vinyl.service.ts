@@ -33,23 +33,15 @@ export class VinylService {
     }
 
     async create(vinylDto: VinylDto): Promise<Vinyl> {
-        if (!vinylDto.isbn || vinylDto.isbn === "")
-            throw new BusinnesLogicException("ISBN is not valid", BusinessError.PRECONDITION_FAILED)
-
-        const vinyl = await this.vinylRepository.findOne({ where: { isbn: vinylDto.isbn } });
-        if (vinyl)
-            throw new BusinnesLogicException("ISBN already exists", BusinessError.PRECONDITION_FAILED)
-
         const recordLabel = await this.recordLabelRepository.findOne({ where: { id: vinylDto.recordLabel.id } });
         if (!recordLabel)
-            throw new BusinnesLogicException("The recordLabel with the given id was not found", BusinessError.PRECONDITION_FAILED)
+            throw new BusinnesLogicException("The record label with the given id was not found", BusinessError.PRECONDITION_FAILED)
 
         const newVinyl = new Vinyl();
         newVinyl.name = vinylDto.name;
-        newVinyl.isbn = vinylDto.isbn;
-        newVinyl.image = vinylDto.image;
+        newVinyl.cover = vinylDto.cover;
         newVinyl.description = vinylDto.description;
-        newVinyl.publishingDate = vinylDto.publishingDate;
+        newVinyl.releaseDate = vinylDto.releaseDate;
         newVinyl.recordLabel = vinylDto.recordLabel;
         return await this.vinylRepository.save(newVinyl);
     }
@@ -60,18 +52,14 @@ export class VinylService {
         if (!vinyl)
             throw new BusinnesLogicException("The vinyl with the given id was not found", BusinessError.NOT_FOUND)
 
-        if (!vinylDto.isbn || vinylDto.isbn === "")
-            throw new BusinnesLogicException("ISBN is not valid", BusinessError.PRECONDITION_FAILED)
-
         const recordLabel = await this.recordLabelRepository.findOne({ where: { id: vinylDto.recordLabel.id } });
         if (!recordLabel)
             throw new BusinnesLogicException("The record label with the given id was not found", BusinessError.PRECONDITION_FAILED)
 
         vinyl.name = vinylDto.name;
-        vinyl.isbn = vinylDto.isbn;
-        vinyl.image = vinylDto.image;
+        vinyl.cover = vinylDto.cover;
         vinyl.description = vinylDto.description;
-        vinyl.publishingDate = vinylDto.publishingDate;
+        vinyl.releaseDate = vinylDto.releaseDate;
         vinyl.recordLabel = vinylDto.recordLabel;
         return this.vinylRepository.save(vinyl);
     }

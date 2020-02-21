@@ -1,0 +1,834 @@
+{
+	"info": {
+		"_postman_id": "ef9d2d98-3507-4296-b901-9da8f2b12ddf",
+		"name": "VinylArtist Tests",
+		"description": "Colección de pruebas sobre el recurso BookAuthors",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Crear un sello discográfico",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6230957c-b09b-41ed-aa66-838a420bcf70",
+						"exec": [
+							"var data = JSON.parse(responseBody);",
+							"postman.setGlobalVariable(\"new_id_rl\",data.id);",
+							"tests[\"no genera error en el Post\"] = responseCode.code === 200;",
+							"console.log(data.id);",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\":\"Sony Music\"\n}"
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/recordlabels",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"recordlabels"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nCrea una nueva editorial. El recurso solo tiene de atributo \"name\" que debe ser único. El Id es inicializado por la BD y se debe ver en la respuesta. \r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
+			},
+			"response": []
+		},
+		{
+			"name": "Crear artista",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9ef7b0fb-8155-465a-b61d-ba934cba533a",
+						"exec": [
+							"var data = JSON.parse(responseBody);",
+							"postman.setGlobalVariable(\"new_id_a\",data.id);",
+							"tests[\"no genera error en el Post\"] = responseCode.code === 200;",
+							"console.log(data.id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"birthDate\": \"1948-07-16T00:00:00-05:00\",\n    \"description\": \"Es un cantante, compositor, músico, actor, abogado, político y activista panameño. Ha desarrollado gran parte de su carrera artística en la ciudad de Nueva York.\",\n    \"image\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Ruben_Blades_by_Gage_Skidmore.jpg/800px-Ruben_Blades_by_Gage_Skidmore.jpg\",\n    \"name\": \"Rubén Blades Bellido de Luna\"\n}"
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/artists",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"artists"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo autor. El Id es inicializado por la BD y se debe ver en la respuesta.\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
+			},
+			"response": []
+		},
+		{
+			"name": "Crear artista 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9e8d5059-ce0b-4e4e-bc87-4093627b6f2a",
+						"exec": [
+							"var data = JSON.parse(responseBody);",
+							"postman.setGlobalVariable(\"new_id_a2\",data.id);",
+							"tests[\"no genera error en el Post\"] = responseCode.code === 200;",
+							"console.log(data.id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"birthDate\": \"1943-12-27T00:00:00-05:00\",\n    \"description\": \"Es un cantautor, compositor, actor, escritor, poeta y músico español.\",\n    \"image\": \"https://upload.wikimedia.org/wikipedia/commons/e/e3/Serrat.jpg\",\n    \"name\": \"Joan Manuel Serrat Teresa\"\n}"
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/artists",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"artists"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo autor. El Id es inicializado por la BD y se debe ver en la respuesta.\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
+			},
+			"response": []
+		},
+		{
+			"name": "Crear un vinilo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d41894c0-f294-4ddf-a0a1-e5a514d266a9",
+						"exec": [
+							"var data = JSON.parse(responseBody);",
+							"postman.setGlobalVariable(\"new_id_v\",data.id);",
+							"tests[\"no genera error en el Post\"] = responseCode.code === 200;",
+							"console.log(data.id);",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"description\": \"Buscando América es el primer álbum de la banda de Rubén Blades y Seis del Solar lanzado en 1984. La producción, bajo el sello Elektra, fusiona diferentes ritmos musicales tales como la salsa, reggae, rock, y el jazz latino. El disco fue grabado en Eurosound Studios en Nueva York entre mayo y agosto de 1983.\",\n    \"recordLabel\": { \"id\": {{new_id_rl}} },\n    \"name\": \"Buscando América\",\n    \"releaseDate\": \"1984-08-01T00:00:00-05:00\",\n    \"cover\": \"\"\n}"
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/vinyls",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"vinyls"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo libro. El ISBN del recurso debe ser único. El Id es inicializado por la BD y se debe ver en la respuesta. \r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
+			},
+			"response": []
+		},
+		{
+			"name": "Agregar un artista a un vinilo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f699e691-caae-4b2e-9c24-4a8ce09969ab",
+						"exec": [
+							"tests[\"no genera error en el Post\"] = responseCode.code === 200;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/vinyls/{{new_id_v}}/artists/{{new_id_a}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"vinyls",
+						"{{new_id_v}}",
+						"artists",
+						"{{new_id_a}}"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nAsocia un autor a un libro en la aplicación. \r\n\r\nSe envía el Id del autor y el del libro a asociar en la URL de la petición.\r\n\r\n**Código http esperado: 200**"
+			},
+			"response": []
+		},
+		{
+			"name": "Agregar un artista que no existe a un vinilo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "408c8842-0532-48cb-9a69-a64339c672cf",
+						"exec": [
+							"tests[\"No deberia asociar al author ya que el author no existe.\"] = responseCode.code === 404;",
+							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The artist with the given id was not found\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/vinyls/{{new_id_v}}/artists/0",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"vinyls",
+						"{{new_id_v}}",
+						"artists",
+						"0"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nAsocia un autor que no existe a un libro en la aplicación. \r\n\r\nSe envía el Id del autor y el del libro a asociar en la URL de la petición.\r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /authors/0 no existe.\".\r\n\r\n**Código http esperado: 404**"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener un artista de un vinilo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8d6e646f-022a-4d41-855b-fa662aa1a3a2",
+						"exec": [
+							"console.log(responseBody);",
+							"var data = JSON.parse(responseBody);",
+							"tests[\"no genera error en el Get\"] = responseCode.code === 200;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/vinyls/{{new_id_v}}/artists/{{new_id_a}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"vinyls",
+						"{{new_id_v}}",
+						"artists",
+						"{{new_id_a}}"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nConsulta un autor de un libro en la aplicación. \r\nLa petición no tiene cuerpo.\r\n\r\nSe envía el Id del autor y del libro a consultar en la URL de la petición.\r\n\r\n**Código http esperado: 200**"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener un artista que no existente de un vinilo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4356c2c8-7242-40aa-ad6d-2349cfdd45df",
+						"exec": [
+							"tests[\"No deberia obtener el autor ya que el author no existe.\"] = responseCode.code === 404;",
+							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The artist with the given id was not found\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/vinyls/{{new_id_v}}/artists/0",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"vinyls",
+						"{{new_id_v}}",
+						"artists",
+						"0"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nConsulta un autor que no existe de un libro en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error.\r\n\r\n**Código http esperado: 404**"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener un artista inexistente de un vinilo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3843fb34-456a-425a-832c-43a60966be5f",
+						"exec": [
+							"tests[\"No deberia obtener el artista ya que no existe.\"] = responseCode.code === 404;",
+							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The artist with the given id was not found\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/vinyls/{{new_id_v}}/artists/0",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"vinyls",
+						"{{new_id_v}}",
+						"artists",
+						"0"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nConsulta un autor que no esta asociado a un libro en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje El recurso /authors/0 no existe.\".\r\n\r\n**Código http esperado: 412**"
+			},
+			"response": []
+		},
+		{
+			"name": "Asociar artistas a un vinilo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b3374dff-9bc4-4781-9d8b-11c920e28d41",
+						"exec": [
+							"tests[\"no genera error en el Put\"] = responseCode.code === 200;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\n\t\"id\": {{new_id_a}},\n    \"birthDate\": \"1948-07-16T00:00:00-05:00\",\n    \"description\": \"Es un cantante, compositor, músico, actor, abogado, político y activista panameño. Ha desarrollado gran parte de su carrera artística en la ciudad de Nueva York.\",\n    \"image\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Ruben_Blades_by_Gage_Skidmore.jpg/800px-Ruben_Blades_by_Gage_Skidmore.jpg\",\n    \"name\": \"Rubén Blades Bellido de Luna\"\n},\n{\n\t\"id\": {{new_id_a2}},\n    \"birthDate\": \"1943-12-27T00:00:00-05:00\",\n    \"description\": \"Es un cantautor, compositor, actor, escritor, poeta y músico español.\",\n    \"image\": \"https://upload.wikimedia.org/wikipedia/commons/e/e3/Serrat.jpg\",\n    \"name\": \"Joan Manuel Serrat Teresa\"\n}]"
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/vinyls/{{new_id_v}}/artists",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"vinyls",
+						"{{new_id_v}}",
+						"artists"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nActualiza la lista de autores a un libro existente.\r\n\r\nSe envía el Id en la URL de la petición.\r\n\r\n**Código http esperado: 200**"
+			},
+			"response": []
+		},
+		{
+			"name": "Asociar artistas a un vinilo que no existe",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "33095ce1-2210-4699-b02f-239aac70ecc2",
+						"exec": [
+							"tests[\"No se deberian asociar los artistas ya que el vinilo no existe.\"] = responseCode.code === 404;",
+							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The vinyl with the given id was not found\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\n\t\"id\": {{new_id_a}},\n    \"birthDate\": \"1948-07-16T00:00:00-05:00\",\n    \"description\": \"Es un cantante, compositor, músico, actor, abogado, político y activista panameño. Ha desarrollado gran parte de su carrera artística en la ciudad de Nueva York.\",\n    \"image\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Ruben_Blades_by_Gage_Skidmore.jpg/800px-Ruben_Blades_by_Gage_Skidmore.jpg\",\n    \"name\": \"Rubén Blades Bellido de Luna\"\n},\n{\n\t\"id\": {{new_id_a2}},\n    \"birthDate\": \"1943-12-27T00:00:00-05:00\",\n    \"description\": \"Es un cantautor, compositor, actor, escritor, poeta y músico español.\",\n    \"image\": \"https://upload.wikimedia.org/wikipedia/commons/e/e3/Serrat.jpg\",\n    \"name\": \"Joan Manuel Serrat Teresa\"\n}]"
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/vinyls/0/artists",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"vinyls",
+						"0",
+						"artists"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nActualiza la lista de autores de un libro que no existe. \r\n\r\nSe envía el Id en la URL de la petición.\r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /books/0 no existe.\".\r\n\r\n**Código http esperado: 404**"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener los artistas de un vinilo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5c07c9b3-26c7-4412-8ec8-13e2ad7549f4",
+						"exec": [
+							"var data= JSON.parse(responseBody);",
+							"tests[\"no genera error en el Get all\"] = responseCode.code === 200;",
+							"tests[\"authors count - book\"] = data.length >= 1;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/vinyls/{{new_id_v}}/artists/",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"vinyls",
+						"{{new_id_v}}",
+						"artists",
+						""
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nConsulta los autores de un libro en la aplicación. \r\nLa petición no tiene cuerpo.\r\n\r\nSe envía el Id del libro y el del autor a consultar en la URL de la petición.\r\n\r\n**Código http esperado: 200**"
+			},
+			"response": []
+		},
+		{
+			"name": "Borrarle un artista  a un vinilo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ad5a388f-7a00-4c08-9e5d-1fb74e608192",
+						"exec": [
+							"tests[\"no genera error en el Delete\"] = responseCode.code === 204;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/vinyls/{{new_id_v}}/artists/{{new_id_a}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"vinyls",
+						"{{new_id_v}}",
+						"artists",
+						"{{new_id_a}}"
+					]
+				},
+				"description": "**Release: Paso-5**\n\nBorra la asociación entre un libro y un autor. Se envían los ids del autor y del libro creados anteriormente.\n\n**Código HTTP esperado: 204**"
+			},
+			"response": []
+		},
+		{
+			"name": "Borrarle un artista 2 a un vinilo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d1e7ac7b-ca47-4902-815a-3f8624b069a3",
+						"exec": [
+							"tests[\"no genera error en el Delete\"] = responseCode.code === 204;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/vinyls/{{new_id_v}}/artists/{{new_id_a2}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"vinyls",
+						"{{new_id_v}}",
+						"artists",
+						"{{new_id_a2}}"
+					]
+				},
+				"description": "**Release: Paso-5**\n\nBorra la asociación entre un libro y un autor. Se envían los ids del autor y del libro creados anteriormente.\n\n**Código HTTP esperado: 204**"
+			},
+			"response": []
+		},
+		{
+			"name": "Borrale un artista a un vinilo que no existe",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ab44fbbd-17d4-4b1a-b874-01632e77093a",
+						"exec": [
+							"tests[\"No so deberia eliminar el author ya que el book no existe..\"] = responseCode.code === 404;",
+							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The vinyl with the given id was not found\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/vinyls/0/artists/{{new_id_a}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"vinyls",
+						"0",
+						"artists",
+						"{{new_id_a}}"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nBorra la asociación entre un libro que no existe y un autor en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error.\r\n\r\n**Código http esperado: 404**"
+			},
+			"response": []
+		},
+		{
+			"name": "Borrarle un artista que no existe a un vinilo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e70c4158-c043-40d1-8f9a-8e168c4eddb2",
+						"exec": [
+							"tests[\"No so deberia eliminar el author ya que este no existe.\"] = responseCode.code === 404;",
+							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The artist with the given id was not found\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/vinyls/{{new_id_v}}/artists/0",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"vinyls",
+						"{{new_id_v}}",
+						"artists",
+						"0"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nBorra la asociación entre a un libro y un autor que no existe en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /books/0/authors no existe.\".\r\n\r\n**Código http esperado: 404**"
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar un artista",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1a9cb860-1e8f-4f04-aafd-5aa781f20a59",
+						"exec": [
+							"tests[\"no genera error en el Delete\"] = responseCode.code === 204;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/artists/{{new_id_a}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"artists",
+						"{{new_id_a}}"
+					]
+				},
+				"description": "**Release: Paso-5**\n\nBorra un autor. Se envía el id del autor creado anteriormente.\n\n**Código HTTP esperado: 204**"
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar un artista 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "dae07995-8b23-4ef4-bafc-8d5a94c5aeb5",
+						"exec": [
+							"tests[\"no genera error en el Delete\"] = responseCode.code === 204;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/artists/{{new_id_a2}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"artists",
+						"{{new_id_a2}}"
+					]
+				},
+				"description": "**Release: Paso-5**\n\nBorra un autor. Se envía el id del autor creado anteriormente.\n\n**Código HTTP esperado: 204**"
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar un vinilo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bb19272f-9f85-468d-9d81-b9cf3eb130e1",
+						"exec": [
+							"tests[\"no genera error en el Delete\"] = responseCode.code === 204;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/vinyls/{{new_id_v}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"vinyls",
+						"{{new_id_v}}"
+					]
+				},
+				"description": "**Release: Paso-5**\n\nBorra un libro. Se envía el id del libro creado anteriormente.\n\n**Código HTTP esperado: 204**"
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar un sello discográfico",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8b67dc9f-4c14-437d-8123-9183498601cc",
+						"exec": [
+							"tests[\"no genera error en el Delete\"] = responseCode.code === 204;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/recordlabels/{{new_id_rl}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"recordlabels",
+						"{{new_id_rl}}"
+					]
+				},
+				"description": "**Release: Paso-5**\n\nBorra una editorial. Se envía el id de la editorial creada anteriormente.\n\n**Código HTTP esperado: 204**"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "85289ec4-5837-4749-81e9-dd5223093547",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "7d6e9d3f-dfdb-4d35-9c44-c848685b110d",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

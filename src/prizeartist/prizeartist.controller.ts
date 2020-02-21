@@ -7,7 +7,7 @@ import { PrizeArtistService } from './prizeartist.service';
 export class PrizeArtistController {
     constructor(private readonly prizeArtistService: PrizeArtistService) { }
 
-    @Get(':prizeId/artist')
+    @Get(':prizeId/artists')
     async findArtistPrize(@Param('prizeId') prizeId) {
         return await this.prizeArtistService.findArtistPrize(prizeId);
     }
@@ -19,16 +19,15 @@ export class PrizeArtistController {
         return await this.prizeArtistService.create(prizeId, artistId);
     }
 
-    @Put(':prizeId/artist/:artistId')
+    @Put(':prizeId/artists/:artistId')
     @HttpCode(200)
     async associateArtistPrize(@Param('prizeId') prizeId: number, @Param('artistId') artistId: number) {
         return await this.prizeArtistService.associateArtistPrize(prizeId, artistId);
     }
 
-    @Delete(':prizeId/artist')
+    @Delete(':prizeId/artists')
     @HttpCode(204)
     async deletePrizeArtist(@Param('prizeId') prizeId: number) {
         return await this.prizeArtistService.deletePrizeArtist(prizeId)
     }
-
 }

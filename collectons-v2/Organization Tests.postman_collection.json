@@ -1,0 +1,586 @@
+{
+	"info": {
+		"_postman_id": "81a23360-bac2-4b49-bf62-c97687cca461",
+		"name": "Organization Tests",
+		"description": "Colección de pruebas sobre el recurso Organization",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Crear una organización",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bf7c06dc-a0e0-4567-999d-c2127f8efbc6",
+						"exec": [
+							"var data = JSON.parse(responseBody);",
+							"postman.setGlobalVariable(\"new_id_o\",data.id);",
+							"tests[\"no genera error en el Post\"] = responseCode.code === 200;",
+							"console.log(data.id);",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"National Academy of Recording Arts & Sciences\",\r\n    \"type\": \"PRIVATED\"\r\n}"
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/organizations",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"organizations"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nCrea una nueva organización. El recurso tiene el atributo \"name\" que debe ser único. El Id es inicializado por la BD y se debe ver en la respuesta. \r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
+			},
+			"response": []
+		},
+		{
+			"name": "Crear una organización 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "699b119c-7db8-436f-8cf7-6bd8c8505654",
+						"exec": [
+							"var data = JSON.parse(responseBody);",
+							"postman.setGlobalVariable(\"new_id_o2\",data.id);",
+							"tests[\"No genera error en el Post\"] = responseCode.code === 200;",
+							"console.log(data.id);",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Univisión\",\r\n    \"type\": \"PRIVATED\"\r\n}"
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/organizations",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"organizations"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nCrea una nueva organización. El recurso tiene el atributo \"name\" que debe ser único. El Id es inicializado por la BD y se debe ver en la respuesta. \r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
+			},
+			"response": []
+		},
+		{
+			"name": "Crear una organización con el mismo nombre",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "dc9d8ab6-34f5-4dfd-9f49-798ceb4bfc5e",
+						"exec": [
+							"tests[\"No crea con el mismo nombre\"] = responseCode.code === 412;",
+							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"There is an organization with the same name\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Univisión\",\r\n    \"type\": \"PRIVATED\"\r\n}"
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/organizations",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"organizations"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nCrea una nueva organización pero con un nombre que ya existe. Verifica que se genera el error y el mensaje \"Ya existe una organización con el nombre\".\r\n\r\n**Código HTTP esperado: 412 Precondition failed\".**"
+			},
+			"response": []
+		},
+		{
+			"name": "Crear un premio",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ffe75c39-6155-47d2-b1d7-2ef6f7c5dae1",
+						"exec": [
+							"var data = JSON.parse(responseBody);",
+							"postman.setGlobalVariable(\"new_id_p\",data.id);",
+							"tests[\"No genera error en el Post\"] = responseCode.code === 200;",
+							"console.log(data.id);",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"name\": \"Grammy Award\",\r\n\t\"description\": \"Grammy Award, any of a series of awards presented annually in the United States by the National Academy of Recording Arts & Sciences\",\r\n\t\"premiationDate\": \"2020-01-26 3:00 PM GMT+1:00\",\r\n\t\"organization\":\r\n\t{\r\n\t    \"id\": {{new_id_o}}\r\n\t}\r\n}"
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/prizes",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"prizes"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo premio. El Id es inicializado por la BD y se debe ver en la respuesta. \r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener todas las organizaciones",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f4108d02-a107-4a25-af7b-f2d7c2e59079",
+						"exec": [
+							"var data= JSON.parse(responseBody);",
+							"tests[\"No genera error en el Get All\"] = responseCode.code === 200;",
+							"tests[\"organizations count\"] = data.length >= 1;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/organizations",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"organizations"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nConsulta todas las organizaciones de la aplicación. \r\nLa petición no tiene cuerpo.\r\n\r\nPara la prueba, se verifica que el conjunto de organizaciones en la respuesta tenga mas de una.\r\n\r\n**Código http esperado: 200**"
+			},
+			"response": []
+		},
+		{
+			"name": "Editar una organización",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2b5b39ea-ae00-4f65-88c1-2dbf15602644",
+						"exec": [
+							"console.log(responseBody);",
+							"var data = JSON.parse(responseBody);",
+							"tests[\"No genera error en el Put\"] = responseCode.code === 200;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"National Academy of Recording Arts & Sciences (NARAS)\",\r\n    \"type\": \"PRIVATED\"\r\n}"
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/organizations/{{new_id_o}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"organizations",
+						"{{new_id_o}}"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nActualiza una organización existente. El recurso tiene de atributo \"name\" que debe ser único. se envía el Id en la URL de la petición.\r\n\r\n**Código http esperado: 200**"
+			},
+			"response": []
+		},
+		{
+			"name": "Editar una organización que no existe",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ae15750a-3d51-4817-bb1e-36851a56c89f",
+						"exec": [
+							"tests[\"No se puede editar una organization que no existe\"] = responseCode.code === 404;",
+							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The organization with the given id was not found\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"National Academy of Recording Arts & Sciences (NARAS)\",\r\n    \"type\": \"PRIVATED\"\r\n}"
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/organizations/0",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"organizations",
+						"0"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nActualiza una organización que no existe. \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /organizations/0 no existe.\".\r\n\r\n**Código HTTP esperado: 404**"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener una organización",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4558b603-d125-44ef-a203-855cd5a85970",
+						"exec": [
+							"console.log(responseBody);",
+							"var data = JSON.parse(responseBody);",
+							"tests[\"No genera error en el Get\"] = responseCode.code === 200;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/organizations/{{new_id_o}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"organizations",
+						"{{new_id_o}}"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nConsulta una organización de la aplicación.  \r\nLa petición no tiene cuerpo.\r\nSe envía el id de la organizacion deseada por la URL de la petición.\r\n\r\n**Código http esperado: 200**"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener una organización que no existe",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0e9ea571-d4ef-43ee-bb3e-afba27c90456",
+						"exec": [
+							"tests[\"No se puede obtener una organization que no existe\"] = responseCode.code === 404;",
+							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The organization with the given id was not found\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/organizations/0",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"organizations",
+						"0"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nConsulta una organización que no existe en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /organizations/0 no existe.\".\r\n\r\n**Código http esperado: 404**"
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar una organización con premio",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8525891b-7d19-492f-b567-5e32313bd5c5",
+						"exec": [
+							"tests[\"No borra con premio asociado\"] = responseCode.code === 412;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/organizations/{{new_id_o}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"organizations",
+						"{{new_id_o}}"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nBorra una organización existente pero con premio asociado. Verifica que se genera el error.\r\n\r\n**Código HTTP esperado: 412 Precondition failed\".**"
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar un premio",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "27c47786-a3b9-4b6c-8a6d-c7c4388bb37f",
+						"exec": [
+							"tests[\"No genera error en el Delete\"] = responseCode.code === 204;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/prizes/{{new_id_p}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"prizes",
+						"{{new_id_p}}"
+					]
+				},
+				"description": "**Release: Paso-5**\n\nBorra un premio. Se envía el id del premio creado anteriormente.\n\n**Código HTTP esperado: 204**"
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar una organización",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b2a09bfa-7337-455a-843a-fcc3c62a3b52",
+						"exec": [
+							"tests[\"No genera error en el Delete\"] = responseCode.code === 204;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/organizations/{{new_id_o}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"organizations",
+						"{{new_id_o}}"
+					]
+				},
+				"description": "**Release: Paso-5**\n\nBorra una organización. Se envía el id de la organizacion creada anteriormente.\n\n**Código HTTP esperado: 204**"
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar una organización 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "eacb79f1-c8c1-4c7f-8e40-1f99a1034e61",
+						"exec": [
+							"tests[\"No genera error en el Delete\"] = responseCode.code === 204;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/organizations/{{new_id_o2}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"organizations",
+						"{{new_id_o2}}"
+					]
+				},
+				"description": "**Release: Paso-5**\n\nBorra una organización. Se envía el id de la organizacion creada anteriormente.\n\n**Código HTTP esperado: 204**"
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar una organización que no existe",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ff8c4448-aec9-4d2f-ae99-91db7d10f6ef",
+						"exec": [
+							"tests[\"No se púede borrar una organization que no existe\"] = responseCode.code === 404;",
+							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The organization with the given id was not found\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/organizations/0",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"organizations",
+						"0"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nBorra una organización que no existe en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /organizations/0 no existe.\".\r\n\r\n**Código http esperado: 404**"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "3814136c-470d-4f04-9638-8dabfb2257b2",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "6b3310dd-6f0b-458f-88d1-68ed04a44249",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
