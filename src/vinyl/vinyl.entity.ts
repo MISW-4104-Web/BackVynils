@@ -2,6 +2,7 @@ import { Entity, Column, PrimaryGeneratedColumn, ManyToOne, ManyToMany, JoinTabl
 import { RecordLabel } from "../recordlabel/recordlabel.entity";
 import { Artist } from "../artist/artist.entity";
 import { Review } from "../review/review.entity";
+import { Track } from "../track/track.entity";
 
 @Entity()
 export class Vinyl {
@@ -31,4 +32,9 @@ export class Vinyl {
         cascade: true
     })
     reviews: Review[];
+
+    @OneToMany(type => Track, track => track.vinyl, {
+        cascade: true
+    })
+    tracks: Track[];
 }

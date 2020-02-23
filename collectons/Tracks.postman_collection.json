@@ -1,8 +1,7 @@
 {
 	"info": {
-		"_postman_id": "09868265-8e3f-4cb9-b7c0-96c185f33d84",
-		"name": "Review Tests",
-		"description": "Colección de pruebas sobre el recurso Review",
+		"_postman_id": "2ea2f149-8fc4-4069-acf6-38b5889de86d",
+		"name": "Tracks",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -12,7 +11,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "093a48de-7f36-460c-bd92-a66165dadb1b",
+						"id": "acdf554f-1d87-4105-8dd9-590c23183914",
 						"exec": [
 							"var data = JSON.parse(responseBody);",
 							"postman.setGlobalVariable(\"new_id_rl\",data.id);",
@@ -88,20 +87,20 @@
 						"vinyls"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo libro. El Id es inicializado por la BD y se debe ver en la respuesta. \r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
+				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo vinilo. El Id es inicializado por la BD y se debe ver en la respuesta. \r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
 			},
 			"response": []
 		},
 		{
-			"name": "Crearle una reseña a un vinilo",
+			"name": "Asociar un track a un vinilo",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
-						"id": "09babbb4-d9e9-471a-ad23-3ce177333cad",
+						"id": "9f355d05-b627-49af-a083-c87286cff30d",
 						"exec": [
 							"var data = JSON.parse(responseBody);",
-							"postman.setGlobalVariable(\"new_id_r\",data.id);",
+							"postman.setGlobalVariable(\"new_id_t\",data.id);",
 							"tests[\"no genera error en el Post\"] = responseCode.code === 200;"
 						],
 						"type": "text/javascript"
@@ -113,15 +112,22 @@
 				"header": [
 					{
 						"key": "Content-Type",
-						"value": "application/json"
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"description\": \"A new review for the vinyl\",\n    \"name\": \"My review\",\n    \"source\": \"Revista Arcadia, Colombia\"\n}"
+					"raw": "{\n    \"name\": \"Decisiones\",\n    \"duration\": \"5:05\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/vinyls/{{new_id_v}}/reviews",
+					"raw": "http://{{ip}}:{{puerto}}/vinyls/{{new_id_v}}/tracks",
 					"protocol": "http",
 					"host": [
 						"{{ip}}"
@@ -130,23 +136,22 @@
 					"path": [
 						"vinyls",
 						"{{new_id_v}}",
-						"reviews"
+						"tracks"
 					]
-				},
-				"description": "**Release: Paso-5**\r\n\r\nCrea una nueva reseña. El Id es inicializado por la BD y se debe ver en la respuesta. \r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
+				}
 			},
 			"response": []
 		},
 		{
-			"name": "Crearle una reseña 2 a un vinilo",
+			"name": "Asociar un track 2 a un vinilo",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
-						"id": "ce6821cb-f2e4-4db6-85d6-356b121aca52",
+						"id": "154c2186-7689-4182-ab17-2c0ccc15a8a1",
 						"exec": [
 							"var data = JSON.parse(responseBody);",
-							"postman.setGlobalVariable(\"new_id_r2\",data.id);",
+							"postman.setGlobalVariable(\"new_id_t2\",data.id);",
 							"tests[\"no genera error en el Post\"] = responseCode.code === 200;"
 						],
 						"type": "text/javascript"
@@ -158,15 +163,22 @@
 				"header": [
 					{
 						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
 						"value": "application/json"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"description\": \"Another review for the vinyl\",\n    \"name\": \"Another review\",\n    \"source\": \"Rolling Stone\"\n}"
+					"raw": "{\n    \"name\": \"Desapariciones\",\n    \"duration\": \"6:29\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/vinyls/{{new_id_v}}/reviews",
+					"raw": "http://{{ip}}:{{puerto}}/vinyls/{{new_id_v}}/tracks",
 					"protocol": "http",
 					"host": [
 						"{{ip}}"
@@ -175,42 +187,35 @@
 					"path": [
 						"vinyls",
 						"{{new_id_v}}",
-						"reviews"
+						"tracks"
 					]
-				},
-				"description": "**Release: Paso-5**\r\n\r\nCrea una nueva reseña. El Id es inicializado por la BD y se debe ver en la respuesta. \r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
+				}
 			},
 			"response": []
 		},
 		{
-			"name": "Crearle una reseña a  un vinilo que no existe",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"id": "235687ad-e750-4fea-b37f-0dccb2edc9bd",
-						"exec": [
-							"tests[\"No se puede asociar una reseña a un vinilo que no existe.\"] = responseCode.code === 404;",
-							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The vinyl with the given id was not found\");"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
+			"name": "Asociar un track a un vinilo que no existe",
 			"request": {
 				"method": "POST",
 				"header": [
 					{
 						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
 						"value": "application/json"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"description\": \"Another review for the vinyl\",\n    \"name\": \"Another review\",\n    \"source\": \"Rolling Stone\"\n}"
+					"raw": "{\n    \"name\": \"Desapariciones\",\n    \"duration\": \"6:29\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/vinyls/0/reviews",
+					"raw": "http://{{ip}}:{{puerto}}/vinyls/0/tracks",
 					"protocol": "http",
 					"host": [
 						"{{ip}}"
@@ -219,15 +224,14 @@
 					"path": [
 						"vinyls",
 						"0",
-						"reviews"
+						"tracks"
 					]
-				},
-				"description": "**Release: Paso-5**\r\n\r\nCrea un nueva nueva reseña pero con un vinilo que no existe. Verifica que se genera el error y el mensaje \"El recurso /vinyls/0/reviews no existe\".\r\n\r\n**Código HTTP esperado: 404**"
+				}
 			},
 			"response": []
 		},
 		{
-			"name": "Obtener las reseñas de un vinilo",
+			"name": "Obtener los tracks de un vinilo",
 			"event": [
 				{
 					"listen": "test",
@@ -246,7 +250,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/vinyls/{{new_id_v}}/reviews",
+					"raw": "http://{{ip}}:{{puerto}}/vinyls/{{new_id_v}}/tracks",
 					"protocol": "http",
 					"host": [
 						"{{ip}}"
@@ -255,15 +259,15 @@
 					"path": [
 						"vinyls",
 						"{{new_id_v}}",
-						"reviews"
+						"tracks"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nConsulta las reseñas de un vinilo en la aplicación. \r\nLa petición no tiene cuerpo.\r\n\r\nSe envía el Id del vinilo a consultar en la URL de la petición.\r\n\r\n**Código http esperado: 200**"
+				"description": "**Release: Paso-5**\r\n\r\nConsulta los tracks de un vinilo en la aplicación. \r\n\r\nLa petición no tiene cuerpo.\r\n\r\nSe envía el Id del vinilo a consultar en la URL de la petición.\r\n\r\n**Código http esperado: 200**"
 			},
 			"response": []
 		},
 		{
-			"name": "Obtener una reseña de un vinilo",
+			"name": "Obtener un track de un vinilo",
 			"event": [
 				{
 					"listen": "test",
@@ -282,7 +286,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/vinyls/{{new_id_v}}/reviews/{{new_id_r}}",
+					"raw": "http://{{ip}}:{{puerto}}/vinyls/{{new_id_v}}/tracks/{{new_id_t}}",
 					"protocol": "http",
 					"host": [
 						"{{ip}}"
@@ -291,16 +295,16 @@
 					"path": [
 						"vinyls",
 						"{{new_id_v}}",
-						"reviews",
-						"{{new_id_r}}"
+						"tracks",
+						"{{new_id_t}}"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nConsulta una reseña de un vinilo en la aplicación. \r\n\r\nLa petición no tiene cuerpo.\r\n\r\nSe envía el Id del vinilo y de la reseña a consultar en la URL de la petición.\r\n\r\n**Código http esperado: 200**"
+				"description": "**Release: Paso-5**\r\n\r\nConsulta un track de un vinilo en la aplicación. \r\n\r\nLa petición no tiene cuerpo.\r\n\r\nSe envía el Id del vinilo y del track a consultar en la URL de la petición.\r\n\r\n**Código http esperado: 200**"
 			},
 			"response": []
 		},
 		{
-			"name": "Editarle una reseña a un vinilo",
+			"name": "Editarle un track a un vinilo",
 			"event": [
 				{
 					"listen": "test",
@@ -325,10 +329,10 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"name\": \"Review name\",\n    \"source\": \"Review source\"\n}"
+					"raw": "{\n    \"name\": \"Decisiones\",\n    \"duration\": \"6:10\"\n}"
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/vinyls/{{new_id_v}}/reviews/{{new_id_r}}",
+					"raw": "http://{{ip}}:{{puerto}}/vinyls/{{new_id_v}}/tracks/{{new_id_t}}",
 					"protocol": "http",
 					"host": [
 						"{{ip}}"
@@ -337,16 +341,16 @@
 					"path": [
 						"vinyls",
 						"{{new_id_v}}",
-						"reviews",
-						"{{new_id_r}}"
+						"tracks",
+						"{{new_id_t}}"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nActualiza una reseña a un vinilo existente. Se envían los Ids de las entidades asociar en la URL de la petición.\r\n\r\n**Código http esperado: 200**"
+				"description": "**Release: Paso-5**\r\n\r\nActualiza los tracks de un vinilo existente. Se envían los Ids de las entidades asociar en la URL de la petición.\r\n\r\n**Código http esperado: 200**"
 			},
 			"response": []
 		},
 		{
-			"name": "Editarle una reseña que no existe a un vinilo",
+			"name": "Editarle un track que no existe a un vinilo",
 			"event": [
 				{
 					"listen": "test",
@@ -355,7 +359,7 @@
 						"exec": [
 							"tests[\"No se puede editar una reseña que no existe.\"] = responseCode.code === 404;",
 							"let id = pm.variables.get(\"new_id_b\");",
-							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The review with the given id was not found\");"
+							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The track with the given id was not found\");"
 						],
 						"type": "text/javascript"
 					}
@@ -371,10 +375,10 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"name\": \"review name\",\n    \"source\": \"review source\"\n}"
+					"raw": "{\n    \"name\": \"Decisiones\",\n    \"source\": \"6:10\"\n}"
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/vinyls/{{new_id_v}}/reviews/0",
+					"raw": "http://{{ip}}:{{puerto}}/vinyls/{{new_id_v}}/tracks/0",
 					"protocol": "http",
 					"host": [
 						"{{ip}}"
@@ -383,16 +387,16 @@
 					"path": [
 						"vinyls",
 						"{{new_id_v}}",
-						"reviews",
+						"tracks",
 						"0"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nAsocia una reseña que no existe a un vinilo. \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /reviews/0 no existe.\".\r\n\r\n**Código HTTP esperado: 404**"
+				"description": "**Release: Paso-5**\r\n\r\nAsocia un track que no existe a un vinilo. \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /tracks/0 no existe.\".\r\n\r\n**Código HTTP esperado: 404**"
 			},
 			"response": []
 		},
 		{
-			"name": "Editarle una reseña a un vinilo que no existe",
+			"name": "Editarle un track a un vinilo que no existe",
 			"event": [
 				{
 					"listen": "test",
@@ -416,10 +420,10 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"name\": \"review name\",\n    \"source\": \"review source\"\n}"
+					"raw": "{\n    \"name\": \"decisiones\",\n    \"source\": \"6:20\"\n}"
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/vinyls/0/reviews/{{new_id_r}}",
+					"raw": "http://{{ip}}:{{puerto}}/vinyls/0/tracks/{{new_id_t}}",
 					"protocol": "http",
 					"host": [
 						"{{ip}}"
@@ -428,16 +432,16 @@
 					"path": [
 						"vinyls",
 						"0",
-						"reviews",
-						"{{new_id_r}}"
+						"tracks",
+						"{{new_id_t}}"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nAsocia una reseña a un vinilo que no existe.\r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /vinyls/0 no existe.\".\r\n\r\n**Código HTTP esperado: 404**"
+				"description": "**Release: Paso-5**\r\n\r\nAsocia un track a un vinilo que no existe.\r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /vinyls/0 no existe.\".\r\n\r\n**Código HTTP esperado: 404**"
 			},
 			"response": []
 		},
 		{
-			"name": "Borrarle una reseña que no existe a un vinilo",
+			"name": "Borrarle un track que no existe a un vinilo",
 			"event": [
 				{
 					"listen": "test",
@@ -446,7 +450,7 @@
 						"exec": [
 							"tests[\"No s epuede borrar una reseña que no existe.\"] = responseCode.code === 404;",
 							"let id = pm.variables.get(\"new_id_b\");",
-							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The review with the given id was not found\");"
+							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The track with the given id was not found\");"
 						],
 						"type": "text/javascript"
 					}
@@ -460,7 +464,7 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/vinyls/{{new_id_v}}/reviews/0",
+					"raw": "http://{{ip}}:{{puerto}}/vinyls/{{new_id_v}}/tracks/0",
 					"protocol": "http",
 					"host": [
 						"{{ip}}"
@@ -469,16 +473,16 @@
 					"path": [
 						"vinyls",
 						"{{new_id_v}}",
-						"reviews",
+						"tracks",
 						"0"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nBorra una reseña que no existe en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error.\r\n\r\n**Código http esperado: 404**"
+				"description": "**Release: Paso-5**\r\n\r\nBorra un track que no existe en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error.\r\n\r\n**Código http esperado: 404**"
 			},
 			"response": []
 		},
 		{
-			"name": "Borrarle una reseña a un vinilo que no existe",
+			"name": "Borrarle un track a un vinilo que no existe",
 			"event": [
 				{
 					"listen": "test",
@@ -500,7 +504,7 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/vinyls/0/reviews/{{new_id_r}}",
+					"raw": "http://{{ip}}:{{puerto}}/vinyls/0/tracks/{{new_id_t}}",
 					"protocol": "http",
 					"host": [
 						"{{ip}}"
@@ -509,16 +513,16 @@
 					"path": [
 						"vinyls",
 						"0",
-						"reviews",
-						"{{new_id_r}}"
+						"tracks",
+						"{{new_id_t}}"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nBorra una reseña a un vinilo que no existe en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /vinyls/0/reviews no existe.\".\r\n\r\n**Código http esperado: 404**"
+				"description": "**Release: Paso-5**\r\n\r\nBorra un track a un vinilo que no existe en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /vinyls/0/tracks no existe.\".\r\n\r\n**Código http esperado: 404**"
 			},
 			"response": []
 		},
 		{
-			"name": "Borrarle una reseña a un vinilo",
+			"name": "Borrarle un track a un vinilo",
 			"event": [
 				{
 					"listen": "test",
@@ -539,7 +543,7 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/vinyls/{{new_id_v}}/reviews/{{new_id_r}}",
+					"raw": "http://{{ip}}:{{puerto}}/vinyls/{{new_id_v}}/tracks/{{new_id_t}}",
 					"protocol": "http",
 					"host": [
 						"{{ip}}"
@@ -548,16 +552,16 @@
 					"path": [
 						"vinyls",
 						"{{new_id_v}}",
-						"reviews",
-						"{{new_id_r}}"
+						"tracks",
+						"{{new_id_t}}"
 					]
 				},
-				"description": "**Release: Paso-5**\n\nBorra una reseña asociada a un vinilo. Se envían los ids de la reseña y el vinilo creados anteriormente.\n\n**Código HTTP esperado: 204**"
+				"description": "**Release: Paso-5**\n\nBorra un track asociado a un vinilo. Se envían los ids del track y el vinilo creados anteriormente.\n\n**Código HTTP esperado: 204**"
 			},
 			"response": []
 		},
 		{
-			"name": "Borrarle una reseña 2 a un vinilo",
+			"name": "Borrarle un track 2 a un vinilo",
 			"event": [
 				{
 					"listen": "test",
@@ -578,7 +582,7 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/vinyls/{{new_id_v}}/reviews/{{new_id_r2}}",
+					"raw": "http://{{ip}}:{{puerto}}/vinyls/{{new_id_v}}/tracks/{{new_id_t2}}",
 					"protocol": "http",
 					"host": [
 						"{{ip}}"
@@ -587,11 +591,11 @@
 					"path": [
 						"vinyls",
 						"{{new_id_v}}",
-						"reviews",
-						"{{new_id_r2}}"
+						"tracks",
+						"{{new_id_t2}}"
 					]
 				},
-				"description": "**Release: Paso-5**\n\nBorra una reseña asociada a un vinilo. Se envían los ids de la reseña y el vinilo creado anteriormente.\n\n**Código HTTP esperado: 204**"
+				"description": "**Release: Paso-5**\n\nBorra un track asociad a un vinilo. Se envían los ids del track y el vinilo creado anteriormente.\n\n**Código HTTP esperado: 204**"
 			},
 			"response": []
 		},
@@ -628,7 +632,7 @@
 						"{{new_id_v}}"
 					]
 				},
-				"description": "**Release: Paso-5**\n\nBorra un libro. Se envía el id del libro creado anteriormente.\n\n**Código HTTP esperado: 204**"
+				"description": "**Release: Paso-5**\n\nBorra un vinilo. Se envía el id del vinilo creado anteriormente.\n\n**Código HTTP esperado: 204**"
 			},
 			"response": []
 		},
@@ -668,28 +672,6 @@
 				"description": "**Release: Paso-5**\n\nBorra un sello discográfico. Se envía el id del sello creado en la primera petición.\n\n**Código HTTP esperado: 204**"
 			},
 			"response": []
-		}
-	],
-	"event": [
-		{
-			"listen": "prerequest",
-			"script": {
-				"id": "00d22f9f-0cad-4e06-8a85-ed1c41a4a1fc",
-				"type": "text/javascript",
-				"exec": [
-					""
-				]
-			}
-		},
-		{
-			"listen": "test",
-			"script": {
-				"id": "0d40a238-261c-43f6-a7fc-b63475c69de5",
-				"type": "text/javascript",
-				"exec": [
-					""
-				]
-			}
 		}
 	],
 	"protocolProfileBehavior": {}

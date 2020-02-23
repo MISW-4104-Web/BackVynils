@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "1c3436d5-3d12-4cfe-bbcb-cdb0276817e2",
-		"name": "PrizeAuthor Tests",
+		"_postman_id": "d7ec6a58-0281-4595-b3b2-a64d99838b76",
+		"name": "PrizeArtist Tests",
 		"description": "Colección de pruebas sobre el recurso PrizeArtist",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -349,7 +349,7 @@
 						"0"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nAsocia un artista que no existe a un premio en la aplicación. \r\n\r\nSe envía el Id del artista y el del premio a asociar en la URL de la petición.\r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /authors/0 no existe.\".\r\n\r\n**Código http esperado: 404**"
+				"description": "**Release: Paso-5**\r\n\r\nAsocia un artista que no existe a un premio en la aplicación. \r\n\r\nSe envía el Id del artista y el del premio a asociar en la URL de la petición.\r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /artists/0 no existe.\".\r\n\r\n**Código http esperado: 404**"
 			},
 			"response": []
 		},
@@ -500,7 +500,7 @@
 						"0"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nAsocia un artista que no existe a un premio en la aplicación. \r\n\r\nSe envían los Ids a asociar en la URL de la petición.\r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /authors/0 no existe.\".\r\n\r\n**Código http esperado: 404**"
+				"description": "**Release: Paso-5**\r\n\r\nAsocia un artista que no existe a un premio en la aplicación. \r\n\r\nSe envían los Ids a asociar en la URL de la petición.\r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /artists/0 no existe.\".\r\n\r\n**Código http esperado: 404**"
 			},
 			"response": []
 		},

@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "c1634d16-0c80-4843-a95f-5d93881ddf5e",
+		"_postman_id": "67218a73-cea6-4e2d-be96-6eb97eac4e0c",
 		"name": "RecordLabel Tests",
 		"description": "Colección de pruebas sobre el recurso RecordLabel",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -132,7 +132,7 @@
 						"recordlabels"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo sello discográfico pero con un nombre que ya existe. Verifica que se genera el error y el mensaje \"Ya existe una Editorial con el nombre\".\r\n\r\n**Código HTTP esperado: 412 Precondition failed\".**"
+				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo sello discográfico pero con un nombre que ya existe. Verifica que se genera el error y el mensaje \"Ya existe un sello discográfico con el nombre\".\r\n\r\n**Código HTTP esperado: 412 Precondition failed\".**"
 			},
 			"response": []
 		},
@@ -175,7 +175,7 @@
 						"vinyls"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo libro. El ISBN del recurso debe ser único. El Id es inicializado por la BD y se debe ver en la respuesta. \r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
+				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo vinilo. El Id es inicializado por la BD y se debe ver en la respuesta. \r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
 			},
 			"response": []
 		},
@@ -403,7 +403,7 @@
 						"{{new_id_rl}}"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nBorra un sello discográfico existente pero con libros asociados. Verifica que se genera el error.\r\n\r\n**Código HTTP esperado: 412 Precondition failed\".**"
+				"description": "**Release: Paso-5**\r\n\r\nBorra un sello discográfico existente pero con vinilos asociados. Verifica que se genera el error.\r\n\r\n**Código HTTP esperado: 412 Precondition failed\".**"
 			},
 			"response": []
 		},
@@ -440,7 +440,7 @@
 						"{{new_id_v}}"
 					]
 				},
-				"description": "**Release: Paso-5**\n\nBorra un libro. Se envía el id del libro creado anteriormente.\n\n**Código HTTP esperado: 204**"
+				"description": "**Release: Paso-5**\n\nBorra un libro. Se envía el id del vinilo creado anteriormente.\n\n**Código HTTP esperado: 204**"
 			},
 			"response": []
 		},
@@ -552,7 +552,7 @@
 						"0"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nBorra un sello discográfico que no existe en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /recordlabel/0 no existe.\".\r\n\r\n**Código http esperado: 404**"
+				"description": "**Release: Paso-5**\r\n\r\nBorra un sello discográfico que no existe en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /recordlabels/0 no existe.\".\r\n\r\n**Código http esperado: 404**"
 			},
 			"response": []
 		}

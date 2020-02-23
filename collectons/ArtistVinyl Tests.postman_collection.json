@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "7054ea70-0183-420d-98e1-a79689eb7783",
+		"_postman_id": "36fcf202-c829-44ba-a53f-920b24e55689",
 		"name": "ArtistVinyl Tests",
 		"description": "Colección de pruebas sobre el recurso ArtistVinyl",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -265,7 +265,7 @@
 						"0"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nAsocia un vinilo que no existe a un artista en la aplicación. \r\n\r\nSe envía el Id del artista y el del vinilo a asociar en la URL de la petición.\r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /books/0 no existe.\".\r\n\r\n**Código http esperado: 404**"
+				"description": "**Release: Paso-5**\r\n\r\nAsocia un vinilo que no existe a un artista en la aplicación. \r\n\r\nSe envía el Id del artista y el del vinilo a asociar en la URL de la petición.\r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /vinyls/0 no existe.\".\r\n\r\n**Código http esperado: 404**"
 			},
 			"response": []
 		},
@@ -497,7 +497,7 @@
 						"vinyls"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nActualiza la lista de vinilos de un sello discográfico existente con vinilos que no existen. \r\n\r\nSe envía el Id en la URL de la petición.\r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /books/0 no existe.\".\r\n\r\n**Código http esperado: 404**"
+				"description": "**Release: Paso-5**\r\n\r\nActualiza la lista de vinilos de un sello discográfico existente con vinilos que no existen. \r\n\r\nSe envía el Id en la URL de la petición.\r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /vinyls/0 no existe.\".\r\n\r\n**Código http esperado: 404**"
 			},
 			"response": []
 		},
@@ -615,7 +615,7 @@
 						"{{new_id_v}}"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nBorra la asociación entre a un vinilo y un artista que no existe en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /authors/0/books no existe.\".\r\n\r\n**Código http esperado: 404**"
+				"description": "**Release: Paso-5**\r\n\r\nBorra la asociación entre a un vinilo y un artista que no existe en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /artists/0/vinyls no existe.\".\r\n\r\n**Código http esperado: 404**"
 			},
 			"response": []
 		},

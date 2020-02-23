@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "342ee07c-ce94-4fa5-9409-00f64ba2b2ac",
+		"_postman_id": "27f91c07-d27c-4a1a-a2b0-45270345b3a9",
 		"name": "VinylRecordLabel Tests",
 		"description": "Colección de pruebas sobre el recurso BookEditorial",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -45,7 +45,7 @@
 						"recordlabels"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nCrea una nueva editorial. El recurso solo tiene de atributo \"name\" que debe ser único. El Id es inicializado por la BD y se debe ver en la respuesta. \r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
+				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo sello discográfico. El recurso solo tiene de atributo \"name\" que debe ser único. El Id es inicializado por la BD y se debe ver en la respuesta. \r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
 			},
 			"response": []
 		},
@@ -90,7 +90,7 @@
 						"recordlabels"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nCrea otra editorial. El recurso solo tiene de atributo \"name\" que debe ser único. El Id es inicializado por la BD y se debe ver en la respuesta. \r\n\r\nEsta segunda editorial se utiliza para probar la petición que consultar todas las editoriales\r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
+				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo sello discográfico. El recurso solo tiene de atributo \"name\" que debe ser único. El Id es inicializado por la BD y se debe ver en la respuesta. \r\n\r\nEste segundo sello se se utiliza para probar la petición que consulta todos los sellos.\r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
 			},
 			"response": []
 		},
@@ -133,7 +133,7 @@
 						"vinyls"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo libro. El ISBN del recurso debe ser único. El Id es inicializado por la BD y se debe ver en la respuesta. \r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
+				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo vinilo. El Id es inicializado por la BD y se debe ver en la respuesta. \r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
 			},
 			"response": []
 		},
@@ -178,7 +178,7 @@
 						"recordlabels"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nActualiza la editorial de un libro existente. Se envían los Ids de las entidades asociar en la URL de la petición.\r\n\r\n**Código http esperado: 200**"
+				"description": "**Release: Paso-5**\r\n\r\nActualiza el sello discográfico de un vinilo existente. Se envían los Ids de las entidades asociar en la URL de la petición.\r\n\r\n**Código http esperado: 200**"
 			},
 			"response": []
 		},
@@ -222,7 +222,7 @@
 						"recordlabels"
 					]
 				},
-				"description": "**Release: Paso-5**\r\nAsocia una editorial que no existe  aun libro. \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /editorials/0 no existe.\".\r\n\r\n**Código HTTP esperado: 404**"
+				"description": "**Release: Paso-5**\r\nAsocia un sello discográfico que no existe a un vinilo. \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /recordlabels/0 no existe.\".\r\n\r\n**Código HTTP esperado: 404**"
 			},
 			"response": []
 		},
@@ -266,7 +266,7 @@
 						"recordlabels"
 					]
 				},
-				"description": "**Release: Paso-5**\r\nAsocia una editorial a un libro que no existe. \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /books/0 no existe.\".\r\n\r\n**Código HTTP esperado: 404**"
+				"description": "**Release: Paso-5**\r\nAsocia un sello discográfico a un vinilo que no existe. \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /vinyls/0 no existe.\".\r\n\r\n**Código HTTP esperado: 404**"
 			},
 			"response": []
 		},
@@ -303,7 +303,7 @@
 						"{{new_id_v}}"
 					]
 				},
-				"description": "**Release: Paso-5**\n\nBorra un libro. Se envía el id del libro creado anteriormente.\n\n**Código HTTP esperado: 204**"
+				"description": "**Release: Paso-5**\n\nBorra un vinilo. Se envía el id del vinilo creado anteriormente.\n\n**Código HTTP esperado: 204**"
 			},
 			"response": []
 		},
@@ -340,7 +340,7 @@
 						"{{new_id_rl}}"
 					]
 				},
-				"description": "**Release: Paso-5**\n\nBorra una editorial. Se envía el id de la editorial creada en la primera petición.\n\n**Código HTTP esperado: 204**"
+				"description": "**Release: Paso-5**\n\nBorra un sello discográfico. Se envía el id del sello discográfico creado en la primera petición.\n\n**Código HTTP esperado: 204**"
 			},
 			"response": []
 		},
@@ -377,7 +377,7 @@
 						"{{new_id_rl2}}"
 					]
 				},
-				"description": "**Release: Paso-5**\n\nBorra una editorial. Se envía el id de la editorial 2 creada en la primera petición.\n\n**Código HTTP esperado: 204**"
+				"description": "**Release: Paso-5**\n\nBorra un sello discográfico. Se envía el id del sello discográfico 2 creado en la primera petición.\n\n**Código HTTP esperado: 204**"
 			},
 			"response": []
 		}

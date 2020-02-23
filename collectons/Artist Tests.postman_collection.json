@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "b0bd38eb-6bb0-48f4-804f-becc6f4fbf54",
+		"_postman_id": "2c9da448-4f21-44fb-a5dc-50e14e82b773",
 		"name": "Artist Tests",
 		"description": "Colección de pruebas sobre el recurso Artist",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -104,7 +104,7 @@
 						"exec": [
 							"var data= JSON.parse(responseBody);",
 							"tests[\"No genera error en el Gell All\"] = responseCode.code === 200;",
-							"tests[\"authors count\"] = data.length >= 1;"
+							"tests[\"artists count\"] = data.length >= 1;"
 						],
 						"type": "text/javascript"
 					}
@@ -193,7 +193,7 @@
 						"0"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nConsulta un artista que no existe en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /authors/0 no existe.\".\r\n\r\n**Código http esperado: 404**"
+				"description": "**Release: Paso-5**\r\n\r\nConsulta un artista que no existe en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /artists/0 no existe.\".\r\n\r\n**Código http esperado: 404**"
 			},
 			"response": []
 		},

@@ -2,11 +2,12 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
 import { Artist } from "./artist/artist.entity"
-import { RecordLabel } from "./recordlabel/recordlabel.entity"
-import { Vinyl } from "./vinyl/vinyl.entity"
 import { Organization } from "./organization/organization.entity"
 import { Prize } from "./prize/prize.entity";
+import { RecordLabel } from "./recordlabel/recordlabel.entity"
 import { Review } from "./review/review.entity";
+import { Track } from "./track/track.entity";
+import { Vinyl } from "./vinyl/vinyl.entity"
 
 
 import { ArtistModule } from './artist/artist.module';
@@ -20,6 +21,7 @@ import { OrganizationModule } from './organization/organization.module';
 import { PrizeModule } from './prize/prize.module';
 import { ReviewModule } from './review/review.module';
 import { PrizeArtistModule } from './prizeartist/prizeartist.module';
+import { TrackModule } from './track/track.module';
 
 
 @Module({
@@ -31,7 +33,7 @@ import { PrizeArtistModule } from './prizeartist/prizeartist.module';
       username: 'postgres',
       password: 'postgres',
       database: 'bookstore',
-      entities: [Artist, RecordLabel, Vinyl, Organization, Prize, Review],
+      entities: [Artist, Organization, Prize, RecordLabel, Review, Track, Vinyl],
       dropSchema: true,
       synchronize: true,
     }),
@@ -45,6 +47,7 @@ import { PrizeArtistModule } from './prizeartist/prizeartist.module';
     OrganizationModule,
     PrizeModule,
     ReviewModule,
-    PrizeArtistModule],
+    PrizeArtistModule,
+    TrackModule],
 })
 export class AppModule { }

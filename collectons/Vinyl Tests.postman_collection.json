@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "bde81957-2303-46cc-a4df-425ccfc314fb",
+		"_postman_id": "37b0c071-bd60-484e-b6bd-357d49f3316d",
 		"name": "Vinyl Tests",
 		"description": "Colección de pruebas sobre el recurso Vinyl",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -45,7 +45,7 @@
 						"recordlabels"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nCrea una nueva editorial. El recurso solo tiene de atributo \"name\" que debe ser único. El Id es inicializado por la BD y se debe ver en la respuesta. \r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
+				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo sello discográfico. El recurso solo tiene de atributo \"name\" que debe ser único. El Id es inicializado por la BD y se debe ver en la respuesta. \r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
 			},
 			"response": []
 		},
@@ -88,7 +88,7 @@
 						"vinyls"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo vinilo. El ISBN del recurso debe ser único. El Id es inicializado por la BD y se debe ver en la respuesta. \r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
+				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo vinilo. El Id es inicializado por la BD y se debe ver en la respuesta. \r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
 			},
 			"response": []
 		},
@@ -131,7 +131,7 @@
 						"vinyls"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nCrea otro vinilo. El ISBN del recurso debe ser único. El Id es inicializado por la BD y se debe ver en la respuesta. \r\nEste segundo vinilo se utiliza para probar la petición que consultar todos los vinilos\r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
+				"description": "**Release: Paso-5**\r\n\r\nCrea otro vinilo. \r\n\r\nEl Id es inicializado por la BD y se debe ver en la respuesta. \r\n\r\nEste segundo vinilo se utiliza para probar la petición que consultar todos los vinilos\r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
 			},
 			"response": []
 		},
