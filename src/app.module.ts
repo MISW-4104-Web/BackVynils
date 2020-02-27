@@ -32,10 +32,11 @@ import { TrackModule } from './track/track.module';
       port: 5432,
       username: 'postgres',
       password: 'postgres',
-      database: 'bookstore',
+      database: 'vinyls',
       entities: [Artist, Organization, Prize, RecordLabel, Review, Track, Vinyl],
       dropSchema: true,
       synchronize: true,
+      keepConnectionAlive: true
     }),
     ArtistModule,
     RecordLabelModule,
