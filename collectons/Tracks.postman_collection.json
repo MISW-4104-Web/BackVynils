@@ -1,55 +1,12 @@
 {
 	"info": {
-		"_postman_id": "2ea2f149-8fc4-4069-acf6-38b5889de86d",
+		"_postman_id": "b5c2966b-a0a7-4622-b100-0e771e6d76b5",
 		"name": "Tracks",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "Crear un sello discográfico",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"id": "acdf554f-1d87-4105-8dd9-590c23183914",
-						"exec": [
-							"var data = JSON.parse(responseBody);",
-							"postman.setGlobalVariable(\"new_id_rl\",data.id);",
-							"tests[\"no genera error en el Post\"] = responseCode.code === 200;"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\"name\":\"Sony Music\"}"
-				},
-				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/recordlabels",
-					"protocol": "http",
-					"host": [
-						"{{ip}}"
-					],
-					"port": "{{puerto}}",
-					"path": [
-						"recordlabels"
-					]
-				},
-				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo sello discográfico. El recurso solo tiene de atributo \"name\" que debe ser único. El Id es inicializado por la BD y se debe ver en la respuesta. \r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
-			},
-			"response": []
-		},
-		{
-			"name": "Crear un vinilo",
+			"name": "Crear un album",
 			"event": [
 				{
 					"listen": "test",
@@ -57,7 +14,7 @@
 						"id": "304084ed-d326-4e9b-b66a-8c2c95b18e0b",
 						"exec": [
 							"var data = JSON.parse(responseBody);",
-							"postman.setGlobalVariable(\"new_id_v\",data.id);",
+							"postman.setGlobalVariable(\"new_id_a\",data.id);",
 							"tests[\"no genera error en el Post\"] = responseCode.code === 200;"
 						],
 						"type": "text/javascript"
@@ -74,25 +31,25 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"description\": \"Buscando América es el primer álbum de la banda de Rubén Blades y Seis del Solar lanzado en 1984. La producción, bajo el sello Elektra, fusiona diferentes ritmos musicales tales como la salsa, reggae, rock, y el jazz latino. El disco fue grabado en Eurosound Studios en Nueva York entre mayo y agosto de 1983.\",\n    \"recordLabel\": { \"id\": {{new_id_rl}} },\n    \"name\": \"Buscando América\",\n    \"releaseDate\": \"1984-08-01T00:00:00-05:00\",\n    \"cover\": \"\"\n}"
+					"raw": "{\n    \"name\": \"Buscando América\",\n    \"cover\": \"\",\n    \"releaseDate\": \"1984-08-01T00:00:00-05:00\",\n    \"description\": \"Buscando América es el primer álbum de la banda de Rubén Blades y Seis del Solar lanzado en 1984. La producción, bajo el sello Elektra, fusiona diferentes ritmos musicales tales como la salsa, reggae, rock, y el jazz latino. El disco fue grabado en Eurosound Studios en Nueva York entre mayo y agosto de 1983.\",\n    \"genre\": \"Salsa\",\n    \"recordLabel\": \"Elektra\"\n}"
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/vinyls",
+					"raw": "http://{{ip}}:{{puerto}}/albums",
 					"protocol": "http",
 					"host": [
 						"{{ip}}"
 					],
 					"port": "{{puerto}}",
 					"path": [
-						"vinyls"
+						"albums"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo vinilo. El Id es inicializado por la BD y se debe ver en la respuesta. \r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
+				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo album. El Id es inicializado por la BD y se debe ver en la respuesta. \r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
 			},
 			"response": []
 		},
 		{
-			"name": "Asociar un track a un vinilo",
+			"name": "Asociar un track a un album",
 			"event": [
 				{
 					"listen": "test",
@@ -113,8 +70,8 @@
 					{
 						"key": "Content-Type",
 						"name": "Content-Type",
-						"value": "application/json",
-						"type": "text"
+						"type": "text",
+						"value": "application/json"
 					}
 				],
 				"body": {
@@ -127,15 +84,15 @@
 					}
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/vinyls/{{new_id_v}}/tracks",
+					"raw": "http://{{ip}}:{{puerto}}/albums/{{new_id_a}}/tracks",
 					"protocol": "http",
 					"host": [
 						"{{ip}}"
 					],
 					"port": "{{puerto}}",
 					"path": [
-						"vinyls",
-						"{{new_id_v}}",
+						"albums",
+						"{{new_id_a}}",
 						"tracks"
 					]
 				}
@@ -143,7 +100,7 @@
 			"response": []
 		},
 		{
-			"name": "Asociar un track 2 a un vinilo",
+			"name": "Asociar un track 2 a un album",
 			"event": [
 				{
 					"listen": "test",
@@ -178,15 +135,15 @@
 					}
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/vinyls/{{new_id_v}}/tracks",
+					"raw": "http://{{ip}}:{{puerto}}/albums/{{new_id_a}}/tracks",
 					"protocol": "http",
 					"host": [
 						"{{ip}}"
 					],
 					"port": "{{puerto}}",
 					"path": [
-						"vinyls",
-						"{{new_id_v}}",
+						"albums",
+						"{{new_id_a}}",
 						"tracks"
 					]
 				}
@@ -194,7 +151,7 @@
 			"response": []
 		},
 		{
-			"name": "Asociar un track a un vinilo que no existe",
+			"name": "Asociar un track a un album que no existe",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -215,14 +172,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/vinyls/0/tracks",
+					"raw": "http://{{ip}}:{{puerto}}/albums/0/tracks",
 					"protocol": "http",
 					"host": [
 						"{{ip}}"
 					],
 					"port": "{{puerto}}",
 					"path": [
-						"vinyls",
+						"albums",
 						"0",
 						"tracks"
 					]
@@ -231,7 +188,7 @@
 			"response": []
 		},
 		{
-			"name": "Obtener los tracks de un vinilo",
+			"name": "Obtener los tracks de un album",
 			"event": [
 				{
 					"listen": "test",
@@ -250,15 +207,15 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/vinyls/{{new_id_v}}/tracks",
+					"raw": "http://{{ip}}:{{puerto}}/albums/{{new_id_a}}/tracks",
 					"protocol": "http",
 					"host": [
 						"{{ip}}"
 					],
 					"port": "{{puerto}}",
 					"path": [
-						"vinyls",
-						"{{new_id_v}}",
+						"albums",
+						"{{new_id_a}}",
 						"tracks"
 					]
 				},
@@ -267,7 +224,7 @@
 			"response": []
 		},
 		{
-			"name": "Obtener un track de un vinilo",
+			"name": "Obtener un track de un album",
 			"event": [
 				{
 					"listen": "test",
@@ -286,15 +243,15 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/vinyls/{{new_id_v}}/tracks/{{new_id_t}}",
+					"raw": "http://{{ip}}:{{puerto}}/albums/{{new_id_a}}/tracks/{{new_id_t}}",
 					"protocol": "http",
 					"host": [
 						"{{ip}}"
 					],
 					"port": "{{puerto}}",
 					"path": [
-						"vinyls",
-						"{{new_id_v}}",
+						"albums",
+						"{{new_id_a}}",
 						"tracks",
 						"{{new_id_t}}"
 					]
@@ -304,7 +261,7 @@
 			"response": []
 		},
 		{
-			"name": "Editarle un track a un vinilo",
+			"name": "Editarle un track a un album",
 			"event": [
 				{
 					"listen": "test",
@@ -332,15 +289,15 @@
 					"raw": "{\n    \"name\": \"Decisiones\",\n    \"duration\": \"6:10\"\n}"
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/vinyls/{{new_id_v}}/tracks/{{new_id_t}}",
+					"raw": "http://{{ip}}:{{puerto}}/albums/{{new_id_a}}/tracks/{{new_id_t}}",
 					"protocol": "http",
 					"host": [
 						"{{ip}}"
 					],
 					"port": "{{puerto}}",
 					"path": [
-						"vinyls",
-						"{{new_id_v}}",
+						"albums",
+						"{{new_id_a}}",
 						"tracks",
 						"{{new_id_t}}"
 					]
@@ -350,7 +307,7 @@
 			"response": []
 		},
 		{
-			"name": "Editarle un track que no existe a un vinilo",
+			"name": "Editarle un track que no existe a un album",
 			"event": [
 				{
 					"listen": "test",
@@ -378,15 +335,15 @@
 					"raw": "{\n    \"name\": \"Decisiones\",\n    \"source\": \"6:10\"\n}"
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/vinyls/{{new_id_v}}/tracks/0",
+					"raw": "http://{{ip}}:{{puerto}}/albums/{{new_id_a}}/tracks/0",
 					"protocol": "http",
 					"host": [
 						"{{ip}}"
 					],
 					"port": "{{puerto}}",
 					"path": [
-						"vinyls",
-						"{{new_id_v}}",
+						"albums",
+						"{{new_id_a}}",
 						"tracks",
 						"0"
 					]
@@ -396,7 +353,7 @@
 			"response": []
 		},
 		{
-			"name": "Editarle un track a un vinilo que no existe",
+			"name": "Editarle un track a un album que no existe",
 			"event": [
 				{
 					"listen": "test",
@@ -404,7 +361,7 @@
 						"id": "ce6fc66f-cb19-4e0d-bc0a-aff100e295ee",
 						"exec": [
 							"tests[\"No se puede editar una revisión sobre un vinilo que no existe.\"] = responseCode.code === 404;",
-							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The vinyl with the given id was not found\");"
+							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The album with the given id was not found\");"
 						],
 						"type": "text/javascript"
 					}
@@ -423,14 +380,14 @@
 					"raw": "{\n    \"name\": \"decisiones\",\n    \"source\": \"6:20\"\n}"
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/vinyls/0/tracks/{{new_id_t}}",
+					"raw": "http://{{ip}}:{{puerto}}/albums/0/tracks/{{new_id_t}}",
 					"protocol": "http",
 					"host": [
 						"{{ip}}"
 					],
 					"port": "{{puerto}}",
 					"path": [
-						"vinyls",
+						"albums",
 						"0",
 						"tracks",
 						"{{new_id_t}}"
@@ -441,7 +398,7 @@
 			"response": []
 		},
 		{
-			"name": "Borrarle un track que no existe a un vinilo",
+			"name": "Borrarle un track que no existe a un album",
 			"event": [
 				{
 					"listen": "test",
@@ -464,15 +421,15 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/vinyls/{{new_id_v}}/tracks/0",
+					"raw": "http://{{ip}}:{{puerto}}/albums/{{new_id_a}}/tracks/0",
 					"protocol": "http",
 					"host": [
 						"{{ip}}"
 					],
 					"port": "{{puerto}}",
 					"path": [
-						"vinyls",
-						"{{new_id_v}}",
+						"albums",
+						"{{new_id_a}}",
 						"tracks",
 						"0"
 					]
@@ -482,7 +439,7 @@
 			"response": []
 		},
 		{
-			"name": "Borrarle un track a un vinilo que no existe",
+			"name": "Borrarle un track a un album que no existe",
 			"event": [
 				{
 					"listen": "test",
@@ -490,7 +447,7 @@
 						"id": "0c199000-a389-4706-8406-5cdc8f12186b",
 						"exec": [
 							"tests[\"No se puede borrar una reseña sobre un vinilos que no existe.\"] = responseCode.code === 404;",
-							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The vinyl with the given id was not found\");"
+							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The album with the given id was not found\");"
 						],
 						"type": "text/javascript"
 					}
@@ -504,14 +461,14 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/vinyls/0/tracks/{{new_id_t}}",
+					"raw": "http://{{ip}}:{{puerto}}/albums/0/tracks/{{new_id_t}}",
 					"protocol": "http",
 					"host": [
 						"{{ip}}"
 					],
 					"port": "{{puerto}}",
 					"path": [
-						"vinyls",
+						"albums",
 						"0",
 						"tracks",
 						"{{new_id_t}}"
@@ -522,7 +479,7 @@
 			"response": []
 		},
 		{
-			"name": "Borrarle un track a un vinilo",
+			"name": "Borrarle un track a un album",
 			"event": [
 				{
 					"listen": "test",
@@ -543,15 +500,15 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/vinyls/{{new_id_v}}/tracks/{{new_id_t}}",
+					"raw": "http://{{ip}}:{{puerto}}/albums/{{new_id_a}}/tracks/{{new_id_t}}",
 					"protocol": "http",
 					"host": [
 						"{{ip}}"
 					],
 					"port": "{{puerto}}",
 					"path": [
-						"vinyls",
-						"{{new_id_v}}",
+						"albums",
+						"{{new_id_a}}",
 						"tracks",
 						"{{new_id_t}}"
 					]
@@ -561,7 +518,7 @@
 			"response": []
 		},
 		{
-			"name": "Borrarle un track 2 a un vinilo",
+			"name": "Borrarle un track 2 a un album",
 			"event": [
 				{
 					"listen": "test",
@@ -582,15 +539,15 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/vinyls/{{new_id_v}}/tracks/{{new_id_t2}}",
+					"raw": "http://{{ip}}:{{puerto}}/albums/{{new_id_a}}/tracks/{{new_id_t2}}",
 					"protocol": "http",
 					"host": [
 						"{{ip}}"
 					],
 					"port": "{{puerto}}",
 					"path": [
-						"vinyls",
-						"{{new_id_v}}",
+						"albums",
+						"{{new_id_a}}",
 						"tracks",
 						"{{new_id_t2}}"
 					]
@@ -600,7 +557,7 @@
 			"response": []
 		},
 		{
-			"name": "Borrar un vinilo",
+			"name": "Borrar un album",
 			"event": [
 				{
 					"listen": "test",
@@ -621,55 +578,18 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/vinyls/{{new_id_v}}",
+					"raw": "http://{{ip}}:{{puerto}}/albums/{{new_id_a}}",
 					"protocol": "http",
 					"host": [
 						"{{ip}}"
 					],
 					"port": "{{puerto}}",
 					"path": [
-						"vinyls",
-						"{{new_id_v}}"
+						"albums",
+						"{{new_id_a}}"
 					]
 				},
 				"description": "**Release: Paso-5**\n\nBorra un vinilo. Se envía el id del vinilo creado anteriormente.\n\n**Código HTTP esperado: 204**"
-			},
-			"response": []
-		},
-		{
-			"name": "Borrar un sello discográfico",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"id": "d40b53c5-ed60-4b95-9432-09f2201a8509",
-						"exec": [
-							"tests[\"No genera error en el Delete\"] = responseCode.code === 204;"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
-				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/recordlabels/{{new_id_rl}}",
-					"protocol": "http",
-					"host": [
-						"{{ip}}"
-					],
-					"port": "{{puerto}}",
-					"path": [
-						"recordlabels",
-						"{{new_id_rl}}"
-					]
-				},
-				"description": "**Release: Paso-5**\n\nBorra un sello discográfico. Se envía el id del sello creado en la primera petición.\n\n**Código HTTP esperado: 204**"
 			},
 			"response": []
 		}

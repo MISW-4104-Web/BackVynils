@@ -1,6 +1,5 @@
-import { Entity, Column, PrimaryGeneratedColumn, JoinColumn, OneToOne, ManyToOne } from 'typeorm';
-import { Organization } from "../organization/organization.entity";
-import { Artist } from "../artist/artist.entity";
+import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
+import { PerformerPrize } from '../performerprize/performerprize.entity';
 
 @Entity()
 export class Prize {
@@ -8,18 +7,14 @@ export class Prize {
     id: number;
 
     @Column()
+    organization: string;
+
+    @Column()
     name: string;
 
     @Column()
     description: string;
 
-    @Column()
-    premiationDate: Date;
-
-    @OneToOne(type => Organization, organization => organization.prize)
-    @JoinColumn()
-    organization: Organization;
-
-    @ManyToOne(type => Artist, artist => artist.prizes)
-    artist: Artist;
+    @OneToMany(type => PerformerPrize, performerPrize => performerPrize.prize)
+    performerPrizes: PerformerPrize[];
 }

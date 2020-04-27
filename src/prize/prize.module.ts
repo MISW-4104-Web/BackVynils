@@ -3,10 +3,9 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { PrizeController } from './prize.controller';
 import { PrizeService } from './prize.service';
 import { Prize } from './prize.entity';
-import { Organization } from '../organization/organization.entity';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([Prize, Organization])],
+  imports: [TypeOrmModule.forFeature([Prize])],
   controllers: [PrizeController],
   providers: [PrizeService]
 })

@@ -1,27 +1,31 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
-import { Artist } from "./artist/artist.entity"
-import { Organization } from "./organization/organization.entity"
+import { Album } from "./album/album.entity";
+import { Comment } from "./comment/comment.entity";
 import { Prize } from "./prize/prize.entity";
-import { RecordLabel } from "./recordlabel/recordlabel.entity"
-import { Review } from "./review/review.entity";
 import { Track } from "./track/track.entity";
-import { Vinyl } from "./vinyl/vinyl.entity"
+import { AlbumCollector } from './albumcollector/albumcollector.entity';
+import { Band } from './band/band.entity';
+import { Collector } from './collector/collector.entity';
+import { Musician } from './musician/musician.entity';
+import { Performer } from './performer/performer.entity';
+import { PerformerPrize } from './performerprize/performerprize.entity';
 
-
-import { ArtistModule } from './artist/artist.module';
 import { RecordLabelModule } from './recordlabel/recordlabel.module';
-import { VinylModule } from './vinyl/vinyl.module';
-import { ArtistVinylModule } from './artistvinyl/artistvinyl.module';
-import { VinylArtistModule } from './vinylartist/vinylartist.module';
-import { VinylRecordLabelModule } from './vinylrecordlabel/vinylrecordlabel.module';
-import { RecordLabelVinylModule } from './recordlabelvinyl/recordlabelvinyl.module';
-import { OrganizationModule } from './organization/organization.module';
 import { PrizeModule } from './prize/prize.module';
-import { ReviewModule } from './review/review.module';
-import { PrizeArtistModule } from './prizeartist/prizeartist.module';
 import { TrackModule } from './track/track.module';
+import { CollectorModule } from './collector/collector.module';
+import { PerformerModule } from './performer/performer.module';
+import { BandModule } from './band/band.module';
+import { MusicianModule } from './musician/musician.module';
+import { AlbumModule } from './album/album.module';
+import { GenreModule } from './genre/genre.module';
+import { CommentModule } from './comment/comment.module';
+import { AlbumcollectorModule } from './albumcollector/albumcollector.module';
+import { AlbumstatusModule } from './albumstatus/albumstatus.module';
+import { PerformerprizeModule } from './performerprize/performerprize.module';
+
 
 
 @Module({
@@ -33,22 +37,23 @@ import { TrackModule } from './track/track.module';
       username: 'postgres',
       password: 'postgres',
       database: 'vinyls',
-      entities: [Artist, Organization, Prize, RecordLabel, Review, Track, Vinyl],
+      entities: [Album, AlbumCollector, Band, Collector, Comment, Musician, Performer, PerformerPrize, Prize, Track,],
       dropSchema: true,
       synchronize: true,
       keepConnectionAlive: true
     }),
-    ArtistModule,
     RecordLabelModule,
-    VinylModule,
-    ArtistVinylModule,
-    VinylArtistModule,
-    VinylRecordLabelModule,
-    RecordLabelVinylModule,
-    OrganizationModule,
     PrizeModule,
-    ReviewModule,
-    PrizeArtistModule,
-    TrackModule],
+    TrackModule,
+    CollectorModule,
+    PerformerModule,
+    BandModule,
+    MusicianModule,
+    AlbumModule,
+    GenreModule,
+    CommentModule,
+    AlbumcollectorModule,
+    AlbumstatusModule,
+    PerformerprizeModule],
 })
 export class AppModule { }

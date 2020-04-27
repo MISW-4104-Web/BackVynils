@@ -1,39 +1,38 @@
 import { Controller, UseInterceptors, Get, Param, Post, HttpCode, Body, Put, Delete } from '@nestjs/common';
 import { BusinessErrorsInterceptor } from "../interceptors/interceptor";
 
-import { TrackDto } from "./track.dto";
+import { TrackDTO } from "./track.dto";
 import { TrackService } from "./track.service";
 
-@Controller('vinyls')
+@Controller('albums')
 @UseInterceptors(BusinessErrorsInterceptor)
 export class TrackController {
     constructor(private readonly trackService: TrackService) { }
 
-    @Get(':vinylId/tracks')
-    async findTracks(@Param('vinylId') vinylId) {
-        return await this.trackService.findTracks(vinylId);
+    @Get(':albumId/tracks')
+    async findTracks(@Param('albumId') albumId) {
+        return await this.trackService.findTracks(albumId);
     }
 
-    @Get(':vinylId/tracks/:trackId')
-    async findOneTrack(@Param('vinylId') vinylId, @Param('trackId') trackId) {
-        return await this.trackService.findOneTrack(vinylId, trackId);
+    @Get(':albumId/tracks/:trackId')
+    async findOneTrack(@Param('albumId') albumId, @Param('trackId') trackId) {
+        return await this.trackService.findOneTrack(albumId, trackId);
     }
 
-    @Post(':vinylId/tracks')
+    @Post(':albumId/tracks')
     @HttpCode(200)
-    async addTrackVinyl(@Param('vinylId') vinylId, @Body() trackDto: TrackDto) {
-        return await this.trackService.addTrackVinyl(vinylId, trackDto);
+    async addTrackVinyl(@Param('albumId') albumId, @Body() trackDTO: TrackDTO) {
+        return await this.trackService.addTrackAlbum(albumId, trackDTO);
     }
 
-    @Put(':vinylId/tracks/:trackId')
-    async update(@Param('vinylId') vinylId: number, @Param('trackId') trackId: number, @Body() trackDto: TrackDto) {
-        return await this.trackService.update(vinylId, trackId, trackDto);
+    @Put(':albumId/tracks/:trackId')
+    async update(@Param('albumId') albumId: number, @Param('trackId') trackId: number, @Body() trackDTO: TrackDTO) {
+        return await this.trackService.update(albumId, trackId, trackDTO);
     }
 
-
-    @Delete(':vinylId/tracks/:trackId')
+    @Delete(':albumId/tracks/:trackId')
     @HttpCode(204)
-    async delete(@Param('vinylId') vinylId: number, @Param('trackId') trackId: number) {
-        return await this.trackService.delete(vinylId, trackId)
+    async delete(@Param('albumId') albumId: number, @Param('trackId') trackId: number) {
+        return await this.trackService.delete(albumId, trackId)
     }
 }

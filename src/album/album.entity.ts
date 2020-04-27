@@ -1,0 +1,52 @@
+import { Entity, Column, PrimaryGeneratedColumn, ManyToMany, OneToMany } from 'typeorm';
+import { Performer } from '../performer/performer.entity';
+import { RECORD_LABEL } from '../recordlabel/recordlabel.enum';
+import { GENRE } from '../genre/genre.enum';
+import { Track } from '../track/track.entity';
+import { Comment } from '../comment/comment.entity';
+import { AlbumCollector } from '../albumcollector/albumcollector.entity';
+
+@Entity()
+export class Album {
+    @PrimaryGeneratedColumn()
+    id: number;
+
+    @Column()
+    name: string;
+
+    @Column()
+    cover: string;
+
+    @Column()
+    releaseDate: Date;
+
+    @Column()
+    description: string;
+
+    @Column({
+        type: "enum",
+        enum: GENRE
+    })
+    genre: GENRE
+
+    @Column({
+        type: "enum",
+        enum: RECORD_LABEL
+    })
+    recordLabel: RECORD_LABEL
+
+    @ManyToMany(type => Performer, performer => performer.albums)
+    performers: Performer[];
+
+    @OneToMany(type => Track, track => track.album)
+    tracks: Track[];
+
+    @OneToMany(type => Comment, comment => comment.album, {
+        cascade: true
+    })
+    comments: Comment[];
+
+    @OneToMany(type => AlbumCollector, albumCollector => albumCollector.album)
+    albumCollectors: AlbumCollector[];
+
+}

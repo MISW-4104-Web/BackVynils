@@ -4,30 +4,31 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { BusinnesLogicException, BusinessError } from "../shared/errors/business-errors";
 import { Repository } from 'typeorm';
 
-import { Vinyl } from "../vinyl/vinyl.entity";
+import { Album } from "../album/album.entity";
 import { Track } from "./track.entity";
-import { TrackDto } from "./track.dto";
+import { TrackDTO } from "./track.dto";
+import { AlbumDTO } from 'src/album/album.dto';
 
 @Injectable()
 export class TrackService {
     constructor(
-        @InjectRepository(Vinyl)
-        private readonly vinylRepository: Repository<Vinyl>,
+        @InjectRepository(Album)
+        private readonly albumRepository: Repository<Album>,
         @InjectRepository(Track)
         private readonly trackRepository: Repository<Track>) { }
 
-    async findTracks(id): Promise<Track[]> {
-        const vinyl = await this.vinylRepository.findOne(id, { relations: ["tracks"] });
-        if (!vinyl)
-            throw new BusinnesLogicException("The vinyl with the given id was not found", BusinessError.NOT_FOUND);
+    async findTracks(id: number): Promise<TrackDTO[]> {
+        const album = await this.albumRepository.findOne(id, { relations: ["tracks"] });
+        if (!album)
+            throw new BusinnesLogicException("The album with the given id was not found", BusinessError.NOT_FOUND);
 
-        return vinyl.tracks;
+        return album.tracks;
     }
 
-    async findOneTrack(vinylId, trackId): Promise<Track> {
-        const vinyl = await this.vinylRepository.findOne(vinylId, { relations: ["tracks"] });
-        if (!vinyl)
-            throw new BusinnesLogicException("The vinyl with the given id was not found", BusinessError.NOT_FOUND);
+    async findOneTrack(albumId: number, trackId: number): Promise<TrackDTO> {
+        const album = await this.albumRepository.findOne(albumId, { relations: ["tracks"] });
+        if (!album)
+            throw new BusinnesLogicException("The album with the given id was not found", BusinessError.NOT_FOUND);
 
         const track = await this.trackRepository.findOne(trackId);
         if (!track)
@@ -36,45 +37,45 @@ export class TrackService {
         return track;
     }
 
-    async addTrackVinyl(vinylId: number, trackDto: TrackDto): Promise<Track> {
-        const vinyl = await this.vinylRepository.findOne(vinylId);
-        if (!vinyl)
-            throw new BusinnesLogicException("The vinyl with the given id was not found", BusinessError.NOT_FOUND)
+    async addTrackAlbum(albumId: number, trackDTO: TrackDTO): Promise<TrackDTO> {
+        const album = await this.albumRepository.findOne(albumId);
+        if (!album)
+            throw new BusinnesLogicException("The album with the given id was not found", BusinessError.NOT_FOUND)
 
         const track = new Track();
-        track.name = trackDto.name;
-        track.duration = trackDto.duration;
-        track.vinyl = vinyl;
+        track.name = trackDTO.name;
+        track.duration = trackDTO.duration;
+        track.album = album;
 
         return await this.trackRepository.save(track);
     }
 
-    async update(vinylId: number, trackId: number, trackDto: TrackDto): Promise<Track> {
-        const vinyl = await this.vinylRepository.findOne(vinylId, { relations: ["tracks"] });
-        if (!vinyl)
-            throw new BusinnesLogicException("The vinyl with the given id was not found", BusinessError.NOT_FOUND)
+    async update(albumId: number, trackId: number, trackDTO: TrackDTO): Promise<TrackDTO> {
+        const album = await this.albumRepository.findOne(albumId, { relations: ["tracks"] });
+        if (!album)
+            throw new BusinnesLogicException("The album with the given id was not found", BusinessError.NOT_FOUND)
 
         const track = await this.trackRepository.findOne(trackId);
         if (!track)
             throw new BusinnesLogicException("The track with the given id was not found", BusinessError.NOT_FOUND);
 
-        track.name = trackDto.name;
-        track.duration = trackDto.duration;
+        track.name = trackDTO.name;
+        track.duration = trackDTO.duration;
 
         return await this.trackRepository.save(track);
     }
 
-    async delete(vinylId: number, trackId: number): Promise<Vinyl> {
-        const vinyl = await this.vinylRepository.findOne(vinylId, { relations: ["tracks"] });
-        if (!vinyl)
-            throw new BusinnesLogicException("The vinyl with the given id was not found", BusinessError.NOT_FOUND)
+    async delete(albumId: number, trackId: number): Promise<AlbumDTO> {
+        const album = await this.albumRepository.findOne(albumId, { relations: ["tracks"] });
+        if (!album)
+            throw new BusinnesLogicException("The album with the given id was not found", BusinessError.NOT_FOUND)
 
         const track = await this.trackRepository.findOne(trackId);
         if (!track)
             throw new BusinnesLogicException("The track with the given id was not found", BusinessError.NOT_FOUND);
 
-        vinyl.tracks = vinyl.tracks.filter(e => e.id !== track.id);
+        album.tracks = album.tracks.filter(e => e.id !== track.id);
 
-        return await this.vinylRepository.save(vinyl);
+        return await this.albumRepository.save(album);
     }
 }

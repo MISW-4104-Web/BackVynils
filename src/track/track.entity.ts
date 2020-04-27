@@ -1,5 +1,5 @@
 import { Entity, Column, PrimaryGeneratedColumn, ManyToOne, ManyToMany, JoinTable, OneToMany } from 'typeorm';
-import { Vinyl } from "../vinyl/vinyl.entity";
+import { Album } from '../album/album.entity';
 
 @Entity()
 export class Track {
@@ -12,6 +12,6 @@ export class Track {
     @Column()
     duration: string;
 
-    @ManyToOne(type => Vinyl, vinyl => vinyl.tracks)
-    vinyl: Vinyl;
+    @ManyToOne(type => Album, album => album.tracks)
+    album: Album;
 }
