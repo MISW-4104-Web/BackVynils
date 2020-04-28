@@ -197,7 +197,7 @@
 						"exec": [
 							"var data= JSON.parse(responseBody);",
 							"tests[\"no genera error en el Get All\"] = responseCode.code === 200;",
-							"tests[\"reviews count\"] = data.length >= 0;"
+							"tests[\"tracks count\"] = data.length >= 0;"
 						],
 						"type": "text/javascript"
 					}
@@ -314,7 +314,7 @@
 					"script": {
 						"id": "02be10e6-750b-4b74-95e7-d927a166ec02",
 						"exec": [
-							"tests[\"No se puede editar una reseña que no existe.\"] = responseCode.code === 404;",
+							"tests[\"No se puede editar un track que no existe.\"] = responseCode.code === 404;",
 							"let id = pm.variables.get(\"new_id_b\");",
 							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The track with the given id was not found\");"
 						],
@@ -360,7 +360,7 @@
 					"script": {
 						"id": "ce6fc66f-cb19-4e0d-bc0a-aff100e295ee",
 						"exec": [
-							"tests[\"No se puede editar una revisión sobre un vinilo que no existe.\"] = responseCode.code === 404;",
+							"tests[\"No se puede editar un track sobre un album que no existe.\"] = responseCode.code === 404;",
 							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The album with the given id was not found\");"
 						],
 						"type": "text/javascript"
@@ -405,7 +405,7 @@
 					"script": {
 						"id": "edb58a8e-9d1a-4d6f-9942-6fe3c8a169e9",
 						"exec": [
-							"tests[\"No s epuede borrar una reseña que no existe.\"] = responseCode.code === 404;",
+							"tests[\"No se puede borrar un track que no existe.\"] = responseCode.code === 404;",
 							"let id = pm.variables.get(\"new_id_b\");",
 							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The track with the given id was not found\");"
 						],
@@ -446,7 +446,7 @@
 					"script": {
 						"id": "0c199000-a389-4706-8406-5cdc8f12186b",
 						"exec": [
-							"tests[\"No se puede borrar una reseña sobre un vinilos que no existe.\"] = responseCode.code === 404;",
+							"tests[\"No se puede borrar un track sobre un album que no existe.\"] = responseCode.code === 404;",
 							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The album with the given id was not found\");"
 						],
 						"type": "text/javascript"

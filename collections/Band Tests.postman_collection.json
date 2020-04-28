@@ -1,0 +1,423 @@
+{
+	"info": {
+		"_postman_id": "a4f21228-df57-4cfb-8120-71329651bdb8",
+		"name": "Band Tests",
+		"description": "Colección de pruebas sobre el recurso Band",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Crear una banda",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "694741e6-4794-48fd-b32b-d790963ac9b0",
+						"exec": [
+							"var data = JSON.parse(responseBody);",
+							"postman.setGlobalVariable(\"new_id_b\",data.id);",
+							"tests[\"No genera error en el Post\"] = responseCode.code === 200;",
+							"console.log(data.id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Queen\",\n    \"image\": \"https://upload.wikimedia.org/wikipedia/commons/7/7c/Queen_logo.svg\",\n    \"description\": \"Queen es una banda británica de rock formada en 1970 en Londres por el cantante Freddie Mercury, el guitarrista Brian May, el baterista Roger Taylor y el bajista John Deacon. Si bien el grupo ha presentado bajas de dos de sus miembros (Mercury, fallecido en 1991, y Deacon, retirado en 1997), los integrantes restantes, May y Taylor, continúan trabajando bajo el nombre Queen, por lo que la banda aún se considera activa.\",\n    \"creationDate\":\"1970-01-01T00:00:00-05:00\"\n}"
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/bands",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"bands"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo artista. El Id es inicializado por la BD y se debe ver en la respuesta.\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
+			},
+			"response": []
+		},
+		{
+			"name": "Crear una banda 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "edca8864-fbb2-420c-a95d-fe433ad517cc",
+						"exec": [
+							"var data = JSON.parse(responseBody);",
+							"postman.setGlobalVariable(\"new_id_b2\",data.id);",
+							"tests[\"No genera error en el Post\"] = responseCode.code === 200;",
+							"console.log(data.id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Soda Stereo\",\n    \"image\": \"https://upload.wikimedia.org/wikipedia/commons/6/6f/CeratiAlbertiBosio.jpg\",\n    \"description\": \"Soda Stereo fue una banda argentina de rock formada en Buenos Aires en 1982 por Gustavo Cerati (voz, guitarra), Héctor «Zeta» Bosio (bajo) y Carlos Alberto Ficicchia «Charly Alberti» (batería), considerada una de las más influyentes e importantes bandas iberoamericanas de todos los tiempos y una leyenda de la música latina. Fueron el primer grupo de habla hispana en conseguir un éxito masivo en Latinoamérica y tuvieron un papel muy importante en el desarrollo y la difusión del rock iberoamericano y el rock en español durante las décadas de 1980 y 1990. Durante su carrera, fueron vanguardistas y marcaron tendencia en Latinoamérica, siendo protagonistas en diversos géneros como la música divertida de sus inicios, la new wave, el dark, el hard rock, el rock alternativo y el rock electrónico de sus finales\",\n    \"creationDate\":\"1982-01-01T00:00:00-05:00\"\n}"
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/bands",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"bands"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nCrea una nueva banda. El Id es inicializado por la BD y se debe ver en la respuesta.\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener todos las bandas",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ffc24813-89a3-47fa-9d38-241d31b1e7c3",
+						"exec": [
+							"var data= JSON.parse(responseBody);",
+							"tests[\"No genera error en el Gell All\"] = responseCode.code === 200;",
+							"tests[\"bands count\"] = data.length >= 1;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/bands",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"bands"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nConsulta todas las bandas de la aplicacion. \r\n\r\nLa petición no tiene cuerpo.\r\n\r\nPara la prueba, se verifica que el conjunto de bandas en la respuesta tenga mas de uno.\r\n\r\n**Código http esperado: 200**"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener una banda",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "20acc8ea-cadf-4ea4-b92e-f4d8218ce963",
+						"exec": [
+							"console.log(responseBody);",
+							"var data = JSON.parse(responseBody);",
+							"tests[\"No genera error en el Get\"] = responseCode.code === 200;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/bands/{{new_id_b}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"bands",
+						"{{new_id_b}}"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nConsulta una banda de la aplicación.  \r\n\r\nLa petición no tiene cuerpo.\r\n\r\nSe envía el id de la banda deseado por la URL de la petición.\r\n\r\n**Código http esperado: 200**"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener una banda que no existe",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "39dc353d-ae0a-41c6-99a5-89218360c4d3",
+						"exec": [
+							"tests[\"No se deberia obtener una banda con un id que no existe\"] = responseCode.code === 404;",
+							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The band with the given id was not found\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/bands/0",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"bands",
+						"0"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nConsulta una banda que no existe en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /bands/0 no existe.\".\r\n\r\n**Código http esperado: 404**"
+			},
+			"response": []
+		},
+		{
+			"name": "Editar una banda",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "68dc8b6c-6d16-40b8-8f51-b61db7113074",
+						"exec": [
+							"console.log(responseBody);",
+							"var data = JSON.parse(responseBody);",
+							"tests[\"No genera error en el Put\"] = responseCode.code === 200;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Queen\",\n    \"image\": \"https://upload.wikimedia.org/wikipedia/commons/7/7c/Queen_logo.svg\",\n    \"description\": \"Queen es una banda británica de rock formada en 1970 en Londres por el cantante Freddie Mercury, el guitarrista Brian May, el baterista Roger Taylor y el bajista John Deacon.\",\n    \"creationDate\":\"1970-01-01T00:00:00-05:00\"\n}"
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/bands/{{new_id_b}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"bands",
+						"{{new_id_b}}"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nActualiza una banda existente. \r\n\r\nse envía el Id en la URL de la petición.\r\n\r\n**Código http esperado: 200**"
+			},
+			"response": []
+		},
+		{
+			"name": "Editar una banda que no existe",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "15a70f62-2a66-469a-9ca6-d1125b0c8774",
+						"exec": [
+							"tests[\"No se deberia actualizar una banda con id que no existe\"] = responseCode.code === 404;",
+							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The band with the given id was not found\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Queen\",\n    \"image\": \"https://upload.wikimedia.org/wikipedia/commons/7/7c/Queen_logo.svg\",\n    \"description\": \"Queen es una banda británica de rock formada en 1970 en Londres por el cantante Freddie Mercury, el guitarrista Brian May, el baterista Roger Taylor y el bajista John Deacon. Si bien el grupo ha presentado bajas de dos de sus miembros (Mercury, fallecido en 1991, y Deacon, retirado en 1997), los integrantes restantes, May y Taylor, continúan trabajando bajo el nombre Queen, por lo que la banda aún se considera activa.\",\n    \"creationDate\":\"1970-01-01T00:00:00-05:00\"\n}"
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/bands/0",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"bands",
+						"0"
+					]
+				},
+				"description": "**Release: Paso-5**\r\nActualiza una banda que no existe. \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /bands/0 no existe.\".\r\n\r\n**Código HTTP esperado: 404**"
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar una banda",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d403e21b-3da3-4bbc-9b8a-9a2285ec0292",
+						"exec": [
+							"tests[\"No genera error en el Delete\"] = responseCode.code === 204;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/bands/{{new_id_b}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"bands",
+						"{{new_id_b}}"
+					]
+				},
+				"description": "**Release: Paso-5**\n\nBorra una banda. Se envía el id de la banda creada anteriormente.\n\n**Código HTTP esperado: 204**"
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar una banda 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7db5b212-04c0-43a8-b627-44b62f4b9852",
+						"exec": [
+							"tests[\"No genera error en el Delete\"] = responseCode.code === 204;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/bands/{{new_id_b2}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"bands",
+						"{{new_id_b2}}"
+					]
+				},
+				"description": "**Release: Paso-5**\n\nBorra una banda. Se envía el id de la banda creada anteriormente.\n\n**Código HTTP esperado: 204**"
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar una banda que no existe",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c0905623-e468-4838-b24e-56e8402ea65c",
+						"exec": [
+							"tests[\"No se deberia borrar una banda con un id que no existe\"] = responseCode.code === 404;",
+							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The band with the given id was not found\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/bands/0",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"bands",
+						"0"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nBorra una banda que no existe en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /bands/0 no existe.\".\r\n\r\n**Código http esperado: 404**"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "9f629ffc-3644-4dca-a8af-f28ae4a4e739",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "b1e97bf7-3232-412f-96bc-7ac233e25ab5",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

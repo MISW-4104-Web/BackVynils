@@ -13,11 +13,11 @@ export class AlbumService {
         private readonly albumRepository: Repository<Album>
     ) { }
 
-    async findAll(): Promise<AlbumDetailDTO[]> {
+    async findAll(): Promise<AlbumDTO[]> {
         return await this.albumRepository.find();
     }
 
-    async findOne(id: number): Promise<AlbumDetailDTO> {
+    async findOne(id: number): Promise<AlbumDTO> {
         const album = await this.albumRepository.findOne(id);
         if (!album)
             throw new BusinnesLogicException("The album with the given id was not found", BusinessError.NOT_FOUND)
@@ -36,7 +36,7 @@ export class AlbumService {
         return await this.albumRepository.save(album);
     }
 
-    async update(id: number, albumDTO: AlbumDTO) {
+    async update(id: number, albumDTO: AlbumDTO): Promise<AlbumDTO> {
 
         const album = await this.albumRepository.findOne(id);
         if (!album)

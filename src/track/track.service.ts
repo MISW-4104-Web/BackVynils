@@ -7,7 +7,6 @@ import { Repository } from 'typeorm';
 import { Album } from "../album/album.entity";
 import { Track } from "./track.entity";
 import { TrackDTO } from "./track.dto";
-import { AlbumDTO } from 'src/album/album.dto';
 
 @Injectable()
 export class TrackService {
@@ -65,7 +64,7 @@ export class TrackService {
         return await this.trackRepository.save(track);
     }
 
-    async delete(albumId: number, trackId: number): Promise<AlbumDTO> {
+    async delete(albumId: number, trackId: number) {
         const album = await this.albumRepository.findOne(albumId, { relations: ["tracks"] });
         if (!album)
             throw new BusinnesLogicException("The album with the given id was not found", BusinessError.NOT_FOUND)

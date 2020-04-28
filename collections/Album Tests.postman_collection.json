@@ -102,7 +102,7 @@
 						"exec": [
 							"var data= JSON.parse(responseBody);",
 							"tests[\"No genera error en el Get all\"] = responseCode.code === 200;",
-							"tests[\"vinyls count\"] = data.length >= 0;"
+							"tests[\"albums count\"] = data.length >= 0;"
 						],
 						"type": "text/javascript"
 					}

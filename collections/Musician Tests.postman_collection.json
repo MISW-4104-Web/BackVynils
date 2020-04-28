@@ -1,0 +1,423 @@
+{
+	"info": {
+		"_postman_id": "16dc14c0-1e53-4fcb-83ed-69c5ed54f0e3",
+		"name": "Musician Tests",
+		"description": "Colección de pruebas sobre el recurso Artist",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Crear un músico",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "694741e6-4794-48fd-b32b-d790963ac9b0",
+						"exec": [
+							"var data = JSON.parse(responseBody);",
+							"postman.setGlobalVariable(\"new_id_m\",data.id);",
+							"tests[\"No genera error en el Post\"] = responseCode.code === 200;",
+							"console.log(data.id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Rubén Blades Bellido de Luna\",\n    \"image\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Ruben_Blades_by_Gage_Skidmore.jpg/800px-Ruben_Blades_by_Gage_Skidmore.jpg\",\n    \"description\": \"Es un cantante, compositor, músico, actor, abogado, político y activista panameño. Ha desarrollado gran parte de su carrera artística en la ciudad de Nueva York.\",\n    \"birthDate\": \"1948-07-16T00:00:00-05:00\"\n}"
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/musicians",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"musicians"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo músico. El Id es inicializado por la BD y se debe ver en la respuesta.\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
+			},
+			"response": []
+		},
+		{
+			"name": "Crear un músico 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "edca8864-fbb2-420c-a95d-fe433ad517cc",
+						"exec": [
+							"var data = JSON.parse(responseBody);",
+							"postman.setGlobalVariable(\"new_id_m2\",data.id);",
+							"tests[\"No genera error en el Post\"] = responseCode.code === 200;",
+							"console.log(data.id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\n        \"name\": \"Joan Manuel Serrat Teresa\",\n        \"image\": \"https://upload.wikimedia.org/wikipedia/commons/e/e3/Serrat.jpg\",\n        \"description\": \"Es un cantautor, compositor, actor, escritor, poeta y músico español.\",\n        \"birthDate\": \"1943-12-27T00:00:00-05:00\"\n    }"
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/musicians",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"musicians"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo músico. El Id es inicializado por la BD y se debe ver en la respuesta.\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener todos los músicos",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ffc24813-89a3-47fa-9d38-241d31b1e7c3",
+						"exec": [
+							"var data= JSON.parse(responseBody);",
+							"tests[\"No genera error en el Gell All\"] = responseCode.code === 200;",
+							"tests[\"musicians count\"] = data.length >= 1;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/musicians",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"musicians"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nConsulta todos los músicos de la aplicacion. \r\n\r\nLa petición no tiene cuerpo.\r\n\r\nPara la prueba, se verifica que el conjunto de músicos en la respuesta tenga mas de uno.\r\n\r\n**Código http esperado: 200**"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener un músico",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "20acc8ea-cadf-4ea4-b92e-f4d8218ce963",
+						"exec": [
+							"console.log(responseBody);",
+							"var data = JSON.parse(responseBody);",
+							"tests[\"No genera error en el Get\"] = responseCode.code === 200;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/musicians/{{new_id_m}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"musicians",
+						"{{new_id_m}}"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nConsulta un músico de la aplicación.  \r\nLa petición no tiene cuerpo.\r\nSe envía el id del músico deseado por la URL de la petición.\r\n\r\n**Código http esperado: 200**"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener un núsico que no existe",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "39dc353d-ae0a-41c6-99a5-89218360c4d3",
+						"exec": [
+							"tests[\"No se deberia obtener un músico con un id que no existe\"] = responseCode.code === 404;",
+							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The musician with the given id was not found\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/musicians/0",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"musicians",
+						"0"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nConsulta un músico que no existe en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /musicians/0 no existe.\".\r\n\r\n**Código http esperado: 404**"
+			},
+			"response": []
+		},
+		{
+			"name": "Editar un músico",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "68dc8b6c-6d16-40b8-8f51-b61db7113074",
+						"exec": [
+							"console.log(responseBody);",
+							"var data = JSON.parse(responseBody);",
+							"tests[\"No genera error en el Put\"] = responseCode.code === 200;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Rubén Blades Bellido de Luna\",\n    \"image\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Ruben_Blades_by_Gage_Skidmore.jpg/800px-Ruben_Blades_by_Gage_Skidmore.jpg\",\n    \"description\": \"Es un cantante, compositor, músico, actor, abogado, político y activista panameño.\",\n    \"birthDate\": \"1948-07-16T00:00:00-05:00\"\n}"
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/musicians/{{new_id_m}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"musicians",
+						"{{new_id_m}}"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nActualiza un músico existente. \r\nse envía el Id en la URL de la petición.\r\n\r\n**Código http esperado: 200**"
+			},
+			"response": []
+		},
+		{
+			"name": "Editar un músico que no existe",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "15a70f62-2a66-469a-9ca6-d1125b0c8774",
+						"exec": [
+							"tests[\"No se deberia actualizar un músico con id que no existe\"] = responseCode.code === 404;",
+							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The musician with the given id was not found\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Rubén Blades Bellido de Luna\",\n    \"image\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Ruben_Blades_by_Gage_Skidmore.jpg/800px-Ruben_Blades_by_Gage_Skidmore.jpg\",\n    \"description\": \"Es un cantante, compositor, músico, actor, abogado, político y activista panameño.\",\n    \"birthDate\": \"1948-07-16T00:00:00-05:00\"\n}"
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/musicians/0",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"musicians",
+						"0"
+					]
+				},
+				"description": "**Release: Paso-5**\r\nActualiza un músico que no existe. \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /musicians/0 no existe.\".\r\n\r\n**Código HTTP esperado: 404**"
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar un músico",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d403e21b-3da3-4bbc-9b8a-9a2285ec0292",
+						"exec": [
+							"tests[\"No genera error en el Delete\"] = responseCode.code === 204;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/musicians/{{new_id_m}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"musicians",
+						"{{new_id_m}}"
+					]
+				},
+				"description": "**Release: Paso-5**\n\nBorra un músico. Se envía el id del músico creado anteriormente.\n\n**Código HTTP esperado: 204**"
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar el músico 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7db5b212-04c0-43a8-b627-44b62f4b9852",
+						"exec": [
+							"tests[\"No genera error en el Delete\"] = responseCode.code === 204;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/musicians/{{new_id_m2}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"musicians",
+						"{{new_id_m2}}"
+					]
+				},
+				"description": "**Release: Paso-5**\n\nBorra un músico. Se envía el id del músico creado anteriormente.\n\n**Código HTTP esperado: 204**"
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar un músico que no existe",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c0905623-e468-4838-b24e-56e8402ea65c",
+						"exec": [
+							"tests[\"No se deberia borrar un músico con un id que no existe\"] = responseCode.code === 404;",
+							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The musician with the given id was not found\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/musicians/0",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"musicians",
+						"0"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nBorra un músico que no existe en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /musicians/0 no existe.\".\r\n\r\n**Código http esperado: 404**"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "9f629ffc-3644-4dca-a8af-f28ae4a4e739",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "b1e97bf7-3232-412f-96bc-7ac233e25ab5",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
