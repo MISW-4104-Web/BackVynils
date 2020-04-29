@@ -25,8 +25,8 @@ import { CommentModule } from './comment/comment.module';
 import { AlbumcollectorModule } from './albumcollector/albumcollector.module';
 import { AlbumstatusModule } from './albumstatus/albumstatus.module';
 import { PerformerprizeModule } from './performerprize/performerprize.module';
-
-
+import { BandmusicianModule } from './bandmusician/bandmusician.module';
+import { MusicianAlbumModule } from './musicianalbum/musicianalbum.module';
 
 @Module({
   imports: [
@@ -54,6 +54,8 @@ import { PerformerprizeModule } from './performerprize/performerprize.module';
     CommentModule,
     AlbumcollectorModule,
     AlbumstatusModule,
-    PerformerprizeModule],
+    PerformerprizeModule,
+    BandmusicianModule,
+    MusicianAlbumModule],
 })
 export class AppModule { }

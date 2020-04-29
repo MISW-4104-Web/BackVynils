@@ -4,12 +4,17 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { BandDTO } from './band.dto';
 import { BusinnesLogicException, BusinessError } from '../shared/errors/business-errors';
+import { Musician } from '../musician/musician.entity';
+import { MusicianDTO } from '../musician/musician.dto';
 
 @Injectable()
 export class BandService {
     constructor(
         @InjectRepository(Band)
-        private readonly bandRepository: Repository<Band>) { }
+        private readonly bandRepository: Repository<Band>,
+        @InjectRepository(Musician)
+        private readonly musicianRepository: Repository<Musician>
+    ) { }
 
     async findAll(): Promise<BandDTO[]> {
         return await this.bandRepository.find();

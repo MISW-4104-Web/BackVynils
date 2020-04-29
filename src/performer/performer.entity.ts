@@ -1,10 +1,11 @@
-import { Entity, Column, PrimaryGeneratedColumn, ManyToMany, OneToMany, JoinTable } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, ManyToMany, OneToMany, JoinTable, TableInheritance } from 'typeorm';
 import { Collector } from '../collector/collector.entity';
 import { Album } from '../album/album.entity';
 import { PerformerPrize } from '../performerprize/performerprize.entity';
 
 @Entity()
-export abstract class Performer {
+@TableInheritance({ column: { type: "varchar", name: "type" } })
+export class Performer {
     @PrimaryGeneratedColumn()
     id: number;
 

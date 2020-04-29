@@ -1,0 +1,748 @@
+{
+	"info": {
+		"_postman_id": "55daf008-c34d-484f-9b5e-8fcfca1ea930",
+		"name": "MusicianAlbum Tests",
+		"description": "Colección de pruebas sobre el recurso ArtistVinyl",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Crear un album",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "304084ed-d326-4e9b-b66a-8c2c95b18e0b",
+						"exec": [
+							"var data = JSON.parse(responseBody);",
+							"postman.setGlobalVariable(\"new_id_a\",data.id);",
+							"tests[\"no genera error en el Post\"] = responseCode.code === 200;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Buscando América\",\n    \"cover\": \"\",\n    \"releaseDate\": \"1984-08-01T00:00:00-05:00\",\n    \"description\": \"Buscando América es el primer álbum de la banda de Rubén Blades y Seis del Solar lanzado en 1984. La producción, bajo el sello Elektra, fusiona diferentes ritmos musicales tales como la salsa, reggae, rock, y el jazz latino. El disco fue grabado en Eurosound Studios en Nueva York entre mayo y agosto de 1983.\",\n    \"genre\": \"Salsa\",\n    \"recordLabel\": \"Elektra\"\n}"
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/albums",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"albums"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo album. El Id es inicializado por la BD y se debe ver en la respuesta. \r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
+			},
+			"response": []
+		},
+		{
+			"name": "Crear un album 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ceefa0d0-e6b0-4457-bf73-209c199fd164",
+						"exec": [
+							"var data = JSON.parse(responseBody);",
+							"postman.setGlobalVariable(\"new_id_a2\",data.id);",
+							"tests[\"no genera error en el Post\"] = responseCode.code === 200;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Poeta del Pueblo\",\n    \"cover\": \"\",\n    \"releaseDate\": \"2011-08-01T00:00:00-05:00\",\n    \"description\": \"Recopilación de 27 composiciones del cosmos Blades que los bailadores y melómanos han hecho suyas en estos 40 años de presencia de los ritmos y concordias afrocaribeños en múltiples escenarios internacionales. Grabaciones de Blades para la Fania con las orquestas de Pete Rodríguez, Ray Barreto, Fania All Stars y, sobre todo, los grandes éxitos con la Banda de Willie Colón\",\n\t\"genre\": \"Salsa\",\n    \"recordLabel\": \"Fania Records\"\n}"
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/albums",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"albums"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nCrea otro album. \r\n\r\nEl Id es inicializado por la BD y se debe ver en la respuesta. \r\n\r\nEste segundo album se utiliza para probar la petición que consultar todos los albumes\r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
+			},
+			"response": []
+		},
+		{
+			"name": "Crear un músico",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "694741e6-4794-48fd-b32b-d790963ac9b0",
+						"exec": [
+							"var data = JSON.parse(responseBody);",
+							"postman.setGlobalVariable(\"new_id_m\",data.id);",
+							"tests[\"No genera error en el Post\"] = responseCode.code === 200;",
+							"console.log(data.id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Rubén Blades Bellido de Luna\",\n    \"image\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Ruben_Blades_by_Gage_Skidmore.jpg/800px-Ruben_Blades_by_Gage_Skidmore.jpg\",\n    \"description\": \"Es un cantante, compositor, músico, actor, abogado, político y activista panameño. Ha desarrollado gran parte de su carrera artística en la ciudad de Nueva York.\",\n    \"birthDate\": \"1948-07-16T00:00:00-05:00\"\n}"
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/musicians",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"musicians"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo músico. El Id es inicializado por la BD y se debe ver en la respuesta.\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
+			},
+			"response": []
+		},
+		{
+			"name": "Agregar un álbum a un músico",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5295fcb5-7252-463d-b81a-5124c1a067be",
+						"exec": [
+							"tests[\"No genera error en el Post\"] = responseCode.code === 200;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/musicians/{{new_id_m}}/albums/{{new_id_a}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"musicians",
+						"{{new_id_m}}",
+						"albums",
+						"{{new_id_a}}"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nAsocia un álbum a un músico en la aplicación. \r\n\r\nSe envía el Id del álbum y el del músico a asociar en la URL de la petición.\r\n\r\n**Código http esperado: 200**"
+			},
+			"response": []
+		},
+		{
+			"name": "Agregar un álbum que no existe a un músico",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e3c06212-e39e-4bc3-9fd1-8abbd1c29ace",
+						"exec": [
+							"tests[\"No se deberia asociar el músico ya que el álbum no existe.\"] = responseCode.code === 404;",
+							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The album with the given id was not found\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/musicians/{{new_id_m}}/albums/0",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"musicians",
+						"{{new_id_m}}",
+						"albums",
+						"0"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nAsocia un álbum que no existe a un músico en la aplicación. \r\n\r\nSe envía el Id del músico y el del álbum a asociar en la URL de la petición.\r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /albums/0 no existe.\".\r\n\r\n**Código http esperado: 404**"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener un álbum de un músico",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e7e73fe8-8e21-4eae-a1bf-973c5ccfbfbc",
+						"exec": [
+							"console.log(responseBody);",
+							"var data = JSON.parse(responseBody);",
+							"tests[\"No genera error en el Get\"] = responseCode.code === 200;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/musicians/{{new_id_m}}/albums/{{new_id_a}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"musicians",
+						"{{new_id_m}}",
+						"albums",
+						"{{new_id_a}}"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nConsulta un álbum de un músico en la aplicación. \r\n\r\nLa petición no tiene cuerpo.\r\n\r\nSe envía el Id del músico y del álbum a consultar en la URL de la petición.\r\n\r\n**Código http esperado: 200**"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener un álbum que no existe de un músico",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9fe51cc4-6ef5-40d2-bc5f-e1200af00028",
+						"exec": [
+							"tests[\"No se deberia obtener ningun álbum ya que el álbum no existe.\"] = responseCode.code === 404;",
+							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The album with the given id was not found\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/musicians/{{new_id_m}}/albums/0",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"musicians",
+						"{{new_id_m}}",
+						"albums",
+						"0"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nConsulta un álbum que no existe de un músico en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error.\r\n\r\n**Código http esperado: 404**"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener un álbum no asociado de un músico",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "10a04ef5-aca6-43ae-bd0a-b1006aa19487",
+						"exec": [
+							"tests[\"No se puede obtener un álbum que no esta asociado\"] = responseCode.code === 412;",
+							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The album with the given id is not associated to the musician\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/musicians/{{new_id_m}}/albums/{{new_id_a2}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"musicians",
+						"{{new_id_m}}",
+						"albums",
+						"{{new_id_a2}}"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nConsulta un álbum que no esta asociado a un músico en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El álbum no está asociado al músico\".\r\n\r\n**Código http esperado: 412**"
+			},
+			"response": []
+		},
+		{
+			"name": "Asociar álbumes a un músico",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c7c5215a-ed1c-498e-9d19-9f5570cfd17d",
+						"exec": [
+							"tests[\"No genera error en el Put\"] = responseCode.code === 200;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n{\n    \"name\": \"Buscando América\",\n    \"cover\": \"\",\n    \"releaseDate\": \"1984-08-01T00:00:00-05:00\",\n    \"description\": \"Buscando América es el primer álbum de la banda de Rubén Blades y Seis del Solar lanzado en 1984. La producción, bajo el sello Elektra, fusiona diferentes ritmos musicales tales como la salsa, reggae, rock, y el jazz latino. El disco fue grabado en Eurosound Studios en Nueva York entre mayo y agosto de 1983.\",\n    \"genre\": \"Salsa\",\n    \"recordLabel\": \"Elektra\",\n    \"id\": {{new_id_a}}\n},\n{\n    \"name\": \"Poeta del Pueblo\",\n    \"cover\": \"\",\n    \"releaseDate\": \"2011-08-01T00:00:00-05:00\",\n    \"description\": \"Recopilación de 27 composiciones del cosmos Blades que los bailadores y melómanos han hecho suyas en estos 40 años de presencia de los ritmos y concordias afrocaribeños en múltiples escenarios internacionales. Grabaciones de Blades para la Fania con las orquestas de Pete Rodríguez, Ray Barreto, Fania All Stars y, sobre todo, los grandes éxitos con la Banda de Willie Colón\",\n\t\"genre\": \"Salsa\",\n    \"recordLabel\": \"Fania Records\",\n    \"id\": {{new_id_a2}}\n}]"
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/musicians/{{new_id_m}}/albums",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"musicians",
+						"{{new_id_m}}",
+						"albums"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nActualiza la lista de álbumes de un músico existente.\r\n\r\nSe envía el Id en la URL de la petición.\r\n\r\n**Código http esperado: 200**"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener los álbumes de un músico",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "49c94c15-1d54-43ee-adef-aec230710223",
+						"exec": [
+							"var data= JSON.parse(responseBody);",
+							"tests[\"No genera error en el Get\"] = responseCode.code === 200;",
+							"tests[\"vinyls count - artists\"] = data.length >= 1;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/musicians/{{new_id_m}}/albums",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"musicians",
+						"{{new_id_m}}",
+						"albums"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nConsulta los álbumes de un músico en la aplicación. \r\n\r\nLa petición no tiene cuerpo.\r\n\r\nSe envía el Id del músico y el del álbum a consultar en la URL de la petición.\r\n\r\n**Código http esperado: 200**"
+			},
+			"response": []
+		},
+		{
+			"name": "Asociar álbumes que no existen a un músico",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5f1389a0-da68-45bc-90aa-eb08f3c8ac36",
+						"exec": [
+							"tests[\"No se pueden asociar los álbumes ya que estos no existen\"] = responseCode.code === 404;",
+							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The album with the given id was not found\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n{\n    \"name\": \"Buscando América\",\n    \"cover\": \"\",\n    \"releaseDate\": \"1984-08-01T00:00:00-05:00\",\n    \"description\": \"Buscando América es el primer álbum de la banda de Rubén Blades y Seis del Solar lanzado en 1984. La producción, bajo el sello Elektra, fusiona diferentes ritmos musicales tales como la salsa, reggae, rock, y el jazz latino. El disco fue grabado en Eurosound Studios en Nueva York entre mayo y agosto de 1983.\",\n    \"genre\": \"Salsa\",\n    \"recordLabel\": \"Elektra\",\n    \"id\": 0\n}\n]"
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/musicians/{{new_id_m}}/albums",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"musicians",
+						"{{new_id_m}}",
+						"albums"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nActualiza la lista de álbumes de un artista existente con álbumes que no existen. \r\n\r\nSe envía el Id en la URL de la petición.\r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /albums/0 no existe.\".\r\n\r\n**Código http esperado: 404**"
+			},
+			"response": []
+		},
+		{
+			"name": "Borrarle un álbum a un músico",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9510b6cd-b566-4cfa-b16f-9c783800176d",
+						"exec": [
+							"tests[\"No genera error en el Delete\"] = responseCode.code === 204;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/musicians/{{new_id_m}}/albums/{{new_id_a}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"musicians",
+						"{{new_id_m}}",
+						"albums",
+						"{{new_id_a}}"
+					]
+				},
+				"description": "**Release: Paso-5**\n\nBorra la asociación entre un álbum y un músico. Se envían los ids del músico y del álbum creados anteriormente.\n\n**Código HTTP esperado: 204**"
+			},
+			"response": []
+		},
+		{
+			"name": "Borrarle un álbum 2 a un músico",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "dca29117-b352-4fc0-893d-46bfdd4cd9bf",
+						"exec": [
+							"tests[\"No genera error en el Delete\"] = responseCode.code === 204;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/musicians/{{new_id_m}}/albums/{{new_id_a2}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"musicians",
+						"{{new_id_m}}",
+						"albums",
+						"{{new_id_a2}}"
+					]
+				},
+				"description": "**Release: Paso-5**\n\nBorra la asociación entre un álbum y un músico. Se envían los ids del músico y del álbum creados anteriormente.\n\n**Código HTTP esperado: 204**"
+			},
+			"response": []
+		},
+		{
+			"name": "Borrarle un álbum a un músico que no existe",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "91d9959e-4825-4dd7-88e3-3e33b988c765",
+						"exec": [
+							"tests[\"No se deberia eliminar ninguna asociacion ya que el músico no existe\"] = responseCode.code === 404;",
+							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The musician with the given id was not found\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/musicians/0/albums/{{new_id_a}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"musicians",
+						"0",
+						"albums",
+						"{{new_id_a}}"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nBorra la asociación entre un álbum y un músico que no existe en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /musicians/0/albums no existe.\".\r\n\r\n**Código http esperado: 404**"
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar un álbum que no existe a un músico",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "db442b05-4aea-4f64-9db1-a28176069f5e",
+						"exec": [
+							"tests[\"No se deberia eliminar ninguna asociacion ya que el álbum no existe\"] = responseCode.code === 404;",
+							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The album with the given id was not found\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/musicians/{{new_id_m}}/albums/0",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"musicians",
+						"{{new_id_m}}",
+						"albums",
+						"0"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nBorra la asociación entre un álbum que no existe y un músico en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error.\r\n\r\n**Código http esperado: 404**"
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar un álbum",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4f1e4dc3-ca8a-4517-a81e-7e899528fbf4",
+						"exec": [
+							"tests[\"No genera error en el Delete\"] = responseCode.code === 204;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/albums/{{new_id_a}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"albums",
+						"{{new_id_a}}"
+					]
+				},
+				"description": "**Release: Paso-5**\n\nBorra un álbum. Se envía el id del álbum creado anteriormente.\n\n**Código HTTP esperado: 204**"
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar un álbum 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ac2c9e22-f152-46e9-8d4e-206c81e38e7b",
+						"exec": [
+							"tests[\"No genera error en el Delete\"] = responseCode.code === 204;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/albums/{{new_id_a2}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"albums",
+						"{{new_id_a2}}"
+					]
+				},
+				"description": "**Release: Paso-5**\n\nBorra un álbum. Se envía el id del álbum creado anteriormente.\n\n**Código HTTP esperado: 204**"
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar un músico",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b1ff16df-2255-4221-9b63-b026ee61a544",
+						"exec": [
+							"tests[\"No genera error en el Delete\"] = responseCode.code === 204;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/musicians/{{new_id_m}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"musicians",
+						"{{new_id_m}}"
+					]
+				},
+				"description": "**Release: Paso-5**\n\nBorra un músico. Se envía el id del músico creado anteriormente.\n\n**Código HTTP esperado: 204**"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "abcf9e66-ab71-40eb-b132-268e8563ad4d",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "99c46863-220f-4853-9796-88ddc37ae16a",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

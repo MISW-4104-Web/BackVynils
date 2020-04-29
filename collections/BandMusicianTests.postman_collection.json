@@ -1,0 +1,624 @@
+{
+	"info": {
+		"_postman_id": "6cfad6b9-1592-47d7-97b1-ec1f90827dc5",
+		"name": "BandMusicianTests",
+		"description": "Colección de pruebas sobre el recurso ArtistVinyl",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Crear una banda",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "694741e6-4794-48fd-b32b-d790963ac9b0",
+						"exec": [
+							"var data = JSON.parse(responseBody);",
+							"postman.setGlobalVariable(\"new_id_b\",data.id);",
+							"tests[\"No genera error en el Post\"] = responseCode.code === 200;",
+							"console.log(data.id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Queen\",\n    \"image\": \"https://upload.wikimedia.org/wikipedia/commons/7/7c/Queen_logo.svg\",\n    \"description\": \"Queen es una banda británica de rock formada en 1970 en Londres por el cantante Freddie Mercury, el guitarrista Brian May, el baterista Roger Taylor y el bajista John Deacon. Si bien el grupo ha presentado bajas de dos de sus miembros (Mercury, fallecido en 1991, y Deacon, retirado en 1997), los integrantes restantes, May y Taylor, continúan trabajando bajo el nombre Queen, por lo que la banda aún se considera activa.\",\n    \"creationDate\":\"1970-01-01T00:00:00-05:00\"\n}"
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/bands",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"bands"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo artista. El Id es inicializado por la BD y se debe ver en la respuesta.\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
+			},
+			"response": []
+		},
+		{
+			"name": "Crear un músico",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "694741e6-4794-48fd-b32b-d790963ac9b0",
+						"exec": [
+							"var data = JSON.parse(responseBody);",
+							"postman.setGlobalVariable(\"new_id_m\",data.id);",
+							"tests[\"No genera error en el Post\"] = responseCode.code === 200;",
+							"console.log(data.id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Freddie Mercury\",\n    \"image\": \"https://upload.wikimedia.org/wikipedia/commons/e/ef/Freddie_Mercury_performing_in_New_Haven%2C_CT%2C_November_1977.jpg\",\n    \"description\": \"Fue un cantante, compositor, pianista, diseñador gráfico y músico británico de origen parsi e indio​ conocido por haber sido el vocalista principal de la banda de rock Queen.\",\n    \"birthDate\": \"1946-09-05T00:00:00-05:00\"\n}"
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/musicians",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"musicians"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo músico. El Id es inicializado por la BD y se debe ver en la respuesta.\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
+			},
+			"response": []
+		},
+		{
+			"name": "Crear un músico 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "694741e6-4794-48fd-b32b-d790963ac9b0",
+						"exec": [
+							"var data = JSON.parse(responseBody);",
+							"postman.setGlobalVariable(\"new_id_m2\",data.id);",
+							"tests[\"No genera error en el Post\"] = responseCode.code === 200;",
+							"console.log(data.id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Rubén Blades Bellido de Luna\",\n    \"image\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Ruben_Blades_by_Gage_Skidmore.jpg/800px-Ruben_Blades_by_Gage_Skidmore.jpg\",\n    \"description\": \"Es un cantante, compositor, músico, actor, abogado, político y activista panameño. Ha desarrollado gran parte de su carrera artística en la ciudad de Nueva York.\",\n    \"birthDate\": \"1948-07-16T00:00:00-05:00\"\n}"
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/musicians",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"musicians"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo músico. El Id es inicializado por la BD y se debe ver en la respuesta.\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
+			},
+			"response": []
+		},
+		{
+			"name": "Agregar un músico a una banda",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5295fcb5-7252-463d-b81a-5124c1a067be",
+						"exec": [
+							"tests[\"No genera error en el Post\"] = responseCode.code === 200;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/bands/{{new_id_b}}/musicians/{{new_id_m}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"bands",
+						"{{new_id_b}}",
+						"musicians",
+						"{{new_id_m}}"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nAsocia un vinilo a un artista en la aplicación. \r\n\r\nSe envía el Id del artista y el del vinilo a asociar en la URL de la petición.\r\n\r\n**Código http esperado: 200**"
+			},
+			"response": []
+		},
+		{
+			"name": "Agregar un músico que no existe a una banda",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e3c06212-e39e-4bc3-9fd1-8abbd1c29ace",
+						"exec": [
+							"tests[\"No se deberia asociar el músico ya que no existe.\"] = responseCode.code === 404;",
+							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The musician with the given id was not found\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/bands/{{new_id_b}}/musicians/0",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"bands",
+						"{{new_id_b}}",
+						"musicians",
+						"0"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nAsocia un músico ue no existe a una banda en la aplicación. \r\n\r\nSe envía el Id de la banda y el del músico a asociar en la URL de la petición.\r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /musicians/0 no existe.\".\r\n\r\n**Código http esperado: 404**"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener un músico de una banda",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e7e73fe8-8e21-4eae-a1bf-973c5ccfbfbc",
+						"exec": [
+							"console.log(responseBody);",
+							"var data = JSON.parse(responseBody);",
+							"tests[\"No genera error en el Get\"] = responseCode.code === 200;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/bands/{{new_id_b}}/musicians/{{new_id_m}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"bands",
+						"{{new_id_b}}",
+						"musicians",
+						"{{new_id_m}}"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nConsulta una banda de un músico en la aplicación. \r\n\r\nLa petición no tiene cuerpo.\r\n\r\nSe envía el Id de la banda y del músico a consultar en la URL de la petición.\r\n\r\n**Código http esperado: 200**"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener un músico que no existe de una banda",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9fe51cc4-6ef5-40d2-bc5f-e1200af00028",
+						"exec": [
+							"tests[\"No se deberia obtener ninguna banda ya que el músico no existe.\"] = responseCode.code === 404;",
+							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The musician with the given id was not found\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/bands/{{new_id_b}}/musicians/0",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"bands",
+						"{{new_id_b}}",
+						"musicians",
+						"0"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nConsulta un músico que no existe de una banda en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error.\r\n\r\n**Código http esperado: 404**"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener un músico no asociado a una banda",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "10a04ef5-aca6-43ae-bd0a-b1006aa19487",
+						"exec": [
+							"tests[\"No se puede obtener un músico que no esta asociado\"] = responseCode.code === 412;",
+							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The musician with the given id is not associated to the band\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/bands/{{new_id_b}}/musicians/{{new_id_m2}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"bands",
+						"{{new_id_b}}",
+						"musicians",
+						"{{new_id_m2}}"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nConsulta un músico que no esta asociado a una banda en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El músico no está asociado a la banda\".\r\n\r\n**Código http esperado: 412**"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener los músicos de una banda",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "49c94c15-1d54-43ee-adef-aec230710223",
+						"exec": [
+							"var data= JSON.parse(responseBody);",
+							"tests[\"No genera error en el Get\"] = responseCode.code === 200;",
+							"tests[\"vinyls count - artists\"] = data.length >= 1;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/bands/{{new_id_b}}/musicians",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"bands",
+						"{{new_id_b}}",
+						"musicians"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nConsulta los vinilos de un artista en la aplicación. \r\nLa petición no tiene cuerpo.\r\n\r\nSe envía el Id del artista y el del vinilo a consultar en la URL de la petición.\r\n\r\n**Código http esperado: 200**"
+			},
+			"response": []
+		},
+		{
+			"name": "Borrarle un musíco a una banda",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9510b6cd-b566-4cfa-b16f-9c783800176d",
+						"exec": [
+							"tests[\"No genera error en el Delete\"] = responseCode.code === 204;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/bands/{{new_id_b}}/musicians/{{new_id_m}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"bands",
+						"{{new_id_b}}",
+						"musicians",
+						"{{new_id_m}}"
+					]
+				},
+				"description": "**Release: Paso-5**\n\nBorra la asociación entre un músico y una banda. Se envían los ids del músico y de la banda creados anteriormente.\n\n**Código HTTP esperado: 204**"
+			},
+			"response": []
+		},
+		{
+			"name": "Borrarle un músico a una banda que no existe",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "91d9959e-4825-4dd7-88e3-3e33b988c765",
+						"exec": [
+							"tests[\"No se deberia eliminar ninguna asociacion ya que la banda no existe\"] = responseCode.code === 404;",
+							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The band with the given id was not found\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/bands/0/musicians/{{new_id_m}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"bands",
+						"0",
+						"musicians",
+						"{{new_id_m}}"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nBorra la asociación entre un músico y una banda que no existe en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /bands/0/musicians no existe.\".\r\n\r\n**Código http esperado: 404**"
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar un músico que no existe a una banda",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "db442b05-4aea-4f64-9db1-a28176069f5e",
+						"exec": [
+							"tests[\"No se deberia eliminar ninguna asociacion ya que el músico no existe\"] = responseCode.code === 404;",
+							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The musician with the given id was not found\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/bands/{{new_id_b}}/musicians/0",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"bands",
+						"{{new_id_b}}",
+						"musicians",
+						"0"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nBorra la asociación entre un músico que no existe y una banda en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error.\r\n\r\n**Código http esperado: 404**"
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar un músico",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4f1e4dc3-ca8a-4517-a81e-7e899528fbf4",
+						"exec": [
+							"tests[\"No genera error en el Delete\"] = responseCode.code === 204;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/musicians/{{new_id_m}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"musicians",
+						"{{new_id_m}}"
+					]
+				},
+				"description": "**Release: Paso-5**\n\nBorra un músico. Se envía el id del músico creado anteriormente.\n\n**Código HTTP esperado: 204**"
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar un músico 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4f1e4dc3-ca8a-4517-a81e-7e899528fbf4",
+						"exec": [
+							"tests[\"No genera error en el Delete\"] = responseCode.code === 204;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/musicians/{{new_id_m2}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"musicians",
+						"{{new_id_m2}}"
+					]
+				},
+				"description": "**Release: Paso-5**\n\nBorra un músico. Se envía el id del músico creado anteriormente.\n\n**Código HTTP esperado: 204**"
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar una banda",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b1ff16df-2255-4221-9b63-b026ee61a544",
+						"exec": [
+							"tests[\"No genera error en el Delete\"] = responseCode.code === 204;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/bands/{{new_id_b}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"bands",
+						"{{new_id_b}}"
+					]
+				},
+				"description": "**Release: Paso-5**\n\nBorra una banda. Se envía el id de la banda creada anteriormente.\n\n**Código HTTP esperado: 204**"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "abcf9e66-ab71-40eb-b132-268e8563ad4d",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "99c46863-220f-4853-9796-88ddc37ae16a",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

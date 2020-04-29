@@ -1,8 +1,9 @@
-import { Entity, Column, OneToMany } from 'typeorm';
+import { Entity, Column, OneToMany, ChildEntity } from 'typeorm';
 import { Performer } from '../performer/performer.entity';
 import { Musician } from '../musician/musician.entity';
 
-@Entity()
+//@Entity()
+@ChildEntity()
 export class Band extends Performer {
 
     @Column()
