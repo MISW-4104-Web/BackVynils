@@ -5,7 +5,6 @@ import { Repository } from 'typeorm';
 import { BandDTO } from './band.dto';
 import { BusinnesLogicException, BusinessError } from '../shared/errors/business-errors';
 import { Musician } from '../musician/musician.entity';
-import { MusicianDTO } from '../musician/musician.dto';
 
 @Injectable()
 export class BandService {
@@ -20,7 +19,7 @@ export class BandService {
         return await this.bandRepository.find();
     }
 
-    async findOne(id: number): Promise<Band> {
+    async findOne(id: number): Promise<BandDTO> {
         const band = await this.bandRepository.findOne(id);
         if (!band)
             throw new BusinnesLogicException("The band with the given id was not found", BusinessError.NOT_FOUND)
@@ -36,7 +35,7 @@ export class BandService {
         return await this.bandRepository.save(band);
     }
 
-    async update(id: number, bandDTO: BandDTO) {
+    async update(id: number, bandDTO: BandDTO): Promise<BandDTO> {
 
         const band = await this.bandRepository.findOne(id);
         if (!band)

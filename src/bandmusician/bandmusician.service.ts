@@ -8,7 +8,7 @@ import { BusinnesLogicException, BusinessError } from '../shared/errors/business
 import { BandDTO } from '../band/band.dto';
 
 @Injectable()
-export class BandmusicianService {
+export class BandMusicianService {
 
     constructor(
         @InjectRepository(Band)
@@ -31,7 +31,7 @@ export class BandmusicianService {
         return await this.musicianRepository.save(musician);
     }
 
-    async findBandByBandIdMusicianId(bandId: number, musicianId: number) {
+    async findBandByBandIdMusicianId(bandId: number, musicianId: number): Promise<MusicianDTO> {
         const band = await this.bandRepository.findOne(bandId);
         if (!band)
             throw new BusinnesLogicException("The band with the given id was not found", BusinessError.NOT_FOUND)

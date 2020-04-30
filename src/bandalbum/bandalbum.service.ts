@@ -16,7 +16,7 @@ export class BandAlbumService {
         @InjectRepository(Album)
         private readonly albumRepository: Repository<Album>) { }
 
-    async addBandAlbum(bandId: number, albumId: number): Promise<Album> {
+    async addBandAlbum(bandId: number, albumId: number): Promise<AlbumDTO> {
         const band = await this.bandRepository.findOne(bandId);
         if (!band)
             throw new BusinnesLogicException("The band with the given id was not found", BusinessError.NOT_FOUND)
@@ -29,7 +29,7 @@ export class BandAlbumService {
         return await this.albumRepository.save(album);
     }
 
-    async findAlbumsByBandIdAlbumId(bandId: number, albumId: number): Promise<Album> {
+    async findAlbumsByBandIdAlbumId(bandId: number, albumId: number): Promise<AlbumDTO> {
         const band = await this.bandRepository.findOne(bandId, { relations: ["albums"] });
         if (!band)
             throw new BusinnesLogicException("The band with the given id was not found", BusinessError.NOT_FOUND)
@@ -82,7 +82,7 @@ export class BandAlbumService {
         return band.albums;
     }
 
-    async deleteAlbumToBand(bandId: number, albumId: number): Promise<Band> {
+    async deleteAlbumToBand(bandId: number, albumId: number): Promise<BandDTO> {
         const band = await this.bandRepository.findOne(bandId, { relations: ["albums"] });
         if (!band)
             throw new BusinnesLogicException("The band with the given id was not found", BusinessError.NOT_FOUND)

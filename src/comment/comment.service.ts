@@ -6,7 +6,6 @@ import { CommentDTO } from './comment.dto';
 import { Comment } from './comment.entity';
 import { Album } from '../album/album.entity';
 import { Collector } from '../collector/collector.entity';
-import { AlbumDTO } from '../album/album.dto';
 
 @Injectable()
 export class CommentService {
@@ -63,7 +62,7 @@ export class CommentService {
         return await this.commentRepository.save(comment);
     }
 
-    async updateComment(albumId: number, commentId: number, commentDTO: CommentDTO) {
+    async updateComment(albumId: number, commentId: number, commentDTO: CommentDTO): Promise<CommentDTO> {
 
         const album = await this.albumRepository.findOne(albumId, { relations: ["comments"] });
         if (!album)
@@ -105,35 +104,4 @@ export class CommentService {
 
         return await this.albumRepository.save(album);
     }
-
-
-    /*
-    async findAll(): Promise<CommentDTO[]> {
-        return await this.collectorRepository.find();
-    }
-
-    async findOne(id: number): Promise<Comment> {
-        const collector = await this.collectorRepository.findOne(id);
-        if (!collector)
-            throw new BusinnesLogicException("The collector with the given id was not found", BusinessError.NOT_FOUND)
-        return collector;
-    }
-
-    async create(collectorDTO: CommentDTO): Promise<CommentDTO> {
-        const collector = new Comment();
-        collector.name = collectorDTO.name;
-        collector.telephone = collectorDTO.telephone;
-        collector.email = collectorDTO.email;
-        return await this.collectorRepository.save(collector);
-    }
-
-    
-
-    async delete(id: number) {
-        const collector = await this.collectorRepository.findOne(id);
-        if (!collector)
-            throw new BusinnesLogicException("The collector with the given id was not found", BusinessError.NOT_FOUND)
-        return await this.collectorRepository.remove(collector);
-    }*/
-
 }

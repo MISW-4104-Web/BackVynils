@@ -1,19 +1,18 @@
 import { Controller, Param, Body, UseInterceptors, Post, HttpCode, Get, Delete } from '@nestjs/common';
-import { PerformerprizeService } from './performerprize.service';
+import { PerformerPrizeService } from './performerprize.service';
 import { PerformerPrizeDTO } from './performerprize.dto';
 import { BusinessErrorsInterceptor } from '../interceptors/interceptor';
 
 @Controller('prizes')
 @UseInterceptors(BusinessErrorsInterceptor)
-export class PerformerprizeController {
+export class PerformerPrizeController {
 
-    constructor(private readonly performerPrizeService: PerformerprizeService) { }
+    constructor(private readonly performerPrizeService: PerformerPrizeService) { }
 
     @Get(':prizeId/performers')
     async findArtistPrize(@Param('prizeId') prizeId) {
         return await this.performerPrizeService.findPerformerPrize(prizeId);
     }
-
 
     @Post(':prizeId/musicians/:musicianId')
     @HttpCode(200)

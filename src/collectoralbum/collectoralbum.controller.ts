@@ -9,7 +9,7 @@ export class CollectorAlbumController {
 
     constructor(private readonly collectorAlbumService: CollectorAlbumService) { }
 
-    @Get(':collectorId/albums/')
+    @Get(':collectorId/albums')
     async findAlbumsByCollectorId(@Param('collectorId') collectorId) {
         return await this.collectorAlbumService.findAlbumsByCollectorId(collectorId);
     }

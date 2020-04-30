@@ -2,7 +2,6 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Collector } from '../collector/collector.entity';
 import { Repository } from 'typeorm';
-import { AlbumDTO } from '../album/album.dto';
 import { BusinnesLogicException, BusinessError } from '../shared/errors/business-errors';
 import { Album } from '../album/album.entity';
 import { CollectorAlbum } from './collectoralbum.entity';
@@ -82,7 +81,7 @@ export class CollectorAlbumService {
         return await this.collectorAlbumRepository.save(collectoralbum)
     }
 
-    async deleteAlbumCollector(collectorId: number, albumId: number): Promise<CollectorAlbum> {
+    async deleteAlbumCollector(collectorId: number, albumId: number): Promise<CollectorAlbumDTO> {
         const collector = await this.collectorRepository.findOne(collectorId, { relations: ["collectorAlbums"] });
         if (!collector)
             throw new BusinnesLogicException("The collector with the given id was not found", BusinessError.NOT_FOUND)

@@ -3,7 +3,6 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Album } from './album.entity';
 import { Repository } from 'typeorm';
 import { AlbumDTO } from './album.dto';
-import { AlbumDetailDTO } from './album.detail.dto';
 import { BusinnesLogicException, BusinessError } from '../shared/errors/business-errors';
 
 @Injectable()

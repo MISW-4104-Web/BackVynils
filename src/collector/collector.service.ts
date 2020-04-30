@@ -16,7 +16,7 @@ export class CollectorService {
         return await this.collectorRepository.find();
     }
 
-    async findOne(id: number): Promise<Collector> {
+    async findOne(id: number): Promise<CollectorDTO> {
         const collector = await this.collectorRepository.findOne(id);
         if (!collector)
             throw new BusinnesLogicException("The collector with the given id was not found", BusinessError.NOT_FOUND)

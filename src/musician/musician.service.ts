@@ -15,7 +15,7 @@ export class MusicianService {
         return await this.musicianRepository.find();
     }
 
-    async findOne(id: number): Promise<Musician> {
+    async findOne(id: number): Promise<MusicianDTO> {
         const musician = await this.musicianRepository.findOne(id);
         if (!musician)
             throw new BusinnesLogicException("The musician with the given id was not found", BusinessError.NOT_FOUND)
@@ -31,7 +31,7 @@ export class MusicianService {
         return await this.musicianRepository.save(musician);
     }
 
-    async update(id: number, musicianDTO: MusicianDTO) {
+    async update(id: number, musicianDTO: MusicianDTO): Promise<MusicianDTO> {
 
         const musician = await this.musicianRepository.findOne(id);
         if (!musician)

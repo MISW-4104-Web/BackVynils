@@ -6,10 +6,9 @@ import { Performer } from '../performer/performer.entity';
 import { BusinnesLogicException, BusinessError } from '../shared/errors/business-errors';
 import { PerformerPrizeDTO } from './performerprize.dto';
 import { PerformerPrize } from './performerprize.entity';
-import { throws } from 'assert';
 
 @Injectable()
-export class PerformerprizeService {
+export class PerformerPrizeService {
 
     constructor(
         @InjectRepository(Prize)

@@ -3,7 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 
 import { Prize } from './prize.entity';
-import { PrizeDto } from './prize.dto';
+import { PrizeDTO } from './prize.dto';
 
 import { BusinnesLogicException, BusinessError } from "../shared/errors/business-errors";
 
@@ -13,11 +13,11 @@ export class PrizeService {
         @InjectRepository(Prize)
         private readonly prizeRepository: Repository<Prize>) { }
 
-    async findAll(): Promise<Prize[]> {
+    async findAll(): Promise<PrizeDTO[]> {
         return await this.prizeRepository.find();
     }
 
-    async findOne(id: number): Promise<Prize> {
+    async findOne(id: number): Promise<PrizeDTO> {
         const prize = await this.prizeRepository.findOne(id);
         if (!prize)
             throw new BusinnesLogicException("The prize with the given id was not found", BusinessError.NOT_FOUND)
@@ -25,24 +25,24 @@ export class PrizeService {
         return prize;
     }
 
-    async create(prizeDto: PrizeDto): Promise<Prize> {
+    async create(prizeDTO: PrizeDTO): Promise<PrizeDTO> {
 
         let newPrize = new Prize();
-        newPrize.name = prizeDto.name;
-        newPrize.description = prizeDto.description
-        newPrize.organization = prizeDto.organization;
+        newPrize.name = prizeDTO.name;
+        newPrize.description = prizeDTO.description
+        newPrize.organization = prizeDTO.organization;
 
         return await this.prizeRepository.save(newPrize)
     }
 
-    async update(id: number, prizeDto: PrizeDto) {
+    async update(id: number, prizeDTO: PrizeDTO): Promise<PrizeDTO> {
         const prize = await this.prizeRepository.findOne(id);
         if (!prize)
             throw new BusinnesLogicException("The prize with the given id was not found", BusinessError.NOT_FOUND)
 
-        prize.name = prizeDto.name;
-        prize.description = prizeDto.description;
-        prize.organization = prizeDto.organization;
+        prize.name = prizeDTO.name;
+        prize.description = prizeDTO.description;
+        prize.organization = prizeDTO.organization;
 
         return await this.prizeRepository.save(prize);
     }

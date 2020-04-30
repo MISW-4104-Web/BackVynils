@@ -1,12 +1,12 @@
 import { Controller, Post, HttpCode, Param, UseInterceptors, Get, Delete } from '@nestjs/common';
-import { BandmusicianService } from './bandmusician.service';
+import { BandMusicianService } from './bandmusician.service';
 import { BusinessErrorsInterceptor } from '../interceptors/interceptor';
 
 @Controller('bands')
 @UseInterceptors(BusinessErrorsInterceptor)
-export class BandmusicianController {
+export class BandMusicianController {
 
-    constructor(private readonly bandMusicianService: BandmusicianService) { }
+    constructor(private readonly bandMusicianService: BandMusicianService) { }
 
     @Post(':bandId/musicians/:musicianId')
     @HttpCode(200)
