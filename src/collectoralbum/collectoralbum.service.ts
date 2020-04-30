@@ -96,7 +96,6 @@ export class CollectorAlbumService {
         if (!collectoralbum)
             throw new BusinnesLogicException("The album is not associated to the collector", BusinessError.NOT_FOUND)
 
-
         return await this.collectorAlbumRepository.remove(collectoralbum)
     }
 

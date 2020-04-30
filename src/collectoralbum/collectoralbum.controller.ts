@@ -1,4 +1,4 @@
-import { Controller, Post, HttpCode, Param, Body, UseInterceptors, Get, Put } from '@nestjs/common';
+import { Controller, Post, HttpCode, Param, Body, UseInterceptors, Get, Put, Delete } from '@nestjs/common';
 import { CollectorAlbumDTO } from './collectoralbum.dto';
 import { BusinessErrorsInterceptor } from '../interceptors/interceptor';
 import { CollectorAlbumService } from './collectoralbum.service';
@@ -28,5 +28,12 @@ export class CollectorAlbumController {
     @Put(':collectorId/albums/:albumId')
     async updateAlbumCollector(@Param('collectorId') collectorId: number, @Param('albumId') albumId: number, @Body() collectorAlbumDTO: CollectorAlbumDTO) {
         return await this.collectorAlbumService.updateAlbumCollector(collectorId, albumId, collectorAlbumDTO);
+    }
+
+    @Delete(':collectorId/albums/:albumId')
+    @HttpCode(204)
+    async deleteAlbumCollector(@Param('collectorId') collectorId: number,
+        @Param('albumId') albumId: number) {
+        return await this.collectorAlbumService.deleteAlbumCollector(collectorId, albumId);
     }
 }

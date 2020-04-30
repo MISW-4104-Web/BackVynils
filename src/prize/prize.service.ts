@@ -48,7 +48,7 @@ export class PrizeService {
     }
 
     async delete(id: number) {
-        const prize = await this.prizeRepository.findOne(id, { relations: ["artist"] });
+        const prize = await this.prizeRepository.findOne(id);
 
         if (!prize)
             throw new BusinnesLogicException("The prize with the given id was not found", BusinessError.NOT_FOUND)
