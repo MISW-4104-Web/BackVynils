@@ -1,0 +1,778 @@
+{
+	"info": {
+		"_postman_id": "558cffa6-c2d6-4a07-9274-d9fcf310ca8b",
+		"name": "Comment Tests",
+		"description": "Colección de pruebas sobre el recurso Review",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Crear un album",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "304084ed-d326-4e9b-b66a-8c2c95b18e0b",
+						"exec": [
+							"var data = JSON.parse(responseBody);",
+							"postman.setGlobalVariable(\"new_id_a\",data.id);",
+							"tests[\"no genera error en el Post\"] = responseCode.code === 200;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Buscando América\",\n    \"cover\": \"\",\n    \"releaseDate\": \"1984-08-01T00:00:00-05:00\",\n    \"description\": \"Buscando América es el primer álbum de la banda de Rubén Blades y Seis del Solar lanzado en 1984. La producción, bajo el sello Elektra, fusiona diferentes ritmos musicales tales como la salsa, reggae, rock, y el jazz latino. El disco fue grabado en Eurosound Studios en Nueva York entre mayo y agosto de 1983.\",\n    \"genre\": \"Salsa\",\n    \"recordLabel\": \"Sony Music\"\n}"
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/albums",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"albums"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo album. El Id es inicializado por la BD y se debe ver en la respuesta. \r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
+			},
+			"response": []
+		},
+		{
+			"name": "Crear un colecionista",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "694741e6-4794-48fd-b32b-d790963ac9b0",
+						"exec": [
+							"var data = JSON.parse(responseBody);",
+							"postman.setGlobalVariable(\"new_id_c\",data.id);",
+							"tests[\"No genera error en el Post\"] = responseCode.code === 200;",
+							"console.log(data.id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Jaime Andrés Monsalve\",\n    \"telephone\": \"3102178976\",\n    \"email\": \"j.monsalve@gmail.com\"\n}"
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/collectors",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"collectors"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo coleccionista. El Id es inicializado por la BD y se debe ver en la respuesta.\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
+			},
+			"response": []
+		},
+		{
+			"name": "Crear un coleccionista 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "edca8864-fbb2-420c-a95d-fe433ad517cc",
+						"exec": [
+							"var data = JSON.parse(responseBody);",
+							"postman.setGlobalVariable(\"new_id_c2\",data.id);",
+							"tests[\"No genera error en el Post\"] = responseCode.code === 200;",
+							"console.log(data.id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"María Alejandra Palacios\",\n    \"telephone\": \"3502889087\",\n    \"email\": \"j.palacios@outlook.es\"\n}"
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/collectors",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"collectors"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo coleccionista. El Id es inicializado por la BD y se debe ver en la respuesta.\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
+			},
+			"response": []
+		},
+		{
+			"name": "Crearle un comentario a un álbum",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "09babbb4-d9e9-471a-ad23-3ce177333cad",
+						"exec": [
+							"var data = JSON.parse(responseBody);",
+							"postman.setGlobalVariable(\"new_id_cm\",data.id);",
+							"tests[\"no genera error en el Post\"] = responseCode.code === 200;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"description\": \"It is an amazing album\",\n    \"rating\": 5,\n    \"collector\": {\"id\":{{new_id_c}}}\n}"
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/albums/{{new_id_a}}/comments",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"albums",
+						"{{new_id_a}}",
+						"comments"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo comentario. El Id es inicializado por la BD y se debe ver en la respuesta. \r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
+			},
+			"response": []
+		},
+		{
+			"name": "Crearle un comentario a un álbum 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "09babbb4-d9e9-471a-ad23-3ce177333cad",
+						"exec": [
+							"var data = JSON.parse(responseBody);",
+							"postman.setGlobalVariable(\"new_id_cm2\",data.id);",
+							"tests[\"no genera error en el Post\"] = responseCode.code === 200;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"description\": \"This album is one of my favourites\",\n    \"rating\": 5,\n    \"collector\": {\"id\":{{new_id_c2}}}\n}"
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/albums/{{new_id_a}}/comments",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"albums",
+						"{{new_id_a}}",
+						"comments"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo comentario. El Id es inicializado por la BD y se debe ver en la respuesta. \r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
+			},
+			"response": []
+		},
+		{
+			"name": "Crearle un comentario a un álbum que no existe",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "09babbb4-d9e9-471a-ad23-3ce177333cad",
+						"exec": [
+							"tests[\"No se puede asociar un comentario a un álbum que no existe.\"] = responseCode.code === 404;",
+							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The album with the given id was not found\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"description\": \"It is an amazing album\",\n    \"rating\": 5,\n    \"collector\": {\"id\":{{new_id_c2}}}\n}"
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/albums/0/comments",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"albums",
+						"0",
+						"comments"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo comentario. El Id es inicializado por la BD y se debe ver en la respuesta. \r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener los comentarios de un álbum",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "030da90b-93b3-4d13-b4e8-db57d0af4c07",
+						"exec": [
+							"var data= JSON.parse(responseBody);",
+							"tests[\"no genera error en el Get All\"] = responseCode.code === 200;",
+							"tests[\"reviews count\"] = data.length >= 0;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/albums/{{new_id_a}}/comments",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"albums",
+						"{{new_id_a}}",
+						"comments"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nConsulta los comentarios de un álbum en la aplicación. \r\nLa petición no tiene cuerpo.\r\n\r\nSe envía el Id del álbum a consultar en la URL de la petición.\r\n\r\n**Código http esperado: 200**"
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener un comentario de un álbum",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "15578bb7-15b6-4871-93b6-559ea819e22c",
+						"exec": [
+							"console.log(responseBody);",
+							"var data = JSON.parse(responseBody);",
+							"tests[\"no genera error en el Get\"] = responseCode.code === 200;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/albums/{{new_id_a}}/comments/{{new_id_cm}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"albums",
+						"{{new_id_a}}",
+						"comments",
+						"{{new_id_cm}}"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nConsulta un comentario de un álbum en la aplicación. \r\n\r\nLa petición no tiene cuerpo.\r\n\r\nSe envía el Id del álbum y del comentario a consultar en la URL de la petición.\r\n\r\n**Código http esperado: 200**"
+			},
+			"response": []
+		},
+		{
+			"name": "Editarle un comentario a un álbum",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "84b4ef5d-3e7d-4a61-80f4-231125db4e8f",
+						"exec": [
+							"console.log(responseBody);",
+							"var data = JSON.parse(responseBody);",
+							"tests[\"no genera error en el Put\"] = responseCode.code === 200;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"description\": \"It is the most amazing album\",\n    \"rating\": 5,\n    \"collector\": {\"id\":{{new_id_c}}}\n}"
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/albums/{{new_id_a}}/comments/{{new_id_cm}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"albums",
+						"{{new_id_a}}",
+						"comments",
+						"{{new_id_cm}}"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nActualiza un comentario a un álbum existente. Se envían los Ids de las entidades asociar en la URL de la petición.\r\n\r\n**Código http esperado: 200**"
+			},
+			"response": []
+		},
+		{
+			"name": "Editarle un comentario que no existe a un álbum",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "02be10e6-750b-4b74-95e7-d927a166ec02",
+						"exec": [
+							"tests[\"No se puede editar un comentario que no existe.\"] = responseCode.code === 404;",
+							"let id = pm.variables.get(\"new_id_b\");",
+							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The comment with the given id was not found\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"description\": \"It is the most amazing album\",\n    \"rating\": 5,\n    \"collector\": {\"id\":{{new_id_c}}}\n}"
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/albums/{{new_id_a}}/comments/0",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"albums",
+						"{{new_id_a}}",
+						"comments",
+						"0"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nEdita un comentario que no existe a un álbum. \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /comments/0 no existe.\".\r\n\r\n**Código HTTP esperado: 404**"
+			},
+			"response": []
+		},
+		{
+			"name": "Editarle un comentario a un álbum que no existe",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ce6fc66f-cb19-4e0d-bc0a-aff100e295ee",
+						"exec": [
+							"tests[\"No se puede editar una comentario sobre un álbum que no existe.\"] = responseCode.code === 404;",
+							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The album with the given id was not found\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"review name\",\n    \"source\": \"review source\"\n}"
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/albums/0/comments/{{new_id_cm}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"albums",
+						"0",
+						"comments",
+						"{{new_id_cm}}"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nEdita un comentario a un álbum que no existe.\r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /albums/0 no existe.\".\r\n\r\n**Código HTTP esperado: 404**"
+			},
+			"response": []
+		},
+		{
+			"name": "Borrarle un comentario que no existe a un álbum",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "edb58a8e-9d1a-4d6f-9942-6fe3c8a169e9",
+						"exec": [
+							"tests[\"No se puede borrar un comentario que no existe.\"] = responseCode.code === 404;",
+							"let id = pm.variables.get(\"new_id_b\");",
+							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The comment with the given id was not found\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/albums/{{new_id_a}}/comments/0",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"albums",
+						"{{new_id_a}}",
+						"comments",
+						"0"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nBorra un comentario que no existe en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error.\r\n\r\n**Código http esperado: 404**"
+			},
+			"response": []
+		},
+		{
+			"name": "Borrarle un comentario a un álbum que no existe",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0c199000-a389-4706-8406-5cdc8f12186b",
+						"exec": [
+							"tests[\"No se puede borrar un comentario sobre un álbum que no existe.\"] = responseCode.code === 404;",
+							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The album with the given id was not found\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/albums/0/comments/{{new_id_cm}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"albums",
+						"0",
+						"comments",
+						"{{new_id_cm}}"
+					]
+				},
+				"description": "**Release: Paso-5**\r\n\r\nBorra un comentario a un álbum que no existe en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /albums/0/comments no existe.\".\r\n\r\n**Código http esperado: 404**"
+			},
+			"response": []
+		},
+		{
+			"name": "Borrarle un comentario a un álbum",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2bb9aa81-6adb-4c8d-b7cd-20f8c7301f8d",
+						"exec": [
+							"tests[\"no genera error en el Delete\"] = responseCode.code === 204;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/albums/{{new_id_a}}/comments/{{new_id_cm}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"albums",
+						"{{new_id_a}}",
+						"comments",
+						"{{new_id_cm}}"
+					]
+				},
+				"description": "**Release: Paso-5**\n\nBorra un comentario asociado a un álbum. Se envían los ids del comentario y el álbum creados anteriormente.\n\n**Código HTTP esperado: 204**"
+			},
+			"response": []
+		},
+		{
+			"name": "Borrarle un comentario a un álbum 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2bb9aa81-6adb-4c8d-b7cd-20f8c7301f8d",
+						"exec": [
+							"tests[\"no genera error en el Delete\"] = responseCode.code === 204;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/albums/{{new_id_a}}/comments/{{new_id_cm2}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"albums",
+						"{{new_id_a}}",
+						"comments",
+						"{{new_id_cm2}}"
+					]
+				},
+				"description": "**Release: Paso-5**\n\nBorra un comentario asociado a un álbum. Se envían los ids del comentario y el álbum creados anteriormente.\n\n**Código HTTP esperado: 204**"
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar un coleccionista",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2ec74fba-bc15-4973-99bd-0c1a86a28a2e",
+						"exec": [
+							"tests[\"No genera error en el Delete\"] = responseCode.code === 204;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/collectors/{{new_id_c}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"collectors",
+						"{{new_id_c}}"
+					]
+				},
+				"description": "**Release: Paso-5**\n\nBorra un álbum. Se envía el id del álbum creado anteriormente.\n\n**Código HTTP esperado: 204**"
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar un coleccionista 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2ec74fba-bc15-4973-99bd-0c1a86a28a2e",
+						"exec": [
+							"tests[\"No genera error en el Delete\"] = responseCode.code === 204;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/collectors/{{new_id_c2}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"collectors",
+						"{{new_id_c2}}"
+					]
+				},
+				"description": "**Release: Paso-5**\n\nBorra un álbum. Se envía el id del álbum creado anteriormente.\n\n**Código HTTP esperado: 204**"
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar un álbum",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2ec74fba-bc15-4973-99bd-0c1a86a28a2e",
+						"exec": [
+							"tests[\"No genera error en el Delete\"] = responseCode.code === 204;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/albums/{{new_id_a}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"albums",
+						"{{new_id_a}}"
+					]
+				},
+				"description": "**Release: Paso-5**\n\nBorra un álbum. Se envía el id del álbum creado anteriormente.\n\n**Código HTTP esperado: 204**"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "00d22f9f-0cad-4e06-8a85-ed1c41a4a1fc",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "0d40a238-261c-43f6-a7fc-b63475c69de5",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

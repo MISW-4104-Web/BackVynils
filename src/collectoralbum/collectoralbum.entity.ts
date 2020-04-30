@@ -4,7 +4,7 @@ import { Album } from '../album/album.entity';
 import { Collector } from '../collector/collector.entity';
 
 @Entity()
-export class AlbumCollector {
+export class CollectorAlbum {
     @PrimaryGeneratedColumn()
     id: number;
 
@@ -17,9 +17,9 @@ export class AlbumCollector {
     })
     status: ALBUM_STATUS
 
-    @ManyToOne(type => Album, album => album.albumCollectors)
+    @ManyToOne(type => Album, album => album.collectorAlbums)
     album: Album;
 
-    @ManyToOne(type => Collector, collector => collector.albumCollectors)
+    @ManyToOne(type => Collector, collector => collector.collectorAlbums)
     collector: Collector;
 }

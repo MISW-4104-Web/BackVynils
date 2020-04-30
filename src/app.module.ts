@@ -5,7 +5,7 @@ import { Album } from "./album/album.entity";
 import { Comment } from "./comment/comment.entity";
 import { Prize } from "./prize/prize.entity";
 import { Track } from "./track/track.entity";
-import { AlbumCollector } from './albumcollector/albumcollector.entity';
+import { CollectorAlbum } from './collectoralbum/collectoralbum.entity';
 import { Band } from './band/band.entity';
 import { Collector } from './collector/collector.entity';
 import { Musician } from './musician/musician.entity';
@@ -22,11 +22,12 @@ import { MusicianModule } from './musician/musician.module';
 import { AlbumModule } from './album/album.module';
 import { GenreModule } from './genre/genre.module';
 import { CommentModule } from './comment/comment.module';
-import { AlbumcollectorModule } from './albumcollector/albumcollector.module';
+import { CollectorAlbumModule } from './collectoralbum/collectoralbum.module';
 import { AlbumstatusModule } from './albumstatus/albumstatus.module';
 import { PerformerprizeModule } from './performerprize/performerprize.module';
 import { BandmusicianModule } from './bandmusician/bandmusician.module';
 import { MusicianAlbumModule } from './musicianalbum/musicianalbum.module';
+import { BandAlbumModule } from './bandalbum/bandalbum.module';
 
 @Module({
   imports: [
@@ -37,7 +38,7 @@ import { MusicianAlbumModule } from './musicianalbum/musicianalbum.module';
       username: 'postgres',
       password: 'postgres',
       database: 'vinyls',
-      entities: [Album, AlbumCollector, Band, Collector, Comment, Musician, Performer, PerformerPrize, Prize, Track,],
+      entities: [Album, CollectorAlbum, Band, Collector, Comment, Musician, Performer, PerformerPrize, Prize, Track,],
       dropSchema: true,
       synchronize: true,
       keepConnectionAlive: true
@@ -52,10 +53,11 @@ import { MusicianAlbumModule } from './musicianalbum/musicianalbum.module';
     AlbumModule,
     GenreModule,
     CommentModule,
-    AlbumcollectorModule,
+    CollectorAlbumModule,
     AlbumstatusModule,
     PerformerprizeModule,
     BandmusicianModule,
-    MusicianAlbumModule],
+    MusicianAlbumModule,
+    BandAlbumModule],
 })
 export class AppModule { }

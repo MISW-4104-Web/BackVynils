@@ -4,7 +4,7 @@ import { RECORD_LABEL } from '../recordlabel/recordlabel.enum';
 import { GENRE } from '../genre/genre.enum';
 import { Track } from '../track/track.entity';
 import { Comment } from '../comment/comment.entity';
-import { AlbumCollector } from '../albumcollector/albumcollector.entity';
+import { CollectorAlbum } from '../collectoralbum/collectoralbum.entity';
 
 @Entity()
 export class Album {
@@ -46,7 +46,7 @@ export class Album {
     })
     comments: Comment[];
 
-    @OneToMany(type => AlbumCollector, albumCollector => albumCollector.album)
-    albumCollectors: AlbumCollector[];
+    @OneToMany(type => CollectorAlbum, collectorAlbum => collectorAlbum.album)
+    collectorAlbums: CollectorAlbum[];
 
 }
