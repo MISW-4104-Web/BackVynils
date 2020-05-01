@@ -29,6 +29,7 @@ import { BandmusicianModule } from './bandmusician/bandmusician.module';
 import { MusicianAlbumModule } from './musicianalbum/musicianalbum.module';
 import { BandAlbumModule } from './bandalbum/bandalbum.module';
 import { CollectorPerformerModule } from './collectorperformer/collectorperformer.module';
+import { AlbumbandModule } from './albumband/albumband.module';
 
 @Module({
   imports: [
@@ -60,6 +61,7 @@ import { CollectorPerformerModule } from './collectorperformer/collectorperforme
     BandmusicianModule,
     MusicianAlbumModule,
     BandAlbumModule,
-    CollectorPerformerModule],
+    CollectorPerformerModule,
+    AlbumbandModule],
 })
 export class AppModule { }
