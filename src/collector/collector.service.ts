@@ -13,11 +13,11 @@ export class CollectorService {
     ) { }
 
     async findAll(): Promise<CollectorDTO[]> {
-        return await this.collectorRepository.find();
+        return await this.collectorRepository.find({ relations: ["comments", "favoritePerformers", "collectorAlbums"] });
     }
 
     async findOne(id: number): Promise<CollectorDTO> {
-        const collector = await this.collectorRepository.findOne(id);
+        const collector = await this.collectorRepository.findOne(id, { relations: ["comments", "favoritePerformers", "collectorAlbums"] });
         if (!collector)
             throw new BusinnesLogicException("The collector with the given id was not found", BusinessError.NOT_FOUND)
         return collector;

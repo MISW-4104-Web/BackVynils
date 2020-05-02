@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "0644b7ba-f2e0-432c-8844-117c612b7dba",
+		"_postman_id": "006117c7-901f-403f-858b-de78a8988ab6",
 		"name": "Collector Tests",
 		"description": "Colección de pruebas sobre el recurso Artist",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -12,7 +12,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "694741e6-4794-48fd-b32b-d790963ac9b0",
+						"id": "8a7f6524-ff48-48d5-98f8-0b6595e37abe",
 						"exec": [
 							"var data = JSON.parse(responseBody);",
 							"postman.setGlobalVariable(\"new_id_c\",data.id);",
@@ -56,7 +56,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "edca8864-fbb2-420c-a95d-fe433ad517cc",
+						"id": "073be636-f616-4d97-8dfb-cfdda3cbb339",
 						"exec": [
 							"var data = JSON.parse(responseBody);",
 							"postman.setGlobalVariable(\"new_id_c2\",data.id);",
@@ -100,7 +100,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "ffc24813-89a3-47fa-9d38-241d31b1e7c3",
+						"id": "08d2b52f-299d-4b2d-b391-3ec81312c00a",
 						"exec": [
 							"var data= JSON.parse(responseBody);",
 							"tests[\"No genera error en el Gell All\"] = responseCode.code === 200;",
@@ -124,7 +124,7 @@
 						"collectors"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nConsulta todos los coleccionistas de la aplicacion. \r\n\r\nLa petición no tiene cuerpo.\r\n\r\nPara la prueba, se verifica que el conjunto de coleccionistas en la respuesta tenga mas de uno.\r\n\r\n**Código http esperado: 200**"
+				"description": "**Release: Paso-5**\r\n\r\nConsulta todos los coleccionistas de la aplicacion. \r\n\r\nLa petición no tiene cuerpo.\r\n\r\nPara la prueba, se verifica que el conjunto de coleccionistas en la respuesta tenga mas de uno.\r\n\r\n**Código http esperado: 200**\r\n\r\n**Ejemplo de respuesta**\r\n\r\n```\r\n[\r\n    {\r\n        \"id\": 1,\r\n        \"name\": \"Jaime Andrés Monsalve\",\r\n        \"telephone\": \"3102178976\",\r\n        \"email\": \"j.monsalve@gmail.com\",\r\n        \"comments\": [],\r\n        \"favoritePerformers\": [],\r\n        \"collectorAlbums\": []\r\n    },\r\n    {\r\n        \"id\": 2,\r\n        \"name\": \"María Alejandra Palacios\",\r\n        \"telephone\": \"3502889087\",\r\n        \"email\": \"j.palacios@outlook.es\",\r\n        \"comments\": [],\r\n        \"favoritePerformers\": [],\r\n        \"collectorAlbums\": []\r\n    }\r\n]\r\n```"
 			},
 			"response": []
 		},
@@ -134,7 +134,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "20acc8ea-cadf-4ea4-b92e-f4d8218ce963",
+						"id": "5d57d753-15bf-43b4-a3da-e0504771105a",
 						"exec": [
 							"console.log(responseBody);",
 							"var data = JSON.parse(responseBody);",
@@ -159,7 +159,7 @@
 						"{{new_id_c}}"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nConsulta un coleccionista de la aplicación.  \r\nLa petición no tiene cuerpo.\r\nSe envía el id del coleccionista deseado por la URL de la petición.\r\n\r\n**Código http esperado: 200**"
+				"description": "**Release: Paso-5**\r\n\r\nConsulta un coleccionista de la aplicación.  \r\nLa petición no tiene cuerpo.\r\nSe envía el id del coleccionista deseado por la URL de la petición.\r\n\r\n**Código http esperado: 200**\r\n\r\n**Ejemplo de respuesta**\r\n\r\n```\r\n{\r\n    \"id\": 1,\r\n    \"name\": \"Jaime Andrés Monsalve\",\r\n    \"telephone\": \"3102178976\",\r\n    \"email\": \"j.monsalve@gmail.com\",\r\n    \"comments\": [],\r\n    \"favoritePerformers\": [],\r\n    \"collectorAlbums\": []\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -169,7 +169,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "39dc353d-ae0a-41c6-99a5-89218360c4d3",
+						"id": "02b27b2b-7277-43b4-b50c-f2f05c4b5564",
 						"exec": [
 							"tests[\"No se deberia obtener un coleccionista con un id que no existe\"] = responseCode.code === 404;",
 							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The collector with the given id was not found\");"
@@ -203,7 +203,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "68dc8b6c-6d16-40b8-8f51-b61db7113074",
+						"id": "ef4fffab-3627-45ff-b8cd-e3188b7968f6",
 						"exec": [
 							"console.log(responseBody);",
 							"var data = JSON.parse(responseBody);",
@@ -247,7 +247,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "15a70f62-2a66-469a-9ca6-d1125b0c8774",
+						"id": "2be9ced9-bf75-4b4d-a754-c718921e27cb",
 						"exec": [
 							"tests[\"No se deberia actualizar un colleccionista con id que no existe\"] = responseCode.code === 404;",
 							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The collector with the given id was not found\");"
@@ -290,7 +290,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "d403e21b-3da3-4bbc-9b8a-9a2285ec0292",
+						"id": "493f4c43-c830-469d-bb3b-002cd3ce10b5",
 						"exec": [
 							"tests[\"No genera error en el Delete\"] = responseCode.code === 204;"
 						],
@@ -327,7 +327,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "7db5b212-04c0-43a8-b627-44b62f4b9852",
+						"id": "9b6948bd-046e-47b5-8e98-714ab74c8385",
 						"exec": [
 							"tests[\"No genera error en el Delete\"] = responseCode.code === 204;"
 						],
@@ -364,7 +364,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "c0905623-e468-4838-b24e-56e8402ea65c",
+						"id": "c08532fa-c18a-44a3-84ea-cc47168bdde0",
 						"exec": [
 							"tests[\"No se deberia borrar un coleccionista con un id que no existe\"] = responseCode.code === 404;",
 							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The collector with the given id was not found\");"
@@ -401,7 +401,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "9f629ffc-3644-4dca-a8af-f28ae4a4e739",
+				"id": "fddfbe94-7a88-4088-8efb-110558bb5f8a",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -411,7 +411,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "b1e97bf7-3232-412f-96bc-7ac233e25ab5",
+				"id": "9569e828-49e5-457d-9496-29151532147b",
 				"type": "text/javascript",
 				"exec": [
 					""

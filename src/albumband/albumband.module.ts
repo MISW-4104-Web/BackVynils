@@ -10,4 +10,4 @@ import { Album } from '../album/album.entity';
   controllers: [AlbumBandController],
   providers: [AlbumBandService]
 })
-export class AlbumbandModule { }
+export class AlbumBandModule { }

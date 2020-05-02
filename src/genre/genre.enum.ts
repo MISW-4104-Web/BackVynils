@@ -1,5 +1,6 @@
 export enum GENRE {
     CLASSICAL = "Classical",
     SALSA = "Salsa",
-    ROCK = "Rock"
+    ROCK = "Rock",
+    FOLK = "Folk"
 }

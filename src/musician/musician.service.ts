@@ -12,11 +12,11 @@ export class MusicianService {
         private readonly musicianRepository: Repository<Musician>) { }
 
     async findAll(): Promise<MusicianDTO[]> {
-        return await this.musicianRepository.find();
+        return await this.musicianRepository.find({ relations: ["albums", "performerPrizes"] });
     }
 
     async findOne(id: number): Promise<MusicianDTO> {
-        const musician = await this.musicianRepository.findOne(id);
+        const musician = await this.musicianRepository.findOne(id, { relations: ["albums", "performerPrizes"] });
         if (!musician)
             throw new BusinnesLogicException("The musician with the given id was not found", BusinessError.NOT_FOUND)
         return musician;

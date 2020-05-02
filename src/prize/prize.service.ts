@@ -14,11 +14,11 @@ export class PrizeService {
         private readonly prizeRepository: Repository<Prize>) { }
 
     async findAll(): Promise<PrizeDTO[]> {
-        return await this.prizeRepository.find();
+        return await this.prizeRepository.find({ relations: ["performerPrizes"] });
     }
 
     async findOne(id: number): Promise<PrizeDTO> {
-        const prize = await this.prizeRepository.findOne(id);
+        const prize = await this.prizeRepository.findOne(id, { relations: ["performerPrizes"] });
         if (!prize)
             throw new BusinnesLogicException("The prize with the given id was not found", BusinessError.NOT_FOUND)
 

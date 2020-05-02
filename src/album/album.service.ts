@@ -13,11 +13,11 @@ export class AlbumService {
     ) { }
 
     async findAll(): Promise<AlbumDTO[]> {
-        return await this.albumRepository.find();
+        return await this.albumRepository.find({ relations: ["tracks", "performers", "comments"] });
     }
 
     async findOne(id: number): Promise<AlbumDTO> {
-        const album = await this.albumRepository.findOne(id);
+        const album = await this.albumRepository.findOne(id, { relations: ["tracks", "performers", "comments"] });
         if (!album)
             throw new BusinnesLogicException("The album with the given id was not found", BusinessError.NOT_FOUND)
         return album;
