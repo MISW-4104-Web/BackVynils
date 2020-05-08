@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "da3e3be2-a93e-42f9-8e25-652a07b2b6a1",
+		"_postman_id": "456a00ee-7850-4e8c-beda-fd6644e31e1a",
 		"name": "AlbumMusician Tests",
 		"description": "Colección de pruebas sobre el recurso ArtistVinyl",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -12,7 +12,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "304084ed-d326-4e9b-b66a-8c2c95b18e0b",
+						"id": "bb770b50-4a3e-4009-bbac-3ba0618d3ad1",
 						"exec": [
 							"var data = JSON.parse(responseBody);",
 							"postman.setGlobalVariable(\"new_id_a\",data.id);",
@@ -32,7 +32,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"name\": \"Cantora\",\n    \"cover\": \"\",\n    \"releaseDate\": \"2009-03-27T00:00:00-05:00\",\n    \"description\": \"Cantora es un álbum doble de duetos de la cantante argentina Mercedes Sosa con diversos intérpretes  y el último proyecto musical grabado por ella. Aunque la cantante ya había sufrido diversos problemas de salud cuando se grabó, el disco fue un éxito inmediato y se convirtió en disco de oro en Argentina en un tiempo récord. El primer disco logró obtener dos Grammy Latinos 2009, por Mejor álbum folclórico y Mejor diseño de empaque\",\n    \"genre\": \"Folk\",\n    \"recordLabel\": \"Sony Music\"\n}"
+					"raw": "{\n    \"name\": \"Cantora\",\n    \"cover\": \"https://www.cancioneros.com/imatges/1987.jpg\",\n    \"releaseDate\": \"2009-03-27T00:00:00-05:00\",\n    \"description\": \"Cantora es un álbum doble de duetos de la cantante argentina Mercedes Sosa con diversos intérpretes  y el último proyecto musical grabado por ella. Aunque la cantante ya había sufrido diversos problemas de salud cuando se grabó, el disco fue un éxito inmediato y se convirtió en disco de oro en Argentina en un tiempo récord. El primer disco logró obtener dos Grammy Latinos 2009, por Mejor álbum folclórico y Mejor diseño de empaque\",\n    \"genre\": \"Folk\",\n    \"recordLabel\": \"Sony Music\"\n}"
 				},
 				"url": {
 					"raw": "http://{{ip}}:{{puerto}}/albums",
@@ -55,7 +55,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "694741e6-4794-48fd-b32b-d790963ac9b0",
+						"id": "f04e6dbb-1971-493e-b67d-8f6400fbbe3d",
 						"exec": [
 							"var data = JSON.parse(responseBody);",
 							"postman.setGlobalVariable(\"new_id_m\",data.id);",
@@ -99,7 +99,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "edca8864-fbb2-420c-a95d-fe433ad517cc",
+						"id": "887d1445-9f16-45e0-abba-201cdae9c47e",
 						"exec": [
 							"var data = JSON.parse(responseBody);",
 							"postman.setGlobalVariable(\"new_id_m2\",data.id);",
@@ -143,7 +143,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "5295fcb5-7252-463d-b81a-5124c1a067be",
+						"id": "8a7fe4f0-8790-4a72-ba5e-4979788ea08d",
 						"exec": [
 							"tests[\"No genera error en el Post\"] = responseCode.code === 200;"
 						],
@@ -188,7 +188,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "e3c06212-e39e-4bc3-9fd1-8abbd1c29ace",
+						"id": "253dbcbf-69b1-40d0-91e7-575e99c0fa98",
 						"exec": [
 							"tests[\"No se deberia asociar el músico ya que no existe.\"] = responseCode.code === 404;",
 							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The musician with the given id was not found\");"
@@ -228,7 +228,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "e7e73fe8-8e21-4eae-a1bf-973c5ccfbfbc",
+						"id": "7d01c37c-a97c-42c5-b752-a6ab716c666d",
 						"exec": [
 							"console.log(responseBody);",
 							"var data = JSON.parse(responseBody);",
@@ -265,7 +265,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "9fe51cc4-6ef5-40d2-bc5f-e1200af00028",
+						"id": "71dbab40-70d9-447c-a680-81fc525b6ced",
 						"exec": [
 							"tests[\"No se deberia obtener ningun álbum ya que el músico no existe.\"] = responseCode.code === 404;",
 							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The musician with the given id was not found\");"
@@ -301,7 +301,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "10a04ef5-aca6-43ae-bd0a-b1006aa19487",
+						"id": "83d37929-42d4-4a55-b3e1-1a12c655d542",
 						"exec": [
 							"tests[\"No se puede obtener un álbum que no esta asociado\"] = responseCode.code === 412;",
 							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The musician with the given id is not associated to the album\");"
@@ -337,7 +337,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "c7c5215a-ed1c-498e-9d19-9f5570cfd17d",
+						"id": "74b00dc9-aae5-4fe4-b113-f2afb95aa483",
 						"exec": [
 							"tests[\"No genera error en el Put\"] = responseCode.code === 200;"
 						],
@@ -380,7 +380,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "49c94c15-1d54-43ee-adef-aec230710223",
+						"id": "f2095b79-1cd3-4de5-8890-68f807b15e2d",
 						"exec": [
 							"var data= JSON.parse(responseBody);",
 							"tests[\"No genera error en el Get\"] = responseCode.code === 200;",
@@ -417,7 +417,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "5f1389a0-da68-45bc-90aa-eb08f3c8ac36",
+						"id": "5ca8c055-4e60-40d6-932a-3054960227d4",
 						"exec": [
 							"tests[\"No se pueden asociar los músicos ya que estos no existen\"] = responseCode.code === 404;",
 							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The musician with the given id was not found\");"
@@ -462,7 +462,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "9510b6cd-b566-4cfa-b16f-9c783800176d",
+						"id": "c3311156-dcef-41a3-9a1b-8544c0e364d5",
 						"exec": [
 							"tests[\"No genera error en el Delete\"] = responseCode.code === 204;"
 						],
@@ -501,7 +501,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "9510b6cd-b566-4cfa-b16f-9c783800176d",
+						"id": "bee67a57-18b0-4530-a51d-f640c45762e2",
 						"exec": [
 							"tests[\"No genera error en el Delete\"] = responseCode.code === 204;"
 						],
@@ -540,7 +540,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "91d9959e-4825-4dd7-88e3-3e33b988c765",
+						"id": "5ba7bc79-fe35-4519-b5dd-a1a17b8a2970",
 						"exec": [
 							"tests[\"No se deberia eliminar ninguna asociacion ya que la banda no existe\"] = responseCode.code === 404;",
 							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The musician with the given id was not found\");"
@@ -581,7 +581,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "db442b05-4aea-4f64-9db1-a28176069f5e",
+						"id": "14cb1b70-e37b-4e90-93f4-a69bbd535d07",
 						"exec": [
 							"tests[\"No se deberia eliminar ninguna asociacion ya que el álbum no existe\"] = responseCode.code === 404;",
 							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The album with the given id was not found\");"
@@ -622,7 +622,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "b1ff16df-2255-4221-9b63-b026ee61a544",
+						"id": "4d0fd9db-cb5d-4ee2-86ec-4d636471dd76",
 						"exec": [
 							"tests[\"No genera error en el Delete\"] = responseCode.code === 204;"
 						],
@@ -659,7 +659,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "b1ff16df-2255-4221-9b63-b026ee61a544",
+						"id": "8a22cc62-521f-449c-96ee-c285ec6a50f9",
 						"exec": [
 							"tests[\"No genera error en el Delete\"] = responseCode.code === 204;"
 						],
@@ -696,7 +696,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "4f1e4dc3-ca8a-4517-a81e-7e899528fbf4",
+						"id": "6cea2297-65f1-4b06-9aae-19131cdf5561",
 						"exec": [
 							"tests[\"No genera error en el Delete\"] = responseCode.code === 204;"
 						],
@@ -732,7 +732,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "abcf9e66-ab71-40eb-b132-268e8563ad4d",
+				"id": "d0180ed2-917b-419c-a186-a2b7a1559ba0",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -742,7 +742,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "99c46863-220f-4853-9796-88ddc37ae16a",
+				"id": "28acaa60-585a-43cc-aff2-9fd6ff2cd67a",
 				"type": "text/javascript",
 				"exec": [
 					""

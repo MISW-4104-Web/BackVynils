@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "8c3a9fdb-c6de-4d3f-b39c-cd0012ace297",
+		"_postman_id": "2c4386ed-7c27-435a-8e68-632429a90c29",
 		"name": "AlbumBand Tests",
 		"description": "Colección de pruebas sobre el recurso ArtistVinyl",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -12,7 +12,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "304084ed-d326-4e9b-b66a-8c2c95b18e0b",
+						"id": "05f09aef-3e6b-4517-ad0e-23a20b1e9668",
 						"exec": [
 							"var data = JSON.parse(responseBody);",
 							"postman.setGlobalVariable(\"new_id_a\",data.id);",
@@ -32,7 +32,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"name\": \"A Night at the Opera\",\n    \"cover\": \"\",\n    \"releaseDate\": \"1975-11-21T00:00:00-05:00\",\n    \"description\": \"Es el cuarto álbum de estudio de la banda británica de rock Queen, publicado originalmente en 1975. Coproducido por Roy Thomas Baker y Queen, A Night at the Opera fue, en el tiempo de su lanzamiento, la producción más cara realizada.1​ Un éxito comercial, el álbum fue votado por el público y citado por publicaciones musicales como uno de los mejores trabajos de Queen y de la historia del rock.\",\n    \"genre\": \"Rock\",\n    \"recordLabel\": \"EMI\"\n}"
+					"raw": "{\n    \"name\": \"A Night at the Opera\",\n    \"cover\": \"https://upload.wikimedia.org/wikipedia/en/4/4d/Queen_A_Night_At_The_Opera.png\",\n    \"releaseDate\": \"1975-11-21T00:00:00-05:00\",\n    \"description\": \"Es el cuarto álbum de estudio de la banda británica de rock Queen, publicado originalmente en 1975. Coproducido por Roy Thomas Baker y Queen, A Night at the Opera fue, en el tiempo de su lanzamiento, la producción más cara realizada.1​ Un éxito comercial, el álbum fue votado por el público y citado por publicaciones musicales como uno de los mejores trabajos de Queen y de la historia del rock.\",\n    \"genre\": \"Rock\",\n    \"recordLabel\": \"EMI\"\n}"
 				},
 				"url": {
 					"raw": "http://{{ip}}:{{puerto}}/albums",
@@ -55,7 +55,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "694741e6-4794-48fd-b32b-d790963ac9b0",
+						"id": "2325479f-7d2f-444b-beed-bb49c4ede789",
 						"exec": [
 							"var data = JSON.parse(responseBody);",
 							"postman.setGlobalVariable(\"new_id_b\",data.id);",
@@ -99,7 +99,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "edca8864-fbb2-420c-a95d-fe433ad517cc",
+						"id": "99fb7e99-5313-4a0d-81f7-5ddd14339518",
 						"exec": [
 							"var data = JSON.parse(responseBody);",
 							"postman.setGlobalVariable(\"new_id_b2\",data.id);",
@@ -143,7 +143,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "5295fcb5-7252-463d-b81a-5124c1a067be",
+						"id": "f93ec244-2b5d-4a68-aefa-4b72a17b72f8",
 						"exec": [
 							"tests[\"No genera error en el Post\"] = responseCode.code === 200;"
 						],
@@ -188,7 +188,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "e3c06212-e39e-4bc3-9fd1-8abbd1c29ace",
+						"id": "4cbbb72e-8fc6-4305-94ea-7c680a3c2705",
 						"exec": [
 							"tests[\"No se deberia asociar la banda ya que no existe.\"] = responseCode.code === 404;",
 							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The band with the given id was not found\");"
@@ -228,7 +228,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "e7e73fe8-8e21-4eae-a1bf-973c5ccfbfbc",
+						"id": "6cde8838-fe41-46ae-b52a-cb5f5be0e92b",
 						"exec": [
 							"console.log(responseBody);",
 							"var data = JSON.parse(responseBody);",
@@ -265,7 +265,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "9fe51cc4-6ef5-40d2-bc5f-e1200af00028",
+						"id": "7dd25313-b681-45dd-8d93-e1c3e174822f",
 						"exec": [
 							"tests[\"No se deberia obtener ningun álbum ya que la banda no existe.\"] = responseCode.code === 404;",
 							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The band with the given id was not found\");"
@@ -301,7 +301,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "10a04ef5-aca6-43ae-bd0a-b1006aa19487",
+						"id": "fd59a50b-3c10-4292-bfb0-32e40e8a5bf8",
 						"exec": [
 							"tests[\"No se puede obtener un álbum que no esta asociado\"] = responseCode.code === 412;",
 							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The band with the given id is not associated to the album\");"
@@ -337,7 +337,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "c7c5215a-ed1c-498e-9d19-9f5570cfd17d",
+						"id": "f7c27bbc-eb21-4360-a57f-065ae7f89cb6",
 						"exec": [
 							"tests[\"No genera error en el Put\"] = responseCode.code === 200;"
 						],
@@ -380,7 +380,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "49c94c15-1d54-43ee-adef-aec230710223",
+						"id": "35ef884b-5908-42a2-b712-bd6452b3f71f",
 						"exec": [
 							"var data= JSON.parse(responseBody);",
 							"tests[\"No genera error en el Get\"] = responseCode.code === 200;",
@@ -417,7 +417,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "5f1389a0-da68-45bc-90aa-eb08f3c8ac36",
+						"id": "404b39fe-c717-491a-bfdf-0bcdbd7f0c13",
 						"exec": [
 							"tests[\"No se pueden asociar las bandas ya que estos no existen\"] = responseCode.code === 404;",
 							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The band with the given id was not found\");"
@@ -462,7 +462,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "9510b6cd-b566-4cfa-b16f-9c783800176d",
+						"id": "519054b9-1708-45ae-beb9-6c82dac00916",
 						"exec": [
 							"tests[\"No genera error en el Delete\"] = responseCode.code === 204;"
 						],
@@ -501,7 +501,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "9510b6cd-b566-4cfa-b16f-9c783800176d",
+						"id": "e40963f7-d584-40b1-8872-3de3baed2a1d",
 						"exec": [
 							"tests[\"No genera error en el Delete\"] = responseCode.code === 204;"
 						],
@@ -540,7 +540,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "91d9959e-4825-4dd7-88e3-3e33b988c765",
+						"id": "b87714c6-7ccf-448f-a308-172908670a26",
 						"exec": [
 							"tests[\"No se deberia eliminar ninguna asociacion ya que la banda no existe\"] = responseCode.code === 404;",
 							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The band with the given id was not found\");"
@@ -581,7 +581,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "db442b05-4aea-4f64-9db1-a28176069f5e",
+						"id": "b4953eee-ec7d-47b8-bbfe-72917030fe89",
 						"exec": [
 							"tests[\"No se deberia eliminar ninguna asociacion ya que el álbum no existe\"] = responseCode.code === 404;",
 							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The album with the given id was not found\");"
@@ -622,7 +622,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "b1ff16df-2255-4221-9b63-b026ee61a544",
+						"id": "c7faca60-37e9-4d6b-baca-ba9e56f795f4",
 						"exec": [
 							"tests[\"No genera error en el Delete\"] = responseCode.code === 204;"
 						],
@@ -659,7 +659,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "b1ff16df-2255-4221-9b63-b026ee61a544",
+						"id": "a13fc1f2-8552-443e-aa09-ffd72aac00bf",
 						"exec": [
 							"tests[\"No genera error en el Delete\"] = responseCode.code === 204;"
 						],
@@ -696,7 +696,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "4f1e4dc3-ca8a-4517-a81e-7e899528fbf4",
+						"id": "d3ef4fb4-fc3c-4d4b-bdae-40eaa1e05c3e",
 						"exec": [
 							"tests[\"No genera error en el Delete\"] = responseCode.code === 204;"
 						],
@@ -732,7 +732,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "abcf9e66-ab71-40eb-b132-268e8563ad4d",
+				"id": "214bf68e-414c-408e-a8aa-91575932cb6a",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -742,7 +742,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "99c46863-220f-4853-9796-88ddc37ae16a",
+				"id": "4d9ca140-76c0-40f7-b7c0-f6e83b21c57f",
 				"type": "text/javascript",
 				"exec": [
 					""

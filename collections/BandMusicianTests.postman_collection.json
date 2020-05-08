@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "6cfad6b9-1592-47d7-97b1-ec1f90827dc5",
+		"_postman_id": "48cefcdb-0ae3-40dc-b9f3-385f207a7b9f",
 		"name": "BandMusicianTests",
 		"description": "Colección de pruebas sobre el recurso ArtistVinyl",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -12,7 +12,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "694741e6-4794-48fd-b32b-d790963ac9b0",
+						"id": "b3afc883-d0b5-4a7e-8efb-724194616633",
 						"exec": [
 							"var data = JSON.parse(responseBody);",
 							"postman.setGlobalVariable(\"new_id_b\",data.id);",
@@ -56,7 +56,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "694741e6-4794-48fd-b32b-d790963ac9b0",
+						"id": "83d618bf-5805-4c88-8ed8-c8cbac923358",
 						"exec": [
 							"var data = JSON.parse(responseBody);",
 							"postman.setGlobalVariable(\"new_id_m\",data.id);",
@@ -100,7 +100,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "694741e6-4794-48fd-b32b-d790963ac9b0",
+						"id": "9a747203-a345-4a93-9bb0-8eca12ddf960",
 						"exec": [
 							"var data = JSON.parse(responseBody);",
 							"postman.setGlobalVariable(\"new_id_m2\",data.id);",
@@ -144,7 +144,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "5295fcb5-7252-463d-b81a-5124c1a067be",
+						"id": "e10b79e8-b03a-4aad-a11b-f2435d8c5c18",
 						"exec": [
 							"tests[\"No genera error en el Post\"] = responseCode.code === 200;"
 						],
@@ -188,7 +188,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "e3c06212-e39e-4bc3-9fd1-8abbd1c29ace",
+						"id": "ab9f1690-0f51-4a7d-9678-db3d29872e85",
 						"exec": [
 							"tests[\"No se deberia asociar el músico ya que no existe.\"] = responseCode.code === 404;",
 							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The musician with the given id was not found\");"
@@ -228,7 +228,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "e7e73fe8-8e21-4eae-a1bf-973c5ccfbfbc",
+						"id": "c50d0b02-7d16-4f33-9233-d174e6e3f18b",
 						"exec": [
 							"console.log(responseBody);",
 							"var data = JSON.parse(responseBody);",
@@ -265,7 +265,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "9fe51cc4-6ef5-40d2-bc5f-e1200af00028",
+						"id": "a1e6fc97-74a1-4fe6-a8da-bc2408cd3393",
 						"exec": [
 							"tests[\"No se deberia obtener ninguna banda ya que el músico no existe.\"] = responseCode.code === 404;",
 							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The musician with the given id was not found\");"
@@ -301,7 +301,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "10a04ef5-aca6-43ae-bd0a-b1006aa19487",
+						"id": "2eb6a8bb-b60c-422d-afc6-0761f2e7ef45",
 						"exec": [
 							"tests[\"No se puede obtener un músico que no esta asociado\"] = responseCode.code === 412;",
 							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The musician with the given id is not associated to the band\");"
@@ -337,7 +337,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "49c94c15-1d54-43ee-adef-aec230710223",
+						"id": "dfa778fb-b861-4026-83aa-d44fb42d5232",
 						"exec": [
 							"var data= JSON.parse(responseBody);",
 							"tests[\"No genera error en el Get\"] = responseCode.code === 200;",
@@ -373,7 +373,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "9510b6cd-b566-4cfa-b16f-9c783800176d",
+						"id": "688ffd0c-e69c-4929-a2b3-752cf7db5793",
 						"exec": [
 							"tests[\"No genera error en el Delete\"] = responseCode.code === 204;"
 						],
@@ -412,7 +412,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "91d9959e-4825-4dd7-88e3-3e33b988c765",
+						"id": "87e1dd26-abbd-4aa0-a1cf-a8d4e9e2bf62",
 						"exec": [
 							"tests[\"No se deberia eliminar ninguna asociacion ya que la banda no existe\"] = responseCode.code === 404;",
 							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The band with the given id was not found\");"
@@ -452,7 +452,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "db442b05-4aea-4f64-9db1-a28176069f5e",
+						"id": "75ae63f3-9feb-4ef9-89b8-465d92efca04",
 						"exec": [
 							"tests[\"No se deberia eliminar ninguna asociacion ya que el músico no existe\"] = responseCode.code === 404;",
 							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The musician with the given id was not found\");"
@@ -492,7 +492,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "4f1e4dc3-ca8a-4517-a81e-7e899528fbf4",
+						"id": "2f49dd0f-21b1-4215-a00e-0492b765766a",
 						"exec": [
 							"tests[\"No genera error en el Delete\"] = responseCode.code === 204;"
 						],
@@ -529,7 +529,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "4f1e4dc3-ca8a-4517-a81e-7e899528fbf4",
+						"id": "fabffbe6-5a59-49e2-8346-bbd7185a25b0",
 						"exec": [
 							"tests[\"No genera error en el Delete\"] = responseCode.code === 204;"
 						],
@@ -566,7 +566,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "b1ff16df-2255-4221-9b63-b026ee61a544",
+						"id": "5d31cb35-9855-4567-b6d8-d5a1fd128825",
 						"exec": [
 							"tests[\"No genera error en el Delete\"] = responseCode.code === 204;"
 						],
@@ -602,7 +602,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "abcf9e66-ab71-40eb-b132-268e8563ad4d",
+				"id": "41b2b403-e14b-4da0-8385-8cf73764f964",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -612,7 +612,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "99c46863-220f-4853-9796-88ddc37ae16a",
+				"id": "922ddccb-2f41-4608-a545-f08964f0cd4a",
 				"type": "text/javascript",
 				"exec": [
 					""

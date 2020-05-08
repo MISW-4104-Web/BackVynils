@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "b5c2966b-a0a7-4622-b100-0e771e6d76b5",
+		"_postman_id": "adc3e959-5362-4216-898d-bc38d42b46a7",
 		"name": "Tracks",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -11,7 +11,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "304084ed-d326-4e9b-b66a-8c2c95b18e0b",
+						"id": "eab15551-01d5-4296-a5b8-2deb3c6662fb",
 						"exec": [
 							"var data = JSON.parse(responseBody);",
 							"postman.setGlobalVariable(\"new_id_a\",data.id);",
@@ -31,7 +31,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"name\": \"Buscando América\",\n    \"cover\": \"\",\n    \"releaseDate\": \"1984-08-01T00:00:00-05:00\",\n    \"description\": \"Buscando América es el primer álbum de la banda de Rubén Blades y Seis del Solar lanzado en 1984. La producción, bajo el sello Elektra, fusiona diferentes ritmos musicales tales como la salsa, reggae, rock, y el jazz latino. El disco fue grabado en Eurosound Studios en Nueva York entre mayo y agosto de 1983.\",\n    \"genre\": \"Salsa\",\n    \"recordLabel\": \"Elektra\"\n}"
+					"raw": "{\n    \"name\": \"Buscando América\",\n    \"cover\": \"https://i.pinimg.com/564x/aa/5f/ed/aa5fed7fac61cc8f41d1e79db917a7cd.jpg\",\n    \"releaseDate\": \"1984-08-01T00:00:00-05:00\",\n    \"description\": \"Buscando América es el primer álbum de la banda de Rubén Blades y Seis del Solar lanzado en 1984. La producción, bajo el sello Elektra, fusiona diferentes ritmos musicales tales como la salsa, reggae, rock, y el jazz latino. El disco fue grabado en Eurosound Studios en Nueva York entre mayo y agosto de 1983.\",\n    \"genre\": \"Salsa\",\n    \"recordLabel\": \"Elektra\"\n}"
 				},
 				"url": {
 					"raw": "http://{{ip}}:{{puerto}}/albums",
@@ -54,7 +54,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "9f355d05-b627-49af-a083-c87286cff30d",
+						"id": "d5b80ab2-f171-40cc-868a-22103e6ad29e",
 						"exec": [
 							"var data = JSON.parse(responseBody);",
 							"postman.setGlobalVariable(\"new_id_t\",data.id);",
@@ -105,7 +105,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "154c2186-7689-4182-ab17-2c0ccc15a8a1",
+						"id": "f02d87ea-90c6-48cc-bbcc-d0d7098cf100",
 						"exec": [
 							"var data = JSON.parse(responseBody);",
 							"postman.setGlobalVariable(\"new_id_t2\",data.id);",
@@ -193,7 +193,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "030da90b-93b3-4d13-b4e8-db57d0af4c07",
+						"id": "db561424-c458-4e3f-ae18-93c1a292e408",
 						"exec": [
 							"var data= JSON.parse(responseBody);",
 							"tests[\"no genera error en el Get All\"] = responseCode.code === 200;",
@@ -229,7 +229,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "15578bb7-15b6-4871-93b6-559ea819e22c",
+						"id": "4d770a0a-984d-4ed6-a39c-1b2402036265",
 						"exec": [
 							"console.log(responseBody);",
 							"var data = JSON.parse(responseBody);",
@@ -266,7 +266,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "84b4ef5d-3e7d-4a61-80f4-231125db4e8f",
+						"id": "e58991af-feb2-4c66-a6ed-5fd625ababc3",
 						"exec": [
 							"console.log(responseBody);",
 							"var data = JSON.parse(responseBody);",
@@ -312,7 +312,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "02be10e6-750b-4b74-95e7-d927a166ec02",
+						"id": "9b6290fc-0caa-4180-a7c4-c50ec7b6e853",
 						"exec": [
 							"tests[\"No se puede editar un track que no existe.\"] = responseCode.code === 404;",
 							"let id = pm.variables.get(\"new_id_b\");",
@@ -358,7 +358,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "ce6fc66f-cb19-4e0d-bc0a-aff100e295ee",
+						"id": "e95a6412-f635-4730-b803-f73e551b6d1a",
 						"exec": [
 							"tests[\"No se puede editar un track sobre un album que no existe.\"] = responseCode.code === 404;",
 							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The album with the given id was not found\");"
@@ -403,7 +403,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "edb58a8e-9d1a-4d6f-9942-6fe3c8a169e9",
+						"id": "49d27331-8cf0-4494-9bec-498bef9dd43c",
 						"exec": [
 							"tests[\"No se puede borrar un track que no existe.\"] = responseCode.code === 404;",
 							"let id = pm.variables.get(\"new_id_b\");",
@@ -444,7 +444,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "0c199000-a389-4706-8406-5cdc8f12186b",
+						"id": "e2f667d3-29c7-4716-b7aa-8ed156af67c5",
 						"exec": [
 							"tests[\"No se puede borrar un track sobre un album que no existe.\"] = responseCode.code === 404;",
 							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The album with the given id was not found\");"
@@ -484,7 +484,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "2bb9aa81-6adb-4c8d-b7cd-20f8c7301f8d",
+						"id": "789dd709-76c8-4035-9c33-2f8037fa2b27",
 						"exec": [
 							"tests[\"no genera error en el Delete\"] = responseCode.code === 204;"
 						],
@@ -523,7 +523,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "39e4ff08-1c18-4cab-a775-f054d1e7389a",
+						"id": "677471ea-6f2f-4166-98b2-20ee0f233db8",
 						"exec": [
 							"tests[\"no genera error en el Delete\"] = responseCode.code === 204;"
 						],
@@ -562,7 +562,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "2ec74fba-bc15-4973-99bd-0c1a86a28a2e",
+						"id": "b5ad5a08-434e-402c-98a8-cd6352771a4d",
 						"exec": [
 							"tests[\"No genera error en el Delete\"] = responseCode.code === 204;"
 						],

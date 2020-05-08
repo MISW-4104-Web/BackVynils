@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "f75406fb-5742-4483-b24a-eaa8c60b3843",
+		"_postman_id": "41d784df-9cf8-46e3-9f8f-5fd3aafe1194",
 		"name": "PerformerPrize Tests",
 		"description": "Colección de pruebas sobre el recurso PrizeArtist",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -12,7 +12,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "c3a9c462-edf9-4bd9-81a0-16ff15613f82",
+						"id": "27b5c491-8e11-4a9f-b0ac-10d0111f51c5",
 						"exec": [
 							"var data = JSON.parse(responseBody);",
 							"postman.setGlobalVariable(\"new_id_p\",data.id);",
@@ -57,7 +57,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "a11007ed-55bf-4f39-8103-d58d1cd3d458",
+						"id": "3f25b7b2-0798-44c2-af56-0e924da9188f",
 						"exec": [
 							"var data = JSON.parse(responseBody);",
 							"postman.setGlobalVariable(\"new_id_p2\",data.id);",
@@ -102,7 +102,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "694741e6-4794-48fd-b32b-d790963ac9b0",
+						"id": "6ac88223-b2ec-45f7-a10e-9ff3c5f5d21c",
 						"exec": [
 							"var data = JSON.parse(responseBody);",
 							"postman.setGlobalVariable(\"new_id_m\",data.id);",
@@ -146,7 +146,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "694741e6-4794-48fd-b32b-d790963ac9b0",
+						"id": "06f059e9-9519-4a40-b5a3-0dc29972f5e5",
 						"exec": [
 							"var data = JSON.parse(responseBody);",
 							"postman.setGlobalVariable(\"new_id_b\",data.id);",
@@ -190,7 +190,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "e9b76351-dc3d-4ac6-beab-81871addfd96",
+						"id": "e79da8f6-1419-4b6f-abd9-b9c7bb69e819",
 						"exec": [
 							"tests[\"no genera error en el Post\"] = responseCode.code === 200;"
 						],
@@ -234,7 +234,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "e9b76351-dc3d-4ac6-beab-81871addfd96",
+						"id": "5a26b9e0-2d15-4c12-8225-a66a832ee525",
 						"exec": [
 							"tests[\"no genera error en el Post\"] = responseCode.code === 200;"
 						],
@@ -278,7 +278,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "bd685e11-33db-4118-be98-28f9dacd0dc7",
+						"id": "6a6bd5b3-eefc-40a8-a57e-dd3d25fea822",
 						"exec": [
 							"tests[\"No se puede asociar el artista ya que este no existe.\"] = responseCode.code === 404;",
 							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The performer with the given id was not found\");"
@@ -323,7 +323,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "bd685e11-33db-4118-be98-28f9dacd0dc7",
+						"id": "402b5dc1-967c-4d6b-830c-a25f1f00940b",
 						"exec": [
 							"tests[\"No se puede asociar el artista ya que este no existe.\"] = responseCode.code === 404;",
 							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The performer with the given id was not found\");"
@@ -368,7 +368,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "6e5d490f-c9a8-4f77-9ff8-cd2807cf9b20",
+						"id": "4716e570-70c5-41d5-933b-ce917a34c5ef",
 						"exec": [
 							"console.log(responseBody);",
 							"var data = JSON.parse(responseBody);",
@@ -404,7 +404,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "6e5d490f-c9a8-4f77-9ff8-cd2807cf9b20",
+						"id": "4a775749-7371-43dd-81cd-dc7481841fd3",
 						"exec": [
 							"tests[\"No se deberia obtener un artista con un id de un premio que no existe\"] = responseCode.code === 404;",
 							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The prize with the given id was not found\");"
@@ -439,7 +439,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "08d9072a-55bf-4641-bbdb-52b352762f65",
+						"id": "bf2fa560-2a1e-4cce-8ff9-d059faab8b6b",
 						"exec": [
 							"tests[\"no genera error en el Delete\"] = responseCode.code === 204;"
 						],
@@ -478,7 +478,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "08d9072a-55bf-4641-bbdb-52b352762f65",
+						"id": "58cefaf2-1bb0-4957-a142-849a01f08f45",
 						"exec": [
 							"tests[\"no genera error en el Delete\"] = responseCode.code === 204;"
 						],
@@ -517,7 +517,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "bb946ff6-d049-4d41-bf7d-9bdcabb53d6e",
+						"id": "c28b7d2b-a31c-4b16-876e-d37818df87eb",
 						"exec": [
 							"tests[\"no genera error en el Delete\"] = responseCode.code === 204;"
 						],
@@ -554,7 +554,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "0cffadd9-c487-464d-ba34-ac04f0b25f6f",
+						"id": "7ecad772-f3df-4805-a99f-321125864a98",
 						"exec": [
 							"tests[\"no genera error en el Delete\"] = responseCode.code === 204;"
 						],
@@ -591,7 +591,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "5af38318-0cba-4c19-ad45-2bb3394069e3",
+						"id": "c322af57-07aa-4f91-9814-dd082c2d1c9e",
 						"exec": [
 							"tests[\"no genera error en el Delete\"] = responseCode.code === 204;"
 						],
@@ -628,7 +628,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "8670dccb-1743-4bae-82b1-e4d2b01febe6",
+						"id": "b4db0831-a697-45c8-ba3f-6e42bd162b51",
 						"exec": [
 							"tests[\"no genera error en el Delete\"] = responseCode.code === 204;"
 						],
@@ -664,7 +664,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "0062c40a-acd3-4e89-b997-477e077f4faf",
+				"id": "5c00e1d1-51c2-4dfc-8245-0b4c3f14e419",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -674,7 +674,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "e944d212-8a99-4296-9ef7-fd69501a8593",
+				"id": "7a14be54-9298-4eae-a33a-65248f8af75e",
 				"type": "text/javascript",
 				"exec": [
 					""

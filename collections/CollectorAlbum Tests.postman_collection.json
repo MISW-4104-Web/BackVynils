@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "0dadc622-fcab-49fb-a6a5-a5f21b331633",
+		"_postman_id": "ef283337-ae56-4b7a-935d-4d5fd61b04e4",
 		"name": "CollectorAlbum Tests",
 		"description": "Colección de pruebas sobre el recurso Artist",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -12,7 +12,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "694741e6-4794-48fd-b32b-d790963ac9b0",
+						"id": "0e5232bc-6928-44cd-b115-da7a70f5455d",
 						"exec": [
 							"var data = JSON.parse(responseBody);",
 							"postman.setGlobalVariable(\"new_id_c\",data.id);",
@@ -56,7 +56,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "304084ed-d326-4e9b-b66a-8c2c95b18e0b",
+						"id": "0f8bd373-5758-47d8-95c4-d3317585ceb7",
 						"exec": [
 							"var data = JSON.parse(responseBody);",
 							"postman.setGlobalVariable(\"new_id_a\",data.id);",
@@ -76,7 +76,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"name\": \"Buscando América\",\n    \"cover\": \"\",\n    \"releaseDate\": \"1984-08-01T00:00:00-05:00\",\n    \"description\": \"Buscando América es el primer álbum de la banda de Rubén Blades y Seis del Solar lanzado en 1984. La producción, bajo el sello Elektra, fusiona diferentes ritmos musicales tales como la salsa, reggae, rock, y el jazz latino. El disco fue grabado en Eurosound Studios en Nueva York entre mayo y agosto de 1983.\",\n    \"genre\": \"Salsa\",\n    \"recordLabel\": \"Elektra\"\n}"
+					"raw": "{\n    \"name\": \"Buscando América\",\n    \"cover\": \"https://i.pinimg.com/564x/aa/5f/ed/aa5fed7fac61cc8f41d1e79db917a7cd.jpg\",\n    \"releaseDate\": \"1984-08-01T00:00:00-05:00\",\n    \"description\": \"Buscando América es el primer álbum de la banda de Rubén Blades y Seis del Solar lanzado en 1984. La producción, bajo el sello Elektra, fusiona diferentes ritmos musicales tales como la salsa, reggae, rock, y el jazz latino. El disco fue grabado en Eurosound Studios en Nueva York entre mayo y agosto de 1983.\",\n    \"genre\": \"Salsa\",\n    \"recordLabel\": \"Elektra\"\n}"
 				},
 				"url": {
 					"raw": "http://{{ip}}:{{puerto}}/albums",
@@ -99,7 +99,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "5295fcb5-7252-463d-b81a-5124c1a067be",
+						"id": "cfd11be9-65db-4de5-ab5a-b9882caa23af",
 						"exec": [
 							"tests[\"No genera error en el Post\"] = responseCode.code === 200;"
 						],
@@ -143,7 +143,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "e3c06212-e39e-4bc3-9fd1-8abbd1c29ace",
+						"id": "2b1dccb6-ab36-42d3-ad63-c6932c26cccc",
 						"exec": [
 							"tests[\"No se deberia asociar ya que el álbum no existe.\"] = responseCode.code === 404;",
 							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The album with the given id was not found\");"
@@ -183,7 +183,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "ffc24813-89a3-47fa-9d38-241d31b1e7c3",
+						"id": "b0a4b7da-ffd9-404b-aabe-657689777436",
 						"exec": [
 							"var data= JSON.parse(responseBody);",
 							"tests[\"No genera error en el Gell All\"] = responseCode.code === 200;",
@@ -220,7 +220,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "ffc24813-89a3-47fa-9d38-241d31b1e7c3",
+						"id": "5e837e6d-c614-450a-b446-8ab2a97a2929",
 						"exec": [
 							"var data= JSON.parse(responseBody);",
 							"tests[\"No genera error en el Gell All\"] = responseCode.code === 200;"
@@ -257,7 +257,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "5295fcb5-7252-463d-b81a-5124c1a067be",
+						"id": "148eeedf-96f7-45e6-9213-46d0d99ffe86",
 						"exec": [
 							"tests[\"No genera error en el Post\"] = responseCode.code === 200;"
 						],
@@ -301,7 +301,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "15a70f62-2a66-469a-9ca6-d1125b0c8774",
+						"id": "f78654e5-5ef7-401c-b658-e2e80bd80f7e",
 						"exec": [
 							"tests[\"No se deberia actualizar un colleccionista con id que no existe\"] = responseCode.code === 404;",
 							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The collector with the given id was not found\");"
@@ -346,7 +346,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "d403e21b-3da3-4bbc-9b8a-9a2285ec0292",
+						"id": "facb62b2-56c4-4f8f-966d-aad89a4ec7ff",
 						"exec": [
 							"tests[\"No genera error en el Delete\"] = responseCode.code === 204;"
 						],
@@ -385,7 +385,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "d403e21b-3da3-4bbc-9b8a-9a2285ec0292",
+						"id": "e4ce4cbe-8ed7-4686-a0f7-d7b6fe10245d",
 						"exec": [
 							"tests[\"No genera error en el Delete\"] = responseCode.code === 204;"
 						],
@@ -422,7 +422,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "2ec74fba-bc15-4973-99bd-0c1a86a28a2e",
+						"id": "928c18db-18b9-4298-af98-5167c4ea7af3",
 						"exec": [
 							"tests[\"No genera error en el Delete\"] = responseCode.code === 204;"
 						],
@@ -458,7 +458,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "9f629ffc-3644-4dca-a8af-f28ae4a4e739",
+				"id": "bb00120b-5926-44b8-b0b0-c17ae1f32f21",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -468,7 +468,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "b1e97bf7-3232-412f-96bc-7ac233e25ab5",
+				"id": "79cfa19d-98ff-44d6-91f4-229038e233e7",
 				"type": "text/javascript",
 				"exec": [
 					""

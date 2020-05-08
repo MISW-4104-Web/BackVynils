@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "558cffa6-c2d6-4a07-9274-d9fcf310ca8b",
+		"_postman_id": "6a24e266-dbb3-4fde-a705-9db882ed46b5",
 		"name": "Comment Tests",
 		"description": "Colección de pruebas sobre el recurso Review",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -12,7 +12,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "304084ed-d326-4e9b-b66a-8c2c95b18e0b",
+						"id": "81f0fc21-b896-4fcc-8849-a0f9fcc1fb92",
 						"exec": [
 							"var data = JSON.parse(responseBody);",
 							"postman.setGlobalVariable(\"new_id_a\",data.id);",
@@ -32,7 +32,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"name\": \"Buscando América\",\n    \"cover\": \"\",\n    \"releaseDate\": \"1984-08-01T00:00:00-05:00\",\n    \"description\": \"Buscando América es el primer álbum de la banda de Rubén Blades y Seis del Solar lanzado en 1984. La producción, bajo el sello Elektra, fusiona diferentes ritmos musicales tales como la salsa, reggae, rock, y el jazz latino. El disco fue grabado en Eurosound Studios en Nueva York entre mayo y agosto de 1983.\",\n    \"genre\": \"Salsa\",\n    \"recordLabel\": \"Sony Music\"\n}"
+					"raw": "{\n    \"name\": \"Buscando América\",\n    \"cover\": \"https://i.pinimg.com/564x/aa/5f/ed/aa5fed7fac61cc8f41d1e79db917a7cd.jpg\",\n    \"releaseDate\": \"1984-08-01T00:00:00-05:00\",\n    \"description\": \"Buscando América es el primer álbum de la banda de Rubén Blades y Seis del Solar lanzado en 1984. La producción, bajo el sello Elektra, fusiona diferentes ritmos musicales tales como la salsa, reggae, rock, y el jazz latino. El disco fue grabado en Eurosound Studios en Nueva York entre mayo y agosto de 1983.\",\n    \"genre\": \"Salsa\",\n    \"recordLabel\": \"Sony Music\"\n}"
 				},
 				"url": {
 					"raw": "http://{{ip}}:{{puerto}}/albums",
@@ -55,7 +55,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "694741e6-4794-48fd-b32b-d790963ac9b0",
+						"id": "aa7658fe-162c-4feb-95b9-58421719d878",
 						"exec": [
 							"var data = JSON.parse(responseBody);",
 							"postman.setGlobalVariable(\"new_id_c\",data.id);",
@@ -99,7 +99,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "edca8864-fbb2-420c-a95d-fe433ad517cc",
+						"id": "ff167d18-57ba-4899-abd5-406e270b703c",
 						"exec": [
 							"var data = JSON.parse(responseBody);",
 							"postman.setGlobalVariable(\"new_id_c2\",data.id);",
@@ -143,7 +143,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "09babbb4-d9e9-471a-ad23-3ce177333cad",
+						"id": "55dfbe70-7f45-496d-ac0e-9775108e07ad",
 						"exec": [
 							"var data = JSON.parse(responseBody);",
 							"postman.setGlobalVariable(\"new_id_cm\",data.id);",
@@ -188,7 +188,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "09babbb4-d9e9-471a-ad23-3ce177333cad",
+						"id": "e20da7d0-4ec5-489f-a6d3-ce1fe875dfca",
 						"exec": [
 							"var data = JSON.parse(responseBody);",
 							"postman.setGlobalVariable(\"new_id_cm2\",data.id);",
@@ -233,7 +233,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "09babbb4-d9e9-471a-ad23-3ce177333cad",
+						"id": "73782938-52f9-4177-99bf-a401a9083bce",
 						"exec": [
 							"tests[\"No se puede asociar un comentario a un álbum que no existe.\"] = responseCode.code === 404;",
 							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The album with the given id was not found\");"
@@ -277,7 +277,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "030da90b-93b3-4d13-b4e8-db57d0af4c07",
+						"id": "4ea32076-b41c-4c82-b1af-d8d3b7faec46",
 						"exec": [
 							"var data= JSON.parse(responseBody);",
 							"tests[\"no genera error en el Get All\"] = responseCode.code === 200;",
@@ -313,7 +313,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "15578bb7-15b6-4871-93b6-559ea819e22c",
+						"id": "fb4b3fa6-653a-4bea-8522-e3dc2442bd5f",
 						"exec": [
 							"console.log(responseBody);",
 							"var data = JSON.parse(responseBody);",
@@ -350,7 +350,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "84b4ef5d-3e7d-4a61-80f4-231125db4e8f",
+						"id": "a0971750-337b-48bc-ac95-759ae3c10813",
 						"exec": [
 							"console.log(responseBody);",
 							"var data = JSON.parse(responseBody);",
@@ -396,7 +396,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "02be10e6-750b-4b74-95e7-d927a166ec02",
+						"id": "27533795-4feb-4374-ad63-0ade16b29575",
 						"exec": [
 							"tests[\"No se puede editar un comentario que no existe.\"] = responseCode.code === 404;",
 							"let id = pm.variables.get(\"new_id_b\");",
@@ -442,7 +442,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "ce6fc66f-cb19-4e0d-bc0a-aff100e295ee",
+						"id": "ed4e3497-2a8a-489b-9382-839bf4cff561",
 						"exec": [
 							"tests[\"No se puede editar una comentario sobre un álbum que no existe.\"] = responseCode.code === 404;",
 							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The album with the given id was not found\");"
@@ -487,7 +487,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "edb58a8e-9d1a-4d6f-9942-6fe3c8a169e9",
+						"id": "fb5de78f-f2cd-4c37-912e-410fe59f4cc6",
 						"exec": [
 							"tests[\"No se puede borrar un comentario que no existe.\"] = responseCode.code === 404;",
 							"let id = pm.variables.get(\"new_id_b\");",
@@ -528,7 +528,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "0c199000-a389-4706-8406-5cdc8f12186b",
+						"id": "906433fe-bc0c-40ed-9114-6b7a62419888",
 						"exec": [
 							"tests[\"No se puede borrar un comentario sobre un álbum que no existe.\"] = responseCode.code === 404;",
 							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The album with the given id was not found\");"
@@ -568,7 +568,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "2bb9aa81-6adb-4c8d-b7cd-20f8c7301f8d",
+						"id": "ca672fa4-d89d-4a46-8203-75a5dbe4a2fc",
 						"exec": [
 							"tests[\"no genera error en el Delete\"] = responseCode.code === 204;"
 						],
@@ -607,7 +607,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "2bb9aa81-6adb-4c8d-b7cd-20f8c7301f8d",
+						"id": "a6899cfb-c5c8-4d13-8743-ef33113e42e5",
 						"exec": [
 							"tests[\"no genera error en el Delete\"] = responseCode.code === 204;"
 						],
@@ -646,7 +646,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "2ec74fba-bc15-4973-99bd-0c1a86a28a2e",
+						"id": "48cc07f2-0fd5-48f6-a625-be31822486fe",
 						"exec": [
 							"tests[\"No genera error en el Delete\"] = responseCode.code === 204;"
 						],
@@ -683,7 +683,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "2ec74fba-bc15-4973-99bd-0c1a86a28a2e",
+						"id": "539d6774-7f80-43ca-b8e8-0a41e7e6c3ce",
 						"exec": [
 							"tests[\"No genera error en el Delete\"] = responseCode.code === 204;"
 						],
@@ -720,7 +720,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "2ec74fba-bc15-4973-99bd-0c1a86a28a2e",
+						"id": "c63ad647-61cf-432a-9b53-ff682ba1f390",
 						"exec": [
 							"tests[\"No genera error en el Delete\"] = responseCode.code === 204;"
 						],
@@ -756,7 +756,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "00d22f9f-0cad-4e06-8a85-ed1c41a4a1fc",
+				"id": "54e239a4-fb1d-4746-9410-953f08bc07e1",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -766,7 +766,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "0d40a238-261c-43f6-a7fc-b63475c69de5",
+				"id": "1fad56df-f45b-4e66-bb99-65ac2f3b3aca",
 				"type": "text/javascript",
 				"exec": [
 					""

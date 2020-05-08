@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "647a860e-8511-40d0-aa07-8f8e8d5f3fad",
+		"_postman_id": "19299553-a629-45e0-acce-a1cf46f42c77",
 		"name": "CollectorPerformer Test",
 		"description": "Colección de pruebas sobre el recurso Artist",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -12,7 +12,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "694741e6-4794-48fd-b32b-d790963ac9b0",
+						"id": "4fceb347-dd45-482b-8946-e16b692c72b6",
 						"exec": [
 							"var data = JSON.parse(responseBody);",
 							"postman.setGlobalVariable(\"new_id_c\",data.id);",
@@ -56,7 +56,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "694741e6-4794-48fd-b32b-d790963ac9b0",
+						"id": "c7d33c6d-9143-48ec-bb25-ade71b3e1333",
 						"exec": [
 							"var data = JSON.parse(responseBody);",
 							"postman.setGlobalVariable(\"new_id_m\",data.id);",
@@ -100,7 +100,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "694741e6-4794-48fd-b32b-d790963ac9b0",
+						"id": "6c91f303-c6da-4179-b004-5d87705dc49c",
 						"exec": [
 							"var data = JSON.parse(responseBody);",
 							"postman.setGlobalVariable(\"new_id_b\",data.id);",
@@ -144,7 +144,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "694741e6-4794-48fd-b32b-d790963ac9b0",
+						"id": "19f06379-77f4-44fb-a80c-b9e4e08dbd97",
 						"exec": [
 							"var data = JSON.parse(responseBody);",
 							"tests[\"No genera error en el Post\"] = responseCode.code === 200;",
@@ -190,7 +190,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "694741e6-4794-48fd-b32b-d790963ac9b0",
+						"id": "91487ff1-f882-4448-8c63-db8ef068695e",
 						"exec": [
 							"var data = JSON.parse(responseBody);",
 							"tests[\"No genera error en el Post\"] = responseCode.code === 200;",
@@ -236,7 +236,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "ffc24813-89a3-47fa-9d38-241d31b1e7c3",
+						"id": "a010fbab-6d6c-4f9e-a355-26bfd4f4dd31",
 						"exec": [
 							"var data= JSON.parse(responseBody);",
 							"tests[\"No genera error en el Gell All\"] = responseCode.code === 200;",
@@ -272,7 +272,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "ffc24813-89a3-47fa-9d38-241d31b1e7c3",
+						"id": "5c1029f9-ca01-423b-8ed2-1ac5fdcc8744",
 						"exec": [
 							"tests[\"No se deberia obtener un coleccionista con un id que no existe\"] = responseCode.code === 404;",
 							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The collector with the given id was not found\");"
@@ -307,7 +307,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "d403e21b-3da3-4bbc-9b8a-9a2285ec0292",
+						"id": "8e4850cc-10c0-429d-89f8-0d04101a83df",
 						"exec": [
 							"tests[\"No genera error en el Delete\"] = responseCode.code === 204;"
 						],
@@ -346,7 +346,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "d403e21b-3da3-4bbc-9b8a-9a2285ec0292",
+						"id": "5019d073-5280-4f8a-8480-7cc6c5b4a206",
 						"exec": [
 							"tests[\"No genera error en el Delete\"] = responseCode.code === 204;"
 						],
@@ -385,7 +385,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "d403e21b-3da3-4bbc-9b8a-9a2285ec0292",
+						"id": "36425822-34a5-437b-9255-ed1209850b77",
 						"exec": [
 							"tests[\"No genera error en el Delete\"] = responseCode.code === 204;"
 						],
@@ -422,7 +422,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "d403e21b-3da3-4bbc-9b8a-9a2285ec0292",
+						"id": "74547e69-f3e2-4271-8ab1-a710ee57ceb3",
 						"exec": [
 							"tests[\"No genera error en el Delete\"] = responseCode.code === 204;"
 						],
@@ -459,7 +459,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "d403e21b-3da3-4bbc-9b8a-9a2285ec0292",
+						"id": "acd16cd0-36af-4832-b8a1-55fc7802a71e",
 						"exec": [
 							"tests[\"No genera error en el Delete\"] = responseCode.code === 204;"
 						],
@@ -495,7 +495,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "9f629ffc-3644-4dca-a8af-f28ae4a4e739",
+				"id": "c81ffbf9-ee9d-4cae-bc52-cf155e5214c4",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -505,7 +505,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "b1e97bf7-3232-412f-96bc-7ac233e25ab5",
+				"id": "60a69b4e-ca06-4bdd-818f-36c3183003d1",
 				"type": "text/javascript",
 				"exec": [
 					""
