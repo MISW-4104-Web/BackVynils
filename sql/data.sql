@@ -1,10 +1,12 @@
+delete from public.album;
+
 INSERT INTO public.album(
 	id, name, cover, "releaseDate", description, genre, "recordLabel")
 	VALUES (100,'Buscando América', 'https://i.pinimg.com/564x/aa/5f/ed/aa5fed7fac61cc8f41d1e79db917a7cd.jpg', '1984-08-01', 'Buscando América es el primer álbum de la banda de Rubén Blades y Seis del Solar lanzado en 1984. La producción, bajo el sello Elektra, fusiona diferentes ritmos musicales tales como la salsa, reggae, rock, y el jazz latino. El disco fue grabado en Eurosound Studios en Nueva York entre mayo y agosto de 1983.','Salsa', 'Elektra');
 
 INSERT INTO public.album(
 	id, name, cover, "releaseDate", description, genre, "recordLabel")
-	VALUES (101,'Buscando América', 'https://cdn.shopify.com/s/files/1/0275/3095/products/image_4931268b-7acf-4702-9c55-b2b3a03ed999_1024x1024.jpg', '1984-08-01', 'Buscando América es el primer álbum de la banda de Rubén Blades y Seis del Solar lanzado en 1984. La producción, bajo el sello Elektra, fusiona diferentes ritmos musicales tales como la salsa, reggae, rock, y el jazz latino. El disco fue grabado en Eurosound Studios en Nueva York entre mayo y agosto de 1983.', 'Salsa', 'Elektra');
+	VALUES (101,'Poeta del pueblo', 'https://cdn.shopify.com/s/files/1/0275/3095/products/image_4931268b-7acf-4702-9c55-b2b3a03ed999_1024x1024.jpg', '1984-08-01', 'Buscando América es el primer álbum de la banda de Rubén Blades y Seis del Solar lanzado en 1984. La producción, bajo el sello Elektra, fusiona diferentes ritmos musicales tales como la salsa, reggae, rock, y el jazz latino. El disco fue grabado en Eurosound Studios en Nueva York entre mayo y agosto de 1983.', 'Salsa', 'Elektra');
 
     INSERT INTO public.album(
 	id, name, cover, "releaseDate", description, genre, "recordLabel")
