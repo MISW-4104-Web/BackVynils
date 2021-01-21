@@ -1,8 +1,8 @@
 {
-  "name": "nest-typescript-starter",
+  "name": "vinyls-backend-miso",
   "private": true,
   "version": "1.0.0",
-  "description": "Nest TypeScript starter repository",
+  "description": "Vinyls Backend MISO",
   "license": "MIT",
   "scripts": {
     "prebuild": "rimraf dist",
