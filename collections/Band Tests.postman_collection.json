@@ -45,7 +45,7 @@
 						"bands"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo artista. El Id es inicializado por la BD y se debe ver en la respuesta.\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```{\r\n    \"name\": \"Queen\",\r\n    \"image\": \"https://pm1.narvii.com/6724/a8b29909071e9d08517b40c748b6689649372852v2_hq.jpg\",\r\n    \"description\": \"Queen es una banda británica de rock formada en 1970 en Londres por el cantante Freddie Mercury, el guitarrista Brian May, el baterista Roger Taylor y el bajista John Deacon. Si bien el grupo ha presentado bajas de dos de sus miembros (Mercury, fallecido en 1991, y Deacon, retirado en 1997), los integrantes restantes, May y Taylor, continúan trabajando bajo el nombre Queen, por lo que la banda aún se considera activa.\",\r\n    \"creationDate\": \"1970-01-01T00:00:00-05:00\",\r\n    \"id\": 5\r\n}\r\n```"
+				"description": "Crea un nuevo artista. El Id es inicializado por la BD y se debe ver en la respuesta.\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```{\r\n    \"name\": \"Queen\",\r\n    \"image\": \"https://pm1.narvii.com/6724/a8b29909071e9d08517b40c748b6689649372852v2_hq.jpg\",\r\n    \"description\": \"Queen es una banda británica de rock formada en 1970 en Londres por el cantante Freddie Mercury, el guitarrista Brian May, el baterista Roger Taylor y el bajista John Deacon. Si bien el grupo ha presentado bajas de dos de sus miembros (Mercury, fallecido en 1991, y Deacon, retirado en 1997), los integrantes restantes, May y Taylor, continúan trabajando bajo el nombre Queen, por lo que la banda aún se considera activa.\",\r\n    \"creationDate\": \"1970-01-01T00:00:00-05:00\",\r\n    \"id\": 5\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -88,7 +88,7 @@
 						"bands"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nCrea una nueva banda. El Id es inicializado por la BD y se debe ver en la respuesta.\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"name\": \"Soda Stereo\",\r\n    \"image\": \"https://upload.wikimedia.org/wikipedia/commons/6/6f/CeratiAlbertiBosio.jpg\",\r\n    \"description\": \"Soda Stereo fue una banda argentina de rock formada en Buenos Aires en 1982 por Gustavo Cerati (voz, guitarra), Héctor «Zeta» Bosio (bajo) y Carlos Alberto Ficicchia «Charly Alberti» (batería), considerada una de las más influyentes e importantes bandas iberoamericanas de todos los tiempos y una leyenda de la música latina. Fueron el primer grupo de habla hispana en conseguir un éxito masivo en Latinoamérica y tuvieron un papel muy importante en el desarrollo y la difusión del rock iberoamericano y el rock en español durante las décadas de 1980 y 1990. Durante su carrera, fueron vanguardistas y marcaron tendencia en Latinoamérica, siendo protagonistas en diversos géneros como la música divertida de sus inicios, la new wave, el dark, el hard rock, el rock alternativo y el rock electrónico de sus finales\",\r\n    \"creationDate\": \"1982-01-01T00:00:00-05:00\",\r\n    \"id\": 6\r\n}\r\n```"
+				"description": "Crea una nueva banda. El Id es inicializado por la BD y se debe ver en la respuesta.\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"name\": \"Soda Stereo\",\r\n    \"image\": \"https://upload.wikimedia.org/wikipedia/commons/6/6f/CeratiAlbertiBosio.jpg\",\r\n    \"description\": \"Soda Stereo fue una banda argentina de rock formada en Buenos Aires en 1982 por Gustavo Cerati (voz, guitarra), Héctor «Zeta» Bosio (bajo) y Carlos Alberto Ficicchia «Charly Alberti» (batería), considerada una de las más influyentes e importantes bandas iberoamericanas de todos los tiempos y una leyenda de la música latina. Fueron el primer grupo de habla hispana en conseguir un éxito masivo en Latinoamérica y tuvieron un papel muy importante en el desarrollo y la difusión del rock iberoamericano y el rock en español durante las décadas de 1980 y 1990. Durante su carrera, fueron vanguardistas y marcaron tendencia en Latinoamérica, siendo protagonistas en diversos géneros como la música divertida de sus inicios, la new wave, el dark, el hard rock, el rock alternativo y el rock electrónico de sus finales\",\r\n    \"creationDate\": \"1982-01-01T00:00:00-05:00\",\r\n    \"id\": 6\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -121,7 +121,7 @@
 						"bands"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nConsulta todas las bandas de la aplicacion. \r\n\r\nLa petición no tiene cuerpo.\r\n\r\nPara la prueba, se verifica que el conjunto de bandas en la respuesta tenga mas de uno.\r\n\r\n**Código http esperado: 200**\r\n\r\n**json de salida**\r\n\r\n```\r\n[\r\n    {\r\n        \"id\": 5,\r\n        \"name\": \"Queen\",\r\n        \"image\": \"https://pm1.narvii.com/6724/a8b29909071e9d08517b40c748b6689649372852v2_hq.jpg\",\r\n        \"description\": \"Queen es una banda británica de rock formada en 1970 en Londres por el cantante Freddie Mercury, el guitarrista Brian May, el baterista Roger Taylor y el bajista John Deacon. Si bien el grupo ha presentado bajas de dos de sus miembros (Mercury, fallecido en 1991, y Deacon, retirado en 1997), los integrantes restantes, May y Taylor, continúan trabajando bajo el nombre Queen, por lo que la banda aún se considera activa.\",\r\n        \"creationDate\": \"1970-01-01T05:00:00.000Z\",\r\n        \"albums\": [],\r\n        \"musicians\": [],\r\n        \"performerPrizes\": []\r\n    },\r\n    {\r\n        \"id\": 6,\r\n        \"name\": \"Soda Stereo\",\r\n        \"image\": \"https://upload.wikimedia.org/wikipedia/commons/6/6f/CeratiAlbertiBosio.jpg\",\r\n        \"description\": \"Soda Stereo fue una banda argentina de rock formada en Buenos Aires en 1982 por Gustavo Cerati (voz, guitarra), Héctor «Zeta» Bosio (bajo) y Carlos Alberto Ficicchia «Charly Alberti» (batería), considerada una de las más influyentes e importantes bandas iberoamericanas de todos los tiempos y una leyenda de la música latina. Fueron el primer grupo de habla hispana en conseguir un éxito masivo en Latinoamérica y tuvieron un papel muy importante en el desarrollo y la difusión del rock iberoamericano y el rock en español durante las décadas de 1980 y 1990. Durante su carrera, fueron vanguardistas y marcaron tendencia en Latinoamérica, siendo protagonistas en diversos géneros como la música divertida de sus inicios, la new wave, el dark, el hard rock, el rock alternativo y el rock electrónico de sus finales\",\r\n        \"creationDate\": \"1982-01-01T05:00:00.000Z\",\r\n        \"albums\": [],\r\n        \"musicians\": [],\r\n        \"performerPrizes\": []\r\n    }\r\n]\r\n```"
+				"description": "Consulta todas las bandas de la aplicacion. \r\n\r\nLa petición no tiene cuerpo.\r\n\r\nPara la prueba, se verifica que el conjunto de bandas en la respuesta tenga mas de uno.\r\n\r\n**Código http esperado: 200**\r\n\r\n**json de salida**\r\n\r\n```\r\n[\r\n    {\r\n        \"id\": 5,\r\n        \"name\": \"Queen\",\r\n        \"image\": \"https://pm1.narvii.com/6724/a8b29909071e9d08517b40c748b6689649372852v2_hq.jpg\",\r\n        \"description\": \"Queen es una banda británica de rock formada en 1970 en Londres por el cantante Freddie Mercury, el guitarrista Brian May, el baterista Roger Taylor y el bajista John Deacon. Si bien el grupo ha presentado bajas de dos de sus miembros (Mercury, fallecido en 1991, y Deacon, retirado en 1997), los integrantes restantes, May y Taylor, continúan trabajando bajo el nombre Queen, por lo que la banda aún se considera activa.\",\r\n        \"creationDate\": \"1970-01-01T05:00:00.000Z\",\r\n        \"albums\": [],\r\n        \"musicians\": [],\r\n        \"performerPrizes\": []\r\n    },\r\n    {\r\n        \"id\": 6,\r\n        \"name\": \"Soda Stereo\",\r\n        \"image\": \"https://upload.wikimedia.org/wikipedia/commons/6/6f/CeratiAlbertiBosio.jpg\",\r\n        \"description\": \"Soda Stereo fue una banda argentina de rock formada en Buenos Aires en 1982 por Gustavo Cerati (voz, guitarra), Héctor «Zeta» Bosio (bajo) y Carlos Alberto Ficicchia «Charly Alberti» (batería), considerada una de las más influyentes e importantes bandas iberoamericanas de todos los tiempos y una leyenda de la música latina. Fueron el primer grupo de habla hispana en conseguir un éxito masivo en Latinoamérica y tuvieron un papel muy importante en el desarrollo y la difusión del rock iberoamericano y el rock en español durante las décadas de 1980 y 1990. Durante su carrera, fueron vanguardistas y marcaron tendencia en Latinoamérica, siendo protagonistas en diversos géneros como la música divertida de sus inicios, la new wave, el dark, el hard rock, el rock alternativo y el rock electrónico de sus finales\",\r\n        \"creationDate\": \"1982-01-01T05:00:00.000Z\",\r\n        \"albums\": [],\r\n        \"musicians\": [],\r\n        \"performerPrizes\": []\r\n    }\r\n]\r\n```"
 			},
 			"response": []
 		},
@@ -155,7 +155,7 @@
 						"{{new_id_b}}"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nConsulta una banda de la aplicación.  \r\n\r\nLa petición no tiene cuerpo.\r\n\r\nSe envía el id de la banda deseado por la URL de la petición.\r\n\r\n**Código http esperado: 200**\r\n\r\n**json de salida**\r\n\r\n```\r\n{\r\n    \"id\": 1,\r\n    \"name\": \"Queen\",\r\n    \"image\": \"https://upload.wikimedia.org/wikipedia/commons/7/7c/Queen_logo.svg\",\r\n    \"description\": \"Queen es una banda británica de rock formada en 1970 en Londres por el cantante Freddie Mercury, el guitarrista Brian May, el baterista Roger Taylor y el bajista John Deacon. Si bien el grupo ha presentado bajas de dos de sus miembros (Mercury, fallecido en 1991, y Deacon, retirado en 1997), los integrantes restantes, May y Taylor, continúan trabajando bajo el nombre Queen, por lo que la banda aún se considera activa.\",\r\n    \"creationDate\": \"1970-01-01T05:00:00.000Z\",\r\n    \"albums\": [],\r\n    \"musicians\": [],\r\n    \"performerPrizes\": []\r\n}\r\n```"
+				"description": "Consulta una banda de la aplicación.  \r\n\r\nLa petición no tiene cuerpo.\r\n\r\nSe envía el id de la banda deseado por la URL de la petición.\r\n\r\n**Código http esperado: 200**\r\n\r\n**json de salida**\r\n\r\n```\r\n{\r\n    \"id\": 1,\r\n    \"name\": \"Queen\",\r\n    \"image\": \"https://upload.wikimedia.org/wikipedia/commons/7/7c/Queen_logo.svg\",\r\n    \"description\": \"Queen es una banda británica de rock formada en 1970 en Londres por el cantante Freddie Mercury, el guitarrista Brian May, el baterista Roger Taylor y el bajista John Deacon. Si bien el grupo ha presentado bajas de dos de sus miembros (Mercury, fallecido en 1991, y Deacon, retirado en 1997), los integrantes restantes, May y Taylor, continúan trabajando bajo el nombre Queen, por lo que la banda aún se considera activa.\",\r\n    \"creationDate\": \"1970-01-01T05:00:00.000Z\",\r\n    \"albums\": [],\r\n    \"musicians\": [],\r\n    \"performerPrizes\": []\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -188,7 +188,7 @@
 						"0"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nConsulta una banda que no existe en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /bands/0 no existe.\".\r\n\r\n**Código http esperado: 404**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"statusCode\": 404,\r\n    \"message\": \"The band with the given id was not found\"\r\n}\r\n```"
+				"description": "Consulta una banda que no existe en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"The band with the given id was not found\".\r\n\r\n**Código http esperado: 404**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"statusCode\": 404,\r\n    \"message\": \"The band with the given id was not found\"\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -231,7 +231,7 @@
 						"{{new_id_b}}"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nActualiza una banda existente. \r\n\r\nse envía el Id en la URL de la petición.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"id\": 5,\r\n    \"name\": \"Queen\",\r\n    \"image\": \"https://pm1.narvii.com/6724/a8b29909071e9d08517b40c748b6689649372852v2_hq.jpg\",\r\n    \"description\": \"Queen es una banda británica de rock formada en 1970 en Londres por el cantante Freddie Mercury, el guitarrista Brian May, el baterista Roger Taylor y el bajista John Deacon.\",\r\n    \"creationDate\": \"1970-01-01T00:00:00-05:00\"\r\n}\r\n```"
+				"description": "Actualiza una banda existente. \r\n\r\nse envía el Id en la URL de la petición.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"id\": 5,\r\n    \"name\": \"Queen\",\r\n    \"image\": \"https://pm1.narvii.com/6724/a8b29909071e9d08517b40c748b6689649372852v2_hq.jpg\",\r\n    \"description\": \"Queen es una banda británica de rock formada en 1970 en Londres por el cantante Freddie Mercury, el guitarrista Brian May, el baterista Roger Taylor y el bajista John Deacon.\",\r\n    \"creationDate\": \"1970-01-01T00:00:00-05:00\"\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -273,7 +273,7 @@
 						"0"
 					]
 				},
-				"description": "**Release: Paso-5**\r\nActualiza una banda que no existe. \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /bands/0 no existe.\".\r\n\r\n**Código HTTP esperado: 404**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"statusCode\": 404,\r\n    \"message\": \"The band with the given id was not found\"\r\n}\r\n```"
+				"description": "Actualiza una banda que no existe. \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"The band with the given id was not found\".\r\n\r\n**Código HTTP esperado: 404**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"statusCode\": 404,\r\n    \"message\": \"The band with the given id was not found\"\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -309,7 +309,7 @@
 						"{{new_id_b}}"
 					]
 				},
-				"description": "**Release: Paso-5**\n\nBorra una banda. Se envía el id de la banda creada anteriormente.\n\n**Código HTTP esperado: 204**"
+				"description": "Borra una banda. Se envía el id de la banda creada anteriormente.\n\n**Código HTTP esperado: 204**"
 			},
 			"response": []
 		},
@@ -345,7 +345,7 @@
 						"{{new_id_b2}}"
 					]
 				},
-				"description": "**Release: Paso-5**\n\nBorra una banda. Se envía el id de la banda creada anteriormente.\n\n**Código HTTP esperado: 204**"
+				"description": "Borra una banda. Se envía el id de la banda creada anteriormente.\n\n**Código HTTP esperado: 204**"
 			},
 			"response": []
 		},
@@ -382,7 +382,7 @@
 						"0"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nBorra una banda que no existe en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /bands/0 no existe.\".\r\n\r\n**Código http esperado: 404**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"statusCode\": 404,\r\n    \"message\": \"The band with the given id was not found\"\r\n}\r\n```"
+				"description": "Borra una banda que no existe en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"The band with the given id was not found\".\r\n\r\n**Código http esperado: 404**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"statusCode\": 404,\r\n    \"message\": \"The band with the given id was not found\"\r\n}\r\n```"
 			},
 			"response": []
 		}

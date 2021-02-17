@@ -44,7 +44,7 @@
 						"albums"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo album. El Id es inicializado por la BD y se debe ver en la respuesta. \r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"name\": \"Buscando América\",\r\n    \"cover\": \"https://i.pinimg.com/564x/aa/5f/ed/aa5fed7fac61cc8f41d1e79db917a7cd.jpg\",\r\n    \"releaseDate\": \"1984-08-01T00:00:00-05:00\",\r\n    \"description\": \"Buscando América es el primer álbum de la banda de Rubén Blades y Seis del Solar lanzado en 1984. La producción, bajo el sello Elektra, fusiona diferentes ritmos musicales tales como la salsa, reggae, rock, y el jazz latino. El disco fue grabado en Eurosound Studios en Nueva York entre mayo y agosto de 1983.\",\r\n    \"genre\": \"Salsa\",\r\n    \"recordLabel\": \"Sony Music\",\r\n    \"id\": 8\r\n}\r\n```"
+				"description": "Crea un nuevo album. El Id es inicializado por la BD y se debe ver en la respuesta. \r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"name\": \"Buscando América\",\r\n    \"cover\": \"https://i.pinimg.com/564x/aa/5f/ed/aa5fed7fac61cc8f41d1e79db917a7cd.jpg\",\r\n    \"releaseDate\": \"1984-08-01T00:00:00-05:00\",\r\n    \"description\": \"Buscando América es el primer álbum de la banda de Rubén Blades y Seis del Solar lanzado en 1984. La producción, bajo el sello Elektra, fusiona diferentes ritmos musicales tales como la salsa, reggae, rock, y el jazz latino. El disco fue grabado en Eurosound Studios en Nueva York entre mayo y agosto de 1983.\",\r\n    \"genre\": \"Salsa\",\r\n    \"recordLabel\": \"Sony Music\",\r\n    \"id\": 8\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -87,7 +87,7 @@
 						"collectors"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo coleccionista. El Id es inicializado por la BD y se debe ver en la respuesta.\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"name\": \"Jaime Andrés Monsalve\",\r\n    \"telephone\": \"3102178976\",\r\n    \"email\": \"j.monsalve@gmail.com\",\r\n    \"id\": 5\r\n}\r\n```"
+				"description": "Crea un nuevo coleccionista. El Id es inicializado por la BD y se debe ver en la respuesta.\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"name\": \"Jaime Andrés Monsalve\",\r\n    \"telephone\": \"3102178976\",\r\n    \"email\": \"j.monsalve@gmail.com\",\r\n    \"id\": 5\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -130,7 +130,7 @@
 						"collectors"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo coleccionista. El Id es inicializado por la BD y se debe ver en la respuesta.\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"name\": \"María Alejandra Palacios\",\r\n    \"telephone\": \"3502889087\",\r\n    \"email\": \"j.palacios@outlook.es\",\r\n    \"id\": 6\r\n}\r\n```"
+				"description": "Crea un nuevo coleccionista. El Id es inicializado por la BD y se debe ver en la respuesta.\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"name\": \"María Alejandra Palacios\",\r\n    \"telephone\": \"3502889087\",\r\n    \"email\": \"j.palacios@outlook.es\",\r\n    \"id\": 6\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -174,7 +174,7 @@
 						"comments"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo comentario. El Id es inicializado por la BD y se debe ver en la respuesta. \r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"description\": \"It is an amazing album\",\r\n    \"rating\": 5,\r\n    \"collector\": {\r\n        \"id\": 5,\r\n        \"name\": \"Jaime Andrés Monsalve\",\r\n        \"telephone\": \"3102178976\",\r\n        \"email\": \"j.monsalve@gmail.com\"\r\n    },\r\n    \"album\": {\r\n        \"id\": 8,\r\n        \"name\": \"Buscando América\",\r\n        \"cover\": \"https://i.pinimg.com/564x/aa/5f/ed/aa5fed7fac61cc8f41d1e79db917a7cd.jpg\",\r\n        \"releaseDate\": \"1984-08-01T05:00:00.000Z\",\r\n        \"description\": \"Buscando América es el primer álbum de la banda de Rubén Blades y Seis del Solar lanzado en 1984. La producción, bajo el sello Elektra, fusiona diferentes ritmos musicales tales como la salsa, reggae, rock, y el jazz latino. El disco fue grabado en Eurosound Studios en Nueva York entre mayo y agosto de 1983.\",\r\n        \"genre\": \"Salsa\",\r\n        \"recordLabel\": \"Sony Music\"\r\n    },\r\n    \"id\": 1\r\n}\r\n```"
+				"description": "Crea un nuevo comentario. El Id es inicializado por la BD y se debe ver en la respuesta. \r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"description\": \"It is an amazing album\",\r\n    \"rating\": 5,\r\n    \"collector\": {\r\n        \"id\": 5,\r\n        \"name\": \"Jaime Andrés Monsalve\",\r\n        \"telephone\": \"3102178976\",\r\n        \"email\": \"j.monsalve@gmail.com\"\r\n    },\r\n    \"album\": {\r\n        \"id\": 8,\r\n        \"name\": \"Buscando América\",\r\n        \"cover\": \"https://i.pinimg.com/564x/aa/5f/ed/aa5fed7fac61cc8f41d1e79db917a7cd.jpg\",\r\n        \"releaseDate\": \"1984-08-01T05:00:00.000Z\",\r\n        \"description\": \"Buscando América es el primer álbum de la banda de Rubén Blades y Seis del Solar lanzado en 1984. La producción, bajo el sello Elektra, fusiona diferentes ritmos musicales tales como la salsa, reggae, rock, y el jazz latino. El disco fue grabado en Eurosound Studios en Nueva York entre mayo y agosto de 1983.\",\r\n        \"genre\": \"Salsa\",\r\n        \"recordLabel\": \"Sony Music\"\r\n    },\r\n    \"id\": 1\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -218,7 +218,7 @@
 						"comments"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo comentario. El Id es inicializado por la BD y se debe ver en la respuesta. \r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"description\": \"This album is one of my favourites\",\r\n    \"rating\": 5,\r\n    \"collector\": {\r\n        \"id\": 6,\r\n        \"name\": \"María Alejandra Palacios\",\r\n        \"telephone\": \"3502889087\",\r\n        \"email\": \"j.palacios@outlook.es\"\r\n    },\r\n    \"album\": {\r\n        \"id\": 8,\r\n        \"name\": \"Buscando América\",\r\n        \"cover\": \"https://i.pinimg.com/564x/aa/5f/ed/aa5fed7fac61cc8f41d1e79db917a7cd.jpg\",\r\n        \"releaseDate\": \"1984-08-01T05:00:00.000Z\",\r\n        \"description\": \"Buscando América es el primer álbum de la banda de Rubén Blades y Seis del Solar lanzado en 1984. La producción, bajo el sello Elektra, fusiona diferentes ritmos musicales tales como la salsa, reggae, rock, y el jazz latino. El disco fue grabado en Eurosound Studios en Nueva York entre mayo y agosto de 1983.\",\r\n        \"genre\": \"Salsa\",\r\n        \"recordLabel\": \"Sony Music\"\r\n    },\r\n    \"id\": 2\r\n}\r\n```"
+				"description": "Crea un nuevo comentario. El Id es inicializado por la BD y se debe ver en la respuesta. \r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"description\": \"This album is one of my favourites\",\r\n    \"rating\": 5,\r\n    \"collector\": {\r\n        \"id\": 6,\r\n        \"name\": \"María Alejandra Palacios\",\r\n        \"telephone\": \"3502889087\",\r\n        \"email\": \"j.palacios@outlook.es\"\r\n    },\r\n    \"album\": {\r\n        \"id\": 8,\r\n        \"name\": \"Buscando América\",\r\n        \"cover\": \"https://i.pinimg.com/564x/aa/5f/ed/aa5fed7fac61cc8f41d1e79db917a7cd.jpg\",\r\n        \"releaseDate\": \"1984-08-01T05:00:00.000Z\",\r\n        \"description\": \"Buscando América es el primer álbum de la banda de Rubén Blades y Seis del Solar lanzado en 1984. La producción, bajo el sello Elektra, fusiona diferentes ritmos musicales tales como la salsa, reggae, rock, y el jazz latino. El disco fue grabado en Eurosound Studios en Nueva York entre mayo y agosto de 1983.\",\r\n        \"genre\": \"Salsa\",\r\n        \"recordLabel\": \"Sony Music\"\r\n    },\r\n    \"id\": 2\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -261,7 +261,7 @@
 						"comments"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo comentario. El Id es inicializado por la BD y se debe ver en la respuesta. \r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"statusCode\": 404,\r\n    \"message\": \"The album with the given id was not found\"\r\n}\r\n```"
+				"description": "Crea un nuevo comentario. El Id es inicializado por la BD y se debe ver en la respuesta. \r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"statusCode\": 404,\r\n    \"message\": \"The album with the given id was not found\"\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -296,7 +296,7 @@
 						"comments"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nConsulta los comentarios de un álbum en la aplicación. \r\nLa petición no tiene cuerpo.\r\n\r\nSe envía el Id del álbum a consultar en la URL de la petición.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n[\r\n    {\r\n        \"id\": 1,\r\n        \"description\": \"It is an amazing album\",\r\n        \"rating\": 5\r\n    },\r\n    {\r\n        \"id\": 2,\r\n        \"description\": \"This album is one of my favourites\",\r\n        \"rating\": 5\r\n    }\r\n]\r\n```"
+				"description": "Consulta los comentarios de un álbum en la aplicación. \r\n\r\nLa petición no tiene cuerpo.\r\n\r\nSe envía el Id del álbum a consultar en la URL de la petición.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n[\r\n    {\r\n        \"id\": 1,\r\n        \"description\": \"It is an amazing album\",\r\n        \"rating\": 5\r\n    },\r\n    {\r\n        \"id\": 2,\r\n        \"description\": \"This album is one of my favourites\",\r\n        \"rating\": 5\r\n    }\r\n]\r\n```"
 			},
 			"response": []
 		},
@@ -332,7 +332,7 @@
 						"{{new_id_cm}}"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nConsulta un comentario de un álbum en la aplicación. \r\n\r\nLa petición no tiene cuerpo.\r\n\r\nSe envía el Id del álbum y del comentario a consultar en la URL de la petición.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"id\": 1,\r\n    \"description\": \"It is an amazing album\",\r\n    \"rating\": 5\r\n}\r\n```"
+				"description": "Consulta un comentario de un álbum en la aplicación. \r\n\r\nLa petición no tiene cuerpo.\r\n\r\nSe envía el Id del álbum y del comentario a consultar en la URL de la petición.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"id\": 1,\r\n    \"description\": \"It is an amazing album\",\r\n    \"rating\": 5\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -377,7 +377,7 @@
 						"{{new_id_cm}}"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nActualiza un comentario a un álbum existente. Se envían los Ids de las entidades asociar en la URL de la petición.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"id\": 1,\r\n    \"description\": \"It is the most amazing album\",\r\n    \"rating\": 5,\r\n    \"collector\": {\r\n        \"id\": 5,\r\n        \"name\": \"Jaime Andrés Monsalve\",\r\n        \"telephone\": \"3102178976\",\r\n        \"email\": \"j.monsalve@gmail.com\"\r\n    }\r\n}\r\n```"
+				"description": "Actualiza un comentario a un álbum existente. Se envían los Ids de las entidades asociar en la URL de la petición.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"id\": 1,\r\n    \"description\": \"It is the most amazing album\",\r\n    \"rating\": 5,\r\n    \"collector\": {\r\n        \"id\": 5,\r\n        \"name\": \"Jaime Andrés Monsalve\",\r\n        \"telephone\": \"3102178976\",\r\n        \"email\": \"j.monsalve@gmail.com\"\r\n    }\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -422,7 +422,7 @@
 						"0"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nEdita un comentario que no existe a un álbum. \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"The comment with the given id was not found\".\r\n\r\n**Código HTTP esperado: 404**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"statusCode\": 404,\r\n    \"message\": \"The comment with the given id was not found\"\r\n}\r\n```"
+				"description": "Edita un comentario que no existe a un álbum. \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"The comment with the given id was not found\".\r\n\r\n**Código HTTP esperado: 404**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"statusCode\": 404,\r\n    \"message\": \"The comment with the given id was not found\"\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -466,7 +466,7 @@
 						"{{new_id_cm}}"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nEdita un comentario a un álbum que no existe.\r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"The album with the given id was not found\".\r\n\r\n**Código HTTP esperado: 404**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"statusCode\": 404,\r\n    \"message\": \"The album with the given id was not found\"\r\n}\r\n```"
+				"description": "Edita un comentario a un álbum que no existe.\r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"The album with the given id was not found\".\r\n\r\n**Código HTTP esperado: 404**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"statusCode\": 404,\r\n    \"message\": \"The album with the given id was not found\"\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -506,7 +506,7 @@
 						"0"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nBorra un comentario que no existe en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error.\r\n\r\n**Código http esperado: 404**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"statusCode\": 404,\r\n    \"message\": \"The comment with the given id was not found\"\r\n}\r\n```"
+				"description": "Borra un comentario que no existe en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error.\r\n\r\n**Código http esperado: 404**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"statusCode\": 404,\r\n    \"message\": \"The comment with the given id was not found\"\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -545,7 +545,7 @@
 						"{{new_id_cm}}"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nBorra un comentario a un álbum que no existe en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"The album with the given id was not found\".\r\n\r\n**Código http esperado: 404**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"statusCode\": 404,\r\n    \"message\": \"The album with the given id was not found\"\r\n}\r\n```"
+				"description": "Borra un comentario a un álbum que no existe en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"The album with the given id was not found\".\r\n\r\n**Código http esperado: 404**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"statusCode\": 404,\r\n    \"message\": \"The album with the given id was not found\"\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -583,7 +583,7 @@
 						"{{new_id_cm}}"
 					]
 				},
-				"description": "**Release: Paso-5**\n\nBorra un comentario asociado a un álbum. Se envían los ids del comentario y el álbum creados anteriormente.\n\n**Código HTTP esperado: 204**"
+				"description": "Borra un comentario asociado a un álbum. Se envían los ids del comentario y el álbum creados anteriormente.\n\n**Código HTTP esperado: 204**"
 			},
 			"response": []
 		},
@@ -621,7 +621,7 @@
 						"{{new_id_cm2}}"
 					]
 				},
-				"description": "**Release: Paso-5**\n\nBorra un comentario asociado a un álbum. Se envían los ids del comentario y el álbum creados anteriormente.\n\n**Código HTTP esperado: 204**"
+				"description": "Borra un comentario asociado a un álbum. Se envían los ids del comentario y el álbum creados anteriormente.\n\n**Código HTTP esperado: 204**"
 			},
 			"response": []
 		},
@@ -657,7 +657,7 @@
 						"{{new_id_c}}"
 					]
 				},
-				"description": "**Release: Paso-5**\n\nBorra un álbum. Se envía el id del álbum creado anteriormente.\n\n**Código HTTP esperado: 204**"
+				"description": "Borra un álbum. Se envía el id del álbum creado anteriormente.\n\n**Código HTTP esperado: 204**"
 			},
 			"response": []
 		},
@@ -693,7 +693,7 @@
 						"{{new_id_c2}}"
 					]
 				},
-				"description": "**Release: Paso-5**\n\nBorra un álbum. Se envía el id del álbum creado anteriormente.\n\n**Código HTTP esperado: 204**"
+				"description": "Borra un álbum. Se envía el id del álbum creado anteriormente.\n\n**Código HTTP esperado: 204**"
 			},
 			"response": []
 		},
@@ -729,7 +729,7 @@
 						"{{new_id_a}}"
 					]
 				},
-				"description": "**Release: Paso-5**\n\nBorra un álbum. Se envía el id del álbum creado anteriormente.\n\n**Código HTTP esperado: 204**"
+				"description": "Borra un álbum. Se envía el id del álbum creado anteriormente.\n\n**Código HTTP esperado: 204**"
 			},
 			"response": []
 		}

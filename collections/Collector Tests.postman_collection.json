@@ -45,7 +45,7 @@
 						"collectors"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo coleccionista. El Id es inicializado por la BD y se debe ver en la respuesta.\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"name\": \"Jaime Andrés Monsalve\",\r\n    \"telephone\": \"3102178976\",\r\n    \"email\": \"j.monsalve@gmail.com\",\r\n    \"id\": 1\r\n}\r\n```"
+				"description": "Crea un nuevo coleccionista. El Id es inicializado por la BD y se debe ver en la respuesta.\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"name\": \"Jaime Andrés Monsalve\",\r\n    \"telephone\": \"3102178976\",\r\n    \"email\": \"j.monsalve@gmail.com\",\r\n    \"id\": 1\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -88,7 +88,7 @@
 						"collectors"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo coleccionista. El Id es inicializado por la BD y se debe ver en la respuesta.\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"name\": \"María Alejandra Palacios\",\r\n    \"telephone\": \"3502889087\",\r\n    \"email\": \"j.palacios@outlook.es\",\r\n    \"id\": 2\r\n}\r\n```"
+				"description": "Crea un nuevo coleccionista. El Id es inicializado por la BD y se debe ver en la respuesta.\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"name\": \"María Alejandra Palacios\",\r\n    \"telephone\": \"3502889087\",\r\n    \"email\": \"j.palacios@outlook.es\",\r\n    \"id\": 2\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -121,7 +121,7 @@
 						"collectors"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nConsulta todos los coleccionistas de la aplicacion. \r\n\r\nLa petición no tiene cuerpo.\r\n\r\nPara la prueba, se verifica que el conjunto de coleccionistas en la respuesta tenga mas de uno.\r\n\r\n**Código http esperado: 200**\r\n\r\n**Ejemplo de respuesta**\r\n\r\n```\r\n[\r\n    {\r\n        \"id\": 1,\r\n        \"name\": \"Jaime Andrés Monsalve\",\r\n        \"telephone\": \"3102178976\",\r\n        \"email\": \"j.monsalve@gmail.com\",\r\n        \"comments\": [],\r\n        \"favoritePerformers\": [],\r\n        \"collectorAlbums\": []\r\n    },\r\n    {\r\n        \"id\": 2,\r\n        \"name\": \"María Alejandra Palacios\",\r\n        \"telephone\": \"3502889087\",\r\n        \"email\": \"j.palacios@outlook.es\",\r\n        \"comments\": [],\r\n        \"favoritePerformers\": [],\r\n        \"collectorAlbums\": []\r\n    }\r\n]\r\n```"
+				"description": "Consulta todos los coleccionistas de la aplicacion. \r\n\r\nLa petición no tiene cuerpo.\r\n\r\nPara la prueba, se verifica que el conjunto de coleccionistas en la respuesta tenga mas de uno.\r\n\r\n**Código http esperado: 200**\r\n\r\n**Ejemplo de respuesta**\r\n\r\n```\r\n[\r\n    {\r\n        \"id\": 1,\r\n        \"name\": \"Jaime Andrés Monsalve\",\r\n        \"telephone\": \"3102178976\",\r\n        \"email\": \"j.monsalve@gmail.com\",\r\n        \"comments\": [],\r\n        \"favoritePerformers\": [],\r\n        \"collectorAlbums\": []\r\n    },\r\n    {\r\n        \"id\": 2,\r\n        \"name\": \"María Alejandra Palacios\",\r\n        \"telephone\": \"3502889087\",\r\n        \"email\": \"j.palacios@outlook.es\",\r\n        \"comments\": [],\r\n        \"favoritePerformers\": [],\r\n        \"collectorAlbums\": []\r\n    }\r\n]\r\n```"
 			},
 			"response": []
 		},
@@ -155,7 +155,7 @@
 						"{{new_id_c}}"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nConsulta un coleccionista de la aplicación.  \r\nLa petición no tiene cuerpo.\r\nSe envía el id del coleccionista deseado por la URL de la petición.\r\n\r\n**Código http esperado: 200**\r\n\r\n**Ejemplo de respuesta**\r\n\r\n```\r\n{\r\n    \"id\": 1,\r\n    \"name\": \"Jaime Andrés Monsalve\",\r\n    \"telephone\": \"3102178976\",\r\n    \"email\": \"j.monsalve@gmail.com\",\r\n    \"comments\": [],\r\n    \"favoritePerformers\": [],\r\n    \"collectorAlbums\": []\r\n}\r\n```"
+				"description": "Consulta un coleccionista de la aplicación.  \r\nLa petición no tiene cuerpo.\r\nSe envía el id del coleccionista deseado por la URL de la petición.\r\n\r\n**Código http esperado: 200**\r\n\r\n**Ejemplo de respuesta**\r\n\r\n```\r\n{\r\n    \"id\": 1,\r\n    \"name\": \"Jaime Andrés Monsalve\",\r\n    \"telephone\": \"3102178976\",\r\n    \"email\": \"j.monsalve@gmail.com\",\r\n    \"comments\": [],\r\n    \"favoritePerformers\": [],\r\n    \"collectorAlbums\": []\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -188,7 +188,7 @@
 						"0"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nConsulta un coleccionista que no existe en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"The collector with the given id was not found\".\r\n\r\n**Código http esperado: 404**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"statusCode\": 404,\r\n    \"message\": \"The collector with the given id was not found\"\r\n}\r\n```"
+				"description": "Consulta un coleccionista que no existe en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"The collector with the given id was not found\".\r\n\r\n**Código http esperado: 404**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"statusCode\": 404,\r\n    \"message\": \"The collector with the given id was not found\"\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -231,7 +231,7 @@
 						"{{new_id_c}}"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nActualiza un coleccionista existente. \r\nSe envía el Id en la URL de la petición.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"id\": 1,\r\n    \"name\": \"Jaime Andrés Monsalve Ruiz\",\r\n    \"telephone\": \"3102178976\",\r\n    \"email\": \"j.monsalve@gmail.com\"\r\n}\r\n```"
+				"description": "Actualiza un coleccionista existente. \r\nSe envía el Id en la URL de la petición.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"id\": 1,\r\n    \"name\": \"Jaime Andrés Monsalve Ruiz\",\r\n    \"telephone\": \"3102178976\",\r\n    \"email\": \"j.monsalve@gmail.com\"\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -273,7 +273,7 @@
 						"0"
 					]
 				},
-				"description": "**Release: Paso-5**\r\nActualiza un coleccionista que no existe. \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"The collector with the given id was not found\".\r\n\r\n**Código HTTP esperado: 404**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"statusCode\": 404,\r\n    \"message\": \"The collector with the given id was not found\"\r\n}\r\n```"
+				"description": "Actualiza un coleccionista que no existe. \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"The collector with the given id was not found\".\r\n\r\n**Código HTTP esperado: 404**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"statusCode\": 404,\r\n    \"message\": \"The collector with the given id was not found\"\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -309,7 +309,7 @@
 						"{{new_id_c}}"
 					]
 				},
-				"description": "**Release: Paso-5**\n\nBorra un coleccionista. Se envía el id del coleccionista creado anteriormente.\n\n**Código HTTP esperado: 204**"
+				"description": "Borra un coleccionista. Se envía el id del coleccionista creado anteriormente.\n\n**Código HTTP esperado: 204**"
 			},
 			"response": []
 		},
@@ -345,7 +345,7 @@
 						"{{new_id_c2}}"
 					]
 				},
-				"description": "**Release: Paso-5**\n\nBorra un coleccionista. Se envía el id del coleccionista creado anteriormente.\n\n**Código HTTP esperado: 204**"
+				"description": "Borra un coleccionista. Se envía el id del coleccionista creado anteriormente.\n\n**Código HTTP esperado: 204**"
 			},
 			"response": []
 		},
@@ -382,7 +382,7 @@
 						"0"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nBorra un coleccionista que no existe en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"The collector with the given id was not found\".\r\n\r\n**Código http esperado: 404**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"statusCode\": 404,\r\n    \"message\": \"The collector with the given id was not found\"\r\n}\r\n```"
+				"description": "Borra un coleccionista que no existe en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"The collector with the given id was not found\".\r\n\r\n**Código http esperado: 404**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"statusCode\": 404,\r\n    \"message\": \"The collector with the given id was not found\"\r\n}\r\n```"
 			},
 			"response": []
 		}

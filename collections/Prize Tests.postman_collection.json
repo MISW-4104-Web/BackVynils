@@ -46,7 +46,7 @@
 						"prizes"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo premio. El Id es inicializado por la BD y se debe ver en la respuesta. \r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"name\": \"Grammy Award\",\r\n    \"description\": \"Grammy Award, any of a series of awards presented annually in the United States by the National Academy of Recording Arts & Sciences\",\r\n    \"organization\": \"National Academy of Recording Arts & Sciences\",\r\n    \"id\": 3\r\n}\r\n```"
+				"description": "Crea un nuevo premio. El Id es inicializado por la BD y se debe ver en la respuesta. \r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"name\": \"Grammy Award\",\r\n    \"description\": \"Grammy Award, any of a series of awards presented annually in the United States by the National Academy of Recording Arts & Sciences\",\r\n    \"organization\": \"National Academy of Recording Arts & Sciences\",\r\n    \"id\": 3\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -90,7 +90,7 @@
 						"prizes"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo premio. El Id es inicializado por la BD y se debe ver en la respuesta. \r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"name\": \"Premios lo Nuestro\",\r\n    \"description\": \" es una ceremonia de entrega de premios a los mejores músicos latinos del año. Premio Lo Nuestro es presentado por la cadena de televisión Univisión, y fueron creados en 1989, siendo la entrega de premios más antigua en la historia musical latina.\",\r\n    \"organization\": \"Univisión\",\r\n    \"id\": 4\r\n}\r\n```"
+				"description": "Crea un nuevo premio. El Id es inicializado por la BD y se debe ver en la respuesta. \r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"name\": \"Premios lo Nuestro\",\r\n    \"description\": \" es una ceremonia de entrega de premios a los mejores músicos latinos del año. Premio Lo Nuestro es presentado por la cadena de televisión Univisión, y fueron creados en 1989, siendo la entrega de premios más antigua en la historia musical latina.\",\r\n    \"organization\": \"Univisión\",\r\n    \"id\": 4\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -123,7 +123,7 @@
 						"prizes"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nConsulta todos los premios de la aplicación. \r\nLa petición no tiene cuerpo.\r\n\r\nPara la prueba, se verifica que el conjunto de premios en la respuesta tenga mas de uno.\r\n\r\n**Código http esperado: 200**\r\n\r\n**Ejemplo de salida**\r\n\r\n```\r\n[\r\n    {\r\n        \"id\": 2,\r\n        \"organization\": \"Univisión\",\r\n        \"name\": \"Premios lo Nuestro\",\r\n        \"description\": \" es una ceremonia de entrega de premios a los mejores músicos latinos del año. Premio Lo Nuestro es presentado por la cadena de televisión Univisión, y fueron creados en 1989, siendo la entrega de premios más antigua en la historia musical latina.\",\r\n        \"performerPrizes\": []\r\n    },\r\n    {\r\n        \"id\": 1,\r\n        \"organization\": \"National Academy of Recording Arts & Sciences\",\r\n        \"name\": \"Grammy Award\",\r\n        \"description\": \"Grammy Award, any of a series of awards presented annually in the United States by the National Academy of Recording Arts & Sciences\",\r\n        \"performerPrizes\": []\r\n    }\r\n]\r\n```"
+				"description": "Consulta todos los premios de la aplicación. \r\n\r\nLa petición no tiene cuerpo.\r\n\r\nPara la prueba, se verifica que el conjunto de premios en la respuesta tenga mas de uno.\r\n\r\n**Código http esperado: 200**\r\n\r\n**Ejemplo de salida**\r\n\r\n```\r\n[\r\n    {\r\n        \"id\": 2,\r\n        \"organization\": \"Univisión\",\r\n        \"name\": \"Premios lo Nuestro\",\r\n        \"description\": \" es una ceremonia de entrega de premios a los mejores músicos latinos del año. Premio Lo Nuestro es presentado por la cadena de televisión Univisión, y fueron creados en 1989, siendo la entrega de premios más antigua en la historia musical latina.\",\r\n        \"performerPrizes\": []\r\n    },\r\n    {\r\n        \"id\": 1,\r\n        \"organization\": \"National Academy of Recording Arts & Sciences\",\r\n        \"name\": \"Grammy Award\",\r\n        \"description\": \"Grammy Award, any of a series of awards presented annually in the United States by the National Academy of Recording Arts & Sciences\",\r\n        \"performerPrizes\": []\r\n    }\r\n]\r\n```"
 			},
 			"response": []
 		},
@@ -157,7 +157,7 @@
 						"{{new_id_p}}"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nConsulta un premio de la aplicación.  \r\nLa petición no tiene cuerpo.\r\nSe envía el id del premio deseado por la URL de la petición.\r\n\r\n**Código http esperado: 200**\r\n\r\n**Ejemplo de salida**\r\n\r\n```\r\n{\r\n    \"id\": 1,\r\n    \"organization\": \"National Academy of Recording Arts & Sciences\",\r\n    \"name\": \"Grammy Award\",\r\n    \"description\": \"Grammy Award, any of a series of awards presented annually in the United States by the National Academy of Recording Arts & Sciences\",\r\n    \"performerPrizes\": []\r\n}\r\n```"
+				"description": "Consulta un premio de la aplicación. \r\n\r\nLa petición no tiene cuerpo.\r\n\r\nSe envía el id del premio deseado por la URL de la petición.\r\n\r\n**Código http esperado: 200**\r\n\r\n**Ejemplo de salida**\r\n\r\n```\r\n{\r\n    \"id\": 1,\r\n    \"organization\": \"National Academy of Recording Arts & Sciences\",\r\n    \"name\": \"Grammy Award\",\r\n    \"description\": \"Grammy Award, any of a series of awards presented annually in the United States by the National Academy of Recording Arts & Sciences\",\r\n    \"performerPrizes\": []\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -190,7 +190,7 @@
 						"0"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nConsulta un premio que no existe en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /prizes/0 no existe.\".\r\n\r\n**Código http esperado: 404**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"statusCode\": 404,\r\n    \"message\": \"The prize with the given id was not found\"\r\n}\r\n```"
+				"description": "Consulta un premio que no existe en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /prizes/0 no existe.\".\r\n\r\n**Código http esperado: 404**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"statusCode\": 404,\r\n    \"message\": \"The prize with the given id was not found\"\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -233,7 +233,7 @@
 						"{{new_id_p}}"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nActualiza un premio existente. Se envía el Id en la URL de la petición.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"id\": 3,\r\n    \"organization\": \"National Academy of Recording Arts & Sciences\",\r\n    \"name\": \"Grammy Award\",\r\n    \"description\": \"Grammy Award, any of a series of awards presented annually in the United States by the National Academy of Recording Arts & Sciences. Winners are selected from more than 25 fields, which cover such genres as pop, rock, rap, R&B, country, reggae, classical, gospel, and jazz\"\r\n}\r\n```"
+				"description": "Actualiza un premio existente. Se envía el Id en la URL de la petición.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"id\": 3,\r\n    \"organization\": \"National Academy of Recording Arts & Sciences\",\r\n    \"name\": \"Grammy Award\",\r\n    \"description\": \"Grammy Award, any of a series of awards presented annually in the United States by the National Academy of Recording Arts & Sciences. Winners are selected from more than 25 fields, which cover such genres as pop, rock, rap, R&B, country, reggae, classical, gospel, and jazz\"\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -275,7 +275,7 @@
 						"0"
 					]
 				},
-				"description": "**Release: Paso-5**\r\nActualiza un premio que no existe. \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"The prize with the given id was not found\".\r\n\r\n**Código HTTP esperado: 404**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"statusCode\": 404,\r\n    \"message\": \"The prize with the given id was not found\"\r\n}\r\n```"
+				"description": "Actualiza un premio que no existe. \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"The prize with the given id was not found\".\r\n\r\n**Código HTTP esperado: 404**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"statusCode\": 404,\r\n    \"message\": \"The prize with the given id was not found\"\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -311,7 +311,7 @@
 						"{{new_id_p}}"
 					]
 				},
-				"description": "**Release: Paso-5**\n\nBorra un premio. Se envía el id del premio creado anteriormente.\n\n**Código HTTP esperado: 204**"
+				"description": "Borra un premio. Se envía el id del premio creado anteriormente.\n\n**Código HTTP esperado: 204**"
 			},
 			"response": []
 		},
@@ -347,7 +347,7 @@
 						"{{new_id_p2}}"
 					]
 				},
-				"description": "**Release: Paso-5**\n\nBorra un premio. Se envía el id del premio creado anteriormente.\n\n**Código HTTP esperado: 204**"
+				"description": "Borra un premio. Se envía el id del premio creado anteriormente.\n\n**Código HTTP esperado: 204**"
 			},
 			"response": []
 		},
@@ -384,7 +384,7 @@
 						"0"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nBorra un premio que no existe en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"The prize with the given id was not found\".\r\n\r\n**Código http esperado: 404**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"statusCode\": 404,\r\n    \"message\": \"The prize with the given id was not found\"\r\n}\r\n```"
+				"description": "Borra un premio que no existe en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"The prize with the given id was not found\".\r\n\r\n**Código http esperado: 404**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"statusCode\": 404,\r\n    \"message\": \"The prize with the given id was not found\"\r\n}\r\n```"
 			},
 			"response": []
 		}
