@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "41d784df-9cf8-46e3-9f8f-5fd3aafe1194",
+		"_postman_id": "23af2672-0008-4b88-9866-161e26ece4eb",
 		"name": "PerformerPrize Tests",
 		"description": "Colección de pruebas sobre el recurso PrizeArtist",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -12,7 +12,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "27b5c491-8e11-4a9f-b0ac-10d0111f51c5",
 						"exec": [
 							"var data = JSON.parse(responseBody);",
 							"postman.setGlobalVariable(\"new_id_p\",data.id);",
@@ -47,7 +46,7 @@
 						"prizes"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo premio. El Id es inicializado por la BD y se debe ver en la respuesta. \r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
+				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo premio. El Id es inicializado por la BD y se debe ver en la respuesta. \r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"name\": \"Grammy Award\",\r\n    \"description\": \"Grammy Award, any of a series of awards presented annually in the United States by the National Academy of Recording Arts & Sciences\",\r\n    \"organization\": \"National Academy of Recording Arts & Sciences\",\r\n    \"id\": 1\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -57,7 +56,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "3f25b7b2-0798-44c2-af56-0e924da9188f",
 						"exec": [
 							"var data = JSON.parse(responseBody);",
 							"postman.setGlobalVariable(\"new_id_p2\",data.id);",
@@ -92,7 +90,7 @@
 						"prizes"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo premio. El Id es inicializado por la BD y se debe ver en la respuesta. \r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
+				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo premio. El Id es inicializado por la BD y se debe ver en la respuesta. \r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"name\": \"Premios lo Nuestro\",\r\n    \"description\": \" es una ceremonia de entrega de premios a los mejores músicos latinos del año. Premio Lo Nuestro es presentado por la cadena de televisión Univisión, y fueron creados en 1989, siendo la entrega de premios más antigua en la historia musical latina.\",\r\n    \"organization\": \"Univisión\",\r\n    \"id\": 2\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -102,7 +100,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "6ac88223-b2ec-45f7-a10e-9ff3c5f5d21c",
 						"exec": [
 							"var data = JSON.parse(responseBody);",
 							"postman.setGlobalVariable(\"new_id_m\",data.id);",
@@ -136,7 +133,7 @@
 						"musicians"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo músico. El Id es inicializado por la BD y se debe ver en la respuesta.\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
+				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo músico. El Id es inicializado por la BD y se debe ver en la respuesta.\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"name\": \"Rubén Blades Bellido de Luna\",\r\n    \"image\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Ruben_Blades_by_Gage_Skidmore.jpg/800px-Ruben_Blades_by_Gage_Skidmore.jpg\",\r\n    \"description\": \"Es un cantante, compositor, músico, actor, abogado, político y activista panameño. Ha desarrollado gran parte de su carrera artística en la ciudad de Nueva York.\",\r\n    \"birthDate\": \"1948-07-16T00:00:00-05:00\",\r\n    \"id\": 16\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -146,7 +143,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "06f059e9-9519-4a40-b5a3-0dc29972f5e5",
 						"exec": [
 							"var data = JSON.parse(responseBody);",
 							"postman.setGlobalVariable(\"new_id_b\",data.id);",
@@ -180,7 +176,7 @@
 						"bands"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo artista. El Id es inicializado por la BD y se debe ver en la respuesta.\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
+				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo artista. El Id es inicializado por la BD y se debe ver en la respuesta.\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"name\": \"Queen\",\r\n    \"image\": \"https://upload.wikimedia.org/wikipedia/commons/7/7c/Queen_logo.svg\",\r\n    \"description\": \"Queen es una banda británica de rock formada en 1970 en Londres por el cantante Freddie Mercury, el guitarrista Brian May, el baterista Roger Taylor y el bajista John Deacon. Si bien el grupo ha presentado bajas de dos de sus miembros (Mercury, fallecido en 1991, y Deacon, retirado en 1997), los integrantes restantes, May y Taylor, continúan trabajando bajo el nombre Queen, por lo que la banda aún se considera activa.\",\r\n    \"creationDate\": \"1970-01-01T00:00:00-05:00\",\r\n    \"id\": 17\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -190,7 +186,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "e79da8f6-1419-4b6f-abd9-b9c7bb69e819",
 						"exec": [
 							"tests[\"no genera error en el Post\"] = responseCode.code === 200;"
 						],
@@ -224,7 +219,7 @@
 						"{{new_id_m}}"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nAsocia un premio a un músico en la aplicación. \r\n\r\nSe envía el Id del músico y el del premio a asociar en la URL de la petición.\r\n\r\n**Código http esperado: 200**"
+				"description": "**Release: Paso-5**\r\n\r\nAsocia un premio a un músico en la aplicación. \r\n\r\nSe envía el Id del músico y el del premio a asociar en la URL de la petición.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"premiationDate\": \"1948-07-16T00:00:00-05:00\",\r\n    \"prize\": {\r\n        \"id\": 1,\r\n        \"organization\": \"National Academy of Recording Arts & Sciences\",\r\n        \"name\": \"Grammy Award\",\r\n        \"description\": \"Grammy Award, any of a series of awards presented annually in the United States by the National Academy of Recording Arts & Sciences\"\r\n    },\r\n    \"performer\": {\r\n        \"id\": 16,\r\n        \"name\": \"Rubén Blades Bellido de Luna\",\r\n        \"image\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Ruben_Blades_by_Gage_Skidmore.jpg/800px-Ruben_Blades_by_Gage_Skidmore.jpg\",\r\n        \"description\": \"Es un cantante, compositor, músico, actor, abogado, político y activista panameño. Ha desarrollado gran parte de su carrera artística en la ciudad de Nueva York.\",\r\n        \"birthDate\": \"1948-07-16T05:00:00.000Z\"\r\n    },\r\n    \"id\": 1\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -234,7 +229,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "5a26b9e0-2d15-4c12-8225-a66a832ee525",
 						"exec": [
 							"tests[\"no genera error en el Post\"] = responseCode.code === 200;"
 						],
@@ -268,7 +262,7 @@
 						"{{new_id_b}}"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nAsocia un premio a una banda en la aplicación. \r\n\r\nSe envía el Id de la banda y el del premio a asociar en la URL de la petición.\r\n\r\n**Código http esperado: 200**"
+				"description": "**Release: Paso-5**\r\n\r\nAsocia un premio a una banda en la aplicación. \r\n\r\nSe envía el Id de la banda y el del premio a asociar en la URL de la petición.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"premiationDate\": \"1948-07-16T00:00:00-05:00\",\r\n    \"prize\": {\r\n        \"id\": 1,\r\n        \"organization\": \"National Academy of Recording Arts & Sciences\",\r\n        \"name\": \"Grammy Award\",\r\n        \"description\": \"Grammy Award, any of a series of awards presented annually in the United States by the National Academy of Recording Arts & Sciences\"\r\n    },\r\n    \"performer\": {\r\n        \"id\": 16,\r\n        \"name\": \"Rubén Blades Bellido de Luna\",\r\n        \"image\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Ruben_Blades_by_Gage_Skidmore.jpg/800px-Ruben_Blades_by_Gage_Skidmore.jpg\",\r\n        \"description\": \"Es un cantante, compositor, músico, actor, abogado, político y activista panameño. Ha desarrollado gran parte de su carrera artística en la ciudad de Nueva York.\",\r\n        \"birthDate\": \"1948-07-16T05:00:00.000Z\"\r\n    },\r\n    \"id\": 1\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -278,7 +272,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "6a6bd5b3-eefc-40a8-a57e-dd3d25fea822",
 						"exec": [
 							"tests[\"No se puede asociar el artista ya que este no existe.\"] = responseCode.code === 404;",
 							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The performer with the given id was not found\");"
@@ -313,7 +306,7 @@
 						"0"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nAsocia un músico que no existe a un premio en la aplicación. \r\n\r\nSe envía el Id del músico y el del premio a asociar en la URL de la petición.\r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /musicians/0 no existe.\".\r\n\r\n**Código http esperado: 404**"
+				"description": "**Release: Paso-5**\r\n\r\nAsocia un músico que no existe a un premio en la aplicación. \r\n\r\nSe envía el Id del músico y el del premio a asociar en la URL de la petición.\r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"The performer with the given id was not found\".\r\n\r\n**Código http esperado: 404**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"statusCode\": 404,\r\n    \"message\": \"The performer with the given id was not found\"\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -323,7 +316,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "402b5dc1-967c-4d6b-830c-a25f1f00940b",
 						"exec": [
 							"tests[\"No se puede asociar el artista ya que este no existe.\"] = responseCode.code === 404;",
 							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The performer with the given id was not found\");"
@@ -358,7 +350,7 @@
 						"0"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nAsocia una banda que no existe a un premio en la aplicación. \r\n\r\nSe envía el Id de la banda y el del premio a asociar en la URL de la petición.\r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /bands/0 no existe.\".\r\n\r\n**Código http esperado: 404**"
+				"description": "**Release: Paso-5**\r\n\r\nAsocia una banda que no existe a un premio en la aplicación. \r\n\r\nSe envía el Id de la banda y el del premio a asociar en la URL de la petición.\r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"The performer with the given id was not found\".\r\n\r\n**Código http esperado: 404**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"statusCode\": 404,\r\n    \"message\": \"The performer with the given id was not found\"\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -368,7 +360,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "4716e570-70c5-41d5-933b-ce917a34c5ef",
 						"exec": [
 							"console.log(responseBody);",
 							"var data = JSON.parse(responseBody);",
@@ -394,7 +385,7 @@
 						"performers"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nConsulta un artista de un premio en la aplicación. \r\nLa petición no tiene cuerpo.\r\n\r\nSe envía el Id del artista y del premio a consultar en la URL de la petición.\r\n\r\n**Código http esperado: 200**"
+				"description": "**Release: Paso-5**\r\n\r\nConsulta un artista de un premio en la aplicación. \r\n\r\nLa petición no tiene cuerpo.\r\n\r\nSe envía el Id del artista y del premio a consultar en la URL de la petición.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n[\r\n    {\r\n        \"id\": 1,\r\n        \"premiationDate\": \"1948-07-16T05:00:00.000Z\",\r\n        \"performer\": {\r\n            \"id\": 16,\r\n            \"name\": \"Rubén Blades Bellido de Luna\",\r\n            \"image\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Ruben_Blades_by_Gage_Skidmore.jpg/800px-Ruben_Blades_by_Gage_Skidmore.jpg\",\r\n            \"description\": \"Es un cantante, compositor, músico, actor, abogado, político y activista panameño. Ha desarrollado gran parte de su carrera artística en la ciudad de Nueva York.\",\r\n            \"birthDate\": \"1948-07-16T05:00:00.000Z\"\r\n        }\r\n    },\r\n    {\r\n        \"id\": 2,\r\n        \"premiationDate\": \"1948-07-16T05:00:00.000Z\",\r\n        \"performer\": {\r\n            \"id\": 17,\r\n            \"name\": \"Queen\",\r\n            \"image\": \"https://upload.wikimedia.org/wikipedia/commons/7/7c/Queen_logo.svg\",\r\n            \"description\": \"Queen es una banda británica de rock formada en 1970 en Londres por el cantante Freddie Mercury, el guitarrista Brian May, el baterista Roger Taylor y el bajista John Deacon. Si bien el grupo ha presentado bajas de dos de sus miembros (Mercury, fallecido en 1991, y Deacon, retirado en 1997), los integrantes restantes, May y Taylor, continúan trabajando bajo el nombre Queen, por lo que la banda aún se considera activa.\",\r\n            \"creationDate\": \"1970-01-01T05:00:00.000Z\"\r\n        }\r\n    }\r\n]\r\n```"
 			},
 			"response": []
 		},
@@ -404,7 +395,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "4a775749-7371-43dd-81cd-dc7481841fd3",
 						"exec": [
 							"tests[\"No se deberia obtener un artista con un id de un premio que no existe\"] = responseCode.code === 404;",
 							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The prize with the given id was not found\");"
@@ -429,7 +419,7 @@
 						"performers"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nConsulta un artista de un premio que noe existe en la aplicación. \r\n\r\nLa petición no tiene cuerpo.\r\n\r\nSe envía el Id del premio a consultar en la URL de la petición.\r\n\r\n**Código http esperado: 200**"
+				"description": "**Release: Paso-5**\r\n\r\nConsulta un artista de un premio que noe existe en la aplicación. \r\n\r\nLa petición no tiene cuerpo.\r\n\r\nSe envía el Id del premio a consultar en la URL de la petición.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"statusCode\": 404,\r\n    \"message\": \"The prize with the given id was not found\"\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -439,7 +429,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "bf2fa560-2a1e-4cce-8ff9-d059faab8b6b",
 						"exec": [
 							"tests[\"no genera error en el Delete\"] = responseCode.code === 204;"
 						],
@@ -478,7 +467,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "58cefaf2-1bb0-4957-a142-849a01f08f45",
 						"exec": [
 							"tests[\"no genera error en el Delete\"] = responseCode.code === 204;"
 						],
@@ -517,7 +505,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "c28b7d2b-a31c-4b16-876e-d37818df87eb",
 						"exec": [
 							"tests[\"no genera error en el Delete\"] = responseCode.code === 204;"
 						],
@@ -554,7 +541,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "7ecad772-f3df-4805-a99f-321125864a98",
 						"exec": [
 							"tests[\"no genera error en el Delete\"] = responseCode.code === 204;"
 						],
@@ -591,7 +577,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "c322af57-07aa-4f91-9814-dd082c2d1c9e",
 						"exec": [
 							"tests[\"no genera error en el Delete\"] = responseCode.code === 204;"
 						],
@@ -628,7 +613,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "b4db0831-a697-45c8-ba3f-6e42bd162b51",
 						"exec": [
 							"tests[\"no genera error en el Delete\"] = responseCode.code === 204;"
 						],
@@ -664,7 +648,6 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "5c00e1d1-51c2-4dfc-8245-0b4c3f14e419",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -674,13 +657,11 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "7a14be54-9298-4eae-a33a-65248f8af75e",
 				"type": "text/javascript",
 				"exec": [
 					""
 				]
 			}
 		}
-	],
-	"protocolProfileBehavior": {}
+	]
 }

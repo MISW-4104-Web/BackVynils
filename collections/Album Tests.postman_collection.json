@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "fe9907ea-8de2-4831-9eb8-8723cca6ddd1",
+		"_postman_id": "dffbaa09-ea88-4751-ab63-21fb7d9d7b3d",
 		"name": "Album Tests",
 		"description": "Colección de pruebas sobre el recurso Vinyl",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -12,7 +12,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "1b54fb4f-dcce-421f-98eb-51f562149ae5",
 						"exec": [
 							"var data = JSON.parse(responseBody);",
 							"postman.setGlobalVariable(\"new_id_a\",data.id);",
@@ -45,7 +44,7 @@
 						"albums"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo album. El Id es inicializado por la BD y se debe ver en la respuesta. \r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
+				"description": "Crea un nuevo album. El Id es inicializado por la BD y se debe ver en la respuesta. \r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"name\": \"Buscando América\",\r\n    \"cover\": \"https://i.pinimg.com/564x/aa/5f/ed/aa5fed7fac61cc8f41d1e79db917a7cd.jpg\",\r\n    \"releaseDate\": \"1984-08-01T00:00:00-05:00\",\r\n    \"description\": \"Buscando América es el primer álbum de la banda de Rubén Blades y Seis del Solar lanzado en 1984. La producción, bajo el sello Elektra, fusiona diferentes ritmos musicales tales como la salsa, reggae, rock, y el jazz latino. El disco fue grabado en Eurosound Studios en Nueva York entre mayo y agosto de 1983.\",\r\n    \"genre\": \"Salsa\",\r\n    \"recordLabel\": \"Elektra\",\r\n    \"id\": 1\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -55,7 +54,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "50ab9bb7-8b91-44b3-9e06-9fd56e11754a",
 						"exec": [
 							"var data = JSON.parse(responseBody);",
 							"postman.setGlobalVariable(\"new_id_a2\",data.id);",
@@ -88,7 +86,7 @@
 						"albums"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nCrea otro album. \r\n\r\nEl Id es inicializado por la BD y se debe ver en la respuesta. \r\n\r\nEste segundo album se utiliza para probar la petición que consultar todos los albumes\r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
+				"description": "Crea otro album. \r\n\r\nEl Id es inicializado por la BD y se debe ver en la respuesta. \r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n```\r\n{\r\n    \"name\": \"Poeta del Pueblo\",\r\n    \"cover\": \"\",\r\n    \"releaseDate\": \"2011-08-01T00:00:00-05:00\",\r\n    \"description\": \"Recopilación de 27 composiciones del cosmos Blades que los bailadores y melómanos han hecho suyas en estos 40 años de presencia de los ritmos y concordias afrocaribeños en múltiples escenarios internacionales. Grabaciones de Blades para la Fania con las orquestas de Pete Rodríguez, Ray Barreto, Fania All Stars y, sobre todo, los grandes éxitos con la Banda de Willie Colón\",\r\n    \"genre\": \"Salsa\",\r\n    \"recordLabel\": \"Fania Records\",\r\n    \"id\": 2\r\n}```"
 			},
 			"response": []
 		},
@@ -98,7 +96,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "d19677d6-acbb-443e-8747-69e1fd56d3e1",
 						"exec": [
 							"var data= JSON.parse(responseBody);",
 							"tests[\"No genera error en el Get all\"] = responseCode.code === 200;",
@@ -122,7 +119,7 @@
 						"albums"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nConsulta todos los albumes de la aplicación. \r\n\r\nLa petición no tiene cuerpo.\r\n\r\nPara la prueba, se verifica que el conjunto de albumes en la respuesta tenga mas de uno.\r\n\r\n**Código http esperado: 200**\r\n\r\n**json de salida**\r\n\r\n```\r\n[\r\n    {\r\n        \"id\": 6,\r\n        \"name\": \"Poeta del Pueblo\",\r\n        \"cover\": \"\",\r\n        \"releaseDate\": \"2011-08-01T05:00:00.000Z\",\r\n        \"description\": \"Recopilación de 27 composiciones del cosmos Blades que los bailadores y melómanos han hecho suyas en estos 40 años de presencia de los ritmos y concordias afrocaribeños en múltiples escenarios internacionales. Grabaciones de Blades para la Fania con las orquestas de Pete Rodríguez, Ray Barreto, Fania All Stars y, sobre todo, los grandes éxitos con la Banda de Willie Colón\",\r\n        \"genre\": \"Salsa\",\r\n        \"recordLabel\": \"Fania Records\",\r\n        \"tracks\": [],\r\n        \"performers\": [],\r\n        \"comments\": []\r\n    },\r\n    {\r\n        \"id\": 5,\r\n        \"name\": \"Buscando América\",\r\n        \"cover\": \"\",\r\n        \"releaseDate\": \"1984-08-01T05:00:00.000Z\",\r\n        \"description\": \"Buscando América es el primer álbum de la banda de Rubén Blades y Seis del Solar lanzado en 1984. La producción, bajo el sello Elektra, fusiona diferentes ritmos musicales tales como la salsa, reggae, rock, y el jazz latino. El disco fue grabado en Eurosound Studios en Nueva York entre mayo y agosto de 1983.\",\r\n        \"genre\": \"Salsa\",\r\n        \"recordLabel\": \"Elektra\",\r\n        \"tracks\": [],\r\n        \"performers\": [],\r\n        \"comments\": []\r\n    }\r\n]\r\n```"
+				"description": "Consulta todos los albumes de la aplicación. \r\n\r\nLa petición no tiene cuerpo.\r\n\r\nPara la prueba, se verifica que el conjunto de albumes en la respuesta tenga mas de uno.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n[\r\n    {\r\n        \"id\": 2,\r\n        \"name\": \"Poeta del Pueblo\",\r\n        \"cover\": \"\",\r\n        \"releaseDate\": \"2011-08-01T05:00:00.000Z\",\r\n        \"description\": \"Recopilación de 27 composiciones del cosmos Blades que los bailadores y melómanos han hecho suyas en estos 40 años de presencia de los ritmos y concordias afrocaribeños en múltiples escenarios internacionales. Grabaciones de Blades para la Fania con las orquestas de Pete Rodríguez, Ray Barreto, Fania All Stars y, sobre todo, los grandes éxitos con la Banda de Willie Colón\",\r\n        \"genre\": \"Salsa\",\r\n        \"recordLabel\": \"Fania Records\",\r\n        \"tracks\": [],\r\n        \"performers\": [],\r\n        \"comments\": []\r\n    },\r\n    {\r\n        \"id\": 1,\r\n        \"name\": \"Buscando América\",\r\n        \"cover\": \"https://i.pinimg.com/564x/aa/5f/ed/aa5fed7fac61cc8f41d1e79db917a7cd.jpg\",\r\n        \"releaseDate\": \"1984-08-01T05:00:00.000Z\",\r\n        \"description\": \"Buscando América es el primer álbum de la banda de Rubén Blades y Seis del Solar lanzado en 1984. La producción, bajo el sello Elektra, fusiona diferentes ritmos musicales tales como la salsa, reggae, rock, y el jazz latino. El disco fue grabado en Eurosound Studios en Nueva York entre mayo y agosto de 1983.\",\r\n        \"genre\": \"Salsa\",\r\n        \"recordLabel\": \"Elektra\",\r\n        \"tracks\": [],\r\n        \"performers\": [],\r\n        \"comments\": []\r\n    }\r\n]\r\n```"
 			},
 			"response": [
 				{
@@ -182,7 +179,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "47f17fc2-039e-4839-a775-a5b81c4d6ed0",
 						"exec": [
 							"console.log(responseBody);",
 							"var data = JSON.parse(responseBody);",
@@ -207,7 +203,7 @@
 						"{{new_id_a}}"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nConsulta un album de la aplicación.  \r\nLa petición no tiene cuerpo.\r\nSe envía el id del album deseado por la URL de la petición.\r\n\r\n**Código http esperado: 200**\r\n\r\n**json de salida**\r\n```\r\n{\r\n    \"id\": 1,\r\n    \"name\": \"Buscando América\",\r\n    \"cover\": \"\",\r\n    \"releaseDate\": \"1984-08-01T05:00:00.000Z\",\r\n    \"description\": \"Buscando América es el primer álbum de la banda de Rubén Blades y Seis del Solar lanzado en 1984. La producción, bajo el sello Elektra, fusiona diferentes ritmos musicales tales como la salsa, reggae, rock, y el jazz latino. El disco fue grabado en Eurosound Studios en Nueva York entre mayo y agosto de 1983.\",\r\n    \"genre\": \"Salsa\",\r\n    \"recordLabel\": \"Elektra\",\r\n    \"tracks\": [],\r\n    \"performers\": [],\r\n    \"comments\": []\r\n}\r\n```"
+				"description": "Consulta un album de la aplicación.  \r\n\r\nLa petición no tiene cuerpo.\r\n\r\nSe envía el id del album deseado por la URL de la petición.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n```\r\n{\r\n    \"id\": 1,\r\n    \"name\": \"Buscando América\",\r\n    \"cover\": \"https://i.pinimg.com/564x/aa/5f/ed/aa5fed7fac61cc8f41d1e79db917a7cd.jpg\",\r\n    \"releaseDate\": \"1984-08-01T05:00:00.000Z\",\r\n    \"description\": \"Buscando América es el primer álbum de la banda de Rubén Blades y Seis del Solar lanzado en 1984. La producción, bajo el sello Elektra, fusiona diferentes ritmos musicales tales como la salsa, reggae, rock, y el jazz latino. El disco fue grabado en Eurosound Studios en Nueva York entre mayo y agosto de 1983.\",\r\n    \"genre\": \"Salsa\",\r\n    \"recordLabel\": \"Elektra\",\r\n    \"tracks\": [],\r\n    \"performers\": [],\r\n    \"comments\": []\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -217,7 +213,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "6a2fd2bd-a1da-4a1e-a0bf-e0067f73a666",
 						"exec": [
 							"tests[\"No consulta con id que no existe\"] = responseCode.code === 404; ",
 							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The album with the given id was not found\");"
@@ -241,7 +236,7 @@
 						"0"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nConsulta un album que no existe en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /albums/0 no existe.\".\r\n\r\n**Código http esperado: 404**"
+				"description": "Consulta un album que no existe en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"The album with the given id was not found\".\r\n\r\n**Código http esperado: 404**\r\n\r\n**JSON de salida**\r\n```\r\n{\r\n    \"statusCode\": 404,\r\n    \"message\": \"The album with the given id was not found\"\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -251,7 +246,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "8aee55cb-b6a9-4787-a602-ddbc390bc9f0",
 						"exec": [
 							"tests[\"No actualiza con id que no existe\"] = responseCode.code === 404;",
 							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The album with the given id was not found\");"
@@ -284,7 +278,7 @@
 						"0"
 					]
 				},
-				"description": "**Release: Paso-5**\r\nActualiza un vinilo que no existe. \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /vinyls/0 no existe.\".\r\n\r\n**Código HTTP esperado: 404**"
+				"description": "Actualiza un vinilo que no existe. \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"The album with the given id was not found\".\r\n\r\n**Código HTTP esperado: 404**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"statusCode\": 404,\r\n    \"message\": \"The album with the given id was not found\"\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -294,7 +288,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "7c216755-b3ec-4b8d-a488-974a7512b759",
 						"exec": [
 							"console.log(responseBody);",
 							"var data = JSON.parse(responseBody);",
@@ -328,7 +321,7 @@
 						"{{new_id_a}}"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nActualiza un vinilo existente. \r\nse envía el Id en la URL de la petición.\r\n\r\n**Código http esperado: 200**"
+				"description": "Actualiza un vinilo existente. \r\n\r\nSe envía el Id en la URL de la petición.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"id\": 1,\r\n    \"name\": \"Buscando América\",\r\n    \"cover\": \"https://i.pinimg.com/564x/aa/5f/ed/aa5fed7fac61cc8f41d1e79db917a7cd.jpg\",\r\n    \"releaseDate\": \"1984-08-01T00:00:00-05:00\",\r\n    \"description\": \"Buscando América es el primer álbum de la banda de Rubén Blades y Seis del Solar lanzado en 1984. La producción, bajo el sello Elektra, fusiona diferentes ritmos musicales tales como la salsa, reggae, rock, y el jazz latino.\",\r\n    \"genre\": \"Salsa\",\r\n    \"recordLabel\": \"Elektra\"\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -338,7 +331,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "df0f2650-d4e5-4eb9-bc80-ba9b1bece1f0",
 						"exec": [
 							"tests[\"No genera error en el Delete\"] = responseCode.code === 204;"
 						],
@@ -365,7 +357,7 @@
 						"{{new_id_a}}"
 					]
 				},
-				"description": "**Release: Paso-5**\n\nBorra un vinilo. Se envía el id del vinilo creado anteriormente.\n\n**Código HTTP esperado: 204**"
+				"description": "Borra un vinilo. Se envía el id del vinilo creado anteriormente.\n\n**Código HTTP esperado: 204**"
 			},
 			"response": []
 		},
@@ -375,7 +367,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "7ad47e80-1699-4f10-a20a-b947544e3d7d",
 						"exec": [
 							"tests[\"No genera error en el Delete\"] = responseCode.code === 204;"
 						],
@@ -402,7 +393,7 @@
 						"{{new_id_a2}}"
 					]
 				},
-				"description": "**Release: Paso-5**\n\nBorra un vinilo. Se envía el id del vinilo creado anteriormente.\n\n**Código HTTP esperado: 204**"
+				"description": "Borra un vinilo. Se envía el id del vinilo creado anteriormente.\n\n**Código HTTP esperado: 204**"
 			},
 			"response": []
 		},
@@ -412,7 +403,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "0eb95416-42e0-49fd-9298-19e973338c52",
 						"exec": [
 							"tests[\"No borra con id que no existe\"] = responseCode.code === 404;",
 							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The album with the given id was not found\");"
@@ -440,7 +430,7 @@
 						"0"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nBorra un vinilo que no existe en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /vinyls/0 no existe.\".\r\n\r\n**Código http esperado: 404**"
+				"description": "Borra un vinilo que no existe en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"The album with the given id was not found\".\r\n\r\n**Código http esperado: 404**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"statusCode\": 404,\r\n    \"message\": \"The album with the given id was not found\"\r\n}\r\n```"
 			},
 			"response": []
 		}
@@ -449,7 +439,6 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "41c64071-64ef-4b1d-b40f-35824990924f",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -459,13 +448,11 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "5770b73c-96ca-4563-98a1-ea253174f231",
 				"type": "text/javascript",
 				"exec": [
 					""
 				]
 			}
 		}
-	],
-	"protocolProfileBehavior": {}
+	]
 }

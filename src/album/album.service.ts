@@ -3,7 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Album } from './album.entity';
 import { Repository } from 'typeorm';
 import { AlbumDTO } from './album.dto';
-import { BusinnesLogicException, BusinessError } from '../shared/errors/business-errors';
+import { BusinessLogicException, BusinessError } from '../shared/errors/business-errors';
 
 @Injectable()
 export class AlbumService {
@@ -19,7 +19,7 @@ export class AlbumService {
     async findOne(id: number): Promise<AlbumDTO> {
         const album = await this.albumRepository.findOne(id, { relations: ["tracks", "performers", "comments"] });
         if (!album)
-            throw new BusinnesLogicException("The album with the given id was not found", BusinessError.NOT_FOUND)
+            throw new BusinessLogicException("The album with the given id was not found", BusinessError.NOT_FOUND)
         return album;
     }
 
@@ -39,7 +39,7 @@ export class AlbumService {
 
         const album = await this.albumRepository.findOne(id);
         if (!album)
-            throw new BusinnesLogicException("The album with the given id was not found", BusinessError.NOT_FOUND)
+            throw new BusinessLogicException("The album with the given id was not found", BusinessError.NOT_FOUND)
         else {
             album.name = albumDTO.name;
             album.cover = albumDTO.cover;
@@ -55,7 +55,7 @@ export class AlbumService {
     async delete(id: number) {
         const album = await this.albumRepository.findOne(id);
         if (!album)
-            throw new BusinnesLogicException("The album with the given id was not found", BusinessError.NOT_FOUND)
+            throw new BusinessLogicException("The album with the given id was not found", BusinessError.NOT_FOUND)
         return await this.albumRepository.remove(album);
     }
 }

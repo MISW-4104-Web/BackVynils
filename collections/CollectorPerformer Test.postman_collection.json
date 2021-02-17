@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "19299553-a629-45e0-acce-a1cf46f42c77",
+		"_postman_id": "c53213af-0cec-4c3f-bdb6-8ba7388ee804",
 		"name": "CollectorPerformer Test",
 		"description": "Colección de pruebas sobre el recurso Artist",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -12,7 +12,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "4fceb347-dd45-482b-8946-e16b692c72b6",
 						"exec": [
 							"var data = JSON.parse(responseBody);",
 							"postman.setGlobalVariable(\"new_id_c\",data.id);",
@@ -46,7 +45,7 @@
 						"collectors"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo coleccionista. El Id es inicializado por la BD y se debe ver en la respuesta.\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
+				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo coleccionista. El Id es inicializado por la BD y se debe ver en la respuesta.\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSOn de salida**\r\n\r\n```\r\n{\r\n    \"name\": \"Jaime Andrés Monsalve\",\r\n    \"telephone\": \"3102178976\",\r\n    \"email\": \"j.monsalve@gmail.com\",\r\n    \"id\": 4\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -56,7 +55,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "c7d33c6d-9143-48ec-bb25-ade71b3e1333",
 						"exec": [
 							"var data = JSON.parse(responseBody);",
 							"postman.setGlobalVariable(\"new_id_m\",data.id);",
@@ -90,7 +88,7 @@
 						"musicians"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo músico. El Id es inicializado por la BD y se debe ver en la respuesta.\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
+				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo músico. El Id es inicializado por la BD y se debe ver en la respuesta.\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"name\": \"Rubén Blades Bellido de Luna\",\r\n    \"image\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Ruben_Blades_by_Gage_Skidmore.jpg/800px-Ruben_Blades_by_Gage_Skidmore.jpg\",\r\n    \"description\": \"Es un cantante, compositor, músico, actor, abogado, político y activista panameño. Ha desarrollado gran parte de su carrera artística en la ciudad de Nueva York.\",\r\n    \"birthDate\": \"1948-07-16T00:00:00-05:00\",\r\n    \"id\": 11\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -100,7 +98,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "6c91f303-c6da-4179-b004-5d87705dc49c",
 						"exec": [
 							"var data = JSON.parse(responseBody);",
 							"postman.setGlobalVariable(\"new_id_b\",data.id);",
@@ -134,7 +131,7 @@
 						"bands"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo artista. El Id es inicializado por la BD y se debe ver en la respuesta.\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
+				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo artista. El Id es inicializado por la BD y se debe ver en la respuesta.\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"name\": \"Queen\",\r\n    \"image\": \"https://upload.wikimedia.org/wikipedia/commons/7/7c/Queen_logo.svg\",\r\n    \"description\": \"Queen es una banda británica de rock formada en 1970 en Londres por el cantante Freddie Mercury, el guitarrista Brian May, el baterista Roger Taylor y el bajista John Deacon. Si bien el grupo ha presentado bajas de dos de sus miembros (Mercury, fallecido en 1991, y Deacon, retirado en 1997), los integrantes restantes, May y Taylor, continúan trabajando bajo el nombre Queen, por lo que la banda aún se considera activa.\",\r\n    \"creationDate\": \"1970-01-01T00:00:00-05:00\",\r\n    \"id\": 12\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -144,7 +141,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "19f06379-77f4-44fb-a80c-b9e4e08dbd97",
 						"exec": [
 							"var data = JSON.parse(responseBody);",
 							"tests[\"No genera error en el Post\"] = responseCode.code === 200;",
@@ -180,7 +176,7 @@
 						"{{new_id_m}}"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nAsocia un coleccionista y un músico\r\n\r\n**Código http esperado: 200**"
+				"description": "**Release: Paso-5**\r\n\r\nAsocia un coleccionista y un músico\r\n\r\n**Código http esperado: 200**\r\n\r\n***JSON de salida**\r\n\r\n```\r\n{\r\n    \"id\": 11,\r\n    \"name\": \"Rubén Blades Bellido de Luna\",\r\n    \"image\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Ruben_Blades_by_Gage_Skidmore.jpg/800px-Ruben_Blades_by_Gage_Skidmore.jpg\",\r\n    \"description\": \"Es un cantante, compositor, músico, actor, abogado, político y activista panameño. Ha desarrollado gran parte de su carrera artística en la ciudad de Nueva York.\",\r\n    \"birthDate\": \"1948-07-16T05:00:00.000Z\",\r\n    \"collectors\": [\r\n        {\r\n            \"id\": 4,\r\n            \"name\": \"Jaime Andrés Monsalve\",\r\n            \"telephone\": \"3102178976\",\r\n            \"email\": \"j.monsalve@gmail.com\"\r\n        }\r\n    ]\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -190,7 +186,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "91487ff1-f882-4448-8c63-db8ef068695e",
 						"exec": [
 							"var data = JSON.parse(responseBody);",
 							"tests[\"No genera error en el Post\"] = responseCode.code === 200;",
@@ -226,7 +221,7 @@
 						"{{new_id_b}}"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nAsocia un coleccionista y una banda\r\n\r\n**Código http esperado: 200**"
+				"description": "**Release: Paso-5**\r\n\r\nAsocia un coleccionista y una banda\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"id\": 12,\r\n    \"name\": \"Queen\",\r\n    \"image\": \"https://upload.wikimedia.org/wikipedia/commons/7/7c/Queen_logo.svg\",\r\n    \"description\": \"Queen es una banda británica de rock formada en 1970 en Londres por el cantante Freddie Mercury, el guitarrista Brian May, el baterista Roger Taylor y el bajista John Deacon. Si bien el grupo ha presentado bajas de dos de sus miembros (Mercury, fallecido en 1991, y Deacon, retirado en 1997), los integrantes restantes, May y Taylor, continúan trabajando bajo el nombre Queen, por lo que la banda aún se considera activa.\",\r\n    \"creationDate\": \"1970-01-01T05:00:00.000Z\",\r\n    \"collectors\": [\r\n        {\r\n            \"id\": 4,\r\n            \"name\": \"Jaime Andrés Monsalve\",\r\n            \"telephone\": \"3102178976\",\r\n            \"email\": \"j.monsalve@gmail.com\"\r\n        }\r\n    ]\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -236,7 +231,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "a010fbab-6d6c-4f9e-a355-26bfd4f4dd31",
 						"exec": [
 							"var data= JSON.parse(responseBody);",
 							"tests[\"No genera error en el Gell All\"] = responseCode.code === 200;",
@@ -262,7 +256,7 @@
 						"performers"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nConsulta todos los artistas de un coleccionista. \r\n\r\nLa petición no tiene cuerpo.\r\n\r\nPara la prueba, se verifica que el conjunto de artistas en la respuesta tenga mas de uno.\r\n\r\n**Código http esperado: 200**"
+				"description": "**Release: Paso-5**\r\n\r\nConsulta todos los artistas de un coleccionista. \r\n\r\nLa petición no tiene cuerpo.\r\n\r\nPara la prueba, se verifica que el conjunto de artistas en la respuesta tenga mas de uno.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n[\r\n    {\r\n        \"id\": 11,\r\n        \"name\": \"Rubén Blades Bellido de Luna\",\r\n        \"image\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Ruben_Blades_by_Gage_Skidmore.jpg/800px-Ruben_Blades_by_Gage_Skidmore.jpg\",\r\n        \"description\": \"Es un cantante, compositor, músico, actor, abogado, político y activista panameño. Ha desarrollado gran parte de su carrera artística en la ciudad de Nueva York.\",\r\n        \"birthDate\": \"1948-07-16T05:00:00.000Z\"\r\n    },\r\n    {\r\n        \"id\": 12,\r\n        \"name\": \"Queen\",\r\n        \"image\": \"https://upload.wikimedia.org/wikipedia/commons/7/7c/Queen_logo.svg\",\r\n        \"description\": \"Queen es una banda británica de rock formada en 1970 en Londres por el cantante Freddie Mercury, el guitarrista Brian May, el baterista Roger Taylor y el bajista John Deacon. Si bien el grupo ha presentado bajas de dos de sus miembros (Mercury, fallecido en 1991, y Deacon, retirado en 1997), los integrantes restantes, May y Taylor, continúan trabajando bajo el nombre Queen, por lo que la banda aún se considera activa.\",\r\n        \"creationDate\": \"1970-01-01T05:00:00.000Z\"\r\n    }\r\n]\r\n```"
 			},
 			"response": []
 		},
@@ -272,7 +266,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "5c1029f9-ca01-423b-8ed2-1ac5fdcc8744",
 						"exec": [
 							"tests[\"No se deberia obtener un coleccionista con un id que no existe\"] = responseCode.code === 404;",
 							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The collector with the given id was not found\");"
@@ -297,7 +290,7 @@
 						"performers"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nConsulta todos los artistas de un coleccionista que no existe. \r\n\r\nLa petición no tiene cuerpo.\r\n\r\n**Código http esperado: 200**"
+				"description": "**Release: Paso-5**\r\n\r\nConsulta todos los artistas de un coleccionista que no existe. \r\n\r\nLa petición no tiene cuerpo.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"statusCode\": 404,\r\n    \"message\": \"The collector with the given id was not found\"\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -307,7 +300,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "8e4850cc-10c0-429d-89f8-0d04101a83df",
 						"exec": [
 							"tests[\"No genera error en el Delete\"] = responseCode.code === 204;"
 						],
@@ -346,7 +338,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "5019d073-5280-4f8a-8480-7cc6c5b4a206",
 						"exec": [
 							"tests[\"No genera error en el Delete\"] = responseCode.code === 204;"
 						],
@@ -385,7 +376,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "36425822-34a5-437b-9255-ed1209850b77",
 						"exec": [
 							"tests[\"No genera error en el Delete\"] = responseCode.code === 204;"
 						],
@@ -422,7 +412,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "74547e69-f3e2-4271-8ab1-a710ee57ceb3",
 						"exec": [
 							"tests[\"No genera error en el Delete\"] = responseCode.code === 204;"
 						],
@@ -459,7 +448,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "acd16cd0-36af-4832-b8a1-55fc7802a71e",
 						"exec": [
 							"tests[\"No genera error en el Delete\"] = responseCode.code === 204;"
 						],
@@ -495,7 +483,6 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "c81ffbf9-ee9d-4cae-bc52-cf155e5214c4",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -505,13 +492,11 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "60a69b4e-ca06-4bdd-818f-36c3183003d1",
 				"type": "text/javascript",
 				"exec": [
 					""
 				]
 			}
 		}
-	],
-	"protocolProfileBehavior": {}
+	]
 }

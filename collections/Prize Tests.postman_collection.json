@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "6080d467-269f-4a3e-9b69-784055364077",
+		"_postman_id": "97fcc3dc-9a60-4a65-846f-8555fe753401",
 		"name": "Prize Tests",
 		"description": "Colección de pruebas sobre el recurso Prize",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -12,7 +12,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "8c2dda63-8e5c-46dd-90a2-5ddf2f73b868",
 						"exec": [
 							"var data = JSON.parse(responseBody);",
 							"postman.setGlobalVariable(\"new_id_p\",data.id);",
@@ -47,7 +46,7 @@
 						"prizes"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo premio. El Id es inicializado por la BD y se debe ver en la respuesta. \r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
+				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo premio. El Id es inicializado por la BD y se debe ver en la respuesta. \r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"name\": \"Grammy Award\",\r\n    \"description\": \"Grammy Award, any of a series of awards presented annually in the United States by the National Academy of Recording Arts & Sciences\",\r\n    \"organization\": \"National Academy of Recording Arts & Sciences\",\r\n    \"id\": 3\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -57,7 +56,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "d13f4815-0af2-42b4-94ac-bcc7250bc2cd",
 						"exec": [
 							"var data = JSON.parse(responseBody);",
 							"postman.setGlobalVariable(\"new_id_p2\",data.id);",
@@ -92,7 +90,7 @@
 						"prizes"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo premio. El Id es inicializado por la BD y se debe ver en la respuesta. \r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
+				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo premio. El Id es inicializado por la BD y se debe ver en la respuesta. \r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"name\": \"Premios lo Nuestro\",\r\n    \"description\": \" es una ceremonia de entrega de premios a los mejores músicos latinos del año. Premio Lo Nuestro es presentado por la cadena de televisión Univisión, y fueron creados en 1989, siendo la entrega de premios más antigua en la historia musical latina.\",\r\n    \"organization\": \"Univisión\",\r\n    \"id\": 4\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -102,7 +100,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "7bf9711e-10a4-4596-9548-88c00439c7f0",
 						"exec": [
 							"var data= JSON.parse(responseBody);",
 							"tests[\"No genera error en el Get All\"] = responseCode.code === 200;",
@@ -136,7 +133,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "08407ef3-e9c4-4589-862e-ee0b62ee8401",
 						"exec": [
 							"console.log(responseBody);",
 							"var data = JSON.parse(responseBody);",
@@ -171,7 +167,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "a2edb226-df58-4d78-9e1d-74a4d94a79fe",
 						"exec": [
 							"tests[\"No se puede un prize que no existe\"] = responseCode.code === 404;",
 							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The prize with the given id was not found\");"
@@ -195,7 +190,7 @@
 						"0"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nConsulta un premio que no existe en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /prizes/0 no existe.\".\r\n\r\n**Código http esperado: 404**"
+				"description": "**Release: Paso-5**\r\n\r\nConsulta un premio que no existe en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /prizes/0 no existe.\".\r\n\r\n**Código http esperado: 404**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"statusCode\": 404,\r\n    \"message\": \"The prize with the given id was not found\"\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -205,7 +200,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "8a7c92ad-8022-4fe6-921b-8440899e7dec",
 						"exec": [
 							"console.log(responseBody);",
 							"var data = JSON.parse(responseBody);",
@@ -239,7 +233,7 @@
 						"{{new_id_p}}"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nActualiza un premio existente. \r\nse envía el Id en la URL de la petición.\r\n\r\n**Código http esperado: 200**"
+				"description": "**Release: Paso-5**\r\n\r\nActualiza un premio existente. Se envía el Id en la URL de la petición.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"id\": 3,\r\n    \"organization\": \"National Academy of Recording Arts & Sciences\",\r\n    \"name\": \"Grammy Award\",\r\n    \"description\": \"Grammy Award, any of a series of awards presented annually in the United States by the National Academy of Recording Arts & Sciences. Winners are selected from more than 25 fields, which cover such genres as pop, rock, rap, R&B, country, reggae, classical, gospel, and jazz\"\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -249,7 +243,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "7aae4964-cabf-4b12-aed9-2d5293f9d700",
 						"exec": [
 							"tests[\"No se deberia editar el prize ya que este no existe\"] = responseCode.code === 404;",
 							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The prize with the given id was not found\");"
@@ -282,7 +275,7 @@
 						"0"
 					]
 				},
-				"description": "**Release: Paso-5**\r\nActualiza un premio que no existe. \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /prizes/0 no existe.\".\r\n\r\n**Código HTTP esperado: 404**"
+				"description": "**Release: Paso-5**\r\nActualiza un premio que no existe. \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"The prize with the given id was not found\".\r\n\r\n**Código HTTP esperado: 404**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"statusCode\": 404,\r\n    \"message\": \"The prize with the given id was not found\"\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -292,7 +285,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "61d2dc67-b37f-45dd-a4d3-c7789963b516",
 						"exec": [
 							"tests[\"No genera error en el Delete\"] = responseCode.code === 204;"
 						],
@@ -329,7 +321,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "5b49cd78-9b18-4079-903b-839b5a5b0273",
 						"exec": [
 							"tests[\"No genera error en el Delete\"] = responseCode.code === 204;"
 						],
@@ -366,7 +357,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "139edc5e-1c9b-40c9-a593-2a1f6bd8870b",
 						"exec": [
 							"tests[\"No se puede borrar el prize ya que este no existe.\"] = responseCode.code === 404;",
 							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The prize with the given id was not found\");"
@@ -394,7 +384,7 @@
 						"0"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nBorra un premio que no existe en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /prizes/0 no existe.\".\r\n\r\n**Código http esperado: 404**"
+				"description": "**Release: Paso-5**\r\n\r\nBorra un premio que no existe en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"The prize with the given id was not found\".\r\n\r\n**Código http esperado: 404**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"statusCode\": 404,\r\n    \"message\": \"The prize with the given id was not found\"\r\n}\r\n```"
 			},
 			"response": []
 		}
@@ -403,7 +393,6 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "44116dad-290e-4e27-81ce-48463924ca67",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -413,13 +402,11 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "bbd1f679-f7e8-4065-923c-629e1d7edf20",
 				"type": "text/javascript",
 				"exec": [
 					""
 				]
 			}
 		}
-	],
-	"protocolProfileBehavior": {}
+	]
 }

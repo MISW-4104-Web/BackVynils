@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { BusinnesLogicException, BusinessError } from '../shared/errors/business-errors';
+import { BusinessLogicException, BusinessError } from '../shared/errors/business-errors';
 import { CommentDTO } from './comment.dto';
 import { Comment } from './comment.entity';
 import { Album } from '../album/album.entity';
@@ -21,7 +21,7 @@ export class CommentService {
     async findCommentsByAlbumId(albumId: number): Promise<CommentDTO[]> {
         const album = await this.albumRepository.findOne(albumId, { relations: ["comments"] });
         if (!album)
-            throw new BusinnesLogicException("The album with the given id was not found", BusinessError.NOT_FOUND)
+            throw new BusinessLogicException("The album with the given id was not found", BusinessError.NOT_FOUND)
 
         return album.comments;
     }
@@ -29,15 +29,15 @@ export class CommentService {
     async findCommentsByAlbumIdCommentId(albumId: number, commentId: number): Promise<CommentDTO> {
         const album = await this.albumRepository.findOne(albumId, { relations: ["comments"] });
         if (!album)
-            throw new BusinnesLogicException("The album with the given id was not found", BusinessError.NOT_FOUND)
+            throw new BusinessLogicException("The album with the given id was not found", BusinessError.NOT_FOUND)
 
         const comment = await this.commentRepository.findOne(commentId);
         if (!comment)
-            throw new BusinnesLogicException("The comment with the given id was not found", BusinessError.NOT_FOUND)
+            throw new BusinessLogicException("The comment with the given id was not found", BusinessError.NOT_FOUND)
 
         const commentalbum = album.comments.find(e => e.id === comment.id);
         if (!commentalbum)
-            throw new BusinnesLogicException("The comment is not associated to the album", BusinessError.NOT_FOUND)
+            throw new BusinessLogicException("The comment is not associated to the album", BusinessError.NOT_FOUND)
 
         return commentalbum;
     }
@@ -47,11 +47,11 @@ export class CommentService {
 
         const album = await this.albumRepository.findOne(albumId);
         if (!album)
-            throw new BusinnesLogicException("The album with the given id was not found", BusinessError.NOT_FOUND)
+            throw new BusinessLogicException("The album with the given id was not found", BusinessError.NOT_FOUND)
 
         const collector = await this.collectorRepository.findOne(commentDTO.collector.id);
         if (!collector)
-            throw new BusinnesLogicException("The collector with the given id was not found", BusinessError.NOT_FOUND)
+            throw new BusinessLogicException("The collector with the given id was not found", BusinessError.NOT_FOUND)
 
         const comment = new Comment();
         comment.description = commentDTO.description;
@@ -66,19 +66,19 @@ export class CommentService {
 
         const album = await this.albumRepository.findOne(albumId, { relations: ["comments"] });
         if (!album)
-            throw new BusinnesLogicException("The album with the given id was not found", BusinessError.NOT_FOUND)
+            throw new BusinessLogicException("The album with the given id was not found", BusinessError.NOT_FOUND)
 
         const collector = await this.collectorRepository.findOne(commentDTO.collector.id);
         if (!collector)
-            throw new BusinnesLogicException("The collector with the given id was not found", BusinessError.NOT_FOUND)
+            throw new BusinessLogicException("The collector with the given id was not found", BusinessError.NOT_FOUND)
 
         const comment = await this.commentRepository.findOne(commentId);
         if (!comment)
-            throw new BusinnesLogicException("The comment with the given id was not found", BusinessError.NOT_FOUND)
+            throw new BusinessLogicException("The comment with the given id was not found", BusinessError.NOT_FOUND)
 
         const commentalbum = album.comments.find(e => e.id === comment.id);
         if (!commentalbum)
-            throw new BusinnesLogicException("The comment is not associated to the album", BusinessError.NOT_FOUND)
+            throw new BusinessLogicException("The comment is not associated to the album", BusinessError.NOT_FOUND)
 
         comment.description = commentDTO.description;
         comment.rating = commentDTO.rating;
@@ -92,11 +92,11 @@ export class CommentService {
 
         const album = await this.albumRepository.findOne(albumId, { relations: ["comments"] });
         if (!album)
-            throw new BusinnesLogicException("The album with the given id was not found", BusinessError.NOT_FOUND)
+            throw new BusinessLogicException("The album with the given id was not found", BusinessError.NOT_FOUND)
 
         const comment = await this.commentRepository.findOne(commentId);
         if (!comment)
-            throw new BusinnesLogicException("The comment with the given id was not found", BusinessError.NOT_FOUND)
+            throw new BusinessLogicException("The comment with the given id was not found", BusinessError.NOT_FOUND)
 
         album.comments = album.comments.filter(e => e.id !== comment.id);
 

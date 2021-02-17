@@ -3,7 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Prize } from '../prize/prize.entity';
 import { Repository } from 'typeorm';
 import { Performer } from '../performer/performer.entity';
-import { BusinnesLogicException, BusinessError } from '../shared/errors/business-errors';
+import { BusinessLogicException, BusinessError } from '../shared/errors/business-errors';
 import { PerformerPrizeDTO } from './performerprize.dto';
 import { PerformerPrize } from './performerprize.entity';
 
@@ -22,7 +22,7 @@ export class PerformerPrizeService {
     async findPerformerPrize(prizeId: number) {
         const prize = await this.prizeRepository.findOne(prizeId);
         if (!prize)
-            throw new BusinnesLogicException("The prize with the given id was not found", BusinessError.NOT_FOUND)
+            throw new BusinessLogicException("The prize with the given id was not found", BusinessError.NOT_FOUND)
 
         const performerPrize = await this.performerPrizeRepository.find({ where: { prizeId }, relations: ["performer"] })
 
@@ -32,11 +32,11 @@ export class PerformerPrizeService {
     async associatePerformerPrize(prizeId: number, performerId: number, performerPrizeDTO: PerformerPrizeDTO) {
         const prize = await this.prizeRepository.findOne(prizeId);
         if (!prize)
-            throw new BusinnesLogicException("The prize with the given id was not found", BusinessError.NOT_FOUND)
+            throw new BusinessLogicException("The prize with the given id was not found", BusinessError.NOT_FOUND)
 
         const performer = await this.performerRepository.findOne(performerId);
         if (!performer)
-            throw new BusinnesLogicException("The performer with the given id was not found", BusinessError.NOT_FOUND)
+            throw new BusinessLogicException("The performer with the given id was not found", BusinessError.NOT_FOUND)
 
         const performerPrize = new PerformerPrize();
         performerPrize.premiationDate = performerPrizeDTO.premiationDate;
@@ -50,11 +50,11 @@ export class PerformerPrizeService {
 
         const prize = await this.prizeRepository.findOne(prizeId);
         if (!prize)
-            throw new BusinnesLogicException("The prize with the given id was not found", BusinessError.NOT_FOUND)
+            throw new BusinessLogicException("The prize with the given id was not found", BusinessError.NOT_FOUND)
 
         const performer = await this.performerRepository.findOne(performerId);
         if (!performer)
-            throw new BusinnesLogicException("The performer with the given id was not found", BusinessError.NOT_FOUND)
+            throw new BusinessLogicException("The performer with the given id was not found", BusinessError.NOT_FOUND)
 
         const performerprize = await this.performerPrizeRepository.findOne({ where: { prizeId, performerId } });
         return await this.performerPrizeRepository.remove(performerprize);

@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { BusinnesLogicException, BusinessError } from "../shared/errors/business-errors";
+import { BusinessLogicException, BusinessError } from "../shared/errors/business-errors";
 import { Repository } from 'typeorm';
 import { Band } from '../band/band.entity';
 import { Album } from '../album/album.entity';
@@ -19,11 +19,11 @@ export class BandAlbumService {
     async addBandAlbum(bandId: number, albumId: number): Promise<AlbumDTO> {
         const band = await this.bandRepository.findOne(bandId);
         if (!band)
-            throw new BusinnesLogicException("The band with the given id was not found", BusinessError.NOT_FOUND)
+            throw new BusinessLogicException("The band with the given id was not found", BusinessError.NOT_FOUND)
 
         const album = await this.albumRepository.findOne(albumId, { relations: ["performers"] });
         if (!album)
-            throw new BusinnesLogicException("The album with the given id was not found", BusinessError.NOT_FOUND)
+            throw new BusinessLogicException("The album with the given id was not found", BusinessError.NOT_FOUND)
 
         album.performers = [band];
         return await this.albumRepository.save(album);
@@ -32,16 +32,16 @@ export class BandAlbumService {
     async findAlbumsByBandIdAlbumId(bandId: number, albumId: number): Promise<AlbumDTO> {
         const band = await this.bandRepository.findOne(bandId, { relations: ["albums"] });
         if (!band)
-            throw new BusinnesLogicException("The band with the given id was not found", BusinessError.NOT_FOUND)
+            throw new BusinessLogicException("The band with the given id was not found", BusinessError.NOT_FOUND)
 
         const album = await this.albumRepository.findOne(albumId);
         if (!album)
-            throw new BusinnesLogicException("The album with the given id was not found", BusinessError.NOT_FOUND)
+            throw new BusinessLogicException("The album with the given id was not found", BusinessError.NOT_FOUND)
 
         const bandalbum = band.albums.find(e => e.id === album.id);
 
         if (!bandalbum)
-            throw new BusinnesLogicException("The album with the given id is not associated to the band", BusinessError.PRECONDITION_FAILED)
+            throw new BusinessLogicException("The album with the given id is not associated to the band", BusinessError.PRECONDITION_FAILED)
 
         return bandalbum;
     }
@@ -50,14 +50,14 @@ export class BandAlbumService {
         const band = await this.bandRepository.findOne(bandId, { relations: ["albums"] });
 
         if (!band)
-            throw new BusinnesLogicException("The band with the given id was not found", BusinessError.NOT_FOUND)
+            throw new BusinessLogicException("The band with the given id was not found", BusinessError.NOT_FOUND)
 
         let albums: Album[] = [];
 
         for (let i = 0; i < albumDTO.length; i++) {
             const album = await this.albumRepository.findOne(albumDTO[i].id);
             if (!album)
-                throw new BusinnesLogicException("The album with the given id was not found", BusinessError.NOT_FOUND)
+                throw new BusinessLogicException("The album with the given id was not found", BusinessError.NOT_FOUND)
 
             const newAlbum = new Album();
             newAlbum.id = albumDTO[i].id;
@@ -77,7 +77,7 @@ export class BandAlbumService {
     async findAlbumsByBandId(bandId: number): Promise<AlbumDTO[]> {
         const band = await this.bandRepository.findOne(bandId, { relations: ["albums"] });
         if (!band)
-            throw new BusinnesLogicException("The band with the given id was not found", BusinessError.NOT_FOUND)
+            throw new BusinessLogicException("The band with the given id was not found", BusinessError.NOT_FOUND)
 
         return band.albums;
     }
@@ -85,11 +85,11 @@ export class BandAlbumService {
     async deleteAlbumToBand(bandId: number, albumId: number): Promise<BandDTO> {
         const band = await this.bandRepository.findOne(bandId, { relations: ["albums"] });
         if (!band)
-            throw new BusinnesLogicException("The band with the given id was not found", BusinessError.NOT_FOUND)
+            throw new BusinessLogicException("The band with the given id was not found", BusinessError.NOT_FOUND)
 
         const album = await this.albumRepository.findOne(albumId);
         if (!album)
-            throw new BusinnesLogicException("The album with the given id was not found", BusinessError.NOT_FOUND)
+            throw new BusinessLogicException("The album with the given id was not found", BusinessError.NOT_FOUND)
 
         band.albums = band.albums.filter(e => {
             e.id !== albumId

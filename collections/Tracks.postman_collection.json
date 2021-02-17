@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "adc3e959-5362-4216-898d-bc38d42b46a7",
+		"_postman_id": "df9e85c3-21a4-4dca-ba03-b0cecb8b3b0b",
 		"name": "Tracks",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -11,7 +11,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "eab15551-01d5-4296-a5b8-2deb3c6662fb",
 						"exec": [
 							"var data = JSON.parse(responseBody);",
 							"postman.setGlobalVariable(\"new_id_a\",data.id);",
@@ -44,7 +43,7 @@
 						"albums"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo album. El Id es inicializado por la BD y se debe ver en la respuesta. \r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
+				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo album. El Id es inicializado por la BD y se debe ver en la respuesta. \r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"name\": \"Buscando América\",\r\n    \"cover\": \"https://i.pinimg.com/564x/aa/5f/ed/aa5fed7fac61cc8f41d1e79db917a7cd.jpg\",\r\n    \"releaseDate\": \"1984-08-01T00:00:00-05:00\",\r\n    \"description\": \"Buscando América es el primer álbum de la banda de Rubén Blades y Seis del Solar lanzado en 1984. La producción, bajo el sello Elektra, fusiona diferentes ritmos musicales tales como la salsa, reggae, rock, y el jazz latino. El disco fue grabado en Eurosound Studios en Nueva York entre mayo y agosto de 1983.\",\r\n    \"genre\": \"Salsa\",\r\n    \"recordLabel\": \"Elektra\",\r\n    \"id\": 11\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -54,7 +53,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "d5b80ab2-f171-40cc-868a-22103e6ad29e",
 						"exec": [
 							"var data = JSON.parse(responseBody);",
 							"postman.setGlobalVariable(\"new_id_t\",data.id);",
@@ -95,7 +93,8 @@
 						"{{new_id_a}}",
 						"tracks"
 					]
-				}
+				},
+				"description": "Asocia un track a un álbum.\n\n**Código http esperado: 200**\n\n**JSON de salida**\n\n```\n{\n    \"name\": \"Decisiones\",\n    \"duration\": \"5:05\",\n    \"album\": {\n        \"id\": 11,\n        \"name\": \"Buscando América\",\n        \"cover\": \"https://i.pinimg.com/564x/aa/5f/ed/aa5fed7fac61cc8f41d1e79db917a7cd.jpg\",\n        \"releaseDate\": \"1984-08-01T05:00:00.000Z\",\n        \"desCódigo http esperado: 200ordLabel\": \"Elektra\"\n    },\n    \"id\": 1\n}\n```"
 			},
 			"response": []
 		},
@@ -105,7 +104,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "f02d87ea-90c6-48cc-bbcc-d0d7098cf100",
 						"exec": [
 							"var data = JSON.parse(responseBody);",
 							"postman.setGlobalVariable(\"new_id_t2\",data.id);",
@@ -146,7 +144,8 @@
 						"{{new_id_a}}",
 						"tracks"
 					]
-				}
+				},
+				"description": "Asocia otro track a un álbum\n\n**Código http esperado: 200**\n\n**JSON de salida**\n\n```\n{\n    \"name\": \"Desapariciones\",\n    \"duration\": \"6:29\",\n    \"album\": {\n        \"id\": 11,\n        \"name\": \"Buscando América\",\n        \"cover\": \"https://i.pinimg.com/564x/aa/5f/ed/aa5fed7fac61cc8f41d1e79db917a7cd.jpg\",\n        \"releaseDate\": \"1984-08-01T05:00:00.000Z\",\n        \"description\": \"Buscando América es el primer álbum de la banda de Rubén Blades y Seis del Solar lanzado en 1984. La producción, bajo el sello Elektra, fusiona diferentes ritmos musicales tales como la salsa, reggae, rock, y el jazz latino. El disco fue grabado en Eurosound Studios en Nueva York entre mayo y agosto de 1983.\",\n        \"genre\": \"Salsa\",\n        \"recordLabel\": \"Elektra\"\n    },\n    \"id\": 2\n}\n```"
 			},
 			"response": []
 		},
@@ -183,7 +182,8 @@
 						"0",
 						"tracks"
 					]
-				}
+				},
+				"description": "Asocia un track a un álbum que no existe.\n\n**Código http esperado: 404**\n\n**JSON de salida**\n```\n{\n    \"statusCode\": 404,\n    \"message\": \"The album with the given id was not found\"\n}"
 			},
 			"response": []
 		},
@@ -193,7 +193,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "db561424-c458-4e3f-ae18-93c1a292e408",
 						"exec": [
 							"var data= JSON.parse(responseBody);",
 							"tests[\"no genera error en el Get All\"] = responseCode.code === 200;",
@@ -219,7 +218,7 @@
 						"tracks"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nConsulta los tracks de un vinilo en la aplicación. \r\n\r\nLa petición no tiene cuerpo.\r\n\r\nSe envía el Id del vinilo a consultar en la URL de la petición.\r\n\r\n**Código http esperado: 200**"
+				"description": "Consulta los tracks de un vinilo en la aplicación. \r\n\r\nLa petición no tiene cuerpo.\r\n\r\nSe envía el Id del vinilo a consultar en la URL de la petición.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n[\r\n    {\r\n        \"id\": 1,\r\n        \"name\": \"Decisiones\",\r\n        \"duration\": \"5:05\"\r\n    },\r\n    {\r\n        \"id\": 2,\r\n        \"name\": \"Desapariciones\",\r\n        \"duration\": \"6:29\"\r\n    }\r\n]\r\n```"
 			},
 			"response": []
 		},
@@ -229,7 +228,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "4d770a0a-984d-4ed6-a39c-1b2402036265",
 						"exec": [
 							"console.log(responseBody);",
 							"var data = JSON.parse(responseBody);",
@@ -256,7 +254,7 @@
 						"{{new_id_t}}"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nConsulta un track de un vinilo en la aplicación. \r\n\r\nLa petición no tiene cuerpo.\r\n\r\nSe envía el Id del vinilo y del track a consultar en la URL de la petición.\r\n\r\n**Código http esperado: 200**"
+				"description": "Consulta un track de un vinilo en la aplicación. \r\n\r\nLa petición no tiene cuerpo.\r\n\r\nSe envía el Id del vinilo y del track a consultar en la URL de la petición.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"id\": 1,\r\n    \"name\": \"Decisiones\",\r\n    \"duration\": \"5:05\"\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -266,7 +264,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "e58991af-feb2-4c66-a6ed-5fd625ababc3",
 						"exec": [
 							"console.log(responseBody);",
 							"var data = JSON.parse(responseBody);",
@@ -302,7 +299,7 @@
 						"{{new_id_t}}"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nActualiza los tracks de un vinilo existente. Se envían los Ids de las entidades asociar en la URL de la petición.\r\n\r\n**Código http esperado: 200**"
+				"description": "Actualiza los tracks de un vinilo existente. Se envían los Ids de las entidades asociar en la URL de la petición.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"id\": 1,\r\n    \"name\": \"Decisiones\",\r\n    \"duration\": \"6:10\"\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -312,7 +309,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "9b6290fc-0caa-4180-a7c4-c50ec7b6e853",
 						"exec": [
 							"tests[\"No se puede editar un track que no existe.\"] = responseCode.code === 404;",
 							"let id = pm.variables.get(\"new_id_b\");",
@@ -348,7 +344,7 @@
 						"0"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nAsocia un track que no existe a un vinilo. \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /tracks/0 no existe.\".\r\n\r\n**Código HTTP esperado: 404**"
+				"description": "Asocia un track que no existe a un vinilo. \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"The track with the given id was not found\".\r\n\r\n**Código HTTP esperado: 404**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"statusCode\": 404,\r\n    \"message\": \"The track with the given id was not found\"\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -358,7 +354,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "e95a6412-f635-4730-b803-f73e551b6d1a",
 						"exec": [
 							"tests[\"No se puede editar un track sobre un album que no existe.\"] = responseCode.code === 404;",
 							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The album with the given id was not found\");"
@@ -393,7 +388,7 @@
 						"{{new_id_t}}"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nAsocia un track a un vinilo que no existe.\r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /vinyls/0 no existe.\".\r\n\r\n**Código HTTP esperado: 404**"
+				"description": "Asocia un track a un vinilo que no existe.\r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"The album with the given id was not found\".\r\n\r\n**Código HTTP esperado: 404**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"statusCode\": 404,\r\n    \"message\": \"The album with the given id was not found\"\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -403,7 +398,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "49d27331-8cf0-4494-9bec-498bef9dd43c",
 						"exec": [
 							"tests[\"No se puede borrar un track que no existe.\"] = responseCode.code === 404;",
 							"let id = pm.variables.get(\"new_id_b\");",
@@ -434,7 +428,7 @@
 						"0"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nBorra un track que no existe en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error.\r\n\r\n**Código http esperado: 404**"
+				"description": "Borra un track que no existe en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error.\r\n\r\n**Código http esperado: 404**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"statusCode\": 404,\r\n    \"message\": \"The track with the given id was not found\"\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -444,7 +438,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "e2f667d3-29c7-4716-b7aa-8ed156af67c5",
 						"exec": [
 							"tests[\"No se puede borrar un track sobre un album que no existe.\"] = responseCode.code === 404;",
 							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The album with the given id was not found\");"
@@ -474,7 +467,7 @@
 						"{{new_id_t}}"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nBorra un track a un vinilo que no existe en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /vinyls/0/tracks no existe.\".\r\n\r\n**Código http esperado: 404**"
+				"description": "Borra un track a un vinilo que no existe en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"The album with the given id was not found\".\r\n\r\n**Código http esperado: 404**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"statusCode\": 404,\r\n    \"message\": \"The album with the given id was not found\"\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -484,7 +477,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "789dd709-76c8-4035-9c33-2f8037fa2b27",
 						"exec": [
 							"tests[\"no genera error en el Delete\"] = responseCode.code === 204;"
 						],
@@ -523,7 +515,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "677471ea-6f2f-4166-98b2-20ee0f233db8",
 						"exec": [
 							"tests[\"no genera error en el Delete\"] = responseCode.code === 204;"
 						],
@@ -562,7 +553,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "b5ad5a08-434e-402c-98a8-cd6352771a4d",
 						"exec": [
 							"tests[\"No genera error en el Delete\"] = responseCode.code === 204;"
 						],
@@ -593,6 +583,5 @@
 			},
 			"response": []
 		}
-	],
-	"protocolProfileBehavior": {}
+	]
 }

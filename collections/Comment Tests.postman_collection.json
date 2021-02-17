@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "6a24e266-dbb3-4fde-a705-9db882ed46b5",
+		"_postman_id": "044e7fb9-2c66-46cb-9eda-0a1c46eb00a8",
 		"name": "Comment Tests",
 		"description": "Colección de pruebas sobre el recurso Review",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -12,7 +12,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "81f0fc21-b896-4fcc-8849-a0f9fcc1fb92",
 						"exec": [
 							"var data = JSON.parse(responseBody);",
 							"postman.setGlobalVariable(\"new_id_a\",data.id);",
@@ -45,7 +44,7 @@
 						"albums"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo album. El Id es inicializado por la BD y se debe ver en la respuesta. \r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
+				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo album. El Id es inicializado por la BD y se debe ver en la respuesta. \r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"name\": \"Buscando América\",\r\n    \"cover\": \"https://i.pinimg.com/564x/aa/5f/ed/aa5fed7fac61cc8f41d1e79db917a7cd.jpg\",\r\n    \"releaseDate\": \"1984-08-01T00:00:00-05:00\",\r\n    \"description\": \"Buscando América es el primer álbum de la banda de Rubén Blades y Seis del Solar lanzado en 1984. La producción, bajo el sello Elektra, fusiona diferentes ritmos musicales tales como la salsa, reggae, rock, y el jazz latino. El disco fue grabado en Eurosound Studios en Nueva York entre mayo y agosto de 1983.\",\r\n    \"genre\": \"Salsa\",\r\n    \"recordLabel\": \"Sony Music\",\r\n    \"id\": 8\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -55,7 +54,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "aa7658fe-162c-4feb-95b9-58421719d878",
 						"exec": [
 							"var data = JSON.parse(responseBody);",
 							"postman.setGlobalVariable(\"new_id_c\",data.id);",
@@ -89,7 +87,7 @@
 						"collectors"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo coleccionista. El Id es inicializado por la BD y se debe ver en la respuesta.\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
+				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo coleccionista. El Id es inicializado por la BD y se debe ver en la respuesta.\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"name\": \"Jaime Andrés Monsalve\",\r\n    \"telephone\": \"3102178976\",\r\n    \"email\": \"j.monsalve@gmail.com\",\r\n    \"id\": 5\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -99,7 +97,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "ff167d18-57ba-4899-abd5-406e270b703c",
 						"exec": [
 							"var data = JSON.parse(responseBody);",
 							"postman.setGlobalVariable(\"new_id_c2\",data.id);",
@@ -133,7 +130,7 @@
 						"collectors"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo coleccionista. El Id es inicializado por la BD y se debe ver en la respuesta.\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
+				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo coleccionista. El Id es inicializado por la BD y se debe ver en la respuesta.\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"name\": \"María Alejandra Palacios\",\r\n    \"telephone\": \"3502889087\",\r\n    \"email\": \"j.palacios@outlook.es\",\r\n    \"id\": 6\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -143,7 +140,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "55dfbe70-7f45-496d-ac0e-9775108e07ad",
 						"exec": [
 							"var data = JSON.parse(responseBody);",
 							"postman.setGlobalVariable(\"new_id_cm\",data.id);",
@@ -178,7 +174,7 @@
 						"comments"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo comentario. El Id es inicializado por la BD y se debe ver en la respuesta. \r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
+				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo comentario. El Id es inicializado por la BD y se debe ver en la respuesta. \r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"description\": \"It is an amazing album\",\r\n    \"rating\": 5,\r\n    \"collector\": {\r\n        \"id\": 5,\r\n        \"name\": \"Jaime Andrés Monsalve\",\r\n        \"telephone\": \"3102178976\",\r\n        \"email\": \"j.monsalve@gmail.com\"\r\n    },\r\n    \"album\": {\r\n        \"id\": 8,\r\n        \"name\": \"Buscando América\",\r\n        \"cover\": \"https://i.pinimg.com/564x/aa/5f/ed/aa5fed7fac61cc8f41d1e79db917a7cd.jpg\",\r\n        \"releaseDate\": \"1984-08-01T05:00:00.000Z\",\r\n        \"description\": \"Buscando América es el primer álbum de la banda de Rubén Blades y Seis del Solar lanzado en 1984. La producción, bajo el sello Elektra, fusiona diferentes ritmos musicales tales como la salsa, reggae, rock, y el jazz latino. El disco fue grabado en Eurosound Studios en Nueva York entre mayo y agosto de 1983.\",\r\n        \"genre\": \"Salsa\",\r\n        \"recordLabel\": \"Sony Music\"\r\n    },\r\n    \"id\": 1\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -188,7 +184,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "e20da7d0-4ec5-489f-a6d3-ce1fe875dfca",
 						"exec": [
 							"var data = JSON.parse(responseBody);",
 							"postman.setGlobalVariable(\"new_id_cm2\",data.id);",
@@ -223,7 +218,7 @@
 						"comments"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo comentario. El Id es inicializado por la BD y se debe ver en la respuesta. \r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
+				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo comentario. El Id es inicializado por la BD y se debe ver en la respuesta. \r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"description\": \"This album is one of my favourites\",\r\n    \"rating\": 5,\r\n    \"collector\": {\r\n        \"id\": 6,\r\n        \"name\": \"María Alejandra Palacios\",\r\n        \"telephone\": \"3502889087\",\r\n        \"email\": \"j.palacios@outlook.es\"\r\n    },\r\n    \"album\": {\r\n        \"id\": 8,\r\n        \"name\": \"Buscando América\",\r\n        \"cover\": \"https://i.pinimg.com/564x/aa/5f/ed/aa5fed7fac61cc8f41d1e79db917a7cd.jpg\",\r\n        \"releaseDate\": \"1984-08-01T05:00:00.000Z\",\r\n        \"description\": \"Buscando América es el primer álbum de la banda de Rubén Blades y Seis del Solar lanzado en 1984. La producción, bajo el sello Elektra, fusiona diferentes ritmos musicales tales como la salsa, reggae, rock, y el jazz latino. El disco fue grabado en Eurosound Studios en Nueva York entre mayo y agosto de 1983.\",\r\n        \"genre\": \"Salsa\",\r\n        \"recordLabel\": \"Sony Music\"\r\n    },\r\n    \"id\": 2\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -233,7 +228,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "73782938-52f9-4177-99bf-a401a9083bce",
 						"exec": [
 							"tests[\"No se puede asociar un comentario a un álbum que no existe.\"] = responseCode.code === 404;",
 							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The album with the given id was not found\");"
@@ -267,7 +261,7 @@
 						"comments"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo comentario. El Id es inicializado por la BD y se debe ver en la respuesta. \r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
+				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo comentario. El Id es inicializado por la BD y se debe ver en la respuesta. \r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"statusCode\": 404,\r\n    \"message\": \"The album with the given id was not found\"\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -277,7 +271,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "4ea32076-b41c-4c82-b1af-d8d3b7faec46",
 						"exec": [
 							"var data= JSON.parse(responseBody);",
 							"tests[\"no genera error en el Get All\"] = responseCode.code === 200;",
@@ -303,7 +296,7 @@
 						"comments"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nConsulta los comentarios de un álbum en la aplicación. \r\nLa petición no tiene cuerpo.\r\n\r\nSe envía el Id del álbum a consultar en la URL de la petición.\r\n\r\n**Código http esperado: 200**"
+				"description": "**Release: Paso-5**\r\n\r\nConsulta los comentarios de un álbum en la aplicación. \r\nLa petición no tiene cuerpo.\r\n\r\nSe envía el Id del álbum a consultar en la URL de la petición.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n[\r\n    {\r\n        \"id\": 1,\r\n        \"description\": \"It is an amazing album\",\r\n        \"rating\": 5\r\n    },\r\n    {\r\n        \"id\": 2,\r\n        \"description\": \"This album is one of my favourites\",\r\n        \"rating\": 5\r\n    }\r\n]\r\n```"
 			},
 			"response": []
 		},
@@ -313,7 +306,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "fb4b3fa6-653a-4bea-8522-e3dc2442bd5f",
 						"exec": [
 							"console.log(responseBody);",
 							"var data = JSON.parse(responseBody);",
@@ -340,7 +332,7 @@
 						"{{new_id_cm}}"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nConsulta un comentario de un álbum en la aplicación. \r\n\r\nLa petición no tiene cuerpo.\r\n\r\nSe envía el Id del álbum y del comentario a consultar en la URL de la petición.\r\n\r\n**Código http esperado: 200**"
+				"description": "**Release: Paso-5**\r\n\r\nConsulta un comentario de un álbum en la aplicación. \r\n\r\nLa petición no tiene cuerpo.\r\n\r\nSe envía el Id del álbum y del comentario a consultar en la URL de la petición.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"id\": 1,\r\n    \"description\": \"It is an amazing album\",\r\n    \"rating\": 5\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -350,7 +342,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "a0971750-337b-48bc-ac95-759ae3c10813",
 						"exec": [
 							"console.log(responseBody);",
 							"var data = JSON.parse(responseBody);",
@@ -386,7 +377,7 @@
 						"{{new_id_cm}}"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nActualiza un comentario a un álbum existente. Se envían los Ids de las entidades asociar en la URL de la petición.\r\n\r\n**Código http esperado: 200**"
+				"description": "**Release: Paso-5**\r\n\r\nActualiza un comentario a un álbum existente. Se envían los Ids de las entidades asociar en la URL de la petición.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"id\": 1,\r\n    \"description\": \"It is the most amazing album\",\r\n    \"rating\": 5,\r\n    \"collector\": {\r\n        \"id\": 5,\r\n        \"name\": \"Jaime Andrés Monsalve\",\r\n        \"telephone\": \"3102178976\",\r\n        \"email\": \"j.monsalve@gmail.com\"\r\n    }\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -396,7 +387,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "27533795-4feb-4374-ad63-0ade16b29575",
 						"exec": [
 							"tests[\"No se puede editar un comentario que no existe.\"] = responseCode.code === 404;",
 							"let id = pm.variables.get(\"new_id_b\");",
@@ -432,7 +422,7 @@
 						"0"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nEdita un comentario que no existe a un álbum. \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /comments/0 no existe.\".\r\n\r\n**Código HTTP esperado: 404**"
+				"description": "**Release: Paso-5**\r\n\r\nEdita un comentario que no existe a un álbum. \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"The comment with the given id was not found\".\r\n\r\n**Código HTTP esperado: 404**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"statusCode\": 404,\r\n    \"message\": \"The comment with the given id was not found\"\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -442,7 +432,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "ed4e3497-2a8a-489b-9382-839bf4cff561",
 						"exec": [
 							"tests[\"No se puede editar una comentario sobre un álbum que no existe.\"] = responseCode.code === 404;",
 							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The album with the given id was not found\");"
@@ -477,7 +466,7 @@
 						"{{new_id_cm}}"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nEdita un comentario a un álbum que no existe.\r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /albums/0 no existe.\".\r\n\r\n**Código HTTP esperado: 404**"
+				"description": "**Release: Paso-5**\r\n\r\nEdita un comentario a un álbum que no existe.\r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"The album with the given id was not found\".\r\n\r\n**Código HTTP esperado: 404**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"statusCode\": 404,\r\n    \"message\": \"The album with the given id was not found\"\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -487,7 +476,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "fb5de78f-f2cd-4c37-912e-410fe59f4cc6",
 						"exec": [
 							"tests[\"No se puede borrar un comentario que no existe.\"] = responseCode.code === 404;",
 							"let id = pm.variables.get(\"new_id_b\");",
@@ -518,7 +506,7 @@
 						"0"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nBorra un comentario que no existe en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error.\r\n\r\n**Código http esperado: 404**"
+				"description": "**Release: Paso-5**\r\n\r\nBorra un comentario que no existe en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error.\r\n\r\n**Código http esperado: 404**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"statusCode\": 404,\r\n    \"message\": \"The comment with the given id was not found\"\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -528,7 +516,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "906433fe-bc0c-40ed-9114-6b7a62419888",
 						"exec": [
 							"tests[\"No se puede borrar un comentario sobre un álbum que no existe.\"] = responseCode.code === 404;",
 							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The album with the given id was not found\");"
@@ -558,7 +545,7 @@
 						"{{new_id_cm}}"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nBorra un comentario a un álbum que no existe en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /albums/0/comments no existe.\".\r\n\r\n**Código http esperado: 404**"
+				"description": "**Release: Paso-5**\r\n\r\nBorra un comentario a un álbum que no existe en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"The album with the given id was not found\".\r\n\r\n**Código http esperado: 404**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"statusCode\": 404,\r\n    \"message\": \"The album with the given id was not found\"\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -568,7 +555,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "ca672fa4-d89d-4a46-8203-75a5dbe4a2fc",
 						"exec": [
 							"tests[\"no genera error en el Delete\"] = responseCode.code === 204;"
 						],
@@ -607,7 +593,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "a6899cfb-c5c8-4d13-8743-ef33113e42e5",
 						"exec": [
 							"tests[\"no genera error en el Delete\"] = responseCode.code === 204;"
 						],
@@ -646,7 +631,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "48cc07f2-0fd5-48f6-a625-be31822486fe",
 						"exec": [
 							"tests[\"No genera error en el Delete\"] = responseCode.code === 204;"
 						],
@@ -683,7 +667,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "539d6774-7f80-43ca-b8e8-0a41e7e6c3ce",
 						"exec": [
 							"tests[\"No genera error en el Delete\"] = responseCode.code === 204;"
 						],
@@ -720,7 +703,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "c63ad647-61cf-432a-9b53-ff682ba1f390",
 						"exec": [
 							"tests[\"No genera error en el Delete\"] = responseCode.code === 204;"
 						],
@@ -756,7 +738,6 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "54e239a4-fb1d-4746-9410-953f08bc07e1",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -766,13 +747,11 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "1fad56df-f45b-4e66-bb99-65ac2f3b3aca",
 				"type": "text/javascript",
 				"exec": [
 					""
 				]
 			}
 		}
-	],
-	"protocolProfileBehavior": {}
+	]
 }

@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "79226bdf-e948-4fc7-9735-0fec72f8b2ca",
+		"_postman_id": "7d09007a-4cc2-457f-b1ec-de0dddd5abb9",
 		"name": "Musician Tests",
 		"description": "Colección de pruebas sobre el recurso Artist",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -12,7 +12,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "d7b002d8-e9ee-42a6-ad7b-dc68eda93813",
 						"exec": [
 							"var data = JSON.parse(responseBody);",
 							"postman.setGlobalVariable(\"new_id_m\",data.id);",
@@ -46,7 +45,7 @@
 						"musicians"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo músico. El Id es inicializado por la BD y se debe ver en la respuesta.\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
+				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo músico. El Id es inicializado por la BD y se debe ver en la respuesta.\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"name\": \"Rubén Blades Bellido de Luna\",\r\n    \"image\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Ruben_Blades_by_Gage_Skidmore.jpg/800px-Ruben_Blades_by_Gage_Skidmore.jpg\",\r\n    \"description\": \"Es un cantante, compositor, músico, actor, abogado, político y activista panameño. Ha desarrollado gran parte de su carrera artística en la ciudad de Nueva York.\",\r\n    \"birthDate\": \"1948-07-16T00:00:00-05:00\",\r\n    \"id\": 13\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -56,7 +55,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "7ab33ce7-67bc-48b1-89fc-54a34f4d2420",
 						"exec": [
 							"var data = JSON.parse(responseBody);",
 							"postman.setGlobalVariable(\"new_id_m2\",data.id);",
@@ -90,7 +88,7 @@
 						"musicians"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo músico. El Id es inicializado por la BD y se debe ver en la respuesta.\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
+				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo músico. El Id es inicializado por la BD y se debe ver en la respuesta.\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"name\": \"Joan Manuel Serrat Teresa\",\r\n    \"image\": \"https://upload.wikimedia.org/wikipedia/commons/e/e3/Serrat.jpg\",\r\n    \"description\": \"Es un cantautor, compositor, actor, escritor, poeta y músico español.\",\r\n    \"birthDate\": \"1943-12-27T00:00:00-05:00\",\r\n    \"id\": 14\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -100,7 +98,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "12cd7d6e-5d7e-4eb6-9781-834c0cdedb64",
 						"exec": [
 							"var data= JSON.parse(responseBody);",
 							"tests[\"No genera error en el Gell All\"] = responseCode.code === 200;",
@@ -134,7 +131,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "383780db-20d3-4f24-8cca-0eef6f6260d6",
 						"exec": [
 							"console.log(responseBody);",
 							"var data = JSON.parse(responseBody);",
@@ -169,7 +165,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "2067f599-5c42-4073-9812-edba4f1d6f29",
 						"exec": [
 							"tests[\"No se deberia obtener un músico con un id que no existe\"] = responseCode.code === 404;",
 							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The musician with the given id was not found\");"
@@ -193,7 +188,7 @@
 						"0"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nConsulta un músico que no existe en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /musicians/0 no existe.\".\r\n\r\n**Código http esperado: 404**"
+				"description": "**Release: Paso-5**\r\n\r\nConsulta un músico que no existe en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"The musician with the given id was not found\".\r\n\r\n**Código http esperado: 404**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"statusCode\": 404,\r\n    \"message\": \"The musician with the given id was not found\"\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -203,7 +198,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "b0521253-1093-4d56-a965-0ae98f26b020",
 						"exec": [
 							"console.log(responseBody);",
 							"var data = JSON.parse(responseBody);",
@@ -237,7 +231,7 @@
 						"{{new_id_m}}"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nActualiza un músico existente. \r\nse envía el Id en la URL de la petición.\r\n\r\n**Código http esperado: 200**"
+				"description": "**Release: Paso-5**\r\n\r\nActualiza un músico existente. \r\nse envía el Id en la URL de la petición.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"id\": 13,\r\n    \"name\": \"Rubén Blades Bellido de Luna\",\r\n    \"image\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Ruben_Blades_by_Gage_Skidmore.jpg/800px-Ruben_Blades_by_Gage_Skidmore.jpg\",\r\n    \"description\": \"Es un cantante, compositor, músico, actor, abogado, político y activista panameño.\",\r\n    \"birthDate\": \"1948-07-16T00:00:00-05:00\"\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -247,7 +241,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "ce51adb0-b2fa-492c-a7a7-3be7ad85841a",
 						"exec": [
 							"tests[\"No se deberia actualizar un músico con id que no existe\"] = responseCode.code === 404;",
 							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The musician with the given id was not found\");"
@@ -280,7 +273,7 @@
 						"0"
 					]
 				},
-				"description": "**Release: Paso-5**\r\nActualiza un músico que no existe. \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /musicians/0 no existe.\".\r\n\r\n**Código HTTP esperado: 404**"
+				"description": "**Release: Paso-5**\r\nActualiza un músico que no existe. \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"The musician with the given id was not found\".\r\n\r\n**Código HTTP esperado: 404**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"statusCode\": 404,\r\n    \"message\": \"The musician with the given id was not found\"\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -290,7 +283,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "d40bd0f8-6fbc-46a5-8ecd-0388f7258c89",
 						"exec": [
 							"tests[\"No genera error en el Delete\"] = responseCode.code === 204;"
 						],
@@ -327,7 +319,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "a64d0fef-82aa-481e-8019-6d46583d0d14",
 						"exec": [
 							"tests[\"No genera error en el Delete\"] = responseCode.code === 204;"
 						],
@@ -364,7 +355,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "4018fcc1-9f6b-4742-a84f-8ee546496b1c",
 						"exec": [
 							"tests[\"No se deberia borrar un músico con un id que no existe\"] = responseCode.code === 404;",
 							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The musician with the given id was not found\");"
@@ -392,7 +382,7 @@
 						"0"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nBorra un músico que no existe en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /musicians/0 no existe.\".\r\n\r\n**Código http esperado: 404**"
+				"description": "**Release: Paso-5**\r\n\r\nBorra un músico que no existe en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"The musician with the given id was not found\".\r\n\r\n**Código http esperado: 404**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"statusCode\": 404,\r\n    \"message\": \"The musician with the given id was not found\"\r\n}\r\n```"
 			},
 			"response": []
 		}
@@ -401,7 +391,6 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "797d0f0f-e649-4e2a-873e-ea99b9194408",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -411,13 +400,11 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "848d92ba-e696-4f4b-b2f9-b38d7fd01c93",
 				"type": "text/javascript",
 				"exec": [
 					""
 				]
 			}
 		}
-	],
-	"protocolProfileBehavior": {}
+	]
 }

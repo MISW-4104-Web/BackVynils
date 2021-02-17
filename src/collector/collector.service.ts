@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { BusinnesLogicException, BusinessError } from '../shared/errors/business-errors';
+import { BusinessLogicException, BusinessError } from '../shared/errors/business-errors';
 import { Collector } from './collector.entity';
 import { CollectorDTO } from './collector.dto';
 
@@ -19,7 +19,7 @@ export class CollectorService {
     async findOne(id: number): Promise<CollectorDTO> {
         const collector = await this.collectorRepository.findOne(id, { relations: ["comments", "favoritePerformers", "collectorAlbums"] });
         if (!collector)
-            throw new BusinnesLogicException("The collector with the given id was not found", BusinessError.NOT_FOUND)
+            throw new BusinessLogicException("The collector with the given id was not found", BusinessError.NOT_FOUND)
         return collector;
     }
 
@@ -35,7 +35,7 @@ export class CollectorService {
 
         const collector = await this.collectorRepository.findOne(id);
         if (!collector)
-            throw new BusinnesLogicException("The collector with the given id was not found", BusinessError.NOT_FOUND)
+            throw new BusinessLogicException("The collector with the given id was not found", BusinessError.NOT_FOUND)
         else {
             collector.name = collectorDTO.name;
             collector.telephone = collectorDTO.telephone;
@@ -48,7 +48,7 @@ export class CollectorService {
     async delete(id: number) {
         const collector = await this.collectorRepository.findOne(id);
         if (!collector)
-            throw new BusinnesLogicException("The collector with the given id was not found", BusinessError.NOT_FOUND)
+            throw new BusinessLogicException("The collector with the given id was not found", BusinessError.NOT_FOUND)
         return await this.collectorRepository.remove(collector);
     }
 

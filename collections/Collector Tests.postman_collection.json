@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "006117c7-901f-403f-858b-de78a8988ab6",
+		"_postman_id": "3cde23e2-d02d-4bae-9f58-3e6530195568",
 		"name": "Collector Tests",
 		"description": "Colección de pruebas sobre el recurso Artist",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -12,7 +12,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "8a7f6524-ff48-48d5-98f8-0b6595e37abe",
 						"exec": [
 							"var data = JSON.parse(responseBody);",
 							"postman.setGlobalVariable(\"new_id_c\",data.id);",
@@ -46,7 +45,7 @@
 						"collectors"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo coleccionista. El Id es inicializado por la BD y se debe ver en la respuesta.\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
+				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo coleccionista. El Id es inicializado por la BD y se debe ver en la respuesta.\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"name\": \"Jaime Andrés Monsalve\",\r\n    \"telephone\": \"3102178976\",\r\n    \"email\": \"j.monsalve@gmail.com\",\r\n    \"id\": 1\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -56,7 +55,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "073be636-f616-4d97-8dfb-cfdda3cbb339",
 						"exec": [
 							"var data = JSON.parse(responseBody);",
 							"postman.setGlobalVariable(\"new_id_c2\",data.id);",
@@ -90,7 +88,7 @@
 						"collectors"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo coleccionista. El Id es inicializado por la BD y se debe ver en la respuesta.\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
+				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo coleccionista. El Id es inicializado por la BD y se debe ver en la respuesta.\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"name\": \"María Alejandra Palacios\",\r\n    \"telephone\": \"3502889087\",\r\n    \"email\": \"j.palacios@outlook.es\",\r\n    \"id\": 2\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -100,7 +98,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "08d2b52f-299d-4b2d-b391-3ec81312c00a",
 						"exec": [
 							"var data= JSON.parse(responseBody);",
 							"tests[\"No genera error en el Gell All\"] = responseCode.code === 200;",
@@ -134,7 +131,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "5d57d753-15bf-43b4-a3da-e0504771105a",
 						"exec": [
 							"console.log(responseBody);",
 							"var data = JSON.parse(responseBody);",
@@ -169,7 +165,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "02b27b2b-7277-43b4-b50c-f2f05c4b5564",
 						"exec": [
 							"tests[\"No se deberia obtener un coleccionista con un id que no existe\"] = responseCode.code === 404;",
 							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The collector with the given id was not found\");"
@@ -193,7 +188,7 @@
 						"0"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nConsulta un coleccionista que no existe en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /collectors/0 no existe.\".\r\n\r\n**Código http esperado: 404**"
+				"description": "**Release: Paso-5**\r\n\r\nConsulta un coleccionista que no existe en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"The collector with the given id was not found\".\r\n\r\n**Código http esperado: 404**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"statusCode\": 404,\r\n    \"message\": \"The collector with the given id was not found\"\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -203,7 +198,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "ef4fffab-3627-45ff-b8cd-e3188b7968f6",
 						"exec": [
 							"console.log(responseBody);",
 							"var data = JSON.parse(responseBody);",
@@ -237,7 +231,7 @@
 						"{{new_id_c}}"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nActualiza un coleccionista existente. \r\nSe envía el Id en la URL de la petición.\r\n\r\n**Código http esperado: 200**"
+				"description": "**Release: Paso-5**\r\n\r\nActualiza un coleccionista existente. \r\nSe envía el Id en la URL de la petición.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"id\": 1,\r\n    \"name\": \"Jaime Andrés Monsalve Ruiz\",\r\n    \"telephone\": \"3102178976\",\r\n    \"email\": \"j.monsalve@gmail.com\"\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -247,7 +241,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "2be9ced9-bf75-4b4d-a754-c718921e27cb",
 						"exec": [
 							"tests[\"No se deberia actualizar un colleccionista con id que no existe\"] = responseCode.code === 404;",
 							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The collector with the given id was not found\");"
@@ -280,7 +273,7 @@
 						"0"
 					]
 				},
-				"description": "**Release: Paso-5**\r\nActualiza un coleccionista que no existe. \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /collectors/0 no existe.\".\r\n\r\n**Código HTTP esperado: 404**"
+				"description": "**Release: Paso-5**\r\nActualiza un coleccionista que no existe. \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"The collector with the given id was not found\".\r\n\r\n**Código HTTP esperado: 404**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"statusCode\": 404,\r\n    \"message\": \"The collector with the given id was not found\"\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -290,7 +283,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "493f4c43-c830-469d-bb3b-002cd3ce10b5",
 						"exec": [
 							"tests[\"No genera error en el Delete\"] = responseCode.code === 204;"
 						],
@@ -327,7 +319,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "9b6948bd-046e-47b5-8e98-714ab74c8385",
 						"exec": [
 							"tests[\"No genera error en el Delete\"] = responseCode.code === 204;"
 						],
@@ -364,7 +355,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "c08532fa-c18a-44a3-84ea-cc47168bdde0",
 						"exec": [
 							"tests[\"No se deberia borrar un coleccionista con un id que no existe\"] = responseCode.code === 404;",
 							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The collector with the given id was not found\");"
@@ -392,7 +382,7 @@
 						"0"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nBorra un coleccionista que no existe en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /collectors/0 no existe.\".\r\n\r\n**Código http esperado: 404**"
+				"description": "**Release: Paso-5**\r\n\r\nBorra un coleccionista que no existe en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"The collector with the given id was not found\".\r\n\r\n**Código http esperado: 404**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"statusCode\": 404,\r\n    \"message\": \"The collector with the given id was not found\"\r\n}\r\n```"
 			},
 			"response": []
 		}
@@ -401,7 +391,6 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "fddfbe94-7a88-4088-8efb-110558bb5f8a",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -411,13 +400,11 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "9569e828-49e5-457d-9496-29151532147b",
 				"type": "text/javascript",
 				"exec": [
 					""
 				]
 			}
 		}
-	],
-	"protocolProfileBehavior": {}
+	]
 }

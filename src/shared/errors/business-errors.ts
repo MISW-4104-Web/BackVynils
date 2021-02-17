@@ -1,4 +1,4 @@
-export function BusinnesLogicException(message, type) {
+export function BusinessLogicException(message: string, type:number) {
     this.message = message;
     this.type = type;
 }

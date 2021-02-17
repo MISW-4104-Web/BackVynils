@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "48cefcdb-0ae3-40dc-b9f3-385f207a7b9f",
+		"_postman_id": "b312f2dd-bcb9-4f68-a56c-32fa53326c0a",
 		"name": "BandMusicianTests",
 		"description": "Colección de pruebas sobre el recurso ArtistVinyl",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -12,7 +12,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "b3afc883-d0b5-4a7e-8efb-724194616633",
 						"exec": [
 							"var data = JSON.parse(responseBody);",
 							"postman.setGlobalVariable(\"new_id_b\",data.id);",
@@ -46,7 +45,7 @@
 						"bands"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo artista. El Id es inicializado por la BD y se debe ver en la respuesta.\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
+				"description": "**Release: Paso-5**\r\n\r\nCrea un nueva banda. El Id es inicializado por la BD y se debe ver en la respuesta.\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"name\": \"Queen\",\r\n    \"image\": \"https://upload.wikimedia.org/wikipedia/commons/7/7c/Queen_logo.svg\",\r\n    \"description\": \"Queen es una banda británica de rock formada en 1970 en Londres por el cantante Freddie Mercury, el guitarrista Brian May, el baterista Roger Taylor y el bajista John Deacon. Si bien el grupo ha presentado bajas de dos de sus miembros (Mercury, fallecido en 1991, y Deacon, retirado en 1997), los integrantes restantes, May y Taylor, continúan trabajando bajo el nombre Queen, por lo que la banda aún se considera activa.\",\r\n    \"creationDate\": \"1970-01-01T00:00:00-05:00\",\r\n    \"id\": 8\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -56,7 +55,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "83d618bf-5805-4c88-8ed8-c8cbac923358",
 						"exec": [
 							"var data = JSON.parse(responseBody);",
 							"postman.setGlobalVariable(\"new_id_m\",data.id);",
@@ -90,7 +88,7 @@
 						"musicians"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo músico. El Id es inicializado por la BD y se debe ver en la respuesta.\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
+				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo músico. El Id es inicializado por la BD y se debe ver en la respuesta.\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**\r\n\r\n***JSON de salida**\r\n\r\n```\r\n{\r\n    \"name\": \"Freddie Mercury\",\r\n    \"image\": \"https://upload.wikimedia.org/wikipedia/commons/e/ef/Freddie_Mercury_performing_in_New_Haven%2C_CT%2C_November_1977.jpg\",\r\n    \"description\": \"Fue un cantante, compositor, pianista, diseñador gráfico y músico británico de origen parsi e indio​ conocido por haber sido el vocalista principal de la banda de rock Queen.\",\r\n    \"birthDate\": \"1946-09-05T00:00:00-05:00\",\r\n    \"id\": 9\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -100,7 +98,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "9a747203-a345-4a93-9bb0-8eca12ddf960",
 						"exec": [
 							"var data = JSON.parse(responseBody);",
 							"postman.setGlobalVariable(\"new_id_m2\",data.id);",
@@ -134,7 +131,7 @@
 						"musicians"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo músico. El Id es inicializado por la BD y se debe ver en la respuesta.\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
+				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo músico. El Id es inicializado por la BD y se debe ver en la respuesta.\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"name\": \"Rubén Blades Bellido de Luna\",\r\n    \"image\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Ruben_Blades_by_Gage_Skidmore.jpg/800px-Ruben_Blades_by_Gage_Skidmore.jpg\",\r\n    \"description\": \"Es un cantante, compositor, músico, actor, abogado, político y activista panameño. Ha desarrollado gran parte de su carrera artística en la ciudad de Nueva York.\",\r\n    \"birthDate\": \"1948-07-16T00:00:00-05:00\",\r\n    \"id\": 10\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -144,7 +141,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "e10b79e8-b03a-4aad-a11b-f2435d8c5c18",
 						"exec": [
 							"tests[\"No genera error en el Post\"] = responseCode.code === 200;"
 						],
@@ -178,7 +174,7 @@
 						"{{new_id_m}}"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nAsocia un vinilo a un artista en la aplicación. \r\n\r\nSe envía el Id del artista y el del vinilo a asociar en la URL de la petición.\r\n\r\n**Código http esperado: 200**"
+				"description": "**Release: Paso-5**\r\n\r\nAsocia un músico a una banda en la aplicación. \r\n\r\nSe envía el Id del músico y el de la banda a asociar en la URL de la petición.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"id\": 9,\r\n    \"name\": \"Freddie Mercury\",\r\n    \"image\": \"https://upload.wikimedia.org/wikipedia/commons/e/ef/Freddie_Mercury_performing_in_New_Haven%2C_CT%2C_November_1977.jpg\",\r\n    \"description\": \"Fue un cantante, compositor, pianista, diseñador gráfico y músico británico de origen parsi e indio​ conocido por haber sido el vocalista principal de la banda de rock Queen.\",\r\n    \"birthDate\": \"1946-09-05T05:00:00.000Z\",\r\n    \"band\": {\r\n        \"id\": 8,\r\n        \"name\": \"Queen\",\r\n        \"image\": \"https://upload.wikimedia.org/wikipedia/commons/7/7c/Queen_logo.svg\",\r\n        \"description\": \"Queen es una banda británica de rock formada en 1970 en Londres por el cantante Freddie Mercury, el guitarrista Brian May, el baterista Roger Taylor y el bajista John Deacon. Si bien el grupo ha presentado bajas de dos de sus miembros (Mercury, fallecido en 1991, y Deacon, retirado en 1997), los integrantes restantes, May y Taylor, continúan trabajando bajo el nombre Queen, por lo que la banda aún se considera activa.\",\r\n        \"creationDate\": \"1970-01-01T05:00:00.000Z\"\r\n    }\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -188,7 +184,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "ab9f1690-0f51-4a7d-9678-db3d29872e85",
 						"exec": [
 							"tests[\"No se deberia asociar el músico ya que no existe.\"] = responseCode.code === 404;",
 							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The musician with the given id was not found\");"
@@ -218,7 +213,7 @@
 						"0"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nAsocia un músico ue no existe a una banda en la aplicación. \r\n\r\nSe envía el Id de la banda y el del músico a asociar en la URL de la petición.\r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /musicians/0 no existe.\".\r\n\r\n**Código http esperado: 404**"
+				"description": "**Release: Paso-5**\r\n\r\nAsocia un músico ue no existe a una banda en la aplicación. \r\n\r\nSe envía el Id de la banda y el del músico a asociar en la URL de la petición.\r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"The musician with the given id was not found\".\r\n\r\n**Código http esperado: 404**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"statusCode\": 404,\r\n    \"message\": \"The musician with the given id was not found\"\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -228,7 +223,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "c50d0b02-7d16-4f33-9233-d174e6e3f18b",
 						"exec": [
 							"console.log(responseBody);",
 							"var data = JSON.parse(responseBody);",
@@ -255,7 +249,7 @@
 						"{{new_id_m}}"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nConsulta una banda de un músico en la aplicación. \r\n\r\nLa petición no tiene cuerpo.\r\n\r\nSe envía el Id de la banda y del músico a consultar en la URL de la petición.\r\n\r\n**Código http esperado: 200**"
+				"description": "**Release: Paso-5**\r\n\r\nConsulta un músico de una banda en la aplicación. \r\n\r\nLa petición no tiene cuerpo.\r\n\r\nSe envía el Id de la banda y del músico a consultar en la URL de la petición.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"id\": 9,\r\n    \"name\": \"Freddie Mercury\",\r\n    \"image\": \"https://upload.wikimedia.org/wikipedia/commons/e/ef/Freddie_Mercury_performing_in_New_Haven%2C_CT%2C_November_1977.jpg\",\r\n    \"description\": \"Fue un cantante, compositor, pianista, diseñador gráfico y músico británico de origen parsi e indio​ conocido por haber sido el vocalista principal de la banda de rock Queen.\",\r\n    \"birthDate\": \"1946-09-05T05:00:00.000Z\",\r\n    \"band\": {\r\n        \"id\": 8,\r\n        \"name\": \"Queen\",\r\n        \"image\": \"https://upload.wikimedia.org/wikipedia/commons/7/7c/Queen_logo.svg\",\r\n        \"description\": \"Queen es una banda británica de rock formada en 1970 en Londres por el cantante Freddie Mercury, el guitarrista Brian May, el baterista Roger Taylor y el bajista John Deacon. Si bien el grupo ha presentado bajas de dos de sus miembros (Mercury, fallecido en 1991, y Deacon, retirado en 1997), los integrantes restantes, May y Taylor, continúan trabajando bajo el nombre Queen, por lo que la banda aún se considera activa.\",\r\n        \"creationDate\": \"1970-01-01T05:00:00.000Z\"\r\n    }\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -265,7 +259,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "a1e6fc97-74a1-4fe6-a8da-bc2408cd3393",
 						"exec": [
 							"tests[\"No se deberia obtener ninguna banda ya que el músico no existe.\"] = responseCode.code === 404;",
 							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The musician with the given id was not found\");"
@@ -291,7 +284,7 @@
 						"0"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nConsulta un músico que no existe de una banda en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error.\r\n\r\n**Código http esperado: 404**"
+				"description": "**Release: Paso-5**\r\n\r\nConsulta un músico que no existe de una banda en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error.\r\n\r\n**Código http esperado: 404**\r\n\r\n**JSON de salida\r\n\r\n```\r\n{\r\n    \"statusCode\": 404,\r\n    \"message\": \"The musician with the given id was not found\"\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -301,7 +294,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "2eb6a8bb-b60c-422d-afc6-0761f2e7ef45",
 						"exec": [
 							"tests[\"No se puede obtener un músico que no esta asociado\"] = responseCode.code === 412;",
 							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The musician with the given id is not associated to the band\");"
@@ -327,7 +319,7 @@
 						"{{new_id_m2}}"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nConsulta un músico que no esta asociado a una banda en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El músico no está asociado a la banda\".\r\n\r\n**Código http esperado: 412**"
+				"description": "**Release: Paso-5**\r\n\r\nConsulta un músico que no esta asociado a una banda en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"The musician with the given id is not associated to the band\".\r\n\r\n**Código http esperado: 412**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"statusCode\": 412,\r\n    \"message\": \"The musician with the given id is not associated to the band\"\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -337,7 +329,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "dfa778fb-b861-4026-83aa-d44fb42d5232",
 						"exec": [
 							"var data= JSON.parse(responseBody);",
 							"tests[\"No genera error en el Get\"] = responseCode.code === 200;",
@@ -363,7 +354,7 @@
 						"musicians"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nConsulta los vinilos de un artista en la aplicación. \r\nLa petición no tiene cuerpo.\r\n\r\nSe envía el Id del artista y el del vinilo a consultar en la URL de la petición.\r\n\r\n**Código http esperado: 200**"
+				"description": "**Release: Paso-5**\r\n\r\nConsulta los músicos de una banda en la aplicación. \r\n\r\nLa petición no tiene cuerpo.\r\n\r\nSe envía el Id del músico y de la banda a consultar en la URL de la petición.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n[\r\n    {\r\n        \"id\": 9,\r\n        \"name\": \"Freddie Mercury\",\r\n        \"image\": \"https://upload.wikimedia.org/wikipedia/commons/e/ef/Freddie_Mercury_performing_in_New_Haven%2C_CT%2C_November_1977.jpg\",\r\n        \"description\": \"Fue un cantante, compositor, pianista, diseñador gráfico y músico británico de origen parsi e indio​ conocido por haber sido el vocalista principal de la banda de rock Queen.\",\r\n        \"birthDate\": \"1946-09-05T05:00:00.000Z\"\r\n    }\r\n]\r\n```"
 			},
 			"response": []
 		},
@@ -373,7 +364,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "688ffd0c-e69c-4929-a2b3-752cf7db5793",
 						"exec": [
 							"tests[\"No genera error en el Delete\"] = responseCode.code === 204;"
 						],
@@ -412,7 +402,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "87e1dd26-abbd-4aa0-a1cf-a8d4e9e2bf62",
 						"exec": [
 							"tests[\"No se deberia eliminar ninguna asociacion ya que la banda no existe\"] = responseCode.code === 404;",
 							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The band with the given id was not found\");"
@@ -442,7 +431,7 @@
 						"{{new_id_m}}"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nBorra la asociación entre un músico y una banda que no existe en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /bands/0/musicians no existe.\".\r\n\r\n**Código http esperado: 404**"
+				"description": "**Release: Paso-5**\r\n\r\nBorra la asociación entre un músico y una banda que no existe en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"he band with the given id was not found\".\r\n\r\n**Código http esperado: 404**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"statusCode\": 404,\r\n    \"message\": \"The band with the given id was not found\"\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -452,7 +441,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "75ae63f3-9feb-4ef9-89b8-465d92efca04",
 						"exec": [
 							"tests[\"No se deberia eliminar ninguna asociacion ya que el músico no existe\"] = responseCode.code === 404;",
 							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The musician with the given id was not found\");"
@@ -482,7 +470,7 @@
 						"0"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nBorra la asociación entre un músico que no existe y una banda en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error.\r\n\r\n**Código http esperado: 404**"
+				"description": "**Release: Paso-5**\r\n\r\nBorra la asociación entre un músico que no existe y una banda en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error.\r\n\r\n**Código http esperado: 404**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"statusCode\": 404,\r\n    \"message\": \"The musician with the given id was not found\"\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -492,7 +480,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "2f49dd0f-21b1-4215-a00e-0492b765766a",
 						"exec": [
 							"tests[\"No genera error en el Delete\"] = responseCode.code === 204;"
 						],
@@ -529,7 +516,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "fabffbe6-5a59-49e2-8346-bbd7185a25b0",
 						"exec": [
 							"tests[\"No genera error en el Delete\"] = responseCode.code === 204;"
 						],
@@ -566,7 +552,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "5d31cb35-9855-4567-b6d8-d5a1fd128825",
 						"exec": [
 							"tests[\"No genera error en el Delete\"] = responseCode.code === 204;"
 						],
@@ -602,7 +587,6 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "41b2b403-e14b-4da0-8385-8cf73764f964",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -612,13 +596,11 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "922ddccb-2f41-4608-a545-f08964f0cd4a",
 				"type": "text/javascript",
 				"exec": [
 					""
 				]
 			}
 		}
-	],
-	"protocolProfileBehavior": {}
+	]
 }

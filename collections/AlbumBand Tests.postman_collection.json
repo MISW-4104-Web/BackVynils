@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "2c4386ed-7c27-435a-8e68-632429a90c29",
+		"_postman_id": "3b20e06f-4231-465c-b44e-b2e84ec9a54a",
 		"name": "AlbumBand Tests",
 		"description": "Colección de pruebas sobre el recurso ArtistVinyl",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -12,7 +12,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "05f09aef-3e6b-4517-ad0e-23a20b1e9668",
 						"exec": [
 							"var data = JSON.parse(responseBody);",
 							"postman.setGlobalVariable(\"new_id_a\",data.id);",
@@ -45,7 +44,7 @@
 						"albums"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo album. El Id es inicializado por la BD y se debe ver en la respuesta. \r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
+				"description": "Crea un nuevo album. El Id es inicializado por la BD y se debe ver en la respuesta. \r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"name\": \"A Night at the Opera\",\r\n    \"cover\": \"https://upload.wikimedia.org/wikipedia/en/4/4d/Queen_A_Night_At_The_Opera.png\",\r\n    \"releaseDate\": \"1975-11-21T00:00:00-05:00\",\r\n    \"description\": \"Es el cuarto álbum de estudio de la banda británica de rock Queen, publicado originalmente en 1975. Coproducido por Roy Thomas Baker y Queen, A Night at the Opera fue, en el tiempo de su lanzamiento, la producción más cara realizada.1​ Un éxito comercial, el álbum fue votado por el público y citado por publicaciones musicales como uno de los mejores trabajos de Queen y de la historia del rock.\",\r\n    \"genre\": \"Rock\",\r\n    \"recordLabel\": \"EMI\",\r\n    \"id\": 3\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -55,7 +54,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "2325479f-7d2f-444b-beed-bb49c4ede789",
 						"exec": [
 							"var data = JSON.parse(responseBody);",
 							"postman.setGlobalVariable(\"new_id_b\",data.id);",
@@ -89,7 +87,7 @@
 						"bands"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nCrea un nuevo artista. El Id es inicializado por la BD y se debe ver en la respuesta.\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
+				"description": "Crea un nuevo artista. El Id es inicializado por la BD y se debe ver en la respuesta.\r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"name\": \"Queen\",\r\n    \"image\": \"https://upload.wikimedia.org/wikipedia/commons/7/7c/Queen_logo.svg\",\r\n    \"description\": \"Queen es una banda británica de rock formada en 1970 en Londres por el cantante Freddie Mercury, el guitarrista Brian May, el baterista Roger Taylor y el bajista John Deacon. Si bien el grupo ha presentado bajas de dos de sus miembros (Mercury, fallecido en 1991, y Deacon, retirado en 1997), los integrantes restantes, May y Taylor, continúan trabajando bajo el nombre Queen, por lo que la banda aún se considera activa.\",\r\n    \"creationDate\": \"1970-01-01T00:00:00-05:00\",\r\n    \"id\": 1\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -99,7 +97,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "99fb7e99-5313-4a0d-81f7-5ddd14339518",
 						"exec": [
 							"var data = JSON.parse(responseBody);",
 							"postman.setGlobalVariable(\"new_id_b2\",data.id);",
@@ -133,7 +130,7 @@
 						"bands"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nCrea una nueva banda. El Id es inicializado por la BD y se debe ver en la respuesta.\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**"
+				"description": "Crea una nueva banda. El Id es inicializado por la BD y se debe ver en la respuesta.\r\n\r\nPara la prueba, se guarda el id en una variable que será utilizada en otras peticiones de la colección.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"name\": \"Soda Stereo\",\r\n    \"image\": \"https://upload.wikimedia.org/wikipedia/commons/6/6f/CeratiAlbertiBosio.jpg\",\r\n    \"description\": \"Soda Stereo fue una banda argentina de rock formada en Buenos Aires en 1982 por Gustavo Cerati (voz, guitarra), Héctor «Zeta» Bosio (bajo) y Carlos Alberto Ficicchia «Charly Alberti» (batería), considerada una de las más influyentes e importantes bandas iberoamericanas de todos los tiempos y una leyenda de la música latina. Fueron el primer grupo de habla hispana en conseguir un éxito masivo en Latinoamérica y tuvieron un papel muy importante en el desarrollo y la difusión del rock iberoamericano y el rock en español durante las décadas de 1980 y 1990. Durante su carrera, fueron vanguardistas y marcaron tendencia en Latinoamérica, siendo protagonistas en diversos géneros como la música divertida de sus inicios, la new wave, el dark, el hard rock, el rock alternativo y el rock electrónico de sus finales\",\r\n    \"creationDate\": \"1982-01-01T00:00:00-05:00\",\r\n    \"id\": 2\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -143,7 +140,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "f93ec244-2b5d-4a68-aefa-4b72a17b72f8",
 						"exec": [
 							"tests[\"No genera error en el Post\"] = responseCode.code === 200;"
 						],
@@ -178,7 +174,7 @@
 						""
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nAsocia una banda a un álbum en la aplicación. \r\n\r\nSe envía el Id del álbum y el de la banda a asociar en la URL de la petición.\r\n\r\n**Código http esperado: 200**"
+				"description": "Asocia una banda a un álbum en la aplicación. \r\n\r\nSe envía el Id del álbum y el de la banda a asociar en la URL de la petición.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"id\": 3,\r\n    \"name\": \"A Night at the Opera\",\r\n    \"cover\": \"https://upload.wikimedia.org/wikipedia/en/4/4d/Queen_A_Night_At_The_Opera.png\",\r\n    \"releaseDate\": \"1975-11-21T05:00:00.000Z\",\r\n    \"description\": \"Es el cuarto álbum de estudio de la banda británica de rock Queen, publicado originalmente en 1975. Coproducido por Roy Thomas Baker y Queen, A Night at the Opera fue, en el tiempo de su lanzamiento, la producción más cara realizada.1​ Un éxito comercial, el álbum fue votado por el público y citado por publicaciones musicales como uno de los mejores trabajos de Queen y de la historia del rock.\",\r\n    \"genre\": \"Rock\",\r\n    \"recordLabel\": \"EMI\",\r\n    \"performers\": [\r\n        {\r\n            \"id\": 1,\r\n            \"name\": \"Queen\",\r\n            \"image\": \"https://upload.wikimedia.org/wikipedia/commons/7/7c/Queen_logo.svg\",\r\n            \"description\": \"Queen es una banda británica de rock formada en 1970 en Londres por el cantante Freddie Mercury, el guitarrista Brian May, el baterista Roger Taylor y el bajista John Deacon. Si bien el grupo ha presentado bajas de dos de sus miembros (Mercury, fallecido en 1991, y Deacon, retirado en 1997), los integrantes restantes, May y Taylor, continúan trabajando bajo el nombre Queen, por lo que la banda aún se considera activa.\",\r\n            \"creationDate\": \"1970-01-01T05:00:00.000Z\"\r\n        }\r\n    ]\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -188,7 +184,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "4cbbb72e-8fc6-4305-94ea-7c680a3c2705",
 						"exec": [
 							"tests[\"No se deberia asociar la banda ya que no existe.\"] = responseCode.code === 404;",
 							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The band with the given id was not found\");"
@@ -218,7 +213,7 @@
 						"0"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nAsocia un álbum que no existe a una banda en la aplicación. \r\n\r\nSe envía el Id de la banda y el del álbum a asociar en la URL de la petición.\r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /albums/0 no existe.\".\r\n\r\n**Código http esperado: 404**"
+				"description": "Asocia un álbum que no existe a una banda en la aplicación. \r\n\r\nSe envía el Id de la banda y el del álbum a asociar en la URL de la petición.\r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"The band with the given id was not found.\".\r\n\r\n**Código http esperado: 404**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"statusCode\": 404,\r\n    \"message\": \"The band with the given id was not found\"\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -228,7 +223,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "6cde8838-fe41-46ae-b52a-cb5f5be0e92b",
 						"exec": [
 							"console.log(responseBody);",
 							"var data = JSON.parse(responseBody);",
@@ -255,7 +249,7 @@
 						"{{new_id_b}}"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nConsulta una banda de un álbum en la aplicación. \r\n\r\nLa petición no tiene cuerpo.\r\n\r\nSe envía el Id de la banda y del álbum a consultar en la URL de la petición.\r\n\r\n**Código http esperado: 200**"
+				"description": "Consulta una banda de un álbum en la aplicación. \r\n\r\nLa petición no tiene cuerpo.\r\n\r\nSe envía el Id de la banda y del álbum a consultar en la URL de la petición.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"id\": 1,\r\n    \"name\": \"Queen\",\r\n    \"image\": \"https://upload.wikimedia.org/wikipedia/commons/7/7c/Queen_logo.svg\",\r\n    \"description\": \"Queen es una banda británica de rock formada en 1970 en Londres por el cantante Freddie Mercury, el guitarrista Brian May, el baterista Roger Taylor y el bajista John Deacon. Si bien el grupo ha presentado bajas de dos de sus miembros (Mercury, fallecido en 1991, y Deacon, retirado en 1997), los integrantes restantes, May y Taylor, continúan trabajando bajo el nombre Queen, por lo que la banda aún se considera activa.\",\r\n    \"creationDate\": \"1970-01-01T05:00:00.000Z\"\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -265,7 +259,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "7dd25313-b681-45dd-8d93-e1c3e174822f",
 						"exec": [
 							"tests[\"No se deberia obtener ningun álbum ya que la banda no existe.\"] = responseCode.code === 404;",
 							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The band with the given id was not found\");"
@@ -291,7 +284,7 @@
 						"0"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nConsulta un álbum que no existe de una banda en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error.\r\n\r\n**Código http esperado: 404**"
+				"description": "Consulta un álbum que no existe de una banda en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error.\r\n\r\n**Código http esperado: 404**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"statusCode\": 404,\r\n    \"message\": \"The band with the given id was not found\"\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -301,7 +294,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "fd59a50b-3c10-4292-bfb0-32e40e8a5bf8",
 						"exec": [
 							"tests[\"No se puede obtener un álbum que no esta asociado\"] = responseCode.code === 412;",
 							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The band with the given id is not associated to the album\");"
@@ -327,7 +319,7 @@
 						"{{new_id_b2}}"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nConsulta un álbum que no esta asociado a una banda en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El álbum no está asociado a la banda\".\r\n\r\n**Código http esperado: 412**"
+				"description": "Consulta un álbum que no esta asociado a una banda en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"The band with the given id is not associated to the album\".\r\n\r\n**Código http esperado: 412**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"statusCode\": 412,\r\n    \"message\": \"The band with the given id is not associated to the album\"\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -337,7 +329,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "f7c27bbc-eb21-4360-a57f-065ae7f89cb6",
 						"exec": [
 							"tests[\"No genera error en el Put\"] = responseCode.code === 200;"
 						],
@@ -370,7 +361,7 @@
 						"bands"
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nActualiza la lista de bandas de un álbum existente.\r\n\r\nSe envía el Id en la URL de la petición.\r\n\r\n**Código http esperado: 200**"
+				"description": "Actualiza la lista de bandas de un álbum existente.\r\n\r\nSe envía el Id en la URL de la petición.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"id\": 3,\r\n    \"name\": \"A Night at the Opera\",\r\n    \"cover\": \"https://upload.wikimedia.org/wikipedia/en/4/4d/Queen_A_Night_At_The_Opera.png\",\r\n    \"releaseDate\": \"1975-11-21T05:00:00.000Z\",\r\n    \"description\": \"Es el cuarto álbum de estudio de la banda británica de rock Queen, publicado originalmente en 1975. Coproducido por Roy Thomas Baker y Queen, A Night at the Opera fue, en el tiempo de su lanzamiento, la producción más cara realizada.1​ Un éxito comercial, el álbum fue votado por el público y citado por publicaciones musicales como uno de los mejores trabajos de Queen y de la historia del rock.\",\r\n    \"genre\": \"Rock\",\r\n    \"recordLabel\": \"EMI\",\r\n    \"performers\": [\r\n        {\r\n            \"id\": 1,\r\n            \"name\": \"Queen\",\r\n            \"image\": \"https://upload.wikimedia.org/wikipedia/commons/7/7c/Queen_logo.svg\",\r\n            \"description\": \"Queen es una banda británica de rock formada en 1970 en Londres por el cantante Freddie Mercury, el guitarrista Brian May, el baterista Roger Taylor y el bajista John Deacon. Si bien el grupo ha presentado bajas de dos de sus miembros (Mercury, fallecido en 1991, y Deacon, retirado en 1997), los integrantes restantes, May y Taylor, continúan trabajando bajo el nombre Queen, por lo que la banda aún se considera activa.\",\r\n            \"creationDate\": \"1970-01-01T00:00:00-05:00\"\r\n        }\r\n    ]\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -380,7 +371,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "35ef884b-5908-42a2-b712-bd6452b3f71f",
 						"exec": [
 							"var data= JSON.parse(responseBody);",
 							"tests[\"No genera error en el Get\"] = responseCode.code === 200;",
@@ -407,7 +397,7 @@
 						""
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nConsulta las bandas de un álbum la aplicación. \r\n\r\nLa petición no tiene cuerpo.\r\n\r\nSe envía el Id del álbum a consultar en la URL de la petición.\r\n\r\n**Código http esperado: 200**"
+				"description": "Consulta las bandas de un álbum la aplicación. \r\n\r\nLa petición no tiene cuerpo.\r\n\r\nSe envía el Id del álbum a consultar en la URL de la petición.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n[\r\n    {\r\n        \"id\": 1,\r\n        \"name\": \"Queen\",\r\n        \"image\": \"https://upload.wikimedia.org/wikipedia/commons/7/7c/Queen_logo.svg\",\r\n        \"description\": \"Queen es una banda británica de rock formada en 1970 en Londres por el cantante Freddie Mercury, el guitarrista Brian May, el baterista Roger Taylor y el bajista John Deacon. Si bien el grupo ha presentado bajas de dos de sus miembros (Mercury, fallecido en 1991, y Deacon, retirado en 1997), los integrantes restantes, May y Taylor, continúan trabajando bajo el nombre Queen, por lo que la banda aún se considera activa.\",\r\n        \"creationDate\": \"1970-01-01T05:00:00.000Z\"\r\n    }\r\n]\r\n```"
 			},
 			"response": []
 		},
@@ -417,7 +407,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "404b39fe-c717-491a-bfdf-0bcdbd7f0c13",
 						"exec": [
 							"tests[\"No se pueden asociar las bandas ya que estos no existen\"] = responseCode.code === 404;",
 							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The band with the given id was not found\");"
@@ -452,7 +441,7 @@
 						""
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nActualiza la lista de bandas de un álgum existente con bandas que no existen. \r\n\r\nSe envía el Id en la URL de la petición.\r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /bands/0 no existe.\".\r\n\r\n**Código http esperado: 404**"
+				"description": "Actualiza la lista de bandas de un álgum existente con bandas que no existen. \r\n\r\nSe envía el Id en la URL de la petición.\r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"The band with the given id was not found\".\r\n\r\n**Código http esperado: 404**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"statusCode\": 404,\r\n    \"message\": \"The band with the given id was not found\"\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -462,7 +451,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "519054b9-1708-45ae-beb9-6c82dac00916",
 						"exec": [
 							"tests[\"No genera error en el Delete\"] = responseCode.code === 204;"
 						],
@@ -491,7 +479,7 @@
 						"{{new_id_b}}"
 					]
 				},
-				"description": "**Release: Paso-5**\n\nBorra la asociación entre una banda y un álbum. Se envían los ids del músico y del álbum creados anteriormente.\n\n**Código HTTP esperado: 204**"
+				"description": "Borra la asociación entre una banda y un álbum. Se envían los ids del músico y del álbum creados anteriormente.\n\n**Código HTTP esperado: 204**"
 			},
 			"response": []
 		},
@@ -501,7 +489,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "e40963f7-d584-40b1-8872-3de3baed2a1d",
 						"exec": [
 							"tests[\"No genera error en el Delete\"] = responseCode.code === 204;"
 						],
@@ -530,7 +517,7 @@
 						"{{new_id_b2}}"
 					]
 				},
-				"description": "**Release: Paso-5**\n\nBorra la asociación entre una banda y un álbum. Se envían los ids del músico y del álbum creados anteriormente.\n\n**Código HTTP esperado: 204**"
+				"description": "Borra la asociación entre una banda y un álbum. Se envían los ids del músico y del álbum creados anteriormente.\n\n**Código HTTP esperado: 204**"
 			},
 			"response": []
 		},
@@ -540,7 +527,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "b87714c6-7ccf-448f-a308-172908670a26",
 						"exec": [
 							"tests[\"No se deberia eliminar ninguna asociacion ya que la banda no existe\"] = responseCode.code === 404;",
 							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The band with the given id was not found\");"
@@ -571,7 +557,7 @@
 						""
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nBorra la asociación entre un álbum y una banda que no existe en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"El recurso /bands/0/albums no existe.\".\r\n\r\n**Código http esperado: 404**"
+				"description": "Borra la asociación entre un álbum y una banda que no existe en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error y el mensaje \"The band with the given id was not found\".\r\n\r\n**Código http esperado: 404**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"statusCode\": 404,\r\n    \"message\": \"The band with the given id was not found\"\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -581,7 +567,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "b4953eee-ec7d-47b8-bbfe-72917030fe89",
 						"exec": [
 							"tests[\"No se deberia eliminar ninguna asociacion ya que el álbum no existe\"] = responseCode.code === 404;",
 							"tests[\"Mensaje correcto de error\"] = responseBody.has(\"The album with the given id was not found\");"
@@ -612,7 +597,7 @@
 						""
 					]
 				},
-				"description": "**Release: Paso-5**\r\n\r\nBorra la asociación entre un álbum que no existe y una banda en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error.\r\n\r\n**Código http esperado: 404**"
+				"description": "Borra la asociación entre un álbum que no existe y una banda en la aplicación.  \r\n\r\nPara la prueba se verifica que se genera el error.\r\n\r\n**Código http esperado: 404**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n{\r\n    \"statusCode\": 404,\r\n    \"message\": \"The album with the given id was not found\"\r\n}\r\n```"
 			},
 			"response": []
 		},
@@ -622,7 +607,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "c7faca60-37e9-4d6b-baca-ba9e56f795f4",
 						"exec": [
 							"tests[\"No genera error en el Delete\"] = responseCode.code === 204;"
 						],
@@ -649,7 +633,7 @@
 						"{{new_id_b}}"
 					]
 				},
-				"description": "**Release: Paso-5**\n\nBorra una banda. Se envía el id de la banda creada anteriormente.\n\n**Código HTTP esperado: 204**"
+				"description": "Borra una banda. Se envía el id de la banda creada anteriormente.\n\n**Código HTTP esperado: 204**"
 			},
 			"response": []
 		},
@@ -659,7 +643,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "a13fc1f2-8552-443e-aa09-ffd72aac00bf",
 						"exec": [
 							"tests[\"No genera error en el Delete\"] = responseCode.code === 204;"
 						],
@@ -686,7 +669,7 @@
 						"{{new_id_b2}}"
 					]
 				},
-				"description": "**Release: Paso-5**\n\nBorra una banda. Se envía el id de la banda creada anteriormente.\n\n**Código HTTP esperado: 204**"
+				"description": "Borra una banda. Se envía el id de la banda creada anteriormente.\n\n**Código HTTP esperado: 204**"
 			},
 			"response": []
 		},
@@ -696,7 +679,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "d3ef4fb4-fc3c-4d4b-bdae-40eaa1e05c3e",
 						"exec": [
 							"tests[\"No genera error en el Delete\"] = responseCode.code === 204;"
 						],
@@ -723,7 +705,7 @@
 						"{{new_id_a}}"
 					]
 				},
-				"description": "**Release: Paso-5**\n\nBorra un álbum. Se envía el id del álbum creado anteriormente.\n\n**Código HTTP esperado: 204**"
+				"description": "Borra un álbum. Se envía el id del álbum creado anteriormente.\n\n**Código HTTP esperado: 204**"
 			},
 			"response": []
 		}
@@ -732,7 +714,6 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "214bf68e-414c-408e-a8aa-91575932cb6a",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -742,13 +723,11 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "4d9ca140-76c0-40f7-b7c0-f6e83b21c57f",
 				"type": "text/javascript",
 				"exec": [
 					""
 				]
 			}
 		}
-	],
-	"protocolProfileBehavior": {}
+	]
 }

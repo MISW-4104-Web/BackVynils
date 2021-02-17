@@ -5,7 +5,7 @@ import { Repository } from 'typeorm';
 import { Prize } from './prize.entity';
 import { PrizeDTO } from './prize.dto';
 
-import { BusinnesLogicException, BusinessError } from "../shared/errors/business-errors";
+import { BusinessLogicException, BusinessError } from "../shared/errors/business-errors";
 
 @Injectable()
 export class PrizeService {
@@ -20,7 +20,7 @@ export class PrizeService {
     async findOne(id: number): Promise<PrizeDTO> {
         const prize = await this.prizeRepository.findOne(id, { relations: ["performerPrizes"] });
         if (!prize)
-            throw new BusinnesLogicException("The prize with the given id was not found", BusinessError.NOT_FOUND)
+            throw new BusinessLogicException("The prize with the given id was not found", BusinessError.NOT_FOUND)
 
         return prize;
     }
@@ -38,7 +38,7 @@ export class PrizeService {
     async update(id: number, prizeDTO: PrizeDTO): Promise<PrizeDTO> {
         const prize = await this.prizeRepository.findOne(id);
         if (!prize)
-            throw new BusinnesLogicException("The prize with the given id was not found", BusinessError.NOT_FOUND)
+            throw new BusinessLogicException("The prize with the given id was not found", BusinessError.NOT_FOUND)
 
         prize.name = prizeDTO.name;
         prize.description = prizeDTO.description;
@@ -51,7 +51,7 @@ export class PrizeService {
         const prize = await this.prizeRepository.findOne(id);
 
         if (!prize)
-            throw new BusinnesLogicException("The prize with the given id was not found", BusinessError.NOT_FOUND)
+            throw new BusinessLogicException("The prize with the given id was not found", BusinessError.NOT_FOUND)
 
         return await this.prizeRepository.remove(prize);
     }

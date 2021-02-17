@@ -3,7 +3,7 @@ import { Band } from './band.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { BandDTO } from './band.dto';
-import { BusinnesLogicException, BusinessError } from '../shared/errors/business-errors';
+import { BusinessLogicException, BusinessError } from '../shared/errors/business-errors';
 import { Musician } from '../musician/musician.entity';
 
 @Injectable()
@@ -22,7 +22,7 @@ export class BandService {
     async findOne(id: number): Promise<BandDTO> {
         const band = await this.bandRepository.findOne(id, { relations: ["albums", "musicians", "performerPrizes"] });
         if (!band)
-            throw new BusinnesLogicException("The band with the given id was not found", BusinessError.NOT_FOUND)
+            throw new BusinessLogicException("The band with the given id was not found", BusinessError.NOT_FOUND)
         return band;
     }
 
@@ -39,7 +39,7 @@ export class BandService {
 
         const band = await this.bandRepository.findOne(id);
         if (!band)
-            throw new BusinnesLogicException("The band with the given id was not found", BusinessError.NOT_FOUND)
+            throw new BusinessLogicException("The band with the given id was not found", BusinessError.NOT_FOUND)
         else {
             band.name = bandDTO.name;
             band.image = bandDTO.image;
@@ -53,7 +53,7 @@ export class BandService {
     async delete(id: number) {
         const band = await this.bandRepository.findOne(id);
         if (!band)
-            throw new BusinnesLogicException("The band with the given id was not found", BusinessError.NOT_FOUND)
+            throw new BusinessLogicException("The band with the given id was not found", BusinessError.NOT_FOUND)
         return await this.bandRepository.remove(band);
     }
 

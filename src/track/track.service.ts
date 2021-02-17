@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 
 import { InjectRepository } from '@nestjs/typeorm';
-import { BusinnesLogicException, BusinessError } from "../shared/errors/business-errors";
+import { BusinessLogicException, BusinessError } from "../shared/errors/business-errors";
 import { Repository } from 'typeorm';
 
 import { Album } from "../album/album.entity";
@@ -19,7 +19,7 @@ export class TrackService {
     async findTracks(id: number): Promise<TrackDTO[]> {
         const album = await this.albumRepository.findOne(id, { relations: ["tracks"] });
         if (!album)
-            throw new BusinnesLogicException("The album with the given id was not found", BusinessError.NOT_FOUND);
+            throw new BusinessLogicException("The album with the given id was not found", BusinessError.NOT_FOUND);
 
         return album.tracks;
     }
@@ -27,11 +27,11 @@ export class TrackService {
     async findOneTrack(albumId: number, trackId: number): Promise<TrackDTO> {
         const album = await this.albumRepository.findOne(albumId, { relations: ["tracks"] });
         if (!album)
-            throw new BusinnesLogicException("The album with the given id was not found", BusinessError.NOT_FOUND);
+            throw new BusinessLogicException("The album with the given id was not found", BusinessError.NOT_FOUND);
 
         const track = await this.trackRepository.findOne(trackId);
         if (!track)
-            throw new BusinnesLogicException("The track with the given id was not found", BusinessError.NOT_FOUND);
+            throw new BusinessLogicException("The track with the given id was not found", BusinessError.NOT_FOUND);
 
         return track;
     }
@@ -39,7 +39,7 @@ export class TrackService {
     async addTrackAlbum(albumId: number, trackDTO: TrackDTO): Promise<TrackDTO> {
         const album = await this.albumRepository.findOne(albumId);
         if (!album)
-            throw new BusinnesLogicException("The album with the given id was not found", BusinessError.NOT_FOUND)
+            throw new BusinessLogicException("The album with the given id was not found", BusinessError.NOT_FOUND)
 
         const track = new Track();
         track.name = trackDTO.name;
@@ -52,11 +52,11 @@ export class TrackService {
     async update(albumId: number, trackId: number, trackDTO: TrackDTO): Promise<TrackDTO> {
         const album = await this.albumRepository.findOne(albumId, { relations: ["tracks"] });
         if (!album)
-            throw new BusinnesLogicException("The album with the given id was not found", BusinessError.NOT_FOUND)
+            throw new BusinessLogicException("The album with the given id was not found", BusinessError.NOT_FOUND)
 
         const track = await this.trackRepository.findOne(trackId);
         if (!track)
-            throw new BusinnesLogicException("The track with the given id was not found", BusinessError.NOT_FOUND);
+            throw new BusinessLogicException("The track with the given id was not found", BusinessError.NOT_FOUND);
 
         track.name = trackDTO.name;
         track.duration = trackDTO.duration;
@@ -67,11 +67,11 @@ export class TrackService {
     async delete(albumId: number, trackId: number) {
         const album = await this.albumRepository.findOne(albumId, { relations: ["tracks"] });
         if (!album)
-            throw new BusinnesLogicException("The album with the given id was not found", BusinessError.NOT_FOUND)
+            throw new BusinessLogicException("The album with the given id was not found", BusinessError.NOT_FOUND)
 
         const track = await this.trackRepository.findOne(trackId);
         if (!track)
-            throw new BusinnesLogicException("The track with the given id was not found", BusinessError.NOT_FOUND);
+            throw new BusinessLogicException("The track with the given id was not found", BusinessError.NOT_FOUND);
 
         album.tracks = album.tracks.filter(e => e.id !== track.id);
 
