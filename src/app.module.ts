@@ -36,7 +36,7 @@ import { AlbumMusicianModule } from './albummusician/albummusician.module';
   imports: [
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: 'localhost',
+      host: process.env.DB_HOST || 'localhost',
       port: 5432,
       username: 'postgres',
       password: 'postgres',
@@ -44,7 +44,9 @@ import { AlbumMusicianModule } from './albummusician/albummusician.module';
       entities: [Album, CollectorAlbum, Band, Collector, Comment, Musician, Performer, PerformerPrize, Prize, Track,],
       dropSchema: true,
       synchronize: true,
-      keepConnectionAlive: true
+      keepConnectionAlive: true,
+      migrations: [__dirname + '/migration/**/*{.ts,.js}'],
+      migrationsRun: true,
     }),
     RecordLabelModule,
     PrizeModule,
