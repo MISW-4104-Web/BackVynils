@@ -7,6 +7,7 @@ import { Album } from '../album/album.entity';
 import { AlbumDTO } from '../album/album.dto';
 import { BandDTO } from '../band/band.dto';
 import { PerformerDTO } from '../performer/performer.dto';
+import { Musician } from 'src/musician/musician.entity';
 
 @Injectable()
 export class AlbumBandService {
@@ -74,11 +75,10 @@ export class AlbumBandService {
     }
 
     async findBandsByAlbumId(albumId: number): Promise<PerformerDTO[]> {
-        const album = await this.albumRepository.findOne(albumId, { relations: ["performers"] });
+        const album: Album = await this.albumRepository.findOne(albumId, { relations: ["performers"] });
         if (!album)
             throw new BusinessLogicException("The album with the given id was not found", BusinessError.NOT_FOUND)
-
-        return album.performers;
+        return album.performers.filter((p)=>p.constructor.name==="Band")
     }
 
     async deleteBandToAlbum(bandId: number, albumId: number): Promise<AlbumDTO> {
