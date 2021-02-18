@@ -78,7 +78,7 @@ export class AlbumBandService {
         const album: Album = await this.albumRepository.findOne(albumId, { relations: ["performers"] });
         if (!album)
             throw new BusinessLogicException("The album with the given id was not found", BusinessError.NOT_FOUND)
-        return album.performers.filter((p)=>p.constructor.name==="Band")
+        return album.performers.filter(p => p.constructor.name === "Band")
     }
 
     async deleteBandToAlbum(bandId: number, albumId: number): Promise<AlbumDTO> {
