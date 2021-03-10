@@ -61,4 +61,8 @@ export class PerformerPrizeService {
 
     }
 
+    async findAll(): Promise<PerformerPrizeDTO[]> {
+        return await this.performerPrizeRepository.find({ relations: ["prize"] });
+    }
+
 }

@@ -38,3 +38,15 @@ export class PerformerPrizeController {
         return await this.performerPrizeService.deletePrizePerformer(prizeId, bandId)
     }
 }
+
+@Controller('performerprizes')
+@UseInterceptors(BusinessErrorsInterceptor)
+export class PerformerPrizesController {
+
+    constructor(private readonly performerPrizeService: PerformerPrizeService) { }
+
+    @Get()
+    async findAll() {
+        return await this.performerPrizeService.findAll();
+    }
+}
