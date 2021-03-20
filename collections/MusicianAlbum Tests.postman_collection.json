@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "6b23179f-e8db-4e64-98d9-e486a44fe216",
 		"name": "MusicianAlbum Tests",
-		"description": "Colección de pruebas sobre el recurso ArtistVinyl",
+		"description": "Colección de pruebas sobre el recurso MusicianAlbum",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [

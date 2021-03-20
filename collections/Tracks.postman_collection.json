@@ -2,6 +2,7 @@
 	"info": {
 		"_postman_id": "df9e85c3-21a4-4dca-ba03-b0cecb8b3b0b",
 		"name": "Tracks",
+		"description": "Colección de pruebas sobre el recurso Track",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [

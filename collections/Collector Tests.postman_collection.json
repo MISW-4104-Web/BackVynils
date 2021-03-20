@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "3cde23e2-d02d-4bae-9f58-3e6530195568",
 		"name": "Collector Tests",
-		"description": "Colección de pruebas sobre el recurso Artist",
+		"description": "Colección de pruebas sobre el recurso Collector",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [

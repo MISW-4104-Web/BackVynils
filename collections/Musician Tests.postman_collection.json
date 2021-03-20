@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "7d09007a-4cc2-457f-b1ec-de0dddd5abb9",
 		"name": "Musician Tests",
-		"description": "Colección de pruebas sobre el recurso Artist",
+		"description": "Colección de pruebas sobre el recurso Musician",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [

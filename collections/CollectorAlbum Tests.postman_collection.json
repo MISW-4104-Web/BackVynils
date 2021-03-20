@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "3cd29fe5-586d-4622-81d3-9ff555574a86",
 		"name": "CollectorAlbum Tests",
-		"description": "Colección de pruebas sobre el recurso Artist",
+		"description": "Colección de pruebas sobre el recurso CollectorAlbum",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -192,7 +192,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/collectors/{{new_id_c}}/albums/",
+					"raw": "http://{{ip}}:{{puerto}}/collectors/{{new_id_c}}/albums",
 					"protocol": "http",
 					"host": [
 						"{{ip}}"
@@ -201,8 +201,7 @@
 					"path": [
 						"collectors",
 						"{{new_id_c}}",
-						"albums",
-						""
+						"albums"
 					]
 				},
 				"description": "Consulta todos los coleccionistas de la aplicacion. \r\n\r\nLa petición no tiene cuerpo.\r\n\r\nPara la prueba, se verifica que el conjunto de coleccionistas en la respuesta tenga mas de uno.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n[\r\n    {\r\n        \"id\": 1,\r\n        \"price\": 25000,\r\n        \"status\": \"Active\",\r\n        \"album\": {\r\n            \"id\": 7,\r\n            \"name\": \"Buscando América\",\r\n            \"cover\": \"https://i.pinimg.com/564x/aa/5f/ed/aa5fed7fac61cc8f41d1e79db917a7cd.jpg\",\r\n            \"releaseDate\": \"1984-08-01T05:00:00.000Z\",\r\n            \"description\": \"Buscando América es el primer álbum de la banda de Rubén Blades y Seis del Solar lanzado en 1984. La producción, bajo el sello Elektra, fusiona diferentes ritmos musicales tales como la salsa, reggae, rock, y el jazz latino. El disco fue grabado en Eurosound Studios en Nueva York entre mayo y agosto de 1983.\",\r\n            \"genre\": \"Salsa\",\r\n            \"recordLabel\": \"Elektra\"\r\n        }\r\n    }\r\n]\r\n```"

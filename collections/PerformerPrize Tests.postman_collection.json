@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "23af2672-0008-4b88-9866-161e26ece4eb",
 		"name": "PerformerPrize Tests",
-		"description": "Colección de pruebas sobre el recurso PrizeArtist",
+		"description": "Colección de pruebas sobre el recurso PerformerPrize",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -355,7 +355,7 @@
 			"response": []
 		},
 		{
-			"name": "Obtener el artista de un premio",
+			"name": "Obtener los artistas de un premio",
 			"event": [
 				{
 					"listen": "test",
@@ -390,7 +390,7 @@
 			"response": []
 		},
 		{
-			"name": "Obtener el artista de un premio que no existe",
+			"name": "Obtener los artistas de un premio que no existe",
 			"event": [
 				{
 					"listen": "test",

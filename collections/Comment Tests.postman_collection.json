@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "044e7fb9-2c66-46cb-9eda-0a1c46eb00a8",
 		"name": "Comment Tests",
-		"description": "Colección de pruebas sobre el recurso Review",
+		"description": "Colección de pruebas sobre el recurso Comment",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
