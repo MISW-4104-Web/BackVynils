@@ -25,7 +25,7 @@ export class CollectorPerformerService {
         if (!performer)
             throw new BusinessLogicException("The performer with the given id was not found", BusinessError.NOT_FOUND)
 
-        performer.collectors = [collector];
+        performer.collectors = [...performer.collectors, collector];
 
         return await this.performerRepository.save(performer);
 
