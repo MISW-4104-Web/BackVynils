@@ -10,7 +10,7 @@ export class PerformerPrizeController {
     constructor(private readonly performerPrizeService: PerformerPrizeService) { }
 
     @Get(':prizeId/performers')
-    async findArtistPrize(@Param('prizeId') prizeId) {
+    async findArtistPrize(@Param('prizeId') prizeId: number) {
         return await this.performerPrizeService.findPerformerPrize(prizeId);
     }
 

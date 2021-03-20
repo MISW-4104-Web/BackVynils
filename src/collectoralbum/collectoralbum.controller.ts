@@ -10,12 +10,12 @@ export class CollectorAlbumController {
     constructor(private readonly collectorAlbumService: CollectorAlbumService) { }
 
     @Get(':collectorId/albums')
-    async findAlbumsByCollectorId(@Param('collectorId') collectorId) {
+    async findAlbumsByCollectorId(@Param('collectorId') collectorId: number) {
         return await this.collectorAlbumService.findAlbumsByCollectorId(collectorId);
     }
 
     @Get(':collectorId/albums/:albumId')
-    async findAlbumsByCollectorIdAlbumId(@Param('collectorId') collectorId, @Param('albumId') albumId) {
+    async findAlbumsByCollectorIdAlbumId(@Param('collectorId') collectorId: number, @Param('albumId') albumId:number) {
         return await this.collectorAlbumService.findAlbumsByCollectorIdAlbumId(collectorId, albumId);
     }
 

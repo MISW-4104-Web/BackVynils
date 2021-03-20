@@ -24,9 +24,9 @@ export class PerformerPrizeService {
         if (!prize)
             throw new BusinessLogicException("The prize with the given id was not found", BusinessError.NOT_FOUND)
 
-        const performerPrize = await this.performerPrizeRepository.find({ where: { prizeId }, relations: ["performer"] })
-
-        return performerPrize;
+        const performerPrize = await this.performerPrizeRepository.find({ relations: ["performer", "prize"] })
+        
+        return performerPrize.filter(p => p.prize.id == prizeId)
     }
 
     async associatePerformerPrize(prizeId: number, performerId: number, performerPrizeDTO: PerformerPrizeDTO) {

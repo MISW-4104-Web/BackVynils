@@ -26,7 +26,7 @@ export class AlbumMusicianService {
         if (!album)
             throw new BusinessLogicException("The album with the given id was not found", BusinessError.NOT_FOUND)
 
-        album.performers = [musician];
+        album.performers = [...album.performers, musician]; //-->
         return await this.albumRepository.save(album);
     }
 

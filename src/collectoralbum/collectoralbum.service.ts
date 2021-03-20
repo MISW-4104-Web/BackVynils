@@ -6,6 +6,7 @@ import { BusinessLogicException, BusinessError } from '../shared/errors/business
 import { Album } from '../album/album.entity';
 import { CollectorAlbum } from './collectoralbum.entity';
 import { CollectorAlbumDTO } from './collectoralbum.dto';
+import { Cipher } from 'crypto';
 
 @Injectable()
 export class CollectorAlbumService {
@@ -40,18 +41,18 @@ export class CollectorAlbumService {
     async findAlbumsByCollectorId(collectorId: number): Promise<CollectorAlbum[]> {
 
         const collector = await this.collectorRepository.findOne(collectorId, { relations: ["collectorAlbums"] });
+       
         if (!collector)
             throw new BusinessLogicException("The collector with the given id was not found", BusinessError.NOT_FOUND)
 
-        const collectoralbum = await this.collectorAlbumRepository.find({ where: { collectorId }, relations: ["album"] }); // { first: "Timber", last: "Saw" } } });
-
-        return collectoralbum;
-
+        const collectorAlbum = await this.collectorAlbumRepository.find({relations: ["album", "collector"]})
+        
+        return collectorAlbum.filter(c => c.collector.id == collectorId );
     }
 
     async findAlbumsByCollectorIdAlbumId(collectorId: number, albumId: number): Promise<CollectorAlbum[]> {
 
-        const collector = await this.collectorRepository.findOne(collectorId, { relations: ["collectorAlbums"] });
+        const collector = await this.collectorRepository.findOne(collectorId);
         if (!collector)
             throw new BusinessLogicException("The collector with the given id was not found", BusinessError.NOT_FOUND)
 
@@ -59,9 +60,9 @@ export class CollectorAlbumService {
         if (!album)
             throw new BusinessLogicException("The album with the given id was not found", BusinessError.NOT_FOUND)
 
-        const collectoralbum = await this.collectorAlbumRepository.find({ where: { collectorId, albumId }, relations: ["album"] }); // { first: "Timber", last: "Saw" } } });
+        const collectoralbum = await this.collectorAlbumRepository.find({relations: ["album", "collector"] });
 
-        return collectoralbum;
+        return collectoralbum.filter(c => c.collector.id == collectorId && c.album.id == albumId);
     }
 
     async updateAlbumCollector(collectorId: number, albumId: number, collectorAlbumDTO: CollectorAlbumDTO): Promise<CollectorAlbum> {
