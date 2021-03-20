@@ -31,7 +31,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"name\": \"A Night at the Opera\",\n    \"cover\": \"\",\n    \"releaseDate\": \"1975-11-21T00:00:00-05:00\",\n    \"description\": \"Es el cuarto álbum de estudio de la banda británica de rock Queen, publicado originalmente en 1975. Coproducido por Roy Thomas Baker y Queen, A Night at the Opera fue, en el tiempo de su lanzamiento, la producción más cara realizada.1​ Un éxito comercial, el álbum fue votado por el público y citado por publicaciones musicales como uno de los mejores trabajos de Queen y de la historia del rock.\",\n    \"genre\": \"Rock\",\n    \"recordLabel\": \"EMI\"\n}"
+					"raw": "{\n    \"name\": \"A Night at the Opera\",\n    \"cover\": \"https://images-na.ssl-images-amazon.com/images/I/71eu02SZK1L._SX355_.jpg\",\n    \"releaseDate\": \"1975-11-21T00:00:00-05:00\",\n    \"description\": \"Es el cuarto álbum de estudio de la banda británica de rock Queen, publicado originalmente en 1975. Coproducido por Roy Thomas Baker y Queen, A Night at the Opera fue, en el tiempo de su lanzamiento, la producción más cara realizada.1​ Un éxito comercial, el álbum fue votado por el público y citado por publicaciones musicales como uno de los mejores trabajos de Queen y de la historia del rock.\",\n    \"genre\": \"Rock\",\n    \"recordLabel\": \"EMI\"\n}"
 				},
 				"url": {
 					"raw": "http://{{ip}}:{{puerto}}/albums",
@@ -73,7 +73,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"name\": \"A Day at the Races\",\n    \"cover\": \"\",\n    \"releaseDate\": \"1976-12-10T00:00:00-05:00\",\n    \"description\": \"El álbum fue grabado en los Estudios Sarm West, The Manor and Wessex en Inglaterra y con el ingeniero Mike Stone. El título del álbum es una referencia directa al anterior, A Night at the Opera. Ambos álbumes están titulados como películas de los hermanos Marx.\",\n\t\"genre\": \"Rock\",\n    \"recordLabel\": \"EMI\"\n}"
+					"raw": "{\n    \"name\": \"A Day at the Races\",\n    \"cover\": \"https://static.wikia.nocookie.net/queen/images/b/b4/A-day-at-the-races-uk2015lpfront.jpg/revision/latest/top-crop/width/360/height/450?cb=20171031212349&path-prefix=es\",\n    \"releaseDate\": \"1976-12-10T00:00:00-05:00\",\n    \"description\": \"El álbum fue grabado en los Estudios Sarm West, The Manor and Wessex en Inglaterra y con el ingeniero Mike Stone. El título del álbum es una referencia directa al anterior, A Night at the Opera. Ambos álbumes están titulados como películas de los hermanos Marx.\",\n\t\"genre\": \"Rock\",\n    \"recordLabel\": \"EMI\"\n}"
 				},
 				"url": {
 					"raw": "http://{{ip}}:{{puerto}}/albums",
@@ -344,7 +344,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "[\n{\n    \"name\": \"A Night at the Opera\",\n    \"cover\": \"\",\n    \"releaseDate\": \"1975-11-21T00:00:00-05:00\",\n    \"description\": \"Es el cuarto álbum de estudio de la banda británica de rock Queen, publicado originalmente en 1975. Coproducido por Roy Thomas Baker y Queen, A Night at the Opera fue, en el tiempo de su lanzamiento, la producción más cara realizada.1​ Un éxito comercial, el álbum fue votado por el público y citado por publicaciones musicales como uno de los mejores trabajos de Queen y de la historia del rock.\",\n    \"genre\": \"Rock\",\n    \"recordLabel\": \"EMI\",\n    \"id\": {{new_id_a}}\n},\n{\n    \"name\": \"A Day at the Races\",\n    \"cover\": \"\",\n    \"releaseDate\": \"1976-12-10T00:00:00-05:00\",\n    \"description\": \"El álbum fue grabado en los Estudios Sarm West, The Manor and Wessex en Inglaterra y con el ingeniero Mike Stone. El título del álbum es una referencia directa al anterior, A Night at the Opera. Ambos álbumes están titulados como películas de los hermanos Marx.\",\n\t\"genre\": \"Rock\",\n    \"recordLabel\": \"EMI\",\n    \"id\": {{new_id_a2}}\n}]"
+					"raw": "[\n{\n    \"name\": \"A Night at the Opera\",\n    \"cover\": \"https://images-na.ssl-images-amazon.com/images/I/71eu02SZK1L._SX355_.jpg\",\n    \"releaseDate\": \"1975-11-21T00:00:00-05:00\",\n    \"description\": \"Es el cuarto álbum de estudio de la banda británica de rock Queen, publicado originalmente en 1975. Coproducido por Roy Thomas Baker y Queen, A Night at the Opera fue, en el tiempo de su lanzamiento, la producción más cara realizada.1​ Un éxito comercial, el álbum fue votado por el público y citado por publicaciones musicales como uno de los mejores trabajos de Queen y de la historia del rock.\",\n    \"genre\": \"Rock\",\n    \"recordLabel\": \"EMI\",\n    \"id\": {{new_id_a}}\n},\n{\n    \"name\": \"A Day at the Races\",\n    \"cover\": \"https://static.wikia.nocookie.net/queen/images/b/b4/A-day-at-the-races-uk2015lpfront.jpg/revision/latest/top-crop/width/360/height/450?cb=20171031212349&path-prefix=es\",\n    \"releaseDate\": \"1976-12-10T00:00:00-05:00\",\n    \"description\": \"El álbum fue grabado en los Estudios Sarm West, The Manor and Wessex en Inglaterra y con el ingeniero Mike Stone. El título del álbum es una referencia directa al anterior, A Night at the Opera. Ambos álbumes están titulados como películas de los hermanos Marx.\",\n\t\"genre\": \"Rock\",\n    \"recordLabel\": \"EMI\",\n    \"id\": {{new_id_a2}}\n}]"
 				},
 				"url": {
 					"raw": "http://{{ip}}:{{puerto}}/bands/{{new_id_b}}/albums",
@@ -422,7 +422,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "[\n{\n    \"name\": \"A Day at the Races\",\n    \"cover\": \"\",\n    \"releaseDate\": \"1976-12-10T00:00:00-05:00\",\n    \"description\": \"El álbum fue grabado en los Estudios Sarm West, The Manor and Wessex en Inglaterra y con el ingeniero Mike Stone. El título del álbum es una referencia directa al anterior, A Night at the Opera. Ambos álbumes están titulados como películas de los hermanos Marx.\",\n\t\"genre\": \"Rock\",\n    \"recordLabel\": \"EMI\",\n    \"id\": 0\n}\n]"
+					"raw": "[\n{\n    \"name\": \"A Day at the Races\",\n    \"cover\": \"https://static.wikia.nocookie.net/queen/images/b/b4/A-day-at-the-races-uk2015lpfront.jpg/revision/latest/top-crop/width/360/height/450?cb=20171031212349&path-prefix=es\",\n    \"releaseDate\": \"1976-12-10T00:00:00-05:00\",\n    \"description\": \"El álbum fue grabado en los Estudios Sarm West, The Manor and Wessex en Inglaterra y con el ingeniero Mike Stone. El título del álbum es una referencia directa al anterior, A Night at the Opera. Ambos álbumes están titulados como películas de los hermanos Marx.\",\n\t\"genre\": \"Rock\",\n    \"recordLabel\": \"EMI\",\n    \"id\": 0\n}\n]"
 				},
 				"url": {
 					"raw": "http://{{ip}}:{{puerto}}/bands/{{new_id_b}}/albums",

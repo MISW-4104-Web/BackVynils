@@ -14,6 +14,8 @@ export class BusinessErrorsInterceptor implements NestInterceptor {
                     throw new HttpException(error.message, HttpStatus.NOT_FOUND);
                 else if (error.type === BusinessError.PRECONDITION_FAILED)
                     throw new HttpException(error.message, HttpStatus.PRECONDITION_FAILED);
+                else if (error.type === BusinessError.BAD_REQUEST)
+                    throw new HttpException(error.message, HttpStatus.BAD_REQUEST);
                 else
                     throw error;
             }));

@@ -15,7 +15,7 @@ export class PrizeController {
     }
 
     @Get(':prizeId')
-    async findOne(@Param('prizeId') prizeId) {
+    async findOne(@Param('prizeId') prizeId: number) {
         return await this.prizeService.findOne(prizeId);
     }
 

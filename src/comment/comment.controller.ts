@@ -9,12 +9,12 @@ export class CommentController {
     constructor(private readonly commentService: CommentService) { }
 
     @Get(':albumId/comments/')
-    async findCommentsByAlbumId(@Param('albumId') albumId) {
+    async findCommentsByAlbumId(@Param('albumId') albumId: number) {
         return await this.commentService.findCommentsByAlbumId(albumId);
     }
 
     @Get(':albumId/comments/:commentId')
-    async findCommentsByAlbumIdCommentId(@Param('albumId') albumId, @Param('commentId') commentId) {
+    async findCommentsByAlbumIdCommentId(@Param('albumId') albumId: number, @Param('commentId') commentId: number) {
         return await this.commentService.findCommentsByAlbumIdCommentId(albumId, commentId);
     }
 

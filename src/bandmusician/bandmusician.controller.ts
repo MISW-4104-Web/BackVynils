@@ -20,7 +20,7 @@ export class BandMusicianController {
     }
 
     @Get(':bandId/musicians/')
-    async findMusiciansByBandId(bandId: number) {
+    async findMusiciansByBandId(@Param('bandId') bandId: number) {
         return await this.bandMusicianService.findMusiciansByBandId(bandId);
     }
 

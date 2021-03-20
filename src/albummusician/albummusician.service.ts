@@ -26,7 +26,7 @@ export class AlbumMusicianService {
         if (!album)
             throw new BusinessLogicException("The album with the given id was not found", BusinessError.NOT_FOUND)
 
-        album.performers = [...album.performers, musician]; //-->
+        album.performers = [...album.performers, musician]; 
         return await this.albumRepository.save(album);
     }
 
@@ -59,14 +59,8 @@ export class AlbumMusicianService {
             const musician = await this.musicianRepository.findOne(musicianDTO[i].id);
             if (!musician)
                 throw new BusinessLogicException("The musician with the given id was not found", BusinessError.NOT_FOUND)
-
-            const newMusician = new Musician();
-            newMusician.id = musicianDTO[i].id;
-            newMusician.name = musicianDTO[i].name;
-            newMusician.image = musicianDTO[i].image;
-            newMusician.description = musicianDTO[i].description;
-            newMusician.birthDate = musicianDTO[i].birthDate;
-            musicians.push(newMusician);
+            else
+                musicians.push(musician);
         }
 
         album.performers = musicians;

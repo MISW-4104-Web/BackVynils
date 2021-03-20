@@ -58,16 +58,8 @@ export class BandAlbumService {
             const album = await this.albumRepository.findOne(albumDTO[i].id);
             if (!album)
                 throw new BusinessLogicException("The album with the given id was not found", BusinessError.NOT_FOUND)
-
-            const newAlbum = new Album();
-            newAlbum.id = albumDTO[i].id;
-            newAlbum.name = albumDTO[i].name;
-            newAlbum.cover = albumDTO[i].cover;
-            newAlbum.description = albumDTO[i].description;
-            newAlbum.releaseDate = albumDTO[i].releaseDate;
-            newAlbum.genre = albumDTO[i].genre;
-            newAlbum.recordLabel = albumDTO[i].recordLabel;
-            albums.push(newAlbum);
+            else
+                albums.push(album);
         }
 
         band.albums = albums;

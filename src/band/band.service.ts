@@ -5,6 +5,8 @@ import { Repository } from 'typeorm';
 import { BandDTO } from './band.dto';
 import { BusinessLogicException, BusinessError } from '../shared/errors/business-errors';
 import { Musician } from '../musician/musician.entity';
+import * as Joi from "joi";
+import { validate } from "../shared/validation"
 
 @Injectable()
 export class BandService {
@@ -27,12 +29,18 @@ export class BandService {
     }
 
     async create(bandDTO: BandDTO): Promise<BandDTO> {
-        const band = new Band();
-        band.name = bandDTO.name;
-        band.image = bandDTO.image;
-        band.description = bandDTO.description;
-        band.creationDate = bandDTO.creationDate;
-        return await this.bandRepository.save(band);
+        const { error } = validate(this.schema, bandDTO);
+
+        if(error) {
+            throw new BusinessLogicException(error.toString(), BusinessError.BAD_REQUEST)    
+        } else {
+            const band = new Band();
+            band.name = bandDTO.name;
+            band.image = bandDTO.image;
+            band.description = bandDTO.description;
+            band.creationDate = bandDTO.creationDate;
+            return await this.bandRepository.save(band);
+        }
     }
 
     async update(id: number, bandDTO: BandDTO): Promise<BandDTO> {
@@ -41,13 +49,18 @@ export class BandService {
         if (!band)
             throw new BusinessLogicException("The band with the given id was not found", BusinessError.NOT_FOUND)
         else {
-            band.name = bandDTO.name;
-            band.image = bandDTO.image;
-            band.description = bandDTO.description;
-            band.creationDate = bandDTO.creationDate;
-            await this.bandRepository.save(band);
+            const { error } = validate(this.schema, bandDTO);
+            if(error){
+                throw new BusinessLogicException(error.toString(), BusinessError.BAD_REQUEST)
+            } else {
+                band.name = bandDTO.name;
+                band.image = bandDTO.image;
+                band.description = bandDTO.description;
+                band.creationDate = bandDTO.creationDate;
+                await this.bandRepository.save(band);
+                return band;
+            }
         }
-        return band;
     }
 
     async delete(id: number) {
@@ -57,4 +70,10 @@ export class BandService {
         return await this.bandRepository.remove(band);
     }
 
+    schema = Joi.object({
+        name: Joi.string().required(),  
+        image: Joi.string().required(),  
+        description: Joi.string().required(),  
+        creationDate:Joi.date().required(),
+    })
 }

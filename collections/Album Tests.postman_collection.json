@@ -73,7 +73,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"name\": \"Poeta del Pueblo\",\n    \"cover\": \"\",\n    \"releaseDate\": \"2011-08-01T00:00:00-05:00\",\n    \"description\": \"Recopilación de 27 composiciones del cosmos Blades que los bailadores y melómanos han hecho suyas en estos 40 años de presencia de los ritmos y concordias afrocaribeños en múltiples escenarios internacionales. Grabaciones de Blades para la Fania con las orquestas de Pete Rodríguez, Ray Barreto, Fania All Stars y, sobre todo, los grandes éxitos con la Banda de Willie Colón\",\n\t\"genre\": \"Salsa\",\n    \"recordLabel\": \"Fania Records\"\n}\n\n"
+					"raw": "{\n    \"name\": \"Poeta del Pueblo\",\n    \"cover\": \"https://img.discogs.com/BrMMi9F_5nW8acbz9YiSAfgjoGw=/fit-in/600x527/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-15276011-1589049135-3433.jpeg.jpg\",\n    \"releaseDate\": \"2011-08-01T00:00:00-05:00\",\n    \"description\": \"Recopilación de 27 composiciones del cosmos Blades que los bailadores y melómanos han hecho suyas en estos 40 años de presencia de los ritmos y concordias afrocaribeños en múltiples escenarios internacionales. Grabaciones de Blades para la Fania con las orquestas de Pete Rodríguez, Ray Barreto, Fania All Stars y, sobre todo, los grandes éxitos con la Banda de Willie Colón\",\n\t\"genre\": \"Salsa\",\n    \"recordLabel\": \"Fania Records\"\n}\n\n"
 				},
 				"url": {
 					"raw": "http://{{ip}}:{{puerto}}/albums",
@@ -121,57 +121,7 @@
 				},
 				"description": "Consulta todos los albumes de la aplicación. \r\n\r\nLa petición no tiene cuerpo.\r\n\r\nPara la prueba, se verifica que el conjunto de albumes en la respuesta tenga mas de uno.\r\n\r\n**Código http esperado: 200**\r\n\r\n**JSON de salida**\r\n\r\n```\r\n[\r\n    {\r\n        \"id\": 2,\r\n        \"name\": \"Poeta del Pueblo\",\r\n        \"cover\": \"\",\r\n        \"releaseDate\": \"2011-08-01T05:00:00.000Z\",\r\n        \"description\": \"Recopilación de 27 composiciones del cosmos Blades que los bailadores y melómanos han hecho suyas en estos 40 años de presencia de los ritmos y concordias afrocaribeños en múltiples escenarios internacionales. Grabaciones de Blades para la Fania con las orquestas de Pete Rodríguez, Ray Barreto, Fania All Stars y, sobre todo, los grandes éxitos con la Banda de Willie Colón\",\r\n        \"genre\": \"Salsa\",\r\n        \"recordLabel\": \"Fania Records\",\r\n        \"tracks\": [],\r\n        \"performers\": [],\r\n        \"comments\": []\r\n    },\r\n    {\r\n        \"id\": 1,\r\n        \"name\": \"Buscando América\",\r\n        \"cover\": \"https://i.pinimg.com/564x/aa/5f/ed/aa5fed7fac61cc8f41d1e79db917a7cd.jpg\",\r\n        \"releaseDate\": \"1984-08-01T05:00:00.000Z\",\r\n        \"description\": \"Buscando América es el primer álbum de la banda de Rubén Blades y Seis del Solar lanzado en 1984. La producción, bajo el sello Elektra, fusiona diferentes ritmos musicales tales como la salsa, reggae, rock, y el jazz latino. El disco fue grabado en Eurosound Studios en Nueva York entre mayo y agosto de 1983.\",\r\n        \"genre\": \"Salsa\",\r\n        \"recordLabel\": \"Elektra\",\r\n        \"tracks\": [],\r\n        \"performers\": [],\r\n        \"comments\": []\r\n    }\r\n]\r\n```"
 			},
-			"response": [
-				{
-					"name": "Obtener todos los albumes",
-					"originalRequest": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://{{ip}}:{{puerto}}/albums",
-							"protocol": "http",
-							"host": [
-								"{{ip}}"
-							],
-							"port": "{{puerto}}",
-							"path": [
-								"albums"
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "X-Powered-By",
-							"value": "Express"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json; charset=utf-8"
-						},
-						{
-							"key": "Content-Length",
-							"value": "990"
-						},
-						{
-							"key": "ETag",
-							"value": "W/\"3de-MqA1F++l5clOU/JVkcAEqk9BBgQ\""
-						},
-						{
-							"key": "Date",
-							"value": "Sat, 02 May 2020 14:23:36 GMT"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
-						}
-					],
-					"cookie": [],
-					"body": "[\n    {\n        \"id\": 6,\n        \"name\": \"Poeta del Pueblo\",\n        \"cover\": \"\",\n        \"releaseDate\": \"2011-08-01T05:00:00.000Z\",\n        \"description\": \"Recopilación de 27 composiciones del cosmos Blades que los bailadores y melómanos han hecho suyas en estos 40 años de presencia de los ritmos y concordias afrocaribeños en múltiples escenarios internacionales. Grabaciones de Blades para la Fania con las orquestas de Pete Rodríguez, Ray Barreto, Fania All Stars y, sobre todo, los grandes éxitos con la Banda de Willie Colón\",\n        \"genre\": \"Salsa\",\n        \"recordLabel\": \"Fania Records\",\n        \"tracks\": [],\n        \"performers\": [],\n        \"comments\": []\n    },\n    {\n        \"id\": 5,\n        \"name\": \"Buscando América\",\n        \"cover\": \"\",\n        \"releaseDate\": \"1984-08-01T05:00:00.000Z\",\n        \"description\": \"Buscando América es el primer álbum de la banda de Rubén Blades y Seis del Solar lanzado en 1984. La producción, bajo el sello Elektra, fusiona diferentes ritmos musicales tales como la salsa, reggae, rock, y el jazz latino.\",\n        \"genre\": \"Salsa\",\n        \"recordLabel\": \"Elektra\",\n        \"tracks\": [],\n        \"performers\": [],\n        \"comments\": []\n    }\n]"
-				}
-			]
+			"response": []
 		},
 		{
 			"name": "Obtener un album",

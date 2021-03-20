@@ -14,7 +14,7 @@ export class CollectorController {
     }
 
     @Get(':collectorId')
-    async findOne(@Param('collectorId') collectorId) {
+    async findOne(@Param('collectorId') collectorId: number) {
         return await this.collectorService.findOne(collectorId);
     }
 

@@ -14,7 +14,7 @@ export class MusicianController {
     }
 
     @Get(':musicianId')
-    async findOne(@Param('musicianId') musicianId) {
+    async findOne(@Param('musicianId') musicianId: number) {
         return await this.musicianService.findOne(musicianId);
     }
 

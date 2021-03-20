@@ -10,18 +10,18 @@ export class TrackController {
     constructor(private readonly trackService: TrackService) { }
 
     @Get(':albumId/tracks')
-    async findTracks(@Param('albumId') albumId) {
+    async findTracks(@Param('albumId') albumId: number) {
         return await this.trackService.findTracks(albumId);
     }
 
     @Get(':albumId/tracks/:trackId')
-    async findOneTrack(@Param('albumId') albumId, @Param('trackId') trackId) {
+    async findOneTrack(@Param('albumId') albumId: number, @Param('trackId') trackId: number) {
         return await this.trackService.findOneTrack(albumId, trackId);
     }
 
     @Post(':albumId/tracks')
     @HttpCode(200)
-    async addTrackVinyl(@Param('albumId') albumId, @Body() trackDTO: TrackDTO) {
+    async addTrackVinyl(@Param('albumId') albumId: number, @Body() trackDTO: TrackDTO) {
         return await this.trackService.addTrackAlbum(albumId, trackDTO);
     }
 

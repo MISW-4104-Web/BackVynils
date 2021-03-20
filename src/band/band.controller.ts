@@ -14,7 +14,7 @@ export class BandController {
     }
 
     @Get(':bandId')
-    async findOne(@Param('bandId') bandId) {
+    async findOne(@Param('bandId') bandId: number) {
         return await this.bandService.findOne(bandId);
     }
 
