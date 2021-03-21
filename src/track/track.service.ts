@@ -8,6 +8,9 @@ import { Album } from "../album/album.entity";
 import { Track } from "./track.entity";
 import { TrackDTO } from "./track.dto";
 
+import * as Joi from "joi";
+import { validate } from "../shared/validation";
+
 @Injectable()
 export class TrackService {
     constructor(
@@ -41,12 +44,18 @@ export class TrackService {
         if (!album)
             throw new BusinessLogicException("The album with the given id was not found", BusinessError.NOT_FOUND)
 
-        const track = new Track();
-        track.name = trackDTO.name;
-        track.duration = trackDTO.duration;
-        track.album = album;
+        const { error } = validate(this.schema, trackDTO);
+        if(error) {
+            throw new BusinessLogicException(error.toString(), BusinessError.BAD_REQUEST)
+        } else {
+            const track = new Track();
+            track.name = trackDTO.name;
+            track.duration = trackDTO.duration;
+            track.album = album;
 
-        return await this.trackRepository.save(track);
+            return await this.trackRepository.save(track);
+        }
+        
     }
 
     async update(albumId: number, trackId: number, trackDTO: TrackDTO): Promise<TrackDTO> {
@@ -58,10 +67,15 @@ export class TrackService {
         if (!track)
             throw new BusinessLogicException("The track with the given id was not found", BusinessError.NOT_FOUND);
 
-        track.name = trackDTO.name;
-        track.duration = trackDTO.duration;
+        const { error } = validate(this.schema, trackDTO);
+        if(error) {
+            throw new BusinessLogicException(error.toString(), BusinessError.BAD_REQUEST)
+        } else {
+            track.name = trackDTO.name;
+            track.duration = trackDTO.duration;
 
-        return await this.trackRepository.save(track);
+            return await this.trackRepository.save(track);
+        }
     }
 
     async delete(albumId: number, trackId: number) {
@@ -77,4 +91,9 @@ export class TrackService {
 
         return await this.albumRepository.save(album);
     }
+
+    schema = Joi.object({
+        name: Joi.string().required(),
+	    duration: Joi.string().required(),
+    })
 }

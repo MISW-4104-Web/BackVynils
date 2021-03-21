@@ -1,11 +1,14 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
+import { JoinColumn, Repository } from 'typeorm';
 import { BusinessLogicException, BusinessError } from '../shared/errors/business-errors';
 import { CommentDTO } from './comment.dto';
 import { Comment } from './comment.entity';
 import { Album } from '../album/album.entity';
 import { Collector } from '../collector/collector.entity';
+import * as Joi from "joi";
+import { validate } from "../shared/validation";
+
 
 @Injectable()
 export class CommentService {
@@ -53,13 +56,18 @@ export class CommentService {
         if (!collector)
             throw new BusinessLogicException("The collector with the given id was not found", BusinessError.NOT_FOUND)
 
-        const comment = new Comment();
-        comment.description = commentDTO.description;
-        comment.rating = commentDTO.rating;
-        comment.collector = collector;
-        comment.album = album;
+        const { error } = validate(this.schema, commentDTO);
+        if(error) {
+            throw new BusinessLogicException(error.toString(), BusinessError.BAD_REQUEST)
+        } else {
+            const comment = new Comment();
+            comment.description = commentDTO.description;
+            comment.rating = commentDTO.rating;
+            comment.collector = collector;
+            comment.album = album;
 
-        return await this.commentRepository.save(comment);
+            return await this.commentRepository.save(comment);
+        }
     }
 
     async updateComment(albumId: number, commentId: number, commentDTO: CommentDTO): Promise<CommentDTO> {
@@ -80,12 +88,16 @@ export class CommentService {
         if (!commentalbum)
             throw new BusinessLogicException("The comment is not associated to the album", BusinessError.NOT_FOUND)
 
-        comment.description = commentDTO.description;
-        comment.rating = commentDTO.rating;
-        comment.collector = collector;
+        const { error } = validate(this.schema, commentDTO);
+        if(error) {
+            throw new BusinessLogicException(error.toString(), BusinessError.BAD_REQUEST)
+        } else {
+            comment.description = commentDTO.description;
+            comment.rating = commentDTO.rating;
+            comment.collector = collector;
 
-        return await this.commentRepository.save(comment);
-
+            return await this.commentRepository.save(comment);
+        }
     }
 
     async deleteComment(albumId: number, commentId: number) {
@@ -104,4 +116,10 @@ export class CommentService {
 
         return await this.albumRepository.save(album);
     }
+
+    schema = Joi.object({
+        description: Joi.string().required(),  
+        rating: Joi.number().greater(-1).less(6).required(),  
+        collector: Joi.any()
+    })
 }

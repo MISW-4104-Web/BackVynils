@@ -6,6 +6,8 @@ import { Performer } from '../performer/performer.entity';
 import { BusinessLogicException, BusinessError } from '../shared/errors/business-errors';
 import { PerformerPrizeDTO } from './performerprize.dto';
 import { PerformerPrize } from './performerprize.entity';
+import * as Joi from "joi";
+import { validate } from "../shared/validation";
 
 @Injectable()
 export class PerformerPrizeService {
@@ -38,12 +40,17 @@ export class PerformerPrizeService {
         if (!performer)
             throw new BusinessLogicException("The performer with the given id was not found", BusinessError.NOT_FOUND)
 
-        const performerPrize = new PerformerPrize();
-        performerPrize.premiationDate = performerPrizeDTO.premiationDate;
-        performerPrize.prize = prize;
-        performerPrize.performer = performer;
+        const { error } = validate(this.schema, performerPrizeDTO);
+        if(error){
+            throw new BusinessLogicException(error.toString(), BusinessError.BAD_REQUEST)
+        } else {
+            const performerPrize = new PerformerPrize();
+            performerPrize.premiationDate = performerPrizeDTO.premiationDate;
+            performerPrize.prize = prize;
+            performerPrize.performer = performer;
 
-        return await this.performerPrizeRepository.save(performerPrize);
+            return await this.performerPrizeRepository.save(performerPrize);
+        }
     }
 
     async deletePrizePerformer(prizeId: number, performerId: number) {
@@ -56,7 +63,8 @@ export class PerformerPrizeService {
         if (!performer)
             throw new BusinessLogicException("The performer with the given id was not found", BusinessError.NOT_FOUND)
 
-        const performerprize = await this.performerPrizeRepository.findOne({ where: { prizeId, performerId } });
+        const performerprize = await this.performerPrizeRepository.findOne({ where: { prizeId, performerId }, relations: ["performer"] });
+
         return await this.performerPrizeRepository.remove(performerprize);
 
     }
@@ -64,5 +72,9 @@ export class PerformerPrizeService {
     async findAll(): Promise<PerformerPrizeDTO[]> {
         return await this.performerPrizeRepository.find({ relations: ["prize"] });
     }
+
+    schema = Joi.object({ 
+        premiationDate: Joi.date()
+    })
 
 }

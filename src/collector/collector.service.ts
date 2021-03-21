@@ -4,6 +4,8 @@ import { Repository } from 'typeorm';
 import { BusinessLogicException, BusinessError } from '../shared/errors/business-errors';
 import { Collector } from './collector.entity';
 import { CollectorDTO } from './collector.dto';
+import * as Joi from "joi";
+import { validate } from "../shared/validation";
 
 @Injectable()
 export class CollectorService {
@@ -24,11 +26,16 @@ export class CollectorService {
     }
 
     async create(collectorDTO: CollectorDTO): Promise<CollectorDTO> {
-        const collector = new Collector();
-        collector.name = collectorDTO.name;
-        collector.telephone = collectorDTO.telephone;
-        collector.email = collectorDTO.email;
-        return await this.collectorRepository.save(collector);
+        const { error } = validate(this.schema, collectorDTO);
+        if(error)
+            throw new BusinessLogicException(error.toString(), BusinessError.BAD_REQUEST)
+        else {
+            const collector = new Collector();
+            collector.name = collectorDTO.name;
+            collector.telephone = collectorDTO.telephone;
+            collector.email = collectorDTO.email;
+            return await this.collectorRepository.save(collector);
+        }
     }
 
     async update(id: number, collectorDTO: CollectorDTO) {
@@ -37,12 +44,18 @@ export class CollectorService {
         if (!collector)
             throw new BusinessLogicException("The collector with the given id was not found", BusinessError.NOT_FOUND)
         else {
-            collector.name = collectorDTO.name;
-            collector.telephone = collectorDTO.telephone;
-            collector.email = collectorDTO.email;
-            await this.collectorRepository.save(collector);
+            const { error } = validate(this.schema, collectorDTO);
+            
+            if(error)
+                throw new BusinessLogicException(error.toString(), BusinessError.BAD_REQUEST)
+            else {
+                collector.name = collectorDTO.name;
+                collector.telephone = collectorDTO.telephone;
+                collector.email = collectorDTO.email;
+                await this.collectorRepository.save(collector);
+                return collector;
+            }   
         }
-        return collector;
     }
 
     async delete(id: number) {
@@ -51,5 +64,11 @@ export class CollectorService {
             throw new BusinessLogicException("The collector with the given id was not found", BusinessError.NOT_FOUND)
         return await this.collectorRepository.remove(collector);
     }
+
+    schema = Joi.object({
+        name: Joi.string().required(),
+        telephone: Joi.string().required(),
+        email: Joi.string().email().required()
+    });
 
 }

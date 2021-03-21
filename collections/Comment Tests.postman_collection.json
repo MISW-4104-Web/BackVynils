@@ -159,7 +159,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"description\": \"It is an amazing album\",\n    \"rating\": 5,\n    \"collector\": {\"id\":{{new_id_c}}}\n}"
+					"raw": "{\n    \"description\": \"It is an amazing album\",\n    \"rating\": 4,\n    \"collector\": {\"id\":{{new_id_c}}}\n}"
 				},
 				"url": {
 					"raw": "http://{{ip}}:{{puerto}}/albums/{{new_id_a}}/comments",

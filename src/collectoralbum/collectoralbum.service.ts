@@ -6,7 +6,8 @@ import { BusinessLogicException, BusinessError } from '../shared/errors/business
 import { Album } from '../album/album.entity';
 import { CollectorAlbum } from './collectoralbum.entity';
 import { CollectorAlbumDTO } from './collectoralbum.dto';
-import { Cipher } from 'crypto';
+import * as Joi from "joi";
+import { validate } from "../shared/validation";
 
 @Injectable()
 export class CollectorAlbumService {
@@ -29,13 +30,18 @@ export class CollectorAlbumService {
         if (!album)
             throw new BusinessLogicException("The album with the given id was not found", BusinessError.NOT_FOUND)
 
-        const collectoralbum = new CollectorAlbum();
-        collectoralbum.price = collectorAlbumDTO.price;
-        collectoralbum.status = collectorAlbumDTO.status;
-        collectoralbum.album = album;
-        collectoralbum.collector = collector;
+        const { error } = validate(this.schema, collectorAlbumDTO);
+        if(error) {
+            throw new BusinessLogicException(error.toString(), BusinessError.BAD_REQUEST);
+        } else {
+            const collectoralbum = new CollectorAlbum();
+            collectoralbum.price = collectorAlbumDTO.price;
+            collectoralbum.status = collectorAlbumDTO.status;
+            collectoralbum.album = album;
+            collectoralbum.collector = collector;
 
-        return await this.collectorAlbumRepository.save(collectoralbum);
+            return await this.collectorAlbumRepository.save(collectoralbum);
+        }   
     }
 
     async findAlbumsByCollectorId(collectorId: number): Promise<CollectorAlbum[]> {
@@ -75,11 +81,16 @@ export class CollectorAlbumService {
             throw new BusinessLogicException("The album with the given id was not found", BusinessError.NOT_FOUND)
 
         const collectoralbum = await this.collectorAlbumRepository.findOne({ where: { collectorId, albumId }, relations: ["album"] }); // { first: "Timber", last: "Saw" } } });
+        const { error } = validate(this.schema, collectorAlbumDTO);
 
-        collectoralbum.price = collectorAlbumDTO.price;
-        collectoralbum.status = collectorAlbumDTO.status;
+        if(error){
+            throw new BusinessLogicException(error.toString(), BusinessError.BAD_REQUEST)  
+        } else {
+            collectoralbum.price = collectorAlbumDTO.price;
+            collectoralbum.status = collectorAlbumDTO.status;
 
-        return await this.collectorAlbumRepository.save(collectoralbum)
+            return await this.collectorAlbumRepository.save(collectoralbum)
+        }
     }
 
     async deleteAlbumCollector(collectorId: number, albumId: number): Promise<CollectorAlbumDTO> {
@@ -98,5 +109,10 @@ export class CollectorAlbumService {
 
         return await this.collectorAlbumRepository.remove(collectoralbum)
     }
+
+    schema = Joi.object({
+        price: Joi.number().required(),  
+        status: Joi.string().valid('Active','Inactive').required(),
+    })
 
 }

@@ -72,7 +72,7 @@ export class BandService {
 
     schema = Joi.object({
         name: Joi.string().required(),  
-        image: Joi.string().required(),  
+        image: Joi.string().uri(),  
         description: Joi.string().required(),  
         creationDate:Joi.date().required(),
     })
