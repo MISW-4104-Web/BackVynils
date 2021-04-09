@@ -6,7 +6,7 @@
     "env": {
       "USE_NPM_INSTALL": {
       "description": "Use NPM install",
-      "value": true
+      "value": "true"
     }
     }
 }
