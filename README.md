@@ -1,5 +1,5 @@
 <p align="center">
-  [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/MISW-4104-Web/BackVynils/tree/heroku-integration)
+  [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/MISW-4104-Web/BackVynils/tree/heroku-integration)]
 </p>
 
 [travis-image]: https://api.travis-ci.org/nestjs/nest.svg?branch=master
