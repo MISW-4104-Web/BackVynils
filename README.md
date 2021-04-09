@@ -1,6 +1,5 @@
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/MISW-4104-Web/BackVynils/tree/heroku-integration)
 <p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/MISW-4104-Web/BackVynils/tree/heroku-integration)
 </p>
 
 [travis-image]: https://api.travis-ci.org/nestjs/nest.svg?branch=master
