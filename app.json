@@ -1,0 +1,6 @@
+{
+    "name": "BackVynils MISO",
+    "description": "Backend project for MISO - Web",
+    "repository": "https://github.com/MISW-4104-Web/BackVynils",
+    "addons": ["heroku-postgresql:hobby-dev", "papertrail"]
+}
