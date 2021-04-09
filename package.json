@@ -4,6 +4,9 @@
   "version": "1.0.0",
   "description": "Vinyls Backend MISO",
   "license": "MIT",
+  "engines": {
+    "node": "12.x"
+  },
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "nest build",
