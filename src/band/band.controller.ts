@@ -2,8 +2,10 @@ import { Controller, UseInterceptors, Get, Param, Post, HttpCode, Body, Put, Del
 import { BusinessErrorsInterceptor } from '../interceptors/interceptor';
 import { BandService } from './band.service';
 import { BandDTO } from './band.dto';
+import { ApiTags } from '@nestjs/swagger';
 
 @Controller('bands')
+@ApiTags('bands')
 @UseInterceptors(BusinessErrorsInterceptor)
 export class BandController {
     constructor(private readonly bandService: BandService) { }
