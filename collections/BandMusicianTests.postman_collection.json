@@ -35,12 +35,11 @@
 					"raw": "{\n    \"name\": \"Queen\",\n    \"image\": \"https://upload.wikimedia.org/wikipedia/commons/7/7c/Queen_logo.svg\",\n    \"description\": \"Queen es una banda británica de rock formada en 1970 en Londres por el cantante Freddie Mercury, el guitarrista Brian May, el baterista Roger Taylor y el bajista John Deacon. Si bien el grupo ha presentado bajas de dos de sus miembros (Mercury, fallecido en 1991, y Deacon, retirado en 1997), los integrantes restantes, May y Taylor, continúan trabajando bajo el nombre Queen, por lo que la banda aún se considera activa.\",\n    \"creationDate\":\"1970-01-01T00:00:00-05:00\"\n}"
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/bands",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/bands",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"bands"
 					]
@@ -78,12 +77,11 @@
 					"raw": "{\n    \"name\": \"Freddie Mercury\",\n    \"image\": \"https://upload.wikimedia.org/wikipedia/commons/e/ef/Freddie_Mercury_performing_in_New_Haven%2C_CT%2C_November_1977.jpg\",\n    \"description\": \"Fue un cantante, compositor, pianista, diseñador gráfico y músico británico de origen parsi e indio​ conocido por haber sido el vocalista principal de la banda de rock Queen.\",\n    \"birthDate\": \"1946-09-05T00:00:00-05:00\"\n}"
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/musicians",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/musicians",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"musicians"
 					]
@@ -121,12 +119,11 @@
 					"raw": "{\n    \"name\": \"Rubén Blades Bellido de Luna\",\n    \"image\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Ruben_Blades_by_Gage_Skidmore.jpg/800px-Ruben_Blades_by_Gage_Skidmore.jpg\",\n    \"description\": \"Es un cantante, compositor, músico, actor, abogado, político y activista panameño. Ha desarrollado gran parte de su carrera artística en la ciudad de Nueva York.\",\n    \"birthDate\": \"1948-07-16T00:00:00-05:00\"\n}"
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/musicians",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/musicians",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"musicians"
 					]
@@ -161,12 +158,11 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/bands/{{new_id_b}}/musicians/{{new_id_m}}",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/bands/{{new_id_b}}/musicians/{{new_id_m}}",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"bands",
 						"{{new_id_b}}",
@@ -200,12 +196,11 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/bands/{{new_id_b}}/musicians/0",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/bands/{{new_id_b}}/musicians/0",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"bands",
 						"{{new_id_b}}",
@@ -236,12 +231,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/bands/{{new_id_b}}/musicians/{{new_id_m}}",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/bands/{{new_id_b}}/musicians/{{new_id_m}}",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"bands",
 						"{{new_id_b}}",
@@ -271,12 +265,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/bands/{{new_id_b}}/musicians/0",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/bands/{{new_id_b}}/musicians/0",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"bands",
 						"{{new_id_b}}",
@@ -306,12 +299,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/bands/{{new_id_b}}/musicians/{{new_id_m2}}",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/bands/{{new_id_b}}/musicians/{{new_id_m2}}",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"bands",
 						"{{new_id_b}}",
@@ -342,12 +334,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/bands/{{new_id_b}}/musicians",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/bands/{{new_id_b}}/musicians",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"bands",
 						"{{new_id_b}}",
@@ -379,12 +370,11 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/bands/{{new_id_b}}/musicians/{{new_id_m}}",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/bands/{{new_id_b}}/musicians/{{new_id_m}}",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"bands",
 						"{{new_id_b}}",
@@ -418,12 +408,11 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/bands/0/musicians/{{new_id_m}}",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/bands/0/musicians/{{new_id_m}}",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"bands",
 						"0",
@@ -457,12 +446,11 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/bands/{{new_id_b}}/musicians/0",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/bands/{{new_id_b}}/musicians/0",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"bands",
 						"{{new_id_b}}",
@@ -495,12 +483,11 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/musicians/{{new_id_m}}",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/musicians/{{new_id_m}}",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"musicians",
 						"{{new_id_m}}"
@@ -531,12 +518,11 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/musicians/{{new_id_m2}}",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/musicians/{{new_id_m2}}",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"musicians",
 						"{{new_id_m2}}"
@@ -567,12 +553,11 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/bands/{{new_id_b}}",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/bands/{{new_id_b}}",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"bands",
 						"{{new_id_b}}"

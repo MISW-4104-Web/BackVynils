@@ -34,12 +34,11 @@
 					"raw": "{\n    \"name\": \"Cantora\",\n    \"cover\": \"https://www.cancioneros.com/imatges/1987.jpg\",\n    \"releaseDate\": \"2009-03-27T00:00:00-05:00\",\n    \"description\": \"Cantora es un álbum doble de duetos de la cantante argentina Mercedes Sosa con diversos intérpretes  y el último proyecto musical grabado por ella. Aunque la cantante ya había sufrido diversos problemas de salud cuando se grabó, el disco fue un éxito inmediato y se convirtió en disco de oro en Argentina en un tiempo récord. El primer disco logró obtener dos Grammy Latinos 2009, por Mejor álbum folclórico y Mejor diseño de empaque\",\n    \"genre\": \"Folk\",\n    \"recordLabel\": \"Sony Music\"\n}"
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/albums",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/albums",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"albums"
 					]
@@ -77,12 +76,11 @@
 					"raw": "{\n    \"name\": \"Mercedes Sosa\",\n    \"image\": \"https://upload.wikimedia.org/wikipedia/commons/a/a5/Mercedes_Sosa%2C_by_Annemarie_Heinrich.jpg\",\n    \"description\": \"Cantante de música folclórica argentina, considerada la mayor exponente del folklore argentino. Se la conoció como La Voz de América Latina\",\n    \"birthDate\": \"1935-07-09T00:00:00-05:00\"\n}"
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/musicians",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/musicians",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"musicians"
 					]
@@ -120,12 +118,11 @@
 					"raw": "{\n    \"name\": \"Joan Manuel Serrat Teresa\",\n    \"image\": \"https://upload.wikimedia.org/wikipedia/commons/e/e3/Serrat.jpg\",\n    \"description\": \"Es un cantautor, compositor, actor, escritor, poeta y músico español.\",\n    \"birthDate\": \"1943-12-27T00:00:00-05:00\"\n}"
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/musicians",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/musicians",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"musicians"
 					]
@@ -160,12 +157,11 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/albums/{{new_id_a}}/musicians/{{new_id_m}}/",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/albums/{{new_id_a}}/musicians/{{new_id_m}}/",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"albums",
 						"{{new_id_a}}",
@@ -200,12 +196,11 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/albums/{{new_id_a}}/musicians/0",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/albums/{{new_id_a}}/musicians/0",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"albums",
 						"{{new_id_a}}",
@@ -236,12 +231,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/albums/{{new_id_a}}/musicians/{{new_id_m}}",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/albums/{{new_id_a}}/musicians/{{new_id_m}}",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"albums",
 						"{{new_id_a}}",
@@ -271,12 +265,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/albums/{{new_id_a}}/musicians/0",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/albums/{{new_id_a}}/musicians/0",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"albums",
 						"{{new_id_a}}",
@@ -306,12 +299,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/albums/{{new_id_a}}/musicians/{{new_id_m2}}",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/albums/{{new_id_a}}/musicians/{{new_id_m2}}",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"albums",
 						"{{new_id_a}}",
@@ -349,12 +341,11 @@
 					"raw": "[\n{\n    \"name\": \"Mercedes Sosa\",\n    \"image\": \"https://upload.wikimedia.org/wikipedia/commons/a/a5/Mercedes_Sosa%2C_by_Annemarie_Heinrich.jpg\",\n    \"description\": \"Cantante de música folclórica argentina, considerada la mayor exponente del folklore argentino. Se la conoció como La Voz de América Latina\",\n    \"birthDate\": \"1935-07-09T00:00:00-05:00\",\n    \"id\": {{new_id_m}}\n},\n{\n    \"name\": \"Joan Manuel Serrat Teresa\",\n    \"image\": \"https://upload.wikimedia.org/wikipedia/commons/e/e3/Serrat.jpg\",\n    \"description\": \"Es un cantautor, compositor, actor, escritor, poeta y músico español.\",\n    \"birthDate\": \"1943-12-27T00:00:00-05:00\",\n    \"id\": {{new_id_m2}}\n}\n]"
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/albums/{{new_id_a}}/musicians",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/albums/{{new_id_a}}/musicians",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"albums",
 						"{{new_id_a}}",
@@ -384,12 +375,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/albums/{{new_id_a}}/musicians/",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/albums/{{new_id_a}}/musicians/",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"albums",
 						"{{new_id_a}}",
@@ -428,12 +418,11 @@
 					"raw": "[\n{\n    \"name\": \"Mercedes Sosa\",\n    \"image\": \"https://upload.wikimedia.org/wikipedia/commons/a/a5/Mercedes_Sosa%2C_by_Annemarie_Heinrich.jpg\",\n    \"description\": \"Cantante de música folclórica argentina, considerada la mayor exponente del folklore argentino. Se la conoció como La Voz de América Latina\",\n    \"birthDate\": \"1935-07-09T00:00:00-05:00\",\n    \"id\": 0\n}\n]"
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/albums/{{new_id_a}}/musicians/",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/albums/{{new_id_a}}/musicians/",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"albums",
 						"{{new_id_a}}",
@@ -466,12 +455,11 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/albums/{{new_id_a}}/musicians/{{new_id_m}}",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/albums/{{new_id_a}}/musicians/{{new_id_m}}",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"albums",
 						"{{new_id_a}}",
@@ -504,12 +492,11 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/albums/{{new_id_a}}/musicians/{{new_id_m2}}",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/albums/{{new_id_a}}/musicians/{{new_id_m2}}",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"albums",
 						"{{new_id_a}}",
@@ -543,12 +530,11 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/albums/{{new_id_a}}/musicians/0/",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/albums/{{new_id_a}}/musicians/0/",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"albums",
 						"{{new_id_a}}",
@@ -583,12 +569,11 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/albums/0/musicians/{{new_id_m}}/",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/albums/0/musicians/{{new_id_m}}/",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"albums",
 						"0",
@@ -622,12 +607,11 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/musicians/{{new_id_m}}",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/musicians/{{new_id_m}}",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"musicians",
 						"{{new_id_m}}"
@@ -658,12 +642,11 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/musicians/{{new_id_m2}}",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/musicians/{{new_id_m2}}",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"musicians",
 						"{{new_id_m2}}"
@@ -694,12 +677,11 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/albums/{{new_id_a}}",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/albums/{{new_id_a}}",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"albums",
 						"{{new_id_a}}"

@@ -34,12 +34,11 @@
 					"raw": "{\n    \"name\": \"Buscando América\",\n    \"cover\": \"https://i.pinimg.com/564x/aa/5f/ed/aa5fed7fac61cc8f41d1e79db917a7cd.jpg\",\n    \"releaseDate\": \"1984-08-01T00:00:00-05:00\",\n    \"description\": \"Buscando América es el primer álbum de la banda de Rubén Blades y Seis del Solar lanzado en 1984. La producción, bajo el sello Elektra, fusiona diferentes ritmos musicales tales como la salsa, reggae, rock, y el jazz latino. El disco fue grabado en Eurosound Studios en Nueva York entre mayo y agosto de 1983.\",\n    \"genre\": \"Salsa\",\n    \"recordLabel\": \"Elektra\"\n}"
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/albums",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/albums",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"albums"
 					]
@@ -83,12 +82,11 @@
 					}
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/albums/{{new_id_a}}/tracks",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/albums/{{new_id_a}}/tracks",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"albums",
 						"{{new_id_a}}",
@@ -134,12 +132,11 @@
 					}
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/albums/{{new_id_a}}/tracks",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/albums/{{new_id_a}}/tracks",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"albums",
 						"{{new_id_a}}",
@@ -172,12 +169,11 @@
 					}
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/albums/0/tracks",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/albums/0/tracks",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"albums",
 						"0",
@@ -207,12 +203,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/albums/{{new_id_a}}/tracks",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/albums/{{new_id_a}}/tracks",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"albums",
 						"{{new_id_a}}",
@@ -242,12 +237,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/albums/{{new_id_a}}/tracks/{{new_id_t}}",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/albums/{{new_id_a}}/tracks/{{new_id_t}}",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"albums",
 						"{{new_id_a}}",
@@ -287,12 +281,11 @@
 					"raw": "{\n    \"name\": \"Decisiones\",\n    \"duration\": \"6:10\"\n}"
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/albums/{{new_id_a}}/tracks/{{new_id_t}}",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/albums/{{new_id_a}}/tracks/{{new_id_t}}",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"albums",
 						"{{new_id_a}}",
@@ -332,12 +325,11 @@
 					"raw": "{\n    \"name\": \"Decisiones\",\n    \"source\": \"6:10\"\n}"
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/albums/{{new_id_a}}/tracks/0",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/albums/{{new_id_a}}/tracks/0",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"albums",
 						"{{new_id_a}}",
@@ -376,12 +368,11 @@
 					"raw": "{\n    \"name\": \"decisiones\",\n    \"source\": \"6:20\"\n}"
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/albums/0/tracks/{{new_id_t}}",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/albums/0/tracks/{{new_id_t}}",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"albums",
 						"0",
@@ -416,12 +407,11 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/albums/{{new_id_a}}/tracks/0",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/albums/{{new_id_a}}/tracks/0",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"albums",
 						"{{new_id_a}}",
@@ -455,12 +445,11 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/albums/0/tracks/{{new_id_t}}",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/albums/0/tracks/{{new_id_t}}",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"albums",
 						"0",
@@ -493,12 +482,11 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/albums/{{new_id_a}}/tracks/{{new_id_t}}",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/albums/{{new_id_a}}/tracks/{{new_id_t}}",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"albums",
 						"{{new_id_a}}",
@@ -531,12 +519,11 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/albums/{{new_id_a}}/tracks/{{new_id_t2}}",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/albums/{{new_id_a}}/tracks/{{new_id_t2}}",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"albums",
 						"{{new_id_a}}",
@@ -569,12 +556,11 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/albums/{{new_id_a}}",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/albums/{{new_id_a}}",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"albums",
 						"{{new_id_a}}"
