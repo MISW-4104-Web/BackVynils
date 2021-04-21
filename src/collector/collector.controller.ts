@@ -2,8 +2,10 @@ import { Controller, UseInterceptors, Get, Param, Post, HttpCode, Body, Put, Del
 import { BusinessErrorsInterceptor } from '../interceptors/interceptor';
 import { CollectorService } from './collector.service';
 import { CollectorDTO } from './collector.dto';
+import { ApiTags } from '@nestjs/swagger';
 
 @Controller('collectors')
+@ApiTags('collectors')
 @UseInterceptors(BusinessErrorsInterceptor)
 export class CollectorController {
     constructor(private readonly collectorService: CollectorService) { }

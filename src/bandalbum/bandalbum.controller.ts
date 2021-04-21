@@ -2,8 +2,10 @@ import { Controller, UseInterceptors, Post, HttpCode, Param, Get, Put, Body, Del
 import { BusinessErrorsInterceptor } from '../interceptors/interceptor';
 import { BandAlbumService } from './bandalbum.service';
 import { AlbumDTO } from '../album/album.dto';
+import { ApiTags } from '@nestjs/swagger';
 
 @Controller('bands')
+@ApiTags('bands-album')
 @UseInterceptors(BusinessErrorsInterceptor)
 export class BandAlbumController {
 

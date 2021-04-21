@@ -1,8 +1,10 @@
 import { Controller, Post, HttpCode, Param, UseInterceptors, Get, Delete } from '@nestjs/common';
 import { BandMusicianService } from './bandmusician.service';
 import { BusinessErrorsInterceptor } from '../interceptors/interceptor';
+import { ApiTags } from '@nestjs/swagger';
 
 @Controller('bands')
+@ApiTags('bands-musician')
 @UseInterceptors(BusinessErrorsInterceptor)
 export class BandMusicianController {
 
