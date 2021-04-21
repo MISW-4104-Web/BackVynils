@@ -35,12 +35,11 @@
 					"raw": "{\n    \"name\": \"Queen\",\n    \"image\": \"https://pm1.narvii.com/6724/a8b29909071e9d08517b40c748b6689649372852v2_hq.jpg\",\n    \"description\": \"Queen es una banda británica de rock formada en 1970 en Londres por el cantante Freddie Mercury, el guitarrista Brian May, el baterista Roger Taylor y el bajista John Deacon. Si bien el grupo ha presentado bajas de dos de sus miembros (Mercury, fallecido en 1991, y Deacon, retirado en 1997), los integrantes restantes, May y Taylor, continúan trabajando bajo el nombre Queen, por lo que la banda aún se considera activa.\",\n    \"creationDate\":\"1970-01-01T00:00:00-05:00\"\n}"
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/bands",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/bands",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"bands"
 					]
@@ -78,12 +77,11 @@
 					"raw": "{\n    \"name\": \"Soda Stereo\",\n    \"image\": \"https://upload.wikimedia.org/wikipedia/commons/6/6f/CeratiAlbertiBosio.jpg\",\n    \"description\": \"Soda Stereo fue una banda argentina de rock formada en Buenos Aires en 1982 por Gustavo Cerati (voz, guitarra), Héctor «Zeta» Bosio (bajo) y Carlos Alberto Ficicchia «Charly Alberti» (batería), considerada una de las más influyentes e importantes bandas iberoamericanas de todos los tiempos y una leyenda de la música latina. Fueron el primer grupo de habla hispana en conseguir un éxito masivo en Latinoamérica y tuvieron un papel muy importante en el desarrollo y la difusión del rock iberoamericano y el rock en español durante las décadas de 1980 y 1990. Durante su carrera, fueron vanguardistas y marcaron tendencia en Latinoamérica, siendo protagonistas en diversos géneros como la música divertida de sus inicios, la new wave, el dark, el hard rock, el rock alternativo y el rock electrónico de sus finales\",\n    \"creationDate\":\"1982-01-01T00:00:00-05:00\"\n}"
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/bands",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/bands",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"bands"
 					]
@@ -111,12 +109,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/bands",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/bands",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"bands"
 					]
@@ -144,12 +141,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/bands/{{new_id_b}}",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/bands/{{new_id_b}}",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"bands",
 						"{{new_id_b}}"
@@ -177,12 +173,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/bands/0",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/bands/0",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"bands",
 						"0"
@@ -220,12 +215,11 @@
 					"raw": "{\n    \"name\": \"Queen\",\n    \"image\": \"https://pm1.narvii.com/6724/a8b29909071e9d08517b40c748b6689649372852v2_hq.jpg\",\n    \"description\": \"Queen es una banda británica de rock formada en 1970 en Londres por el cantante Freddie Mercury, el guitarrista Brian May, el baterista Roger Taylor y el bajista John Deacon.\",\n    \"creationDate\":\"1970-01-01T00:00:00-05:00\"\n}"
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/bands/{{new_id_b}}",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/bands/{{new_id_b}}",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"bands",
 						"{{new_id_b}}"
@@ -262,12 +256,11 @@
 					"raw": "{\n    \"name\": \"Queen\",\n    \"image\": \"https://upload.wikimedia.org/wikipedia/commons/7/7c/Queen_logo.svg\",\n    \"description\": \"Queen es una banda británica de rock formada en 1970 en Londres por el cantante Freddie Mercury, el guitarrista Brian May, el baterista Roger Taylor y el bajista John Deacon. Si bien el grupo ha presentado bajas de dos de sus miembros (Mercury, fallecido en 1991, y Deacon, retirado en 1997), los integrantes restantes, May y Taylor, continúan trabajando bajo el nombre Queen, por lo que la banda aún se considera activa.\",\n    \"creationDate\":\"1970-01-01T00:00:00-05:00\"\n}"
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/bands/0",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/bands/0",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"bands",
 						"0"
@@ -298,12 +291,11 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/bands/{{new_id_b}}",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/bands/{{new_id_b}}",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"bands",
 						"{{new_id_b}}"
@@ -334,12 +326,11 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/bands/{{new_id_b2}}",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/bands/{{new_id_b2}}",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"bands",
 						"{{new_id_b2}}"
@@ -371,12 +362,11 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/bands/0",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/bands/0",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"bands",
 						"0"

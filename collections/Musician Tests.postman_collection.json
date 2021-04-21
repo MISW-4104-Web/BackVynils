@@ -35,12 +35,11 @@
 					"raw": "{\n    \"name\": \"Rubén Blades Bellido de Luna\",\n    \"image\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Ruben_Blades_by_Gage_Skidmore.jpg/800px-Ruben_Blades_by_Gage_Skidmore.jpg\",\n    \"description\": \"Es un cantante, compositor, músico, actor, abogado, político y activista panameño. Ha desarrollado gran parte de su carrera artística en la ciudad de Nueva York.\",\n    \"birthDate\": \"1948-07-16T00:00:00-05:00\"\n}"
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/musicians",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/musicians",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"musicians"
 					]
@@ -78,12 +77,11 @@
 					"raw": "    {\n        \"name\": \"Joan Manuel Serrat Teresa\",\n        \"image\": \"https://upload.wikimedia.org/wikipedia/commons/e/e3/Serrat.jpg\",\n        \"description\": \"Es un cantautor, compositor, actor, escritor, poeta y músico español.\",\n        \"birthDate\": \"1943-12-27T00:00:00-05:00\"\n    }"
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/musicians",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/musicians",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"musicians"
 					]
@@ -111,12 +109,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/musicians",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/musicians",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"musicians"
 					]
@@ -144,12 +141,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/musicians/{{new_id_m}}",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/musicians/{{new_id_m}}",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"musicians",
 						"{{new_id_m}}"
@@ -177,12 +173,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/musicians/0",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/musicians/0",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"musicians",
 						"0"
@@ -220,12 +215,11 @@
 					"raw": "{\n    \"name\": \"Rubén Blades Bellido de Luna\",\n    \"image\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Ruben_Blades_by_Gage_Skidmore.jpg/800px-Ruben_Blades_by_Gage_Skidmore.jpg\",\n    \"description\": \"Es un cantante, compositor, músico, actor, abogado, político y activista panameño.\",\n    \"birthDate\": \"1948-07-16T00:00:00-05:00\"\n}"
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/musicians/{{new_id_m}}",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/musicians/{{new_id_m}}",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"musicians",
 						"{{new_id_m}}"
@@ -262,12 +256,11 @@
 					"raw": "{\n    \"name\": \"Rubén Blades Bellido de Luna\",\n    \"image\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Ruben_Blades_by_Gage_Skidmore.jpg/800px-Ruben_Blades_by_Gage_Skidmore.jpg\",\n    \"description\": \"Es un cantante, compositor, músico, actor, abogado, político y activista panameño.\",\n    \"birthDate\": \"1948-07-16T00:00:00-05:00\"\n}"
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/musicians/0",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/musicians/0",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"musicians",
 						"0"
@@ -298,12 +291,11 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/musicians/{{new_id_m}}",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/musicians/{{new_id_m}}",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"musicians",
 						"{{new_id_m}}"
@@ -334,12 +326,11 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/musicians/{{new_id_m2}}",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/musicians/{{new_id_m2}}",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"musicians",
 						"{{new_id_m2}}"
@@ -371,12 +362,11 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/musicians/0",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/musicians/0",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"musicians",
 						"0"

@@ -34,12 +34,11 @@
 					"raw": "{\n    \"name\": \"A Night at the Opera\",\n    \"cover\": \"https://images-na.ssl-images-amazon.com/images/I/71eu02SZK1L._SX355_.jpg\",\n    \"releaseDate\": \"1975-11-21T00:00:00-05:00\",\n    \"description\": \"Es el cuarto álbum de estudio de la banda británica de rock Queen, publicado originalmente en 1975. Coproducido por Roy Thomas Baker y Queen, A Night at the Opera fue, en el tiempo de su lanzamiento, la producción más cara realizada.1​ Un éxito comercial, el álbum fue votado por el público y citado por publicaciones musicales como uno de los mejores trabajos de Queen y de la historia del rock.\",\n    \"genre\": \"Rock\",\n    \"recordLabel\": \"EMI\"\n}"
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/albums",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/albums",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"albums"
 					]
@@ -76,12 +75,11 @@
 					"raw": "{\n    \"name\": \"A Day at the Races\",\n    \"cover\": \"https://static.wikia.nocookie.net/queen/images/b/b4/A-day-at-the-races-uk2015lpfront.jpg/revision/latest/top-crop/width/360/height/450?cb=20171031212349&path-prefix=es\",\n    \"releaseDate\": \"1976-12-10T00:00:00-05:00\",\n    \"description\": \"El álbum fue grabado en los Estudios Sarm West, The Manor and Wessex en Inglaterra y con el ingeniero Mike Stone. El título del álbum es una referencia directa al anterior, A Night at the Opera. Ambos álbumes están titulados como películas de los hermanos Marx.\",\n\t\"genre\": \"Rock\",\n    \"recordLabel\": \"EMI\"\n}"
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/albums",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/albums",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"albums"
 					]
@@ -119,12 +117,11 @@
 					"raw": "{\n    \"name\": \"Queen\",\n    \"image\": \"https://upload.wikimedia.org/wikipedia/commons/7/7c/Queen_logo.svg\",\n    \"description\": \"Queen es una banda británica de rock formada en 1970 en Londres por el cantante Freddie Mercury, el guitarrista Brian May, el baterista Roger Taylor y el bajista John Deacon. Si bien el grupo ha presentado bajas de dos de sus miembros (Mercury, fallecido en 1991, y Deacon, retirado en 1997), los integrantes restantes, May y Taylor, continúan trabajando bajo el nombre Queen, por lo que la banda aún se considera activa.\",\n    \"creationDate\":\"1970-01-01T00:00:00-05:00\"\n}"
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/bands",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/bands",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"bands"
 					]
@@ -159,12 +156,11 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/bands/{{new_id_b}}/albums/{{new_id_a}}",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/bands/{{new_id_b}}/albums/{{new_id_a}}",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"bands",
 						"{{new_id_b}}",
@@ -198,12 +194,11 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/bands/{{new_id_b}}/albums/0",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/bands/{{new_id_b}}/albums/0",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"bands",
 						"{{new_id_b}}",
@@ -234,12 +229,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/bands/{{new_id_b}}/albums/{{new_id_a}}",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/bands/{{new_id_b}}/albums/{{new_id_a}}",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"bands",
 						"{{new_id_b}}",
@@ -269,12 +263,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/bands/{{new_id_b}}/albums/0",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/bands/{{new_id_b}}/albums/0",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"bands",
 						"{{new_id_b}}",
@@ -304,12 +297,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/bands/{{new_id_b}}/albums/{{new_id_a2}}",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/bands/{{new_id_b}}/albums/{{new_id_a2}}",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"bands",
 						"{{new_id_b}}",
@@ -347,12 +339,11 @@
 					"raw": "[\n{\n    \"name\": \"A Night at the Opera\",\n    \"cover\": \"https://images-na.ssl-images-amazon.com/images/I/71eu02SZK1L._SX355_.jpg\",\n    \"releaseDate\": \"1975-11-21T00:00:00-05:00\",\n    \"description\": \"Es el cuarto álbum de estudio de la banda británica de rock Queen, publicado originalmente en 1975. Coproducido por Roy Thomas Baker y Queen, A Night at the Opera fue, en el tiempo de su lanzamiento, la producción más cara realizada.1​ Un éxito comercial, el álbum fue votado por el público y citado por publicaciones musicales como uno de los mejores trabajos de Queen y de la historia del rock.\",\n    \"genre\": \"Rock\",\n    \"recordLabel\": \"EMI\",\n    \"id\": {{new_id_a}}\n},\n{\n    \"name\": \"A Day at the Races\",\n    \"cover\": \"https://static.wikia.nocookie.net/queen/images/b/b4/A-day-at-the-races-uk2015lpfront.jpg/revision/latest/top-crop/width/360/height/450?cb=20171031212349&path-prefix=es\",\n    \"releaseDate\": \"1976-12-10T00:00:00-05:00\",\n    \"description\": \"El álbum fue grabado en los Estudios Sarm West, The Manor and Wessex en Inglaterra y con el ingeniero Mike Stone. El título del álbum es una referencia directa al anterior, A Night at the Opera. Ambos álbumes están titulados como películas de los hermanos Marx.\",\n\t\"genre\": \"Rock\",\n    \"recordLabel\": \"EMI\",\n    \"id\": {{new_id_a2}}\n}]"
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/bands/{{new_id_b}}/albums",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/bands/{{new_id_b}}/albums",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"bands",
 						"{{new_id_b}}",
@@ -382,12 +373,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/bands/{{new_id_b}}/albums",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/bands/{{new_id_b}}/albums",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"bands",
 						"{{new_id_b}}",
@@ -425,12 +415,11 @@
 					"raw": "[\n{\n    \"name\": \"A Day at the Races\",\n    \"cover\": \"https://static.wikia.nocookie.net/queen/images/b/b4/A-day-at-the-races-uk2015lpfront.jpg/revision/latest/top-crop/width/360/height/450?cb=20171031212349&path-prefix=es\",\n    \"releaseDate\": \"1976-12-10T00:00:00-05:00\",\n    \"description\": \"El álbum fue grabado en los Estudios Sarm West, The Manor and Wessex en Inglaterra y con el ingeniero Mike Stone. El título del álbum es una referencia directa al anterior, A Night at the Opera. Ambos álbumes están titulados como películas de los hermanos Marx.\",\n\t\"genre\": \"Rock\",\n    \"recordLabel\": \"EMI\",\n    \"id\": 0\n}\n]"
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/bands/{{new_id_b}}/albums",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/bands/{{new_id_b}}/albums",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"bands",
 						"{{new_id_b}}",
@@ -462,12 +451,11 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/bands/{{new_id_b}}/albums/{{new_id_a}}",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/bands/{{new_id_b}}/albums/{{new_id_a}}",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"bands",
 						"{{new_id_b}}",
@@ -500,12 +488,11 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/bands/{{new_id_b}}/albums/{{new_id_a2}}",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/bands/{{new_id_b}}/albums/{{new_id_a2}}",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"bands",
 						"{{new_id_b}}",
@@ -539,12 +526,11 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/bands/0/albums/{{new_id_a}}",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/bands/0/albums/{{new_id_a}}",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"bands",
 						"0",
@@ -578,12 +564,11 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/bands/{{new_id_b}}/albums/0",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/bands/{{new_id_b}}/albums/0",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"bands",
 						"{{new_id_b}}",
@@ -616,12 +601,11 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/albums/{{new_id_a}}",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/albums/{{new_id_a}}",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"albums",
 						"{{new_id_a}}"
@@ -652,12 +636,11 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/albums/{{new_id_a2}}",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/albums/{{new_id_a2}}",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"albums",
 						"{{new_id_a2}}"
@@ -688,12 +671,11 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/bands/{{new_id_b}}",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/bands/{{new_id_b}}",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"bands",
 						"{{new_id_b}}"

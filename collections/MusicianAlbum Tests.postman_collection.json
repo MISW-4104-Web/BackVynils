@@ -34,12 +34,11 @@
 					"raw": "{\n    \"name\": \"Buscando América\",\n    \"cover\": \"https://i.pinimg.com/564x/aa/5f/ed/aa5fed7fac61cc8f41d1e79db917a7cd.jpg\",\n    \"releaseDate\": \"1984-08-01T00:00:00-05:00\",\n    \"description\": \"Buscando América es el primer álbum de la banda de Rubén Blades y Seis del Solar lanzado en 1984. La producción, bajo el sello Elektra, fusiona diferentes ritmos musicales tales como la salsa, reggae, rock, y el jazz latino. El disco fue grabado en Eurosound Studios en Nueva York entre mayo y agosto de 1983.\",\n    \"genre\": \"Salsa\",\n    \"recordLabel\": \"Elektra\"\n}"
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/albums",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/albums",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"albums"
 					]
@@ -76,12 +75,11 @@
 					"raw": "{\n    \"name\": \"Poeta del Pueblo\",\n    \"cover\": \"https://cdn.shopify.com/s/files/1/0275/3095/products/image_4931268b-7acf-4702-9c55-b2b3a03ed999_1024x1024.jpg\",\n    \"releaseDate\": \"2011-08-01T00:00:00-05:00\",\n    \"description\": \"Recopilación de 27 composiciones del cosmos Blades que los bailadores y melómanos han hecho suyas en estos 40 años de presencia de los ritmos y concordias afrocaribeños en múltiples escenarios internacionales. Grabaciones de Blades para la Fania con las orquestas de Pete Rodríguez, Ray Barreto, Fania All Stars y, sobre todo, los grandes éxitos con la Banda de Willie Colón\",\n\t\"genre\": \"Salsa\",\n    \"recordLabel\": \"Fania Records\"\n}"
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/albums",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/albums",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"albums"
 					]
@@ -119,12 +117,11 @@
 					"raw": "{\n    \"name\": \"Rubén Blades Bellido de Luna\",\n    \"image\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Ruben_Blades_by_Gage_Skidmore.jpg/800px-Ruben_Blades_by_Gage_Skidmore.jpg\",\n    \"description\": \"Es un cantante, compositor, músico, actor, abogado, político y activista panameño. Ha desarrollado gran parte de su carrera artística en la ciudad de Nueva York.\",\n    \"birthDate\": \"1948-07-16T00:00:00-05:00\"\n}"
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/musicians",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/musicians",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"musicians"
 					]
@@ -159,12 +156,11 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/musicians/{{new_id_m}}/albums/{{new_id_a}}",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/musicians/{{new_id_m}}/albums/{{new_id_a}}",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"musicians",
 						"{{new_id_m}}",
@@ -198,12 +194,11 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/musicians/{{new_id_m}}/albums/0",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/musicians/{{new_id_m}}/albums/0",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"musicians",
 						"{{new_id_m}}",
@@ -234,12 +229,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/musicians/{{new_id_m}}/albums/{{new_id_a}}",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/musicians/{{new_id_m}}/albums/{{new_id_a}}",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"musicians",
 						"{{new_id_m}}",
@@ -269,12 +263,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/musicians/{{new_id_m}}/albums/0",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/musicians/{{new_id_m}}/albums/0",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"musicians",
 						"{{new_id_m}}",
@@ -304,12 +297,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/musicians/{{new_id_m}}/albums/{{new_id_a2}}",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/musicians/{{new_id_m}}/albums/{{new_id_a2}}",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"musicians",
 						"{{new_id_m}}",
@@ -347,12 +339,11 @@
 					"raw": "[\n{\n    \"name\": \"Buscando América\",\n    \"cover\": \"https://i.pinimg.com/564x/aa/5f/ed/aa5fed7fac61cc8f41d1e79db917a7cd.jpg\",\n    \"releaseDate\": \"1984-08-01T00:00:00-05:00\",\n    \"description\": \"Buscando América es el primer álbum de la banda de Rubén Blades y Seis del Solar lanzado en 1984. La producción, bajo el sello Elektra, fusiona diferentes ritmos musicales tales como la salsa, reggae, rock, y el jazz latino. El disco fue grabado en Eurosound Studios en Nueva York entre mayo y agosto de 1983.\",\n    \"genre\": \"Salsa\",\n    \"recordLabel\": \"Elektra\",\n    \"id\": {{new_id_a}}\n},\n{\n    \"name\": \"Poeta del Pueblo\",\n    \"cover\": \"https://cdn.shopify.com/s/files/1/0275/3095/products/image_4931268b-7acf-4702-9c55-b2b3a03ed999_1024x1024.jpg\",\n    \"releaseDate\": \"2011-08-01T00:00:00-05:00\",\n    \"description\": \"Recopilación de 27 composiciones del cosmos Blades que los bailadores y melómanos han hecho suyas en estos 40 años de presencia de los ritmos y concordias afrocaribeños en múltiples escenarios internacionales. Grabaciones de Blades para la Fania con las orquestas de Pete Rodríguez, Ray Barreto, Fania All Stars y, sobre todo, los grandes éxitos con la Banda de Willie Colón\",\n\t\"genre\": \"Salsa\",\n    \"recordLabel\": \"Fania Records\",\n    \"id\": {{new_id_a2}}\n}]"
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/musicians/{{new_id_m}}/albums",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/musicians/{{new_id_m}}/albums",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"musicians",
 						"{{new_id_m}}",
@@ -382,12 +373,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/musicians/{{new_id_m}}/albums",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/musicians/{{new_id_m}}/albums",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"musicians",
 						"{{new_id_m}}",
@@ -425,12 +415,11 @@
 					"raw": "[\n{\n    \"name\": \"Buscando América\",\n    \"cover\": \"https://i.pinimg.com/564x/aa/5f/ed/aa5fed7fac61cc8f41d1e79db917a7cd.jpg\",\n    \"releaseDate\": \"1984-08-01T00:00:00-05:00\",\n    \"description\": \"Buscando América es el primer álbum de la banda de Rubén Blades y Seis del Solar lanzado en 1984. La producción, bajo el sello Elektra, fusiona diferentes ritmos musicales tales como la salsa, reggae, rock, y el jazz latino. El disco fue grabado en Eurosound Studios en Nueva York entre mayo y agosto de 1983.\",\n    \"genre\": \"Salsa\",\n    \"recordLabel\": \"Elektra\",\n    \"id\": 0\n}\n]"
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/musicians/{{new_id_m}}/albums",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/musicians/{{new_id_m}}/albums",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"musicians",
 						"{{new_id_m}}",
@@ -462,12 +451,11 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/musicians/{{new_id_m}}/albums/{{new_id_a}}",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/musicians/{{new_id_m}}/albums/{{new_id_a}}",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"musicians",
 						"{{new_id_m}}",
@@ -500,12 +488,11 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/musicians/{{new_id_m}}/albums/{{new_id_a2}}",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/musicians/{{new_id_m}}/albums/{{new_id_a2}}",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"musicians",
 						"{{new_id_m}}",
@@ -539,12 +526,11 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/musicians/0/albums/{{new_id_a}}",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/musicians/0/albums/{{new_id_a}}",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"musicians",
 						"0",
@@ -578,12 +564,11 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/musicians/{{new_id_m}}/albums/0",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/musicians/{{new_id_m}}/albums/0",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"musicians",
 						"{{new_id_m}}",
@@ -616,12 +601,11 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/albums/{{new_id_a}}",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/albums/{{new_id_a}}",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"albums",
 						"{{new_id_a}}"
@@ -652,12 +636,11 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/albums/{{new_id_a2}}",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/albums/{{new_id_a2}}",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"albums",
 						"{{new_id_a2}}"
@@ -688,12 +671,11 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/musicians/{{new_id_m}}",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/musicians/{{new_id_m}}",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"musicians",
 						"{{new_id_m}}"

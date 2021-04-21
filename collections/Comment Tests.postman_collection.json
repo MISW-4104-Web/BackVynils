@@ -34,12 +34,11 @@
 					"raw": "{\n    \"name\": \"Buscando América\",\n    \"cover\": \"https://i.pinimg.com/564x/aa/5f/ed/aa5fed7fac61cc8f41d1e79db917a7cd.jpg\",\n    \"releaseDate\": \"1984-08-01T00:00:00-05:00\",\n    \"description\": \"Buscando América es el primer álbum de la banda de Rubén Blades y Seis del Solar lanzado en 1984. La producción, bajo el sello Elektra, fusiona diferentes ritmos musicales tales como la salsa, reggae, rock, y el jazz latino. El disco fue grabado en Eurosound Studios en Nueva York entre mayo y agosto de 1983.\",\n    \"genre\": \"Salsa\",\n    \"recordLabel\": \"Sony Music\"\n}"
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/albums",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/albums",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"albums"
 					]
@@ -77,12 +76,11 @@
 					"raw": "{\n    \"name\": \"Jaime Andrés Monsalve\",\n    \"telephone\": \"3102178976\",\n    \"email\": \"j.monsalve@gmail.com\"\n}"
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/collectors",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/collectors",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"collectors"
 					]
@@ -120,12 +118,11 @@
 					"raw": "{\n    \"name\": \"María Alejandra Palacios\",\n    \"telephone\": \"3502889087\",\n    \"email\": \"j.palacios@outlook.es\"\n}"
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/collectors",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/collectors",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"collectors"
 					]
@@ -162,12 +159,11 @@
 					"raw": "{\n    \"description\": \"It is an amazing album\",\n    \"rating\": 4,\n    \"collector\": {\"id\":{{new_id_c}}}\n}"
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/albums/{{new_id_a}}/comments",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/albums/{{new_id_a}}/comments",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"albums",
 						"{{new_id_a}}",
@@ -206,12 +202,11 @@
 					"raw": "{\n    \"description\": \"This album is one of my favourites\",\n    \"rating\": 5,\n    \"collector\": {\"id\":{{new_id_c2}}}\n}"
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/albums/{{new_id_a}}/comments",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/albums/{{new_id_a}}/comments",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"albums",
 						"{{new_id_a}}",
@@ -249,12 +244,11 @@
 					"raw": "{\n    \"description\": \"It is an amazing album\",\n    \"rating\": 5,\n    \"collector\": {\"id\":{{new_id_c2}}}\n}"
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/albums/0/comments",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/albums/0/comments",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"albums",
 						"0",
@@ -284,12 +278,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/albums/{{new_id_a}}/comments",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/albums/{{new_id_a}}/comments",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"albums",
 						"{{new_id_a}}",
@@ -319,12 +312,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/albums/{{new_id_a}}/comments/{{new_id_cm}}",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/albums/{{new_id_a}}/comments/{{new_id_cm}}",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"albums",
 						"{{new_id_a}}",
@@ -364,12 +356,11 @@
 					"raw": "{\n\t\"description\": \"It is the most amazing album\",\n    \"rating\": 5,\n    \"collector\": {\"id\":{{new_id_c}}}\n}"
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/albums/{{new_id_a}}/comments/{{new_id_cm}}",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/albums/{{new_id_a}}/comments/{{new_id_cm}}",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"albums",
 						"{{new_id_a}}",
@@ -409,12 +400,11 @@
 					"raw": "{\n\t\"description\": \"It is the most amazing album\",\n    \"rating\": 5,\n    \"collector\": {\"id\":{{new_id_c}}}\n}"
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/albums/{{new_id_a}}/comments/0",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/albums/{{new_id_a}}/comments/0",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"albums",
 						"{{new_id_a}}",
@@ -453,12 +443,11 @@
 					"raw": "{\n    \"name\": \"review name\",\n    \"source\": \"review source\"\n}"
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/albums/0/comments/{{new_id_cm}}",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/albums/0/comments/{{new_id_cm}}",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"albums",
 						"0",
@@ -493,12 +482,11 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/albums/{{new_id_a}}/comments/0",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/albums/{{new_id_a}}/comments/0",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"albums",
 						"{{new_id_a}}",
@@ -532,12 +520,11 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/albums/0/comments/{{new_id_cm}}",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/albums/0/comments/{{new_id_cm}}",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"albums",
 						"0",
@@ -570,12 +557,11 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/albums/{{new_id_a}}/comments/{{new_id_cm}}",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/albums/{{new_id_a}}/comments/{{new_id_cm}}",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"albums",
 						"{{new_id_a}}",
@@ -608,12 +594,11 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/albums/{{new_id_a}}/comments/{{new_id_cm2}}",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/albums/{{new_id_a}}/comments/{{new_id_cm2}}",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"albums",
 						"{{new_id_a}}",
@@ -646,12 +631,11 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/collectors/{{new_id_c}}",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/collectors/{{new_id_c}}",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"collectors",
 						"{{new_id_c}}"
@@ -682,12 +666,11 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/collectors/{{new_id_c2}}",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/collectors/{{new_id_c2}}",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"collectors",
 						"{{new_id_c2}}"
@@ -718,12 +701,11 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{puerto}}/albums/{{new_id_a}}",
-					"protocol": "http",
+					"raw": "{{protocol}}://{{ip}}/albums/{{new_id_a}}",
+					"protocol": "{{protocol}}",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{puerto}}",
 					"path": [
 						"albums",
 						"{{new_id_a}}"
