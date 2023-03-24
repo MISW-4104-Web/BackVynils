@@ -14,28 +14,6 @@ pipeline {
             url: 'https://github.com/MISW-4104-Web/' + env.GIT_REPO
          }
       }
-      stage('Git Analysis') {
-         // Run git analysis
-         steps {
-            script {
-               docker.image('gitinspector-isis2603').inside('--entrypoint=""') {
-                  sh '''
-                     mkdir -p ./reports/
-                     datetime=$(date +'%Y-%m-%d_%H%M%S')
-                     gitinspector --file-types="cs,js,asax,ascx,asmx,aspx,html,fs,ts" --format=html --RxU -w -T > ./reports/index.html
-                  '''
-               }
-            }
-            withCredentials([usernamePassword(credentialsId: env.GIT_CREDENTIAL_ID, passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
-               sh('git config --global user.email "ci-isis2603@uniandes.edu.co"')
-               sh('git config --global user.name "ci-isis2603"')
-               sh('git add ./reports/index.html')
-               sh('git commit -m "[ci-skip] GitInspector report added"')
-               sh('git pull https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/MISW-4104-Web/${GIT_REPO} master')
-               sh('git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/MISW-4104-Web/${GIT_REPO} master')
-            }
-         }
-      }
       stage('Build') {
          // Build app
          steps {
