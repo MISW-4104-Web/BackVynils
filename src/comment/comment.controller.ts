@@ -2,8 +2,10 @@ import { Controller, UseInterceptors, Post, HttpCode, Param, Body, Get, Put, Del
 import { BusinessErrorsInterceptor } from '../interceptors/interceptor';
 import { CommentService } from './comment.service';
 import { CommentDTO } from './comment.dto';
+import { ApiTags } from '@nestjs/swagger';
 
 @Controller('albums')
+@ApiTags('album-comments')
 @UseInterceptors(BusinessErrorsInterceptor)
 export class CommentController {
     constructor(private readonly commentService: CommentService) { }

@@ -3,7 +3,9 @@ import { AlbumService } from './album.service';
 import { AlbumDTO } from './album.dto';
 
 import { BusinessErrorsInterceptor } from "../interceptors/interceptor";
+import { ApiTags } from '@nestjs/swagger';
 @Controller('albums')
+@ApiTags('albums')
 @UseInterceptors(BusinessErrorsInterceptor)
 export class AlbumController {
     constructor(private readonly albumService: AlbumService) { }

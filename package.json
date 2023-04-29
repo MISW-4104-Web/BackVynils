@@ -5,7 +5,7 @@
   "description": "Vinyls Backend MISO",
   "license": "MIT",
   "engines": {
-    "node": "12.x"
+    "node": "14.x"
   },
   "scripts": {
     "prebuild": "rimraf dist",
@@ -26,6 +26,7 @@
     "@nestjs/common": "^6.8.0",
     "@nestjs/core": "^6.8.0",
     "@nestjs/platform-express": "^6.8.0",
+    "@nestjs/swagger": "^4.8.0",
     "@nestjs/typeorm": "^6.2.0",
     "joi": "^17.4.0",
     "pg": "^7.14.0",
@@ -35,7 +36,9 @@
     "rxjs": "^6.5.3",
     "sequelize": "^5.21.2",
     "sequelize-typescript": "^1.1.0",
-    "typeorm": "^0.2.21"
+    "swagger-ui-express": "^4.1.6",
+    "typeorm": "^0.2.21",
+    "tslib": "1.11.2"
   },
   "devDependencies": {
     "@nestjs/cli": "^6.9.1",

@@ -3,8 +3,10 @@ import { BusinessErrorsInterceptor } from "../interceptors/interceptor";
 
 import { TrackDTO } from "./track.dto";
 import { TrackService } from "./track.service";
+import { ApiTags } from '@nestjs/swagger';
 
 @Controller('albums')
+@ApiTags('tracks')
 @UseInterceptors(BusinessErrorsInterceptor)
 export class TrackController {
     constructor(private readonly trackService: TrackService) { }

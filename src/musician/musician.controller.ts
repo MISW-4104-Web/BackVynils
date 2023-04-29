@@ -2,8 +2,10 @@ import { Controller, UseInterceptors, Get, Param, Post, HttpCode, Body, Put, Del
 import { BusinessErrorsInterceptor } from '../interceptors/interceptor';
 import { MusicianService } from './musician.service';
 import { MusicianDTO } from './musician.dto';
+import { ApiTags } from '@nestjs/swagger';
 
 @Controller('musicians')
+@ApiTags('musicians')
 @UseInterceptors(BusinessErrorsInterceptor)
 export class MusicianController {
     constructor(private readonly musicianService: MusicianService) { }

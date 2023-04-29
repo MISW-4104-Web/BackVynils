@@ -3,8 +3,10 @@ import { BusinessErrorsInterceptor } from "../interceptors/interceptor";
 
 import { PrizeService } from "./prize.service";
 import { PrizeDTO } from "./prize.dto"
+import { ApiTags } from '@nestjs/swagger';
 
 @Controller('prizes')
+@ApiTags('prizes')
 @UseInterceptors(BusinessErrorsInterceptor)
 export class PrizeController {
     constructor(private readonly prizeService: PrizeService) { }
