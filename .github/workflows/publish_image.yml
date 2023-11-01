@@ -6,7 +6,7 @@ on:
       - "master"
 
 jobs:
-  docker-image-offer:
+  docker-image:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

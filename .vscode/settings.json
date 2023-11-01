@@ -1,0 +1,15 @@
+{
+    "files.eol": "\n",
+    "[terraform]": {
+      "editor.defaultFormatter": "hashicorp.terraform",
+      "editor.formatOnSave": true,
+      "editor.formatOnPaste": true,
+    },
+    "[terraform-vars]": {
+      "editor.defaultFormatter": "hashicorp.terraform",
+      "editor.formatOnSave": true,
+      "editor.formatOnPaste": true,
+    },
+    "workbench.iconTheme": "material-icon-theme"
+  }
+  
