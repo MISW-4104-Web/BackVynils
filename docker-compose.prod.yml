@@ -1,0 +1,31 @@
+version: "3.8"
+   
+services:
+  web:
+    image: ghcr.io/juanmanuelgg/backvynils:latest
+    environment:
+      DB_HOST: "db"
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    links:
+      - db
+    networks:
+      - default
+
+  db:
+    image: postgres
+    environment:
+      - POSTGRES_DB=vinyls
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - default
+
+volumes:
+  pgdata:
