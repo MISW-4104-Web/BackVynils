@@ -134,7 +134,7 @@ ufw allow in on lo
 ufw allow from 127.0.0.1/8
 
 ufw allow 22
-ufw allow 80 # Se podria quitar ya que se usa https
+# ufw allow 80 # La idea es quitar http cuando ya se tiene https.
 ufw allow 443
 
 # Prender cuando ya tenga las reglas claras

@@ -1,5 +1,5 @@
 resource "digitalocean_firewall" "web" {
-  name = "web-22-53-80-443-3000-y-5432-8140-local"
+  name = "web-22-53-80-443"
 
   droplet_ids = [var.droplet_id]
 
@@ -8,11 +8,13 @@ resource "digitalocean_firewall" "web" {
     port_range       = "22"
     source_addresses = ["0.0.0.0/0", "::/0"]
   }
+  /* La idea es quitar http cuando ya se tiene https.
   inbound_rule {
     protocol         = "tcp"
     port_range       = "80"
     source_addresses = ["0.0.0.0/0", "::/0"]
   }
+  */
   inbound_rule {
     protocol         = "tcp"
     port_range       = "443"
@@ -25,16 +27,6 @@ resource "digitalocean_firewall" "web" {
     source_addresses = ["0.0.0.0/0", "::/0"]
   }
   */
-  inbound_rule {
-    protocol         = "tcp"
-    port_range       = "5432"
-    source_addresses = ["127.0.0.1/8", "::1/128"]
-  }
-  inbound_rule {
-    protocol         = "tcp"
-    port_range       = "8140"
-    source_addresses = ["127.0.0.1/8", "::1/128"]
-  }
   outbound_rule {
     protocol              = "tcp"
     port_range            = "53"
@@ -62,14 +54,4 @@ resource "digitalocean_firewall" "web" {
     destination_addresses = ["0.0.0.0/0", "::/0"]
   }
   */
-  outbound_rule {
-    protocol              = "tcp"
-    port_range            = "5432"
-    destination_addresses = ["127.0.0.1/8", "::1/128"]
-  }
-  outbound_rule {
-    protocol              = "tcp"
-    port_range            = "8140"
-    destination_addresses = ["127.0.0.1/8", "::1/128"]
-  }
 }
